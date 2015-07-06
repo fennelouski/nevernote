@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>44E426E5-8604-4C95-942C-FA7CE136C9E2</string>
+	<key>IDESourceControlProjectName</key>
+	<string>NeverNote</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>7046AE5E9C075850D134A6069FC2B116BE6EDF4B</key>
+		<string>github.com:nfennel/NeverNote.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>NeverNote.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>7046AE5E9C075850D134A6069FC2B116BE6EDF4B</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:nfennel/NeverNote.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>7046AE5E9C075850D134A6069FC2B116BE6EDF4B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7046AE5E9C075850D134A6069FC2B116BE6EDF4B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>NeverNote</string>
+		</dict>
+	</array>
+</dict>
+</plist>

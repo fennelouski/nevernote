@@ -1,0 +1,636 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8008A38B191BC5C10071B32D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8008A38A191BC5C10071B32D /* Default-568h@2x.png */; };
+		800D2E021947919700E904AA /* UIColor+AppColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 800D2E011947919700E904AA /* UIColor+AppColors.m */; };
+		8015691419B1189F00A4A083 /* NNListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8015691319B1189F00A4A083 /* NNListViewController.m */; };
+		803137BC1965D08E00B78BC5 /* UNIOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 803137BB1965D08E00B78BC5 /* UNIOptionsView.m */; };
+		803137BF1965D5CC00B78BC5 /* UNISuggestionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 803137BE1965D5CC00B78BC5 /* UNISuggestionView.m */; };
+		803137C21965F15B00B78BC5 /* UNICalendarPopOver.m in Sources */ = {isa = PBXBuildFile; fileRef = 803137C11965F15B00B78BC5 /* UNICalendarPopOver.m */; };
+		803137CB19660DAB00B78BC5 /* UNIAdditionalOptionsViewButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 803137CA19660DAB00B78BC5 /* UNIAdditionalOptionsViewButton.m */; };
+		803CDE46196AFFE600C1C789 /* UNITimeInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 803CDE45196AFFE600C1C789 /* UNITimeInputView.m */; };
+		803CDE49196B06A700C1C789 /* UNIAdditionalOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 803CDE48196B06A700C1C789 /* UNIAdditionalOptionsView.m */; };
+		803CDE4C196B157600C1C789 /* UNIRepeatOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 803CDE4B196B157600C1C789 /* UNIRepeatOptionsView.m */; };
+		8056F5FF196591BE009CEA81 /* UNITaskCreatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8056F5FE196591BE009CEA81 /* UNITaskCreatorViewController.m */; };
+		805898751916641F00352439 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 805898741916641F00352439 /* Foundation.framework */; };
+		805898771916641F00352439 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 805898761916641F00352439 /* CoreGraphics.framework */; };
+		805898791916641F00352439 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 805898781916641F00352439 /* UIKit.framework */; };
+		8058987B1916641F00352439 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8058987A1916641F00352439 /* CoreData.framework */; };
+		805898811916641F00352439 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8058987F1916641F00352439 /* InfoPlist.strings */; };
+		805898831916641F00352439 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 805898821916641F00352439 /* main.m */; };
+		805898871916641F00352439 /* NNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 805898861916641F00352439 /* NNAppDelegate.m */; };
+		8058988A1916641F00352439 /* NeverNote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 805898881916641F00352439 /* NeverNote.xcdatamodeld */; };
+		8058988C1916641F00352439 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8058988B1916641F00352439 /* Images.xcassets */; };
+		805898931916642000352439 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 805898921916642000352439 /* XCTest.framework */; };
+		805898941916642000352439 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 805898741916641F00352439 /* Foundation.framework */; };
+		805898951916642000352439 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 805898781916641F00352439 /* UIKit.framework */; };
+		805898961916642000352439 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8058987A1916641F00352439 /* CoreData.framework */; };
+		8058989E1916642000352439 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8058989C1916642000352439 /* InfoPlist.strings */; };
+		805898A01916642000352439 /* NeverNoteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8058989F1916642000352439 /* NeverNoteTests.m */; };
+		805898AB1916643400352439 /* NNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 805898AA1916643400352439 /* NNViewController.m */; };
+		805898B21919A21400352439 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 805898B11919A21400352439 /* CoreMotion.framework */; };
+		80B9E221191AF91B008B377C /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 80B9E220191AF91B008B377C /* icon.icns */; };
+		80B9E22A191AFC4A008B377C /* Icon 29.png in Resources */ = {isa = PBXBuildFile; fileRef = 80B9E224191AFC4A008B377C /* Icon 29.png */; };
+		80B9E22B191AFC4A008B377C /* Icon 40.png in Resources */ = {isa = PBXBuildFile; fileRef = 80B9E225191AFC4A008B377C /* Icon 40.png */; };
+		80B9E22C191AFC4A008B377C /* Icon 58.png in Resources */ = {isa = PBXBuildFile; fileRef = 80B9E226191AFC4A008B377C /* Icon 58.png */; };
+		80B9E22D191AFC4A008B377C /* Icon 80.png in Resources */ = {isa = PBXBuildFile; fileRef = 80B9E227191AFC4A008B377C /* Icon 80.png */; };
+		80B9E22E191AFC4A008B377C /* Icon 120.png in Resources */ = {isa = PBXBuildFile; fileRef = 80B9E228191AFC4A008B377C /* Icon 120.png */; };
+		80B9E22F191AFC4A008B377C /* Icon 152.png in Resources */ = {isa = PBXBuildFile; fileRef = 80B9E229191AFC4A008B377C /* Icon 152.png */; };
+		80B9E236191AFDA1008B377C /* Launch Screen iPad Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 80B9E230191AFDA1008B377C /* Launch Screen iPad Landscape.png */; };
+		80B9E237191AFDA1008B377C /* Launch Screen iPad Landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 80B9E231191AFDA1008B377C /* Launch Screen iPad Landscape@2x.png */; };
+		80B9E238191AFDA1008B377C /* Launch Screen iPad Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 80B9E232191AFDA1008B377C /* Launch Screen iPad Portrait.png */; };
+		80B9E239191AFDA1008B377C /* Launch Screen iPad Portrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 80B9E233191AFDA1008B377C /* Launch Screen iPad Portrait@2x.png */; };
+		80B9E23A191AFDA1008B377C /* Launch Screen iPhone Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 80B9E234191AFDA1008B377C /* Launch Screen iPhone Portrait.png */; };
+		80B9E23B191AFDA1008B377C /* Launch Screen iPhone Portrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 80B9E235191AFDA1008B377C /* Launch Screen iPhone Portrait@2x.png */; };
+		80B9E23D191AFDF8008B377C /* Launch Screen iPhone Portrait 4-inch.png in Resources */ = {isa = PBXBuildFile; fileRef = 80B9E23C191AFDF8008B377C /* Launch Screen iPhone Portrait 4-inch.png */; };
+		80ECF9371964519E00EDABD1 /* NNColorObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 80ECF9361964519E00EDABD1 /* NNColorObject.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		805898971916642000352439 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 805898691916641F00352439 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 805898701916641F00352439;
+			remoteInfo = NeverNote;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8008A38A191BC5C10071B32D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		800D2E001947919700E904AA /* UIColor+AppColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+AppColors.h"; sourceTree = "<group>"; };
+		800D2E011947919700E904AA /* UIColor+AppColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AppColors.m"; sourceTree = "<group>"; };
+		8015691219B1189F00A4A083 /* NNListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNListViewController.h; sourceTree = "<group>"; };
+		8015691319B1189F00A4A083 /* NNListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNListViewController.m; sourceTree = "<group>"; };
+		803137BA1965D08E00B78BC5 /* UNIOptionsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNIOptionsView.h; sourceTree = "<group>"; };
+		803137BB1965D08E00B78BC5 /* UNIOptionsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNIOptionsView.m; sourceTree = "<group>"; };
+		803137BD1965D5CC00B78BC5 /* UNISuggestionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNISuggestionView.h; sourceTree = "<group>"; };
+		803137BE1965D5CC00B78BC5 /* UNISuggestionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNISuggestionView.m; sourceTree = "<group>"; };
+		803137C01965F15B00B78BC5 /* UNICalendarPopOver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNICalendarPopOver.h; sourceTree = "<group>"; };
+		803137C11965F15B00B78BC5 /* UNICalendarPopOver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNICalendarPopOver.m; sourceTree = "<group>"; };
+		803137C919660DAB00B78BC5 /* UNIAdditionalOptionsViewButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNIAdditionalOptionsViewButton.h; sourceTree = "<group>"; };
+		803137CA19660DAB00B78BC5 /* UNIAdditionalOptionsViewButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNIAdditionalOptionsViewButton.m; sourceTree = "<group>"; };
+		803CDE44196AFFE600C1C789 /* UNITimeInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNITimeInputView.h; sourceTree = "<group>"; };
+		803CDE45196AFFE600C1C789 /* UNITimeInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNITimeInputView.m; sourceTree = "<group>"; };
+		803CDE47196B06A700C1C789 /* UNIAdditionalOptionsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNIAdditionalOptionsView.h; sourceTree = "<group>"; };
+		803CDE48196B06A700C1C789 /* UNIAdditionalOptionsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNIAdditionalOptionsView.m; sourceTree = "<group>"; };
+		803CDE4A196B157600C1C789 /* UNIRepeatOptionsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNIRepeatOptionsView.h; sourceTree = "<group>"; };
+		803CDE4B196B157600C1C789 /* UNIRepeatOptionsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNIRepeatOptionsView.m; sourceTree = "<group>"; };
+		8056F5FD196591BE009CEA81 /* UNITaskCreatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNITaskCreatorViewController.h; sourceTree = "<group>"; };
+		8056F5FE196591BE009CEA81 /* UNITaskCreatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNITaskCreatorViewController.m; sourceTree = "<group>"; };
+		805898711916641F00352439 /* NeverNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeverNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		805898741916641F00352439 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		805898761916641F00352439 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		805898781916641F00352439 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8058987A1916641F00352439 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		8058987E1916641F00352439 /* NeverNote-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NeverNote-Info.plist"; sourceTree = "<group>"; };
+		805898801916641F00352439 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		805898821916641F00352439 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		805898841916641F00352439 /* NeverNote-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NeverNote-Prefix.pch"; sourceTree = "<group>"; };
+		805898851916641F00352439 /* NNAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NNAppDelegate.h; sourceTree = "<group>"; };
+		805898861916641F00352439 /* NNAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NNAppDelegate.m; sourceTree = "<group>"; };
+		805898891916641F00352439 /* NeverNote.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NeverNote.xcdatamodel; sourceTree = "<group>"; };
+		8058988B1916641F00352439 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		805898911916642000352439 /* NeverNoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeverNoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		805898921916642000352439 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		8058989B1916642000352439 /* NeverNoteTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NeverNoteTests-Info.plist"; sourceTree = "<group>"; };
+		8058989D1916642000352439 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8058989F1916642000352439 /* NeverNoteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NeverNoteTests.m; sourceTree = "<group>"; };
+		805898A91916643400352439 /* NNViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNViewController.h; sourceTree = "<group>"; };
+		805898AA1916643400352439 /* NNViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNViewController.m; sourceTree = "<group>"; };
+		805898B11919A21400352439 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		80B9E220191AF91B008B377C /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
+		80B9E224191AFC4A008B377C /* Icon 29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon 29.png"; sourceTree = "<group>"; };
+		80B9E225191AFC4A008B377C /* Icon 40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon 40.png"; sourceTree = "<group>"; };
+		80B9E226191AFC4A008B377C /* Icon 58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon 58.png"; sourceTree = "<group>"; };
+		80B9E227191AFC4A008B377C /* Icon 80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon 80.png"; sourceTree = "<group>"; };
+		80B9E228191AFC4A008B377C /* Icon 120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon 120.png"; sourceTree = "<group>"; };
+		80B9E229191AFC4A008B377C /* Icon 152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon 152.png"; sourceTree = "<group>"; };
+		80B9E230191AFDA1008B377C /* Launch Screen iPad Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Launch Screen iPad Landscape.png"; sourceTree = "<group>"; };
+		80B9E231191AFDA1008B377C /* Launch Screen iPad Landscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Launch Screen iPad Landscape@2x.png"; sourceTree = "<group>"; };
+		80B9E232191AFDA1008B377C /* Launch Screen iPad Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Launch Screen iPad Portrait.png"; sourceTree = "<group>"; };
+		80B9E233191AFDA1008B377C /* Launch Screen iPad Portrait@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Launch Screen iPad Portrait@2x.png"; sourceTree = "<group>"; };
+		80B9E234191AFDA1008B377C /* Launch Screen iPhone Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Launch Screen iPhone Portrait.png"; sourceTree = "<group>"; };
+		80B9E235191AFDA1008B377C /* Launch Screen iPhone Portrait@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Launch Screen iPhone Portrait@2x.png"; sourceTree = "<group>"; };
+		80B9E23C191AFDF8008B377C /* Launch Screen iPhone Portrait 4-inch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Launch Screen iPhone Portrait 4-inch.png"; sourceTree = "<group>"; };
+		80ECF9351964519E00EDABD1 /* NNColorObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNColorObject.h; sourceTree = "<group>"; };
+		80ECF9361964519E00EDABD1 /* NNColorObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNColorObject.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8058986E1916641F00352439 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				805898B21919A21400352439 /* CoreMotion.framework in Frameworks */,
+				805898771916641F00352439 /* CoreGraphics.framework in Frameworks */,
+				8058987B1916641F00352439 /* CoreData.framework in Frameworks */,
+				805898791916641F00352439 /* UIKit.framework in Frameworks */,
+				805898751916641F00352439 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8058988E1916642000352439 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				805898931916642000352439 /* XCTest.framework in Frameworks */,
+				805898961916642000352439 /* CoreData.framework in Frameworks */,
+				805898951916642000352439 /* UIKit.framework in Frameworks */,
+				805898941916642000352439 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		805898681916641F00352439 = {
+			isa = PBXGroup;
+			children = (
+				8008A38A191BC5C10071B32D /* Default-568h@2x.png */,
+				8058987C1916641F00352439 /* NeverNote */,
+				805898991916642000352439 /* NeverNoteTests */,
+				805898731916641F00352439 /* Frameworks */,
+				805898721916641F00352439 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		805898721916641F00352439 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				805898711916641F00352439 /* NeverNote.app */,
+				805898911916642000352439 /* NeverNoteTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		805898731916641F00352439 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				805898B11919A21400352439 /* CoreMotion.framework */,
+				805898741916641F00352439 /* Foundation.framework */,
+				805898761916641F00352439 /* CoreGraphics.framework */,
+				805898781916641F00352439 /* UIKit.framework */,
+				8058987A1916641F00352439 /* CoreData.framework */,
+				805898921916642000352439 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8058987C1916641F00352439 /* NeverNote */ = {
+			isa = PBXGroup;
+			children = (
+				805898851916641F00352439 /* NNAppDelegate.h */,
+				805898861916641F00352439 /* NNAppDelegate.m */,
+				8015691219B1189F00A4A083 /* NNListViewController.h */,
+				8015691319B1189F00A4A083 /* NNListViewController.m */,
+				805898A91916643400352439 /* NNViewController.h */,
+				805898AA1916643400352439 /* NNViewController.m */,
+				80ECF9351964519E00EDABD1 /* NNColorObject.h */,
+				80ECF9361964519E00EDABD1 /* NNColorObject.m */,
+				800D2E001947919700E904AA /* UIColor+AppColors.h */,
+				800D2E011947919700E904AA /* UIColor+AppColors.m */,
+				8056F5FD196591BE009CEA81 /* UNITaskCreatorViewController.h */,
+				8056F5FE196591BE009CEA81 /* UNITaskCreatorViewController.m */,
+				803137BA1965D08E00B78BC5 /* UNIOptionsView.h */,
+				803137BB1965D08E00B78BC5 /* UNIOptionsView.m */,
+				803137C919660DAB00B78BC5 /* UNIAdditionalOptionsViewButton.h */,
+				803137CA19660DAB00B78BC5 /* UNIAdditionalOptionsViewButton.m */,
+				803137BD1965D5CC00B78BC5 /* UNISuggestionView.h */,
+				803137BE1965D5CC00B78BC5 /* UNISuggestionView.m */,
+				803137C01965F15B00B78BC5 /* UNICalendarPopOver.h */,
+				803137C11965F15B00B78BC5 /* UNICalendarPopOver.m */,
+				803CDE44196AFFE600C1C789 /* UNITimeInputView.h */,
+				803CDE45196AFFE600C1C789 /* UNITimeInputView.m */,
+				803CDE47196B06A700C1C789 /* UNIAdditionalOptionsView.h */,
+				803CDE48196B06A700C1C789 /* UNIAdditionalOptionsView.m */,
+				803CDE4A196B157600C1C789 /* UNIRepeatOptionsView.h */,
+				803CDE4B196B157600C1C789 /* UNIRepeatOptionsView.m */,
+				8058988B1916641F00352439 /* Images.xcassets */,
+				805898881916641F00352439 /* NeverNote.xcdatamodeld */,
+				8058987D1916641F00352439 /* Supporting Files */,
+			);
+			path = NeverNote;
+			sourceTree = "<group>";
+		};
+		8058987D1916641F00352439 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				80B9E211191AF7C9008B377C /* Images */,
+				8058987E1916641F00352439 /* NeverNote-Info.plist */,
+				8058987F1916641F00352439 /* InfoPlist.strings */,
+				805898821916641F00352439 /* main.m */,
+				805898841916641F00352439 /* NeverNote-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		805898991916642000352439 /* NeverNoteTests */ = {
+			isa = PBXGroup;
+			children = (
+				8058989F1916642000352439 /* NeverNoteTests.m */,
+				8058989A1916642000352439 /* Supporting Files */,
+			);
+			path = NeverNoteTests;
+			sourceTree = "<group>";
+		};
+		8058989A1916642000352439 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8058989B1916642000352439 /* NeverNoteTests-Info.plist */,
+				8058989C1916642000352439 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		80B9E211191AF7C9008B377C /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				80B9E21F191AF913008B377C /* Icon */,
+				80B9E212191AF7CF008B377C /* Launch Images */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		80B9E212191AF7CF008B377C /* Launch Images */ = {
+			isa = PBXGroup;
+			children = (
+				80B9E230191AFDA1008B377C /* Launch Screen iPad Landscape.png */,
+				80B9E231191AFDA1008B377C /* Launch Screen iPad Landscape@2x.png */,
+				80B9E232191AFDA1008B377C /* Launch Screen iPad Portrait.png */,
+				80B9E233191AFDA1008B377C /* Launch Screen iPad Portrait@2x.png */,
+				80B9E234191AFDA1008B377C /* Launch Screen iPhone Portrait.png */,
+				80B9E235191AFDA1008B377C /* Launch Screen iPhone Portrait@2x.png */,
+				80B9E23C191AFDF8008B377C /* Launch Screen iPhone Portrait 4-inch.png */,
+				80B9E224191AFC4A008B377C /* Icon 29.png */,
+				80B9E225191AFC4A008B377C /* Icon 40.png */,
+				80B9E226191AFC4A008B377C /* Icon 58.png */,
+				80B9E227191AFC4A008B377C /* Icon 80.png */,
+				80B9E228191AFC4A008B377C /* Icon 120.png */,
+				80B9E229191AFC4A008B377C /* Icon 152.png */,
+			);
+			name = "Launch Images";
+			sourceTree = "<group>";
+		};
+		80B9E21F191AF913008B377C /* Icon */ = {
+			isa = PBXGroup;
+			children = (
+				80B9E220191AF91B008B377C /* icon.icns */,
+			);
+			name = Icon;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		805898701916641F00352439 /* NeverNote */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 805898A31916642000352439 /* Build configuration list for PBXNativeTarget "NeverNote" */;
+			buildPhases = (
+				8058986D1916641F00352439 /* Sources */,
+				8058986E1916641F00352439 /* Frameworks */,
+				8058986F1916641F00352439 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NeverNote;
+			productName = NeverNote;
+			productReference = 805898711916641F00352439 /* NeverNote.app */;
+			productType = "com.apple.product-type.application";
+		};
+		805898901916642000352439 /* NeverNoteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 805898A61916642000352439 /* Build configuration list for PBXNativeTarget "NeverNoteTests" */;
+			buildPhases = (
+				8058988D1916642000352439 /* Sources */,
+				8058988E1916642000352439 /* Frameworks */,
+				8058988F1916642000352439 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				805898981916642000352439 /* PBXTargetDependency */,
+			);
+			name = NeverNoteTests;
+			productName = NeverNoteTests;
+			productReference = 805898911916642000352439 /* NeverNoteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		805898691916641F00352439 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = NN;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Nathan Fennel";
+				TargetAttributes = {
+					805898901916642000352439 = {
+						TestTargetID = 805898701916641F00352439;
+					};
+				};
+			};
+			buildConfigurationList = 8058986C1916641F00352439 /* Build configuration list for PBXProject "NeverNote" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 805898681916641F00352439;
+			productRefGroup = 805898721916641F00352439 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				805898701916641F00352439 /* NeverNote */,
+				805898901916642000352439 /* NeverNoteTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8058986F1916641F00352439 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				805898811916641F00352439 /* InfoPlist.strings in Resources */,
+				80B9E23D191AFDF8008B377C /* Launch Screen iPhone Portrait 4-inch.png in Resources */,
+				80B9E23A191AFDA1008B377C /* Launch Screen iPhone Portrait.png in Resources */,
+				80B9E22F191AFC4A008B377C /* Icon 152.png in Resources */,
+				80B9E236191AFDA1008B377C /* Launch Screen iPad Landscape.png in Resources */,
+				80B9E22B191AFC4A008B377C /* Icon 40.png in Resources */,
+				80B9E239191AFDA1008B377C /* Launch Screen iPad Portrait@2x.png in Resources */,
+				80B9E22C191AFC4A008B377C /* Icon 58.png in Resources */,
+				8008A38B191BC5C10071B32D /* Default-568h@2x.png in Resources */,
+				80B9E22E191AFC4A008B377C /* Icon 120.png in Resources */,
+				80B9E237191AFDA1008B377C /* Launch Screen iPad Landscape@2x.png in Resources */,
+				8058988C1916641F00352439 /* Images.xcassets in Resources */,
+				80B9E238191AFDA1008B377C /* Launch Screen iPad Portrait.png in Resources */,
+				80B9E22A191AFC4A008B377C /* Icon 29.png in Resources */,
+				80B9E22D191AFC4A008B377C /* Icon 80.png in Resources */,
+				80B9E23B191AFDA1008B377C /* Launch Screen iPhone Portrait@2x.png in Resources */,
+				80B9E221191AF91B008B377C /* icon.icns in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8058988F1916642000352439 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8058989E1916642000352439 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8058986D1916641F00352439 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				803137C21965F15B00B78BC5 /* UNICalendarPopOver.m in Sources */,
+				800D2E021947919700E904AA /* UIColor+AppColors.m in Sources */,
+				8015691419B1189F00A4A083 /* NNListViewController.m in Sources */,
+				803137CB19660DAB00B78BC5 /* UNIAdditionalOptionsViewButton.m in Sources */,
+				803137BF1965D5CC00B78BC5 /* UNISuggestionView.m in Sources */,
+				805898AB1916643400352439 /* NNViewController.m in Sources */,
+				8058988A1916641F00352439 /* NeverNote.xcdatamodeld in Sources */,
+				803CDE49196B06A700C1C789 /* UNIAdditionalOptionsView.m in Sources */,
+				805898871916641F00352439 /* NNAppDelegate.m in Sources */,
+				8056F5FF196591BE009CEA81 /* UNITaskCreatorViewController.m in Sources */,
+				80ECF9371964519E00EDABD1 /* NNColorObject.m in Sources */,
+				803137BC1965D08E00B78BC5 /* UNIOptionsView.m in Sources */,
+				803CDE4C196B157600C1C789 /* UNIRepeatOptionsView.m in Sources */,
+				803CDE46196AFFE600C1C789 /* UNITimeInputView.m in Sources */,
+				805898831916641F00352439 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8058988D1916642000352439 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				805898A01916642000352439 /* NeverNoteTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		805898981916642000352439 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 805898701916641F00352439 /* NeverNote */;
+			targetProxy = 805898971916642000352439 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8058987F1916641F00352439 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				805898801916641F00352439 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8058989C1916642000352439 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8058989D1916642000352439 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		805898A11916642000352439 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		805898A21916642000352439 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		805898A41916642000352439 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NeverNote/NeverNote-Prefix.pch";
+				INFOPLIST_FILE = "NeverNote/NeverNote-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		805898A51916642000352439 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NeverNote/NeverNote-Prefix.pch";
+				INFOPLIST_FILE = "NeverNote/NeverNote-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		805898A71916642000352439 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NeverNote.app/NeverNote";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NeverNote/NeverNote-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "NeverNoteTests/NeverNoteTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		805898A81916642000352439 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NeverNote.app/NeverNote";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NeverNote/NeverNote-Prefix.pch";
+				INFOPLIST_FILE = "NeverNoteTests/NeverNoteTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8058986C1916641F00352439 /* Build configuration list for PBXProject "NeverNote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				805898A11916642000352439 /* Debug */,
+				805898A21916642000352439 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		805898A31916642000352439 /* Build configuration list for PBXNativeTarget "NeverNote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				805898A41916642000352439 /* Debug */,
+				805898A51916642000352439 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		805898A61916642000352439 /* Build configuration list for PBXNativeTarget "NeverNoteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				805898A71916642000352439 /* Debug */,
+				805898A81916642000352439 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		805898881916641F00352439 /* NeverNote.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				805898891916641F00352439 /* NeverNote.xcdatamodel */,
+			);
+			currentVersion = 805898891916641F00352439 /* NeverNote.xcdatamodel */;
+			path = NeverNote.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 805898691916641F00352439 /* Project object */;
+}
