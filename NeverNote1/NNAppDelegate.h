@@ -17,11 +17,12 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+// Modern Core Data stack (iOS 10+)
+@property (strong, nonatomic) NSPersistentContainer *persistentContainer API_AVAILABLE(ios(10.0));
+
+// Legacy Core Data properties for backward compatibility
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-@property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
-@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 - (void)saveContext;
-- (NSURL *)applicationDocumentsDirectory;
 
 @end

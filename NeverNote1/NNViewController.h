@@ -10,4 +10,6 @@
 
 @interface NNViewController : UIViewController <UITextViewDelegate>
 
+@property (nonatomic) CGFloat currentKeyboardHeight;
+
 @end

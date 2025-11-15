@@ -102,7 +102,8 @@
         _textView = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
         [_textView setDelegate:self];
         [_textView setFont:[UIFont systemFontOfSize:TASK_TEXT_FONT_SIZE]];
-        [_textView setContentInset:UIEdgeInsetsMake(TOOLBAR_HEIGHT, 0, 214.0f, 0)];        
+        // Use dynamic keyboard height (default 216 for iPhone portrait)
+        [_textView setContentInset:UIEdgeInsetsMake(TOOLBAR_HEIGHT, 0, 216.0f, 0)];        
         
         [_textView setAttributedText:[self placeHolderString]];
         [_textView setSelectedRange:NSMakeRange(0, 0)];

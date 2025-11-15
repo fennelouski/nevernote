@@ -21,7 +21,7 @@
 
 // Sizes 'n Stuff
 #define FONT_SIZE 18.0f
-#define KEYBOARD_HEIGHT 216.0f
+#define DEFAULT_KEYBOARD_HEIGHT 216.0f  // Fallback value
 #define TOOLBAR_HEIGHT 44.0f
 
 // Background
@@ -38,7 +38,6 @@ float prevZ;
 BOOL ONE_SHAKE = YES;
 
 // Keyboard specs
-#define BUTTON_HEIGHT KEYBOARD_HEIGHT/4
 #define BUTTON_BORDER_WIDTH 0.5f
 #define TIME_BUTTON_FONT_SIZE 30.0f
 
@@ -72,19 +71,22 @@ BOOL ONE_SHAKE = YES;
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         _currentFontSize = FONT_SIZE;
+        _currentKeyboardHeight = DEFAULT_KEYBOARD_HEIGHT;  // Initialize with default
         _isDaylight = [self isDaylight];
         _lastDoubleBump = [NSDate date];
         _allFonts = [self listAvailableFonts];
         _lastFont = [NSMutableArray new];
         _nextFont = [NSMutableArray new];
-        
+
         _keyboardTypes = @[@"ABC",@"@",@"#",[self timeStringFromDate:[NSDate date] withRounding:YES]];
-        
+
         [self.view setBackgroundColor:(_isDaylight) ? [UIColor lightTextColor] : [UIColor darkGrayColor]];
 
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resetView) name:UIApplicationDidEnterBackgroundNotification object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setUpStatusBar:) name:UIApplicationDidChangeStatusBarOrientationNotification object:nil];
-        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+
         [self colorText];
     }
     return self;
@@ -92,7 +94,6 @@ BOOL ONE_SHAKE = YES;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self initStatusBar];
     [self setUpGestures];
     [self.view addSubview:self.viewBackgroundLabel];
     [self.view addSubview:self.textView];
@@ -104,14 +105,78 @@ BOOL ONE_SHAKE = YES;
     [self listAvailableFonts];
 }
 
+#pragma mark - Status Bar
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return _isDaylight ? UIStatusBarStyleDefault : UIStatusBarStyleLightContent;
+}
+
+- (BOOL)prefersStatusBarHidden {
+    // Hide status bar in landscape mode when updated
+    if (_isUpdated && ([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeLeft ||
+        [[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeRight)) {
+        return YES;
+    }
+    return NO;
+}
+
+- (UIStatusBarAnimation)preferredStatusBarUpdateAnimation {
+    return UIStatusBarAnimationFade;
+}
+
+- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
+    [super traitCollectionDidChange:previousTraitCollection];
+
+    if (@available(iOS 13.0, *)) {
+        // Respond to system dark mode changes if user hasn't manually set a preference
+        if (self.traitCollection.userInterfaceStyle != previousTraitCollection.userInterfaceStyle) {
+            // Optionally update the appearance based on system dark mode
+            // For now, we keep the manual day/night toggle via shake gesture
+            // Users can still override using the shake gesture
+        }
+    }
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)viewSafeAreaInsetsDidChange {
     [super viewSafeAreaInsetsDidChange];
     if (@available(iOS 11.0, *)) {
         // Recalculate text view frame when safe area changes (e.g., rotation)
         CGFloat topInset = self.view.safeAreaInsets.top > 0 ? self.view.safeAreaInsets.top : [[UIApplication sharedApplication] statusBarFrame].size.height;
         CGFloat bottomInset = self.view.safeAreaInsets.bottom;
-        [_textView setFrame:CGRectMake(0, topInset, kScreenWidth, kScreenHeight - topInset - KEYBOARD_HEIGHT - bottomInset)];
+        [_textView setFrame:CGRectMake(0, topInset, kScreenWidth, kScreenHeight - topInset - _currentKeyboardHeight - bottomInset)];
     }
+}
+
+#pragma mark - Keyboard Notifications
+
+- (void)keyboardWillShow:(NSNotification *)notification {
+    NSDictionary *userInfo = notification.userInfo;
+    CGRect keyboardFrame = [userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    CGFloat keyboardHeight = keyboardFrame.size.height;
+
+    // Update the current keyboard height
+    _currentKeyboardHeight = keyboardHeight;
+
+    // Update text view frame with actual keyboard height
+    CGFloat topInset = 0;
+    CGFloat bottomInset = 0;
+
+    if (@available(iOS 11.0, *)) {
+        topInset = self.view.safeAreaInsets.top > 0 ? self.view.safeAreaInsets.top : [[UIApplication sharedApplication] statusBarFrame].size.height;
+        bottomInset = self.view.safeAreaInsets.bottom;
+    } else {
+        topInset = ([[UIApplication sharedApplication] statusBarFrame].size.height <= 20.0f) ? [[UIApplication sharedApplication] statusBarFrame].size.height : 20.0f;
+    }
+
+    [_textView setFrame:CGRectMake(0, topInset, kScreenWidth, kScreenHeight - topInset - keyboardHeight - bottomInset)];
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification {
+    // Optionally handle keyboard hiding if needed
 }
 
 - (NSMutableArray *)listAvailableFonts
@@ -150,32 +215,25 @@ BOOL ONE_SHAKE = YES;
     [self.motionManager stopAccelerometerUpdates];
 }
 
-- (void)initStatusBar {
-    [[UIApplication sharedApplication] setStatusBarStyle:(_isDaylight) ? UIStatusBarStyleDefault : UIStatusBarStyleLightContent animated:NO];
-    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
-}
-
 - (void)setUpStatusBar:(NSNotification *)notification {
-	[[UIApplication sharedApplication] setStatusBarStyle:(_isDaylight) ? UIStatusBarStyleDefault : UIStatusBarStyleLightContent animated:NO];
-    
-    if (!([[UIDevice currentDevice] orientation] == UIDeviceOrientationIsLandscape(UIDeviceOrientationLandscapeLeft) || [[UIDevice currentDevice] orientation] == UIDeviceOrientationIsLandscape(UIDeviceOrientationLandscapeRight)) && _isUpdated) {
-        
-        [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
+    // Update status bar appearance using modern API
+    [self setNeedsStatusBarAppearanceUpdate];
+
+    if (!([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeLeft ||
+        [[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeRight) && _isUpdated) {
+
         [self.textView setInputAccessoryView:nil];
         [_textView reloadInputViews];
         [_textView setTextContainerInset:UIEdgeInsetsMake(2, 2, 8, 2)];
         [_textView setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width/2)];
-        
     }
-    
-    else if ([UIApplication sharedApplication].statusBarHidden){
-        
-        [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
+
+    else if ([self prefersStatusBarHidden]){
         [self.textView setInputAccessoryView:[self currentInputAccessoryView]];
         [_textView reloadInputViews];
-        
-        [_textView setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - [[UIApplication sharedApplication] statusBarFrame].size.height - KEYBOARD_HEIGHT)];
-        
+
+        [_textView setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - [[UIApplication sharedApplication] statusBarFrame].size.height - _currentKeyboardHeight)];
+
         [_textView setCenter:CGPointMake(_textView.center.x, _textView.center.y + 20.0f)];
         [_textView setTextContainerInset:UIEdgeInsetsMake(0, 2, _textView.inputAccessoryView.frame.size.height + 8, 2)];
     }
@@ -354,13 +412,14 @@ BOOL ONE_SHAKE = YES;
     
     if (!_isDaylight) {
         [self.textView setInputAccessoryView:(_textView.keyboardType == UIKeyboardTypeNamePhonePad) ? self.keyboardToolbarLowerCaseDark : self.keyboardToolbarUpperCaseDark];
-        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
     }
-    
+
     else {
         [self.textView setInputAccessoryView:(_textView.keyboardType == UIKeyboardTypeNamePhonePad) ? self.keyboardToolbarLowerCaseLight : self.keyboardToolbarUpperCaseLight];
-        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:NO];
     }
+
+    // Update status bar appearance
+    [self setNeedsStatusBarAppearanceUpdate];
     [_textView reloadInputViews];
     _isUpdated = YES;
 }
@@ -439,7 +498,7 @@ BOOL ONE_SHAKE = YES;
             bottomInset = self.view.safeAreaInsets.bottom;
         }
 
-        _textView = [[UITextView alloc] initWithFrame:CGRectMake(0, topInset, kScreenWidth, kScreenHeight - topInset - KEYBOARD_HEIGHT - bottomInset)];
+        _textView = [[UITextView alloc] initWithFrame:CGRectMake(0, topInset, kScreenWidth, kScreenHeight - topInset - _currentKeyboardHeight - bottomInset)];
         [_textView setDelegate:self];
         [_textView setFont:[UIFont boldSystemFontOfSize:FONT_SIZE]];
         [_textView setBounces:YES];
@@ -684,7 +743,7 @@ BOOL ONE_SHAKE = YES;
 		
 		CGRect integralTextRect = CGRectIntegral(textRect);
 		
-		[_viewBackgroundLabel setFrame:CGRectMake((kScreenWidth)/2, (kScreenHeight - KEYBOARD_HEIGHT)/2 - TOOLBAR_HEIGHT/2, integralTextRect.size.width, integralTextRect.size.height)];
+		[_viewBackgroundLabel setFrame:CGRectMake((kScreenWidth)/2, (kScreenHeight - _currentKeyboardHeight)/2 - TOOLBAR_HEIGHT/2, integralTextRect.size.width, integralTextRect.size.height)];
         
         [_viewBackgroundLabel setAlpha:BACKGROUND_LABEL_ALPHA];
 	}
@@ -775,13 +834,14 @@ BOOL ONE_SHAKE = YES;
 
 - (UIView *)timeKeyboard {
     if (!_timeKeyboard) {
-        _timeKeyboard = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, KEYBOARD_HEIGHT)];
+        CGFloat buttonHeight = _currentKeyboardHeight / 4;
+        _timeKeyboard = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, _currentKeyboardHeight)];
         int digits = 12;
         int x = 0;
         int y = 0;
-        
+
         for (int i = 0; i < digits; i++) {
-            UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(kScreenWidth * (2*x)/6, BUTTON_HEIGHT * (2*y)/2, kScreenWidth/3, BUTTON_HEIGHT)];
+            UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(kScreenWidth * (2*x)/6, buttonHeight * (2*y)/2, kScreenWidth/3, buttonHeight)];
             [button setTitle:[NSString stringWithFormat:@"%d",(i+1)] forState:UIControlStateNormal];
             [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
             [button.layer setBorderColor:[UIColor lightGrayColor].CGColor];
@@ -813,13 +873,14 @@ BOOL ONE_SHAKE = YES;
 
 - (UIView *)minuteKeyboard {
     if (!_minuteKeyboard) {
-        _minuteKeyboard = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, KEYBOARD_HEIGHT)];
+        CGFloat buttonHeight = _currentKeyboardHeight / 4;
+        _minuteKeyboard = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, _currentKeyboardHeight)];
         int digits = 12;
         int x = 0;
         int y = 0;
-        
+
         for (int i = 0; i < digits; i++) {
-            UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(kScreenWidth * (2*x)/6, BUTTON_HEIGHT * (2*y)/2, kScreenWidth/3, BUTTON_HEIGHT)];
+            UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(kScreenWidth * (2*x)/6, buttonHeight * (2*y)/2, kScreenWidth/3, buttonHeight)];
             [button setTitle:[NSString stringWithFormat:(i < 2) ? @"0%d" : @"%d",(i*5)] forState:UIControlStateNormal];
             [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
             [button.layer setBorderColor:[UIColor lightGrayColor].CGColor];

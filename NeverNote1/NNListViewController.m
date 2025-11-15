@@ -47,28 +47,30 @@
 
 - (UIScrollView *)scrollView {
     if (!_scrollView) {
-        _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 40.0f, 320.0f, 500.0f)];
-        [_scrollView setContentSize:CGSizeMake(320.0f, 20000)];
+        CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+        _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 40.0f, screenWidth, 500.0f)];
+        [_scrollView setContentSize:CGSizeMake(screenWidth, 20000)];
         [_scrollView setDelegate:self];
         [_scrollView setBackgroundColor:[UIColor lightGrayAppColor]];
-        
+
         for (int i = 0; i < _scrollView.contentSize.height; i++) {
-            int x = arc4random()%320;
+            int x = arc4random()%(int)screenWidth;
             int y = arc4random()%50;
             y+=50;
-            UIView *view = [[UIView alloc] initWithFrame:CGRectMake(x, i, 320 - x, y)];
+            UIView *view = [[UIView alloc] initWithFrame:CGRectMake(x, i, screenWidth - x, y)];
             i+=y;
             [view setBackgroundColor:[UIColor randomPastelColor]];
             [_scrollView addSubview:view];
         }
     }
-    
+
     return _scrollView;
 }
 
 - (UITableView *)tableView {
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 20.0f, 320.0f, 20.0f)];
+        CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 20.0f, screenWidth, 20.0f)];
         [_tableView setDataSource:self];
         [_tableView setDelegate:self];
         [_tableView setScrollsToTop:YES];
@@ -129,9 +131,10 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 20.0f)];
+    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, 20.0f)];
     [headerView setBackgroundColor:[UIColor randomPastelColor]];
-    
+
     return headerView;
 }
 
