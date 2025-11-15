@@ -10,6 +10,8 @@
 #import "NNViewController.h"
 #import "UNITaskCreatorViewController.h"
 #import "NNListViewController.h"
+#import "NNOnboardingManager.h"
+#import "NNOnboardingCoordinator.h"
 
 @implementation NNAppDelegate
 
@@ -28,10 +30,14 @@
     vc = listViewController;
     
     self.window.backgroundColor = [UIColor whiteColor];
-    
+
     [self.window setRootViewController:vc];
-    
+
     [self.window makeKeyAndVisible];
+
+    // Setup onboarding coordinator
+    [NNOnboardingCoordinator sharedCoordinator].rootViewController = vc;
+
     return YES;
 }
 
@@ -56,6 +62,12 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+
+    // Update last app use date
+    [[NNOnboardingManager sharedManager] updateLastAppUseDate];
+
+    // Check if onboarding should be shown
+    [[NNOnboardingCoordinator sharedCoordinator] checkAndStartOnboarding];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
