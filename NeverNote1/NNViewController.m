@@ -100,8 +100,18 @@ BOOL ONE_SHAKE = YES;
     [self.textView setInputAccessoryView:(_isDaylight) ? self.keyboardToolbarUpperCaseLight : self.keyboardToolbarUpperCaseDark];
     [[UIApplication sharedApplication] setApplicationSupportsShakeToEdit:NO];
     [self setUpLabels];
-    
+
     [self listAvailableFonts];
+}
+
+- (void)viewSafeAreaInsetsDidChange {
+    [super viewSafeAreaInsetsDidChange];
+    if (@available(iOS 11.0, *)) {
+        // Recalculate text view frame when safe area changes (e.g., rotation)
+        CGFloat topInset = self.view.safeAreaInsets.top > 0 ? self.view.safeAreaInsets.top : [[UIApplication sharedApplication] statusBarFrame].size.height;
+        CGFloat bottomInset = self.view.safeAreaInsets.bottom;
+        [_textView setFrame:CGRectMake(0, topInset, kScreenWidth, kScreenHeight - topInset - KEYBOARD_HEIGHT - bottomInset)];
+    }
 }
 
 - (NSMutableArray *)listAvailableFonts
@@ -141,16 +151,16 @@ BOOL ONE_SHAKE = YES;
 }
 
 - (void)initStatusBar {
-    [[UIApplication sharedApplication] setStatusBarStyle:(_isDaylight) ? UIStatusBarStyleDefault : UIStatusBarStyleLightContent];
-    [[UIApplication sharedApplication] setStatusBarHidden:NO];
+    [[UIApplication sharedApplication] setStatusBarStyle:(_isDaylight) ? UIStatusBarStyleDefault : UIStatusBarStyleLightContent animated:NO];
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
 }
 
 - (void)setUpStatusBar:(NSNotification *)notification {
-	[[UIApplication sharedApplication] setStatusBarStyle:(_isDaylight) ? UIStatusBarStyleDefault : UIStatusBarStyleLightContent];
+	[[UIApplication sharedApplication] setStatusBarStyle:(_isDaylight) ? UIStatusBarStyleDefault : UIStatusBarStyleLightContent animated:NO];
     
     if (!([[UIDevice currentDevice] orientation] == UIDeviceOrientationIsLandscape(UIDeviceOrientationLandscapeLeft) || [[UIDevice currentDevice] orientation] == UIDeviceOrientationIsLandscape(UIDeviceOrientationLandscapeRight)) && _isUpdated) {
         
-        [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:YES];
+        [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
         [self.textView setInputAccessoryView:nil];
         [_textView reloadInputViews];
         [_textView setTextContainerInset:UIEdgeInsetsMake(2, 2, 8, 2)];
@@ -160,7 +170,7 @@ BOOL ONE_SHAKE = YES;
     
     else if ([UIApplication sharedApplication].statusBarHidden){
         
-        [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:YES];
+        [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
         [self.textView setInputAccessoryView:[self currentInputAccessoryView]];
         [_textView reloadInputViews];
         
@@ -414,8 +424,22 @@ BOOL ONE_SHAKE = YES;
 
 - (UITextView *)textView {
     if (!_textView) {
-        float yPos = ([[UIApplication sharedApplication] statusBarFrame].size.height <= 20.0f) ? [[UIApplication sharedApplication] statusBarFrame].size.height : 20.0f;
-        _textView = [[UITextView alloc] initWithFrame:CGRectMake(0, yPos, kScreenWidth, kScreenHeight - yPos - KEYBOARD_HEIGHT)];
+        CGFloat topInset = 0;
+        if (@available(iOS 11.0, *)) {
+            topInset = self.view.safeAreaInsets.top;
+            if (topInset == 0) {
+                topInset = [[UIApplication sharedApplication] statusBarFrame].size.height;
+            }
+        } else {
+            topInset = ([[UIApplication sharedApplication] statusBarFrame].size.height <= 20.0f) ? [[UIApplication sharedApplication] statusBarFrame].size.height : 20.0f;
+        }
+
+        CGFloat bottomInset = 0;
+        if (@available(iOS 11.0, *)) {
+            bottomInset = self.view.safeAreaInsets.bottom;
+        }
+
+        _textView = [[UITextView alloc] initWithFrame:CGRectMake(0, topInset, kScreenWidth, kScreenHeight - topInset - KEYBOARD_HEIGHT - bottomInset)];
         [_textView setDelegate:self];
         [_textView setFont:[UIFont boldSystemFontOfSize:FONT_SIZE]];
         [_textView setBounces:YES];
@@ -453,7 +477,7 @@ BOOL ONE_SHAKE = YES;
         NSMutableArray *toolbarItems = [[NSMutableArray alloc] initWithCapacity:keyboardTypes.count];
         int tag = 10;
         for (NSString *name in keyboardTypes) {
-            UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:name style:UIBarButtonItemStyleBordered target:self action:@selector(changeKeyboard:)];
+            UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:name style:UIBarButtonItemStylePlain target:self action:@selector(changeKeyboard:)];
             NSShadow *shadow = [NSShadow new];
             [shadow setShadowColor: [UIColor colorWithWhite:1.0f alpha:0.750f]];
             [shadow setShadowOffset: CGSizeMake(0.0f, 1.0f)];
@@ -488,7 +512,7 @@ BOOL ONE_SHAKE = YES;
         NSMutableArray *toolbarItems = [[NSMutableArray alloc] initWithCapacity:keyboardTypes.count];
         int tag = 10;
         for (NSString *name in keyboardTypes) {
-            UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:name style:UIBarButtonItemStyleBordered target:self action:@selector(changeKeyboard:)];
+            UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:name style:UIBarButtonItemStylePlain target:self action:@selector(changeKeyboard:)];
             NSShadow *shadow = [NSShadow new];
             [shadow setShadowColor: [UIColor colorWithWhite:1.0f alpha:0.750f]];
             [shadow setShadowOffset: CGSizeMake(0.0f, 1.0f)];
@@ -522,7 +546,7 @@ BOOL ONE_SHAKE = YES;
         NSMutableArray *toolbarItems = [[NSMutableArray alloc] initWithCapacity:keyboardTypes.count];
         int tag = 10;
         for (NSString *name in keyboardTypes) {
-            UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:name style:UIBarButtonItemStyleBordered target:self action:@selector(changeKeyboard:)];
+            UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:name style:UIBarButtonItemStylePlain target:self action:@selector(changeKeyboard:)];
             NSShadow *shadow = [NSShadow new];
             [shadow setShadowColor: [UIColor colorWithWhite:1.0f alpha:0.750f]];
             [shadow setShadowOffset: CGSizeMake(0.0f, 1.0f)];
@@ -554,7 +578,7 @@ BOOL ONE_SHAKE = YES;
         NSMutableArray *toolbarItems = [[NSMutableArray alloc] initWithCapacity:keyboardTypes.count];
         int tag = 10;
         for (NSString *name in keyboardTypes) {
-            UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:name style:UIBarButtonItemStyleBordered target:self action:@selector(changeKeyboard:)];
+            UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:name style:UIBarButtonItemStylePlain target:self action:@selector(changeKeyboard:)];
             NSShadow *shadow = [NSShadow new];
             [shadow setShadowColor: [UIColor colorWithWhite:1.0f alpha:0.750f]];
             [shadow setShadowOffset: CGSizeMake(0.0f, 1.0f)];
@@ -1154,13 +1178,13 @@ BOOL ONE_SHAKE = YES;
     
     // get current date/time
     NSDate *now = [NSDate date];
-    
+
     // create an NSDate for today at the earlier given time
     NSDateComponents *todayDateComps = [[NSCalendar currentCalendar]
-                                        components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit
+                                        components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay
                                         fromDate:now];
     NSDateComponents *earlierTimeComps = [[NSCalendar currentCalendar]
-                                          components:NSHourCalendarUnit|NSMinuteCalendarUnit|NSSecondCalendarUnit
+                                          components:NSCalendarUnitHour|NSCalendarUnitMinute|NSCalendarUnitSecond
                                           fromDate:earlierDate];
     NSDateComponents *todayEarlierTimeComps = [[NSDateComponents alloc] init];
     [todayEarlierTimeComps setYear:[todayDateComps year]];
@@ -1180,7 +1204,7 @@ BOOL ONE_SHAKE = YES;
                          toDate:now
                          options:0];
     NSDateComponents *yesterdayDateComps = [[NSCalendar currentCalendar]
-                                            components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit
+                                            components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay
                                             fromDate:yesterday];
     NSDateComponents *yesterdayEarlierTimeComps = [[NSDateComponents alloc] init];
     [yesterdayEarlierTimeComps setYear:[yesterdayDateComps year]];
