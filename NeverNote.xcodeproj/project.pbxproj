@@ -50,6 +50,8 @@
 		80B9E23B191AFDA1008B377C /* Launch Screen iPhone Portrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 80B9E235191AFDA1008B377C /* Launch Screen iPhone Portrait@2x.png */; };
 		80B9E23D191AFDF8008B377C /* Launch Screen iPhone Portrait 4-inch.png in Resources */ = {isa = PBXBuildFile; fileRef = 80B9E23C191AFDF8008B377C /* Launch Screen iPhone Portrait 4-inch.png */; };
 		80ECF9371964519E00EDABD1 /* NNColorObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 80ECF9361964519E00EDABD1 /* NNColorObject.m */; };
+		9ECED7F59E864A5DAB31195E /* NNSettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DE51B2428F42E399C83D79 /* NNSettingsManager.m */; };
+		33B70CB51399476FAEFB55D8 /* NNSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 478AA74701524D5BB5AE53F4 /* NNSettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +123,10 @@
 		80B9E23C191AFDF8008B377C /* Launch Screen iPhone Portrait 4-inch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Launch Screen iPhone Portrait 4-inch.png"; sourceTree = "<group>"; };
 		80ECF9351964519E00EDABD1 /* NNColorObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNColorObject.h; sourceTree = "<group>"; };
 		80ECF9361964519E00EDABD1 /* NNColorObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNColorObject.m; sourceTree = "<group>"; };
+		30F8F0CBA3F646DDA8B85864 /* NNSettingsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNSettingsManager.h; sourceTree = "<group>"; };
+		60DE51B2428F42E399C83D79 /* NNSettingsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNSettingsManager.m; sourceTree = "<group>"; };
+		C49CBDEC93FC4C8192723291 /* NNSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNSettingsViewController.h; sourceTree = "<group>"; };
+		478AA74701524D5BB5AE53F4 /* NNSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNSettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,11 +218,15 @@
 				803CDE48196B06A700C1C789 /* UNIAdditionalOptionsView.m */,
 				803CDE4A196B157600C1C789 /* UNIRepeatOptionsView.h */,
 				803CDE4B196B157600C1C789 /* UNIRepeatOptionsView.m */,
+				30F8F0CBA3F646DDA8B85864 /* NNSettingsManager.h */,
+				60DE51B2428F42E399C83D79 /* NNSettingsManager.m */,
+				C49CBDEC93FC4C8192723291 /* NNSettingsViewController.h */,
+				478AA74701524D5BB5AE53F4 /* NNSettingsViewController.m */,
 				8058988B1916641F00352439 /* Images.xcassets */,
 				805898881916641F00352439 /* NeverNote.xcdatamodeld */,
 				8058987D1916641F00352439 /* Supporting Files */,
 			);
-			path = NeverNote;
+			path = NeverNote1;
 			sourceTree = "<group>";
 		};
 		8058987D1916641F00352439 /* Supporting Files */ = {
@@ -412,6 +422,8 @@
 				803CDE4C196B157600C1C789 /* UNIRepeatOptionsView.m in Sources */,
 				803CDE46196AFFE600C1C789 /* UNITimeInputView.m in Sources */,
 				805898831916641F00352439 /* main.m in Sources */,
+				9ECED7F59E864A5DAB31195E /* NNSettingsManager.m in Sources */,
+				33B70CB51399476FAEFB55D8 /* NNSettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
