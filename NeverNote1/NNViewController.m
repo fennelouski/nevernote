@@ -80,7 +80,7 @@ BOOL ONE_SHAKE = YES;
 
         _keyboardTypes = @[@"ABC",@"@",@"#",[self timeStringFromDate:[NSDate date] withRounding:YES]];
 
-        [self.view setBackgroundColor:(_isDaylight) ? [UIColor lightTextColor] : [UIColor darkGrayColor]];
+        [self.view setBackgroundColor:[UIColor systemBackgroundColor]];
 
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resetView) name:UIApplicationDidEnterBackgroundNotification object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setUpStatusBar:) name:UIApplicationDidChangeStatusBarOrientationNotification object:nil];
@@ -172,13 +172,37 @@ BOOL ONE_SHAKE = YES;
     [super traitCollectionDidChange:previousTraitCollection];
 
     if (@available(iOS 13.0, *)) {
-        // Respond to system dark mode changes if user hasn't manually set a preference
+        // Respond to system dark mode changes
         if (self.traitCollection.userInterfaceStyle != previousTraitCollection.userInterfaceStyle) {
-            // Optionally update the appearance based on system dark mode
-            // For now, we keep the manual day/night toggle via shake gesture
-            // Users can still override using the shake gesture
+            // Update appearance to match system dark mode
+            [self updateAppearanceForCurrentTraitCollection];
         }
     }
+}
+
+- (void)updateAppearanceForCurrentTraitCollection {
+    // Update background color
+    [self.view setBackgroundColor:[UIColor systemBackgroundColor]];
+
+    // Update text color
+    [_textView setTextColor:[UIColor labelColor]];
+
+    // Update keyboard appearance
+    if (@available(iOS 13.0, *)) {
+        if (self.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+            [_textView setKeyboardAppearance:UIKeyboardAppearanceDark];
+            _isDaylight = NO;
+        } else {
+            [_textView setKeyboardAppearance:UIKeyboardAppearanceLight];
+            _isDaylight = YES;
+        }
+    }
+
+    // Update status bar
+    [self setNeedsStatusBarAppearanceUpdate];
+
+    // Reload keyboard
+    [_textView reloadInputViews];
 }
 
 - (void)dealloc {
@@ -457,23 +481,23 @@ BOOL ONE_SHAKE = YES;
     [_textView setFont:[UIFont boldSystemFontOfSize:FONT_SIZE]];
     [_textView setBounces:YES];
     [_textView setKeyboardType:UIKeyboardTypeAlphabet];
-    [_textView setKeyboardAppearance:UIKeyboardAppearanceDark];
+    [_textView setKeyboardAppearance:_isDaylight ? UIKeyboardAppearanceLight : UIKeyboardAppearanceDark];
     [_textView setBackgroundColor:[UIColor clearColor]];
-    [_textView setTextColor:[UIColor lightTextColor]];
+    [_textView setTextColor:[UIColor labelColor]];
     [_textView setOpaque:NO];
     [self.textView setInputAccessoryView:(_textView.keyboardType == UIKeyboardTypeNamePhonePad) ? self.keyboardToolbarLowerCaseLight : self.keyboardToolbarUpperCaseLight];
-    
+
     if (_isDaylight) {
         [_textView setKeyboardAppearance:UIKeyboardAppearanceLight];
-        [_textView setTextColor:[UIColor blackColor]];
+        [_textView setTextColor:[UIColor labelColor]];
         [self.textView setInputAccessoryView:self.keyboardToolbarUpperCaseLight];
         if (_textView.keyboardType == UIKeyboardTypeNamePhonePad) {
             [self.textView setInputAccessoryView:self.keyboardToolbarLowerCaseLight];
         }
     }
     _oldText = @"";
-    
-    [self.view setBackgroundColor:(_isDaylight) ? [UIColor lightTextColor] : [UIColor darkGrayColor]];
+
+    [self.view setBackgroundColor:[UIColor systemBackgroundColor]];
     
     if (!_isDaylight) {
         [self.textView setInputAccessoryView:(_textView.keyboardType == UIKeyboardTypeNamePhonePad) ? self.keyboardToolbarLowerCaseDark : self.keyboardToolbarUpperCaseDark];
@@ -561,18 +585,18 @@ BOOL ONE_SHAKE = YES;
         [_textView setFont:[UIFont boldSystemFontOfSize:FONT_SIZE]];
         [_textView setBounces:YES];
         [_textView setKeyboardType:UIKeyboardTypeAlphabet];
-        [_textView setKeyboardAppearance:UIKeyboardAppearanceDark];
+        [_textView setKeyboardAppearance:_isDaylight ? UIKeyboardAppearanceLight : UIKeyboardAppearanceDark];
         [_textView setScrollsToTop:YES];
         [_textView setShowsVerticalScrollIndicator:NO];
         [_textView setBackgroundColor:[UIColor clearColor]];
-        [_textView setTextColor:[UIColor lightTextColor]];
+        [_textView setTextColor:[UIColor labelColor]];
         [_textView setOpaque:NO];
         [_textView setScrollsToTop:YES];
         [_textView setTextContainerInset:UIEdgeInsetsMake(0, 2, TOOLBAR_HEIGHT + 8, 2)];
-        
+
         if (_isDaylight) {
             [_textView setKeyboardAppearance:UIKeyboardAppearanceLight];
-            [_textView setTextColor:[UIColor blackColor]];
+            [_textView setTextColor:[UIColor labelColor]];
         }
     }
     
@@ -656,7 +680,7 @@ BOOL ONE_SHAKE = YES;
 - (UIToolbar *)keyboardToolbarUpperCaseDark {
     if (!_keyboardToolbarUpperCaseDark) {
         _keyboardToolbarUpperCaseDark = [[UIToolbar alloc] initWithFrame:CGRectMake(0, kScreenHeight, kScreenWidth, TOOLBAR_HEIGHT)];
-        [_keyboardToolbarUpperCaseDark setBarTintColor:[UIColor blackColor]];
+        [_keyboardToolbarUpperCaseDark setBarTintColor:[UIColor keyboardBackgroundColor]];
         
         UIBarButtonItem *flex = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
         NSArray *keyboardTypes = _keyboardTypes;
@@ -688,7 +712,7 @@ BOOL ONE_SHAKE = YES;
 - (UIToolbar *)keyboardToolbarLowerCaseDark {
     if (!_keyboardToolbarLowerCaseDark) {
         _keyboardToolbarLowerCaseDark = [[UIToolbar alloc] initWithFrame:CGRectMake(0, kScreenHeight, kScreenWidth, TOOLBAR_HEIGHT)];
-        [_keyboardToolbarLowerCaseDark setBarTintColor:[UIColor blackColor]];
+        [_keyboardToolbarLowerCaseDark setBarTintColor:[UIColor keyboardBackgroundColor]];
         
         UIBarButtonItem *flex = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
         NSArray *keyboardTypes = _keyboardTypes;
@@ -778,10 +802,10 @@ BOOL ONE_SHAKE = YES;
 - (UILabel *)viewBackgroundLabel {
 	if (!_viewBackgroundLabel) {
 		_viewBackgroundLabel = [[UILabel alloc] init];
-		
+
 		UIFont *font = [UIFont boldSystemFontOfSize:BACKGROUND_FONT_SIZE];
-		
-		UIColor *textColor = [UIColor colorWithWhite:0.8 alpha:0.9];
+
+		UIColor *textColor = [UIColor tertiaryLabelColor];
 		
 		NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
 		[paragraphStyle setAlignment:NSTextAlignmentCenter];
@@ -901,14 +925,14 @@ BOOL ONE_SHAKE = YES;
         for (int i = 0; i < digits; i++) {
             UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(kScreenWidth * (2*x)/6, buttonHeight * (2*y)/2, kScreenWidth/3, buttonHeight)];
             [button setTitle:[NSString stringWithFormat:@"%d",(i+1)] forState:UIControlStateNormal];
-            [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-            [button.layer setBorderColor:[UIColor lightGrayColor].CGColor];
+            [button setTitleColor:[UIColor labelColor] forState:UIControlStateNormal];
+            [button.layer setBorderColor:[UIColor numberPadKeyBorderColor].CGColor];
             [button.layer setBorderWidth:BUTTON_BORDER_WIDTH];
-            [button setBackgroundColor:[UIColor whiteColor]];
+            [button setBackgroundColor:[UIColor numberPadKeyColor]];
             [button.titleLabel setFont:[UIFont systemFontOfSize:TIME_BUTTON_FONT_SIZE]];
-            [button setBackgroundImage:[self imageWithColor:[UIColor lightGrayColor]] forState:UIControlStateHighlighted];
-            [button setTitleColor:[UIColor lightGrayColor] forState:UIControlStateDisabled];
-            [button setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+            [button setBackgroundImage:[self imageWithColor:[UIColor numberPadSelectedKeyColor]] forState:UIControlStateHighlighted];
+            [button setTitleColor:[UIColor tertiaryLabelColor] forState:UIControlStateDisabled];
+            [button setTitleColor:[UIColor systemBackgroundColor] forState:UIControlStateHighlighted];
             [button setTag:i];
             
             if (x == 2) {
@@ -940,14 +964,14 @@ BOOL ONE_SHAKE = YES;
         for (int i = 0; i < digits; i++) {
             UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(kScreenWidth * (2*x)/6, buttonHeight * (2*y)/2, kScreenWidth/3, buttonHeight)];
             [button setTitle:[NSString stringWithFormat:(i < 2) ? @"0%d" : @"%d",(i*5)] forState:UIControlStateNormal];
-            [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-            [button.layer setBorderColor:[UIColor lightGrayColor].CGColor];
+            [button setTitleColor:[UIColor labelColor] forState:UIControlStateNormal];
+            [button.layer setBorderColor:[UIColor numberPadKeyBorderColor].CGColor];
             [button.layer setBorderWidth:BUTTON_BORDER_WIDTH];
-            [button setBackgroundColor:[UIColor whiteColor]];
+            [button setBackgroundColor:[UIColor numberPadKeyColor]];
             [button.titleLabel setFont:[UIFont systemFontOfSize:TIME_BUTTON_FONT_SIZE]];
-            [button setBackgroundImage:[self imageWithColor:[UIColor lightGrayColor]] forState:UIControlStateHighlighted];
-            [button setTitleColor:[UIColor lightGrayColor] forState:UIControlStateDisabled];
-            [button setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+            [button setBackgroundImage:[self imageWithColor:[UIColor numberPadSelectedKeyColor]] forState:UIControlStateHighlighted];
+            [button setTitleColor:[UIColor tertiaryLabelColor] forState:UIControlStateDisabled];
+            [button setTitleColor:[UIColor systemBackgroundColor] forState:UIControlStateHighlighted];
             [button setTag:i];
             
             if (x == 2) {
@@ -978,7 +1002,7 @@ BOOL ONE_SHAKE = YES;
             [button setTitle:period forState:UIControlStateNormal];
             [button setTag:(i + 1)];
             [button setBackgroundColor:[UIColor colorWithRed:(1 - i) green:(1 - i)/2 blue:(i)/2 alpha:1.0f]];
-            [button setBackgroundImage:[self imageWithColor:[UIColor lightGrayColor]] forState:UIControlStateHighlighted];
+            [button setBackgroundImage:[self imageWithColor:[UIColor numberPadSelectedKeyColor]] forState:UIControlStateHighlighted];
             [button addTarget:self action:@selector(buttonTouched:) forControlEvents:UIControlEventTouchUpInside];
             i++;
             

@@ -69,6 +69,30 @@
 + (UIImage *)imageWithColor:(UIColor *)color;
 + (UIColor *)randomPastelColor;
 
+// MARK: - Semantic Colors for Dark Mode Support (iOS 13+)
+
+// Background Colors
++ (UIColor *)systemBackgroundColor;
++ (UIColor *)secondarySystemBackgroundColor;
++ (UIColor *)tertiarySystemBackgroundColor;
+
+// Text Colors
++ (UIColor *)labelColor;
++ (UIColor *)secondaryLabelColor;
++ (UIColor *)tertiaryLabelColor;
+
+// Separator Colors
++ (UIColor *)separatorColor;
++ (UIColor *)opaqueSeparatorColor;
+
+// Keyboard Colors (Dark Mode Adaptive)
++ (UIColor *)keyboardBackgroundColor;
++ (UIColor *)keyboardKeyColor;
++ (UIColor *)numberPadKeyColor;
++ (UIColor *)numberPadKeyBorderColor;
++ (UIColor *)numberPadDarkKeyColor;
++ (UIColor *)numberPadSelectedKeyColor;
+
 //Basic Colors that should have been there in the beginning
 + (UIColor *)acidGreen;
 + (UIColor *)aero;

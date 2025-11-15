@@ -85,7 +85,7 @@
     [cell addSubview:button];
     
     UIView *border = [[UIView alloc] initWithFrame:CGRectMake(5.0f, -self.textSize*self.interval/2, cell.frame.size.width - 10.0f, 0.5f)];
-    [border setBackgroundColor:[UIColor whiteColor]];
+    [border setBackgroundColor:[UIColor separatorColor]];
     [cell addSubview:border];
     
     return cell;

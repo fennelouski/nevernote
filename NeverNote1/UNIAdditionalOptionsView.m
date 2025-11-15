@@ -204,7 +204,7 @@
         [self.accountButton.label setAlpha:1.0f];
         [self.alarmButton.label setAlpha:1.0f];
         [self.repeatButton.label setAlpha:1.0f];
-        [self setBackgroundColor:[UIColor whiteColor]];
+        [self setBackgroundColor:[UIColor systemBackgroundColor]];
     }completion:^(BOOL finished){
         self.isAnimating = NO;
         self.isSmall = NO;
@@ -401,23 +401,23 @@
     
     
     //Path color fill
-    [[UIColor whiteColor] setFill];
+    [[UIColor labelColor] setFill];
     [path fill];
-    [[UIColor whiteColor] setStroke];
+    [[UIColor labelColor] setStroke];
     path.lineWidth = ADDITIONAL_OPTIONS_ICON_SIZE/14;
     [path stroke];
-    
+
     //// Path2 drawing
     UIBezierPath *path2 = [UIBezierPath bezierPath];
     [path2 moveToPoint:CGPointMake(ADDITIONAL_OPTIONS_ICON_SIZE/2, ADDITIONAL_OPTIONS_ICON_SIZE/2)];
     [path2 addLineToPoint:CGPointMake(ADDITIONAL_OPTIONS_ICON_SIZE*5/6, ADDITIONAL_OPTIONS_ICON_SIZE/2)];
     path2.lineCapStyle = kCGLineCapRound;
-    
-    
+
+
     //Path2 color fill
-    [[UIColor whiteColor] setFill];
+    [[UIColor labelColor] setFill];
     [path2 fill];
-    [[UIColor whiteColor] setStroke];
+    [[UIColor labelColor] setStroke];
     path2.lineWidth = ADDITIONAL_OPTIONS_ICON_SIZE/20;
     [path2 stroke];
     
@@ -524,7 +524,7 @@
         _timeInputToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, TOOLBAR_HEIGHT)];
         [_timeInputToolbar addSubview:self.timeInputTextField];
         [_timeInputToolbar setBarStyle:UIBarStyleDefault];
-        [_timeInputToolbar setBarTintColor:[UIColor whiteColor]];
+        [_timeInputToolbar setBarTintColor:[UIColor systemBackgroundColor]];
         [_timeInputToolbar setBackgroundColor:[UIColor clearColor]];
     }
     
