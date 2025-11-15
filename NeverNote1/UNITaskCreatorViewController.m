@@ -60,11 +60,49 @@
 
 @implementation UNITaskCreatorViewController
 
+#pragma mark - Safe Area Helpers
+
+- (UIEdgeInsets)currentSafeAreaInsets {
+    if (@available(iOS 11.0, *)) {
+        return self.view.safeAreaInsets;
+    }
+    return UIEdgeInsetsZero;
+}
+
+- (CGFloat)safeTopInset {
+    if (@available(iOS 11.0, *)) {
+        CGFloat topInset = self.view.safeAreaInsets.top;
+        return topInset > 0 ? topInset : 0;
+    }
+    return 0;
+}
+
+- (CGFloat)safeBottomInset {
+    if (@available(iOS 11.0, *)) {
+        return self.view.safeAreaInsets.bottom;
+    }
+    return 0;
+}
+
+- (CGFloat)safeLeftInset {
+    if (@available(iOS 11.0, *)) {
+        return self.view.safeAreaInsets.left;
+    }
+    return 0;
+}
+
+- (CGFloat)safeRightInset {
+    if (@available(iOS 11.0, *)) {
+        return self.view.safeAreaInsets.right;
+    }
+    return 0;
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        
+
     }
     return self;
 }
@@ -97,19 +135,46 @@
     [self.textView becomeFirstResponder];
 }
 
+- (void)viewSafeAreaInsetsDidChange {
+    [super viewSafeAreaInsetsDidChange];
+    if (@available(iOS 11.0, *)) {
+        // Update text view frame when safe area changes (e.g., rotation)
+        CGFloat leftInset = [self safeLeftInset];
+        CGFloat rightInset = [self safeRightInset];
+        CGFloat topInset = [self safeTopInset];
+        CGFloat bottomInset = [self safeBottomInset];
+
+        if (_textView) {
+            [_textView setFrame:CGRectMake(leftInset,
+                                           topInset,
+                                           kScreenWidth - leftInset - rightInset,
+                                           kScreenHeight - topInset - bottomInset)];
+            [_textView setContentInset:UIEdgeInsetsMake(TOOLBAR_HEIGHT, 0, 216.0f + bottomInset, 0)];
+        }
+    }
+}
+
 - (UITextView *)textView {
     if (!_textView) {
-        _textView = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
+        CGFloat leftInset = [self safeLeftInset];
+        CGFloat rightInset = [self safeRightInset];
+        CGFloat topInset = [self safeTopInset];
+        CGFloat bottomInset = [self safeBottomInset];
+
+        _textView = [[UITextView alloc] initWithFrame:CGRectMake(leftInset,
+                                                                  topInset,
+                                                                  kScreenWidth - leftInset - rightInset,
+                                                                  kScreenHeight - topInset - bottomInset)];
         [_textView setDelegate:self];
         [_textView setFont:[UIFont systemFontOfSize:TASK_TEXT_FONT_SIZE]];
-        // Use dynamic keyboard height (default 216 for iPhone portrait)
-        [_textView setContentInset:UIEdgeInsetsMake(TOOLBAR_HEIGHT, 0, 216.0f, 0)];        
-        
+        // Use dynamic keyboard height (default 216 for iPhone portrait) with safe area insets
+        [_textView setContentInset:UIEdgeInsetsMake(TOOLBAR_HEIGHT, 0, 216.0f + bottomInset, 0)];
+
         [_textView setAttributedText:[self placeHolderString]];
         [_textView setSelectedRange:NSMakeRange(0, 0)];
         _selectedTextRange = _textView.selectedTextRange;
     }
-    
+
     return _textView;
 }
 

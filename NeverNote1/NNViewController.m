@@ -111,6 +111,50 @@ BOOL ONE_SHAKE = YES;
     return _isDaylight ? UIStatusBarStyleDefault : UIStatusBarStyleLightContent;
 }
 
+#pragma mark - Safe Area Helpers
+
+- (UIEdgeInsets)currentSafeAreaInsets {
+    if (@available(iOS 11.0, *)) {
+        return self.view.safeAreaInsets;
+    }
+    return UIEdgeInsetsZero;
+}
+
+- (CGFloat)safeTopInset {
+    CGFloat topInset = 0;
+    if (@available(iOS 11.0, *)) {
+        topInset = self.view.safeAreaInsets.top;
+        if (topInset == 0) {
+            topInset = [[UIApplication sharedApplication] statusBarFrame].size.height;
+        }
+    } else {
+        topInset = ([[UIApplication sharedApplication] statusBarFrame].size.height <= 20.0f) ?
+                   [[UIApplication sharedApplication] statusBarFrame].size.height : 20.0f;
+    }
+    return topInset;
+}
+
+- (CGFloat)safeBottomInset {
+    if (@available(iOS 11.0, *)) {
+        return self.view.safeAreaInsets.bottom;
+    }
+    return 0;
+}
+
+- (CGFloat)safeLeftInset {
+    if (@available(iOS 11.0, *)) {
+        return self.view.safeAreaInsets.left;
+    }
+    return 0;
+}
+
+- (CGFloat)safeRightInset {
+    if (@available(iOS 11.0, *)) {
+        return self.view.safeAreaInsets.right;
+    }
+    return 0;
+}
+
 - (BOOL)prefersStatusBarHidden {
     // Hide status bar in landscape mode when updated
     if (_isUpdated && ([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeLeft ||
@@ -145,9 +189,15 @@ BOOL ONE_SHAKE = YES;
     [super viewSafeAreaInsetsDidChange];
     if (@available(iOS 11.0, *)) {
         // Recalculate text view frame when safe area changes (e.g., rotation)
-        CGFloat topInset = self.view.safeAreaInsets.top > 0 ? self.view.safeAreaInsets.top : [[UIApplication sharedApplication] statusBarFrame].size.height;
-        CGFloat bottomInset = self.view.safeAreaInsets.bottom;
-        [_textView setFrame:CGRectMake(0, topInset, kScreenWidth, kScreenHeight - topInset - _currentKeyboardHeight - bottomInset)];
+        CGFloat topInset = [self safeTopInset];
+        CGFloat bottomInset = [self safeBottomInset];
+        CGFloat leftInset = [self safeLeftInset];
+        CGFloat rightInset = [self safeRightInset];
+
+        [_textView setFrame:CGRectMake(leftInset,
+                                       topInset,
+                                       kScreenWidth - leftInset - rightInset,
+                                       kScreenHeight - topInset - _currentKeyboardHeight - bottomInset)];
     }
 }
 
@@ -161,18 +211,16 @@ BOOL ONE_SHAKE = YES;
     // Update the current keyboard height
     _currentKeyboardHeight = keyboardHeight;
 
-    // Update text view frame with actual keyboard height
-    CGFloat topInset = 0;
-    CGFloat bottomInset = 0;
+    // Update text view frame with actual keyboard height and safe area insets
+    CGFloat topInset = [self safeTopInset];
+    CGFloat bottomInset = [self safeBottomInset];
+    CGFloat leftInset = [self safeLeftInset];
+    CGFloat rightInset = [self safeRightInset];
 
-    if (@available(iOS 11.0, *)) {
-        topInset = self.view.safeAreaInsets.top > 0 ? self.view.safeAreaInsets.top : [[UIApplication sharedApplication] statusBarFrame].size.height;
-        bottomInset = self.view.safeAreaInsets.bottom;
-    } else {
-        topInset = ([[UIApplication sharedApplication] statusBarFrame].size.height <= 20.0f) ? [[UIApplication sharedApplication] statusBarFrame].size.height : 20.0f;
-    }
-
-    [_textView setFrame:CGRectMake(0, topInset, kScreenWidth, kScreenHeight - topInset - keyboardHeight - bottomInset)];
+    [_textView setFrame:CGRectMake(leftInset,
+                                   topInset,
+                                   kScreenWidth - leftInset - rightInset,
+                                   kScreenHeight - topInset - keyboardHeight - bottomInset)];
 }
 
 - (void)keyboardWillHide:(NSNotification *)notification {
@@ -219,25 +267,42 @@ BOOL ONE_SHAKE = YES;
     // Update status bar appearance using modern API
     [self setNeedsStatusBarAppearanceUpdate];
 
+    CGFloat leftInset = [self safeLeftInset];
+    CGFloat rightInset = [self safeRightInset];
+    CGFloat topInset = [self safeTopInset];
+    CGFloat bottomInset = [self safeBottomInset];
+
     if (!([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeLeft ||
         [[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeRight) && _isUpdated) {
 
         [self.textView setInputAccessoryView:nil];
         [_textView reloadInputViews];
-        [_textView setTextContainerInset:UIEdgeInsetsMake(2, 2, 8, 2)];
-        [_textView setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width/2)];
+        [_textView setTextContainerInset:UIEdgeInsetsMake(2 + topInset, 2 + leftInset, 8 + bottomInset, 2 + rightInset)];
+        [_textView setFrame:CGRectMake(leftInset,
+                                       topInset,
+                                       kScreenHeight - leftInset - rightInset,
+                                       kScreenWidth/2 - topInset - bottomInset)];
     }
 
     else if ([self prefersStatusBarHidden]){
         [self.textView setInputAccessoryView:[self currentInputAccessoryView]];
         [_textView reloadInputViews];
 
-        [_textView setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - [[UIApplication sharedApplication] statusBarFrame].size.height - _currentKeyboardHeight)];
+        // In landscape with keyboard, account for safe areas (especially on notched devices)
+        [_textView setFrame:CGRectMake(leftInset,
+                                       topInset,
+                                       kScreenWidth - leftInset - rightInset,
+                                       kScreenHeight - topInset - _currentKeyboardHeight - bottomInset)];
 
-        [_textView setCenter:CGPointMake(_textView.center.x, _textView.center.y + 20.0f)];
-        [_textView setTextContainerInset:UIEdgeInsetsMake(0, 2, _textView.inputAccessoryView.frame.size.height + 8, 2)];
+        // Adjust for landscape safe areas instead of hard-coded 20.0f
+        CGFloat centerOffset = MAX(leftInset, rightInset);
+        if (centerOffset == 0) {
+            centerOffset = 20.0f; // fallback for non-notched devices
+        }
+        [_textView setCenter:CGPointMake(_textView.center.x, _textView.center.y + centerOffset)];
+        [_textView setTextContainerInset:UIEdgeInsetsMake(0, 2 + leftInset, _textView.inputAccessoryView.frame.size.height + 8 + bottomInset, 2 + rightInset)];
     }
-    
+
     [_viewBackgroundLabel setCenter:CGPointMake(_textView.center.x, _textView.center.y - _textView.inputAccessoryView.frame.size.height/2)];
 }
 
@@ -483,22 +548,15 @@ BOOL ONE_SHAKE = YES;
 
 - (UITextView *)textView {
     if (!_textView) {
-        CGFloat topInset = 0;
-        if (@available(iOS 11.0, *)) {
-            topInset = self.view.safeAreaInsets.top;
-            if (topInset == 0) {
-                topInset = [[UIApplication sharedApplication] statusBarFrame].size.height;
-            }
-        } else {
-            topInset = ([[UIApplication sharedApplication] statusBarFrame].size.height <= 20.0f) ? [[UIApplication sharedApplication] statusBarFrame].size.height : 20.0f;
-        }
+        CGFloat topInset = [self safeTopInset];
+        CGFloat bottomInset = [self safeBottomInset];
+        CGFloat leftInset = [self safeLeftInset];
+        CGFloat rightInset = [self safeRightInset];
 
-        CGFloat bottomInset = 0;
-        if (@available(iOS 11.0, *)) {
-            bottomInset = self.view.safeAreaInsets.bottom;
-        }
-
-        _textView = [[UITextView alloc] initWithFrame:CGRectMake(0, topInset, kScreenWidth, kScreenHeight - topInset - _currentKeyboardHeight - bottomInset)];
+        _textView = [[UITextView alloc] initWithFrame:CGRectMake(leftInset,
+                                                                  topInset,
+                                                                  kScreenWidth - leftInset - rightInset,
+                                                                  kScreenHeight - topInset - _currentKeyboardHeight - bottomInset)];
         [_textView setDelegate:self];
         [_textView setFont:[UIFont boldSystemFontOfSize:FONT_SIZE]];
         [_textView setBounces:YES];
