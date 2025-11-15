@@ -219,7 +219,7 @@
 - (UIView *)optionsView {
     if (!_optionsView) {
         _optionsView = [[UNIOptionsView alloc] initWithFrame:CGRectMake(-kScreenWidth, 0, kScreenWidth, TOOLBAR_HEIGHT)];
-        [_optionsView setBackgroundColor:[UIColor lightKeyboardBackgroundColor]];
+        [_optionsView setBackgroundColor:[UIColor keyboardBackgroundColor]];
         [_optionsView.layer setCornerRadius:OPTIONS_VIEW_CORNER_RADIUS];
         [_optionsView setDelegate:self];
         
@@ -234,7 +234,7 @@
 - (UIView *)optionsViewHelper {
     if (!_optionsViewHelper) {
         _optionsViewHelper = [[UIView alloc] initWithFrame:CGRectMake(-kScreenWidth, 0, kScreenWidth, TOOLBAR_HEIGHT/2)];
-        [_optionsViewHelper setBackgroundColor:[UIColor lightKeyboardBackgroundColor]];
+        [_optionsViewHelper setBackgroundColor:[UIColor keyboardBackgroundColor]];
         [_optionsViewHelper.layer setCornerRadius:OPTIONS_VIEW_CORNER_RADIUS];
     }
     
@@ -268,7 +268,7 @@
 - (UIToolbar *)headerToolbar {
     if (!_headerToolbar) {
         _headerToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, TOOLBAR_HEIGHT)];
-        [_headerToolbar setBarTintColor:[UIColor whiteColor]];
+        [_headerToolbar setBarTintColor:[UIColor systemBackgroundColor]];
         [_headerToolbar addSubview:self.categoryTextField];
         
         [_headerToolbar addSubview:self.dueButton];

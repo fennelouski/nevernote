@@ -175,9 +175,9 @@
 
 - (void) formatButton:(UIButton *)button {
     [button.titleLabel setFont:[UIFont systemFontOfSize:TIME_FONT_SIZE]];
-    [button setTitleColor:[UIColor darkTextColor] forState:UIControlStateNormal];
-    [button setBackgroundColor:[UIColor lightKeyboardBackgroundColor]];
-    [button.layer setBorderColor:[UIColor lightNumberPadKeyBorderColor].CGColor];
+    [button setTitleColor:[UIColor labelColor] forState:UIControlStateNormal];
+    [button setBackgroundColor:[UIColor keyboardBackgroundColor]];
+    [button.layer setBorderColor:[UIColor numberPadKeyBorderColor].CGColor];
     [button.layer setBorderWidth:DELINEATOR_WIDTH];
 }
 

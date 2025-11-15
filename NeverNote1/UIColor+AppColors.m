@@ -243,6 +243,208 @@
     return [UIColor colorWithHue:arc4random()%255/255.0f saturation:(arc4random()%200 + 55)/255.0f brightness:((arc4random()%200) + 55.0f)/255.0f alpha:1.0f];
 }
 
+#pragma mark - Semantic Colors for Dark Mode Support
+
+// Background Colors
++ (UIColor *)systemBackgroundColor {
+    if (@available(iOS 13.0, *)) {
+        return [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+            if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+                return [UIColor colorWithRed:0 green:0 blue:0 alpha:1.0]; // Black
+            } else {
+                return [UIColor colorWithRed:1 green:1 blue:1 alpha:1.0]; // White
+            }
+        }];
+    } else {
+        return [UIColor whiteColor];
+    }
+}
+
++ (UIColor *)secondarySystemBackgroundColor {
+    if (@available(iOS 13.0, *)) {
+        return [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+            if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+                return [UIColor colorWithRed:28/255.0 green:28/255.0 blue:30/255.0 alpha:1.0]; // Dark gray
+            } else {
+                return [UIColor colorWithRed:247/255.0 green:247/255.0 blue:247/255.0 alpha:1.0]; // Light gray
+            }
+        }];
+    } else {
+        return [UIColor colorWithRed:247/255.0 green:247/255.0 blue:247/255.0 alpha:1.0];
+    }
+}
+
++ (UIColor *)tertiarySystemBackgroundColor {
+    if (@available(iOS 13.0, *)) {
+        return [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+            if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+                return [UIColor colorWithRed:44/255.0 green:44/255.0 blue:46/255.0 alpha:1.0]; // Medium dark gray
+            } else {
+                return [UIColor whiteColor];
+            }
+        }];
+    } else {
+        return [UIColor whiteColor];
+    }
+}
+
+// Text Colors
++ (UIColor *)labelColor {
+    if (@available(iOS 13.0, *)) {
+        return [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+            if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+                return [UIColor whiteColor];
+            } else {
+                return [UIColor blackColor];
+            }
+        }];
+    } else {
+        return [UIColor blackColor];
+    }
+}
+
++ (UIColor *)secondaryLabelColor {
+    if (@available(iOS 13.0, *)) {
+        return [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+            if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+                return [UIColor colorWithWhite:0.92 alpha:0.6];
+            } else {
+                return [UIColor colorWithWhite:0.4 alpha:1.0];
+            }
+        }];
+    } else {
+        return [UIColor colorWithWhite:0.4 alpha:1.0];
+    }
+}
+
++ (UIColor *)tertiaryLabelColor {
+    if (@available(iOS 13.0, *)) {
+        return [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+            if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+                return [UIColor colorWithWhite:0.92 alpha:0.3];
+            } else {
+                return [UIColor colorWithWhite:0.6 alpha:1.0];
+            }
+        }];
+    } else {
+        return [UIColor colorWithWhite:0.6 alpha:1.0];
+    }
+}
+
+// Separator Colors
++ (UIColor *)separatorColor {
+    if (@available(iOS 13.0, *)) {
+        return [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+            if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+                return [UIColor colorWithWhite:1.0 alpha:0.2];
+            } else {
+                return [UIColor colorWithWhite:0.0 alpha:0.2];
+            }
+        }];
+    } else {
+        return [UIColor colorWithWhite:0.0 alpha:0.2];
+    }
+}
+
++ (UIColor *)opaqueSeparatorColor {
+    if (@available(iOS 13.0, *)) {
+        return [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+            if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+                return [UIColor colorWithRed:56/255.0 green:56/255.0 blue:58/255.0 alpha:1.0];
+            } else {
+                return [UIColor colorWithRed:198/255.0 green:198/255.0 blue:200/255.0 alpha:1.0];
+            }
+        }];
+    } else {
+        return [UIColor colorWithRed:198/255.0 green:198/255.0 blue:200/255.0 alpha:1.0];
+    }
+}
+
+// Keyboard Colors (Dark Mode Adaptive)
++ (UIColor *)keyboardBackgroundColor {
+    if (@available(iOS 13.0, *)) {
+        return [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+            if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+                return [UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1.0];
+            } else {
+                return [UIColor colorWithRed:209/255.0 green:213/255.0 blue:219/255.0 alpha:1.0];
+            }
+        }];
+    } else {
+        return [UIColor colorWithRed:209/255.0 green:213/255.0 blue:219/255.0 alpha:1.0];
+    }
+}
+
++ (UIColor *)keyboardKeyColor {
+    if (@available(iOS 13.0, *)) {
+        return [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+            if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+                return [UIColor colorWithRed:76/255.0 green:76/255.0 blue:78/255.0 alpha:1.0];
+            } else {
+                return [UIColor whiteColor];
+            }
+        }];
+    } else {
+        return [UIColor whiteColor];
+    }
+}
+
++ (UIColor *)numberPadKeyColor {
+    if (@available(iOS 13.0, *)) {
+        return [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+            if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+                return [UIColor colorWithRed:76/255.0 green:76/255.0 blue:78/255.0 alpha:1.0];
+            } else {
+                return [UIColor colorWithRed:252/255.0 green:252/255.0 blue:253/255.0 alpha:1.0];
+            }
+        }];
+    } else {
+        return [UIColor colorWithRed:252/255.0 green:252/255.0 blue:253/255.0 alpha:1.0];
+    }
+}
+
++ (UIColor *)numberPadKeyBorderColor {
+    if (@available(iOS 13.0, *)) {
+        return [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+            if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+                return [UIColor colorWithRed:56/255.0 green:56/255.0 blue:58/255.0 alpha:1.0];
+            } else {
+                return [UIColor colorWithRed:217/255.0 green:219/255.0 blue:222/255.0 alpha:1.0];
+            }
+        }];
+    } else {
+        return [UIColor colorWithRed:217/255.0 green:219/255.0 blue:222/255.0 alpha:1.0];
+    }
+}
+
++ (UIColor *)numberPadDarkKeyColor {
+    if (@available(iOS 13.0, *)) {
+        return [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+            if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+                return [UIColor colorWithRed:98/255.0 green:98/255.0 blue:102/255.0 alpha:1.0];
+            } else {
+                return [UIColor colorWithRed:188/255.0 green:192/255.0 blue:196/255.0 alpha:1.0];
+            }
+        }];
+    } else {
+        return [UIColor colorWithRed:188/255.0 green:192/255.0 blue:196/255.0 alpha:1.0];
+    }
+}
+
++ (UIColor *)numberPadSelectedKeyColor {
+    if (@available(iOS 13.0, *)) {
+        return [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+            if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+                return [UIColor colorWithRed:98/255.0 green:98/255.0 blue:102/255.0 alpha:1.0];
+            } else {
+                return [UIColor colorWithRed:188/255.0 green:191/255.0 blue:196/255.0 alpha:1.0];
+            }
+        }];
+    } else {
+        return [UIColor colorWithRed:188/255.0 green:191/255.0 blue:196/255.0 alpha:1.0];
+    }
+}
+
 // Colors that should have been there from the beginning
 + (UIColor *)acidGreen {
     return [UIColor colorWithRed:0.69f green:0.75f blue:0.10f alpha:1.0f];

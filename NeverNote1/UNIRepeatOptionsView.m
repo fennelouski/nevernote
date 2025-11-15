@@ -51,10 +51,10 @@
     UIButton *button = [[UIButton alloc] initWithFrame:frame];
     
     [button setTitle:self.options[position] forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor darkTextColor] forState:UIControlStateNormal];
-    [button setBackgroundColor:[UIColor lightKeyboardBackgroundColor]];
+    [button setTitleColor:[UIColor labelColor] forState:UIControlStateNormal];
+    [button setBackgroundColor:[UIColor keyboardBackgroundColor]];
     [button.layer setBorderWidth:DELINEATOR_WIDTH];
-    [button.layer setBorderColor:[UIColor lightNumberPadKeyBorderColor].CGColor];
+    [button.layer setBorderColor:[UIColor numberPadKeyBorderColor].CGColor];
     [button addTarget:self action:@selector(repeatOptionSelected:) forControlEvents:UIControlEventTouchUpInside];
     
     return button;
