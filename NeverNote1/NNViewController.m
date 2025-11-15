@@ -9,6 +9,8 @@
 #import "NNViewController.h"
 #import <CoreMotion/CoreMotion.h>
 #import "NNColorObject.h"
+#import "NNSettingsManager.h"
+#import "NNSettingsViewController.h"
 
 // screen width
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
@@ -63,6 +65,9 @@ BOOL ONE_SHAKE = YES;
 
 @property (nonatomic, strong) UIView *timeKeyboard, *minuteKeyboard, *ampmKeyboard, *colorView;
 
+@property (nonatomic, strong) NNSettingsManager *settingsManager;
+@property (nonatomic, strong) UILabel *settingsHintLabel;
+
 @end
 
 @implementation NNViewController
@@ -70,9 +75,11 @@ BOOL ONE_SHAKE = YES;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        _currentFontSize = FONT_SIZE;
+        _settingsManager = [NNSettingsManager sharedManager];
+
+        _currentFontSize = _settingsManager.fontSize;
         _currentKeyboardHeight = DEFAULT_KEYBOARD_HEIGHT;  // Initialize with default
-        _isDaylight = [self isDaylight];
+        _isDaylight = ![_settingsManager shouldUseDarkMode];
         _lastDoubleBump = [NSDate date];
         _allFonts = [self listAvailableFonts];
         _lastFont = [NSMutableArray new];
@@ -86,6 +93,7 @@ BOOL ONE_SHAKE = YES;
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setUpStatusBar:) name:UIApplicationDidChangeStatusBarOrientationNotification object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(settingsDidChange:) name:@"NNSettingsDidChangeNotification" object:nil];
 
         [self colorText];
     }
@@ -101,8 +109,15 @@ BOOL ONE_SHAKE = YES;
     [self.textView setInputAccessoryView:(_isDaylight) ? self.keyboardToolbarUpperCaseLight : self.keyboardToolbarUpperCaseDark];
     [[UIApplication sharedApplication] setApplicationSupportsShakeToEdit:NO];
     [self setUpLabels];
+    [self setUpSettingsGesture];
 
     [self listAvailableFonts];
+    [self applySettings];
+
+    // Handle clear on launch
+    if (self.settingsManager.clearOnLaunchEnabled) {
+        [self.textView setText:@""];
+    }
 }
 
 #pragma mark - Status Bar
@@ -343,12 +358,41 @@ BOOL ONE_SHAKE = YES;
     UISwipeGestureRecognizer *swipeUp = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeUp)];
     [swipeUp setDirection:UISwipeGestureRecognizerDirectionUp];
     [self.view addGestureRecognizer:swipeUp];
-    
+
     UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinch:)];
     [self.view addGestureRecognizer:pinch];
 
     UIRotationGestureRecognizer *rotate = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotate:)];
     [self.view addGestureRecognizer:rotate];
+
+    // Add tap gesture for tap-to-copy functionality
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+    tap.numberOfTapsRequired = 1;
+    [self.view addGestureRecognizer:tap];
+}
+
+- (void)setUpSettingsGesture {
+    // Two-finger double-tap to open settings
+    UITapGestureRecognizer *settingsTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openSettings)];
+    settingsTap.numberOfTouchesRequired = 2;
+    settingsTap.numberOfTapsRequired = 2;
+    [self.view addGestureRecognizer:settingsTap];
+
+    // Create settings hint label
+    _settingsHintLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height - 30, self.view.bounds.size.width, 20)];
+    [_settingsHintLabel setText:@"Two-finger double-tap for settings"];
+    [_settingsHintLabel setTextAlignment:NSTextAlignmentCenter];
+    [_settingsHintLabel setFont:[UIFont systemFontOfSize:10]];
+    [_settingsHintLabel setTextColor:[UIColor tertiaryLabelColor]];
+    [_settingsHintLabel setAlpha:0.5];
+    [self.view addSubview:_settingsHintLabel];
+
+    // Hide hint after a few seconds
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [UIView animateWithDuration:0.5 animations:^{
+            self.settingsHintLabel.alpha = 0.0;
+        }];
+    });
 }
 
 - (void)setUpLabels {
@@ -1159,9 +1203,86 @@ BOOL ONE_SHAKE = YES;
     return image;
 }
 
+#pragma mark - Settings Integration
+
+- (void)openSettings {
+    NNSettingsViewController *settingsVC = [[NNSettingsViewController alloc] init];
+    settingsVC.modalPresentationStyle = UIModalPresentationPageSheet;
+
+    if (@available(iOS 13.0, *)) {
+        settingsVC.modalPresentationStyle = UIModalPresentationAutomatic;
+    }
+
+    [self presentViewController:settingsVC animated:YES completion:nil];
+}
+
+- (void)applySettings {
+    // Apply font settings
+    UIFont *font;
+    if ([self.settingsManager.fontName isEqualToString:@"System Bold"]) {
+        font = [UIFont boldSystemFontOfSize:self.settingsManager.fontSize];
+    } else {
+        font = [UIFont fontWithName:self.settingsManager.fontName size:self.settingsManager.fontSize];
+        if (!font) {
+            font = [UIFont boldSystemFontOfSize:self.settingsManager.fontSize];
+        }
+    }
+    [_textView setFont:font];
+    _currentFontSize = self.settingsManager.fontSize;
+
+    // Apply theme settings
+    _isDaylight = ![self.settingsManager shouldUseDarkMode];
+    [self updateAppearanceForCurrentTraitCollection];
+
+    // Apply keyboard toolbar settings
+    if (!self.settingsManager.showKeyboardToolbar) {
+        [_textView setInputAccessoryView:nil];
+    } else {
+        [_textView setInputAccessoryView:(_isDaylight) ? self.keyboardToolbarUpperCaseLight : self.keyboardToolbarUpperCaseDark];
+    }
+    [_textView reloadInputViews];
+}
+
+- (void)settingsDidChange:(NSNotification *)notification {
+    [self applySettings];
+}
+
+- (void)handleTap:(UITapGestureRecognizer *)sender {
+    if (!self.settingsManager.tapToCopyEnabled) {
+        return;
+    }
+
+    // Only handle tap if there's text and the tap is not on the keyboard
+    if (_textView.text.length > 0 && sender.state == UIGestureRecognizerStateEnded) {
+        CGPoint location = [sender locationInView:self.view];
+
+        // Don't trigger if tapping in the text view editing area
+        if (CGRectContainsPoint(_textView.frame, location)) {
+            return;
+        }
+
+        // Copy text to clipboard
+        [[UIPasteboard generalPasteboard] setString:[_textView text]];
+        [self animateLabel:_labelForCopy];
+
+        // Provide haptic feedback
+        if (@available(iOS 10.0, *)) {
+            if (self.settingsManager.hapticFeedbackEnabled) {
+                UIImpactFeedbackGenerator *feedbackGenerator = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleLight];
+                [feedbackGenerator impactOccurred];
+            }
+        }
+    }
+}
+
 #pragma mark - Motion Detection
 
 - (void)startMotionDetect {
+    // Only start motion detection if enabled in settings
+    if (!self.settingsManager.motionDetectionEnabled) {
+        return;
+    }
+
     [self.motionManager
      startAccelerometerUpdatesToQueue:[[NSOperationQueue alloc] init]
      withHandler:^(CMAccelerometerData *data, NSError *error)

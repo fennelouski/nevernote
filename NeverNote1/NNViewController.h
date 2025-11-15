@@ -12,4 +12,6 @@
 
 @property (nonatomic) CGFloat currentKeyboardHeight;
 
+- (void)openSettings;
+
 @end
