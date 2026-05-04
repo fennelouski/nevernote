@@ -1,12 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "Launch Screen iPhone Portrait.png",
+      "filename" : "BrandGraphic.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Launch Screen iPhone Portrait@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

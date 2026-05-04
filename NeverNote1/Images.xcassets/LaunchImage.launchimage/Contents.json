@@ -3,6 +3,7 @@
     {
       "orientation" : "portrait",
       "idiom" : "ipad",
+      "filename" : "Launch Screen iPad Portrait.png",
       "minimum-system-version" : "7.0",
       "extent" : "full-screen",
       "scale" : "1x"
@@ -10,6 +11,7 @@
     {
       "orientation" : "portrait",
       "idiom" : "ipad",
+      "filename" : "Launch Screen iPad Portrait@2x.png",
       "minimum-system-version" : "7.0",
       "extent" : "full-screen",
       "scale" : "2x"
@@ -17,6 +19,7 @@
     {
       "orientation" : "landscape",
       "idiom" : "ipad",
+      "filename" : "Launch Screen iPad Landscape.png",
       "minimum-system-version" : "7.0",
       "extent" : "full-screen",
       "scale" : "1x"
@@ -24,6 +27,7 @@
     {
       "orientation" : "landscape",
       "idiom" : "ipad",
+      "filename" : "Launch Screen iPad Landscape@2x.png",
       "minimum-system-version" : "7.0",
       "extent" : "full-screen",
       "scale" : "2x"
@@ -38,6 +42,7 @@
     {
       "orientation" : "portrait",
       "idiom" : "iphone",
+      "filename" : "Launch Screen iPhone Portrait 4-inch.png",
       "minimum-system-version" : "7.0",
       "subtype" : "retina4",
       "scale" : "2x"
