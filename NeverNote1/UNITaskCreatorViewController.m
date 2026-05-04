@@ -681,6 +681,14 @@
     NSLog(@"repeatButtonTouched");
 }
 
+- (void)repeatOptionSelected:(NSString *)option {
+    (void)option;
+}
+
+- (void)alarmTimeSelected:(NSDate *)alarmTime {
+    (void)alarmTime;
+}
+
 #pragma mark - Suggestions View delegate methods
 
 - (void)suggestionSelected:(UIButton *)button {

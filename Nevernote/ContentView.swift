@@ -9,19 +9,129 @@ import SwiftData
 import SwiftUI
 import UIKit
 
+private extension Color {
+    static let brandBlue = Color(red: 28.0 / 255.0, green: 128.0 / 255.0, blue: 152.0 / 255.0)
+}
+
+private enum NevernoteNotification {
+    static let onboardingDidStart = Notification.Name("NNOnboardingDidStartNotification")
+    static let onboardingDidComplete = Notification.Name("NNOnboardingDidCompleteNotification")
+}
+
+enum ScreenshotPromptStep {
+    case chooseShareKind
+    case chooseAspect
+}
+
+private enum EditorFont {
+    /// SwiftUI app only; legacy Obj-C target uses its own defaults suite.
+    static let appStorageKey = "nevernote.swiftui.editorFontName"
+    static let recentFontsStorageKey = "nevernote.swiftui.recentEditorFontNames"
+    static let systemBoldToken = "System Bold"
+    static let editorPointSize: CGFloat = 24
+    static let maxRecentCount = 5
+
+    static func uiFont(forToken token: String, size: CGFloat) -> UIFont {
+        if token == systemBoldToken {
+            return UIFont.systemFont(ofSize: size, weight: .bold)
+        }
+        return UIFont(name: token, size: size)
+            ?? UIFont.systemFont(ofSize: size, weight: .bold)
+    }
+
+    static var sortedPostScriptNames: [String] {
+        let names = Set(UIFont.familyNames.flatMap { UIFont.fontNames(forFamilyName: $0) })
+        return names.sorted { $0.localizedCaseInsensitiveCompare($1) == .orderedAscending }
+    }
+
+    static func recentTokens() -> [String] {
+        let raw = UserDefaults.standard.stringArray(forKey: recentFontsStorageKey) ?? []
+        let valid = Set(sortedPostScriptNames + [systemBoldToken])
+        var seen = Set<String>()
+        return raw.filter { token in
+            guard valid.contains(token) else { return false }
+            guard !seen.contains(token) else { return false }
+            seen.insert(token)
+            return true
+        }
+    }
+
+    static func recordRecentToken(_ token: String) {
+        guard Set(sortedPostScriptNames + [systemBoldToken]).contains(token) else { return }
+        var updated = recentTokens().filter { $0 != token }
+        updated.insert(token, at: 0)
+        if updated.count > maxRecentCount {
+            updated = Array(updated.prefix(maxRecentCount))
+        }
+        UserDefaults.standard.set(updated, forKey: recentFontsStorageKey)
+    }
+}
+
+private enum NoteDataDetectors {
+    static let appStorageKey = "nevernote.dataDetectorsEnabled"
+    static let enabledTypes: UIDataDetectorTypes = .all
+
+    static func textWouldTriggerDataDetectors(_ text: String, types: UIDataDetectorTypes = enabledTypes) -> Bool {
+        let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else { return false }
+        let checkingTypes = NSTextCheckingTypes(types.rawValue)
+        guard let detector = try? NSDataDetector(types: checkingTypes) else { return false }
+        let len = (text as NSString).length
+        guard len > 0 else { return false }
+        return detector.firstMatch(in: text, options: [], range: NSRange(location: 0, length: len)) != nil
+    }
+}
+
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query(sort: \NoteDocument.lastEditedAt, order: .reverse) private var notes: [NoteDocument]
 
+    @AppStorage(EditorFont.appStorageKey) private var editorFontName: String = EditorFont.systemBoldToken
+    @AppStorage(NoteDataDetectors.appStorageKey) private var dataDetectorsEnabled = false
+
     @State private var attributedText = NSAttributedString(string: "")
     @State private var isEditing = false
-    @State private var isKeyboardVisible = false
     @State private var editorHasFocus = false
     @State private var hasLoadedExistingNote = false
     @State private var commandCounter = 0
     @State private var editorCommand: EditorCommand?
+    @State private var showFontPicker = false
+    @State private var showLastEditedBanner = true
+    @State private var lastEditedBannerScheduleID = UUID()
+
+    @State private var onboardingActive = false
+    @State private var showScreenshotPrompt = false
+    @State private var screenshotPromptStep: ScreenshotPromptStep = .chooseShareKind
+    @State private var lastScreenshotHandledAt = Date.distantPast
+    @State private var showActivityShare = false
+    @State private var activityItems: [Any] = []
+    @State private var textAlignment: NoteTextAlignment = .center
+    @State private var maximizePresentationSize = false
+    @State private var linePrefixMode: NoteLinePrefixMode = .none
+    @State private var urlPreviewRefreshToken = 0
 
     private var activeNote: NoteDocument? { notes.first }
+    private var displayAttributedText: NSAttributedString {
+        NoteTextFormatting.makeDisplayAttributedText(
+            from: attributedText,
+            alignment: textAlignment,
+            linePrefixMode: linePrefixMode
+        )
+    }
+
+    private var hasDetectableContent: Bool {
+        NoteDataDetectors.textWouldTriggerDataDetectors(attributedText.string)
+    }
+
+    private var bottomPreviewURLKeys: [String] {
+        _ = urlPreviewRefreshToken
+        guard let note = activeNote else { return [] }
+        return NoteHTTPSLinkEnumeration.orderedLinkKeys(in: attributedText) { note.urlShowsImagePreview($0) }
+    }
+
+    private var noteExportBackground: UIColor {
+        UIColor(red: 0.95, green: 0.95, blue: 0.96, alpha: 1)
+    }
 
     var body: some View {
         ZStack {
@@ -38,55 +148,122 @@ struct ContentView: View {
 
                 Spacer(minLength: 20)
 
-                if isEditing {
+                if isEditing && !editorHasFocus {
                     editorToolbar
                 }
             }
+
+            if showScreenshotPrompt {
+                ScreenshotSharePromptOverlay(
+                    step: screenshotPromptStep,
+                    onShareText: {
+                        activityItems = [attributedText.string]
+                        dismissScreenshotPrompt()
+                        showActivityShare = true
+                    },
+                    onChooseImage: {
+                        withAnimation(.easeInOut(duration: 0.2)) {
+                            screenshotPromptStep = .chooseAspect
+                        }
+                    },
+                    onPickAspect: { ratio in
+                        if let image = NoteTextImageRenderer.renderImage(
+                            attributedText: attributedText,
+                            backgroundColor: noteExportBackground,
+                            aspect: ratio,
+                            alignment: textAlignment,
+                            linePrefixMode: linePrefixMode,
+                            maximizePresentationSize: maximizePresentationSize
+                        ) {
+                            activityItems = [image]
+                        } else {
+                            activityItems = [attributedText.string]
+                        }
+                        dismissScreenshotPrompt()
+                        showActivityShare = true
+                    },
+                    onCancel: { dismissScreenshotPrompt() }
+                )
+                .zIndex(2)
+            }
         }
+        .animation(.easeInOut(duration: 0.22), value: showScreenshotPrompt)
         .onAppear {
             ensureSingleNoteExists()
             loadNoteIfNeeded()
+            scheduleLastEditedBannerAutoHide()
         }
         .onChange(of: notes.count) { _, _ in
             ensureSingleNoteExists()
             loadNoteIfNeeded()
         }
         .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification)) { _ in
-            isKeyboardVisible = true
-            isEditing = true
-            editorHasFocus = true
+            dismissLastEditedBannerForKeyboardOrTimeout()
         }
-        .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)) { _ in
-            isKeyboardVisible = false
-            isEditing = false
-            editorHasFocus = false
+        .onReceive(NotificationCenter.default.publisher(for: NevernoteNotification.onboardingDidStart)) { _ in
+            onboardingActive = true
+        }
+        .onReceive(NotificationCenter.default.publisher(for: NevernoteNotification.onboardingDidComplete)) { _ in
+            onboardingActive = false
+        }
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.userDidTakeScreenshotNotification)) { _ in
+            handleScreenshotDetected()
+        }
+        .sheet(isPresented: $showFontPicker) {
+            FontPickerSheet(
+                currentToken: editorFontName,
+                recentTokens: EditorFont.recentTokens()
+            ) { token in
+                editorFontName = token
+                EditorFont.recordRecentToken(token)
+                sendEditorCommand(.font(token))
+                showFontPicker = false
+            }
+        }
+        .sheet(isPresented: $showActivityShare) {
+            ActivityShareSheet(
+                activityItems: activityItems,
+                isPresented: $showActivityShare,
+                sourceRect: Optional<CGRect>.none
+            )
+        }
+    }
+
+    private func dismissScreenshotPrompt() {
+        withAnimation(.easeInOut(duration: 0.2)) {
+            showScreenshotPrompt = false
+            screenshotPromptStep = .chooseShareKind
+        }
+    }
+
+    private func handleScreenshotDetected() {
+        guard !onboardingActive else { return }
+        guard !showActivityShare else { return }
+        let now = Date()
+        guard now.timeIntervalSince(lastScreenshotHandledAt) > 1.5 else { return }
+        lastScreenshotHandledAt = now
+        screenshotPromptStep = .chooseShareKind
+        withAnimation(.easeInOut(duration: 0.22)) {
+            showScreenshotPrompt = true
         }
     }
 
     private var topBar: some View {
         HStack {
-            Button(action: {}) {
-                Image(systemName: "line.3.horizontal")
-                    .font(.system(size: 17, weight: .semibold))
-            }
-
             Text("Nevernote")
                 .font(.headline)
                 .foregroundStyle(Color.black.opacity(0.95))
 
             Spacer()
 
-            Button(action: {}) {
+            ShareLink(item: attributedText.string) {
                 Image(systemName: "square.and.arrow.up")
                     .font(.system(size: 16, weight: .semibold))
             }
-
-            Button(action: {}) {
-                Image(systemName: "ellipsis")
-                    .font(.system(size: 16, weight: .semibold))
-            }
+            .disabled(attributedText.string.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+            .accessibilityLabel("Share note")
         }
-        .foregroundStyle(Color.blue)
+        .foregroundStyle(Color.brandBlue)
         .padding(.horizontal, 18)
         .frame(height: 56)
         .background(Color.white.opacity(0.96))
@@ -103,13 +280,29 @@ struct ContentView: View {
                 RichTextEditor(
                     attributedText: $attributedText,
                     isFirstResponder: $editorHasFocus,
+                    preferredFontName: editorFontName,
+                    textAlignment: textAlignment,
+                    linePrefixMode: linePrefixMode,
                     command: editorCommand,
-                    onChange: persistNote
+                    onHTTPSImageLinkLongPress: { url, point, tv in
+                        handleHTTPSImageLinkLongPress(url: url, point: point, textView: tv)
+                    },
+                    onChange: persistNote,
+                    accessory: { editorToolbar }
                 )
                 .frame(maxWidth: .infinity, minHeight: 180, maxHeight: 360)
+                .clipped()
                 .padding(.horizontal, 26)
             } else {
-                FocusTextView(attributedText: attributedText)
+                FocusTextView(
+                    attributedText: displayAttributedText,
+                    textAlignment: textAlignment,
+                    maximizePresentationSize: maximizePresentationSize,
+                    dataDetectorsEnabled: dataDetectorsEnabled,
+                    onHTTPSImageLinkLongPress: { url, point, tv in
+                        handleHTTPSImageLinkLongPress(url: url, point: point, textView: tv)
+                    }
+                )
                     .padding(.horizontal, 24)
                     .contentShape(Rectangle())
                     .onTapGesture {
@@ -118,15 +311,29 @@ struct ContentView: View {
                     }
             }
 
-            Text(footerText)
-                .font(.system(size: 14, weight: .semibold, design: .default))
-                .tracking(2)
-                .foregroundStyle(Color.black.opacity(0.20))
+            if !bottomPreviewURLKeys.isEmpty {
+                NoteBottomURLImagePreviews(urlKeys: bottomPreviewURLKeys)
+                    .padding(.horizontal, 24)
+            }
+
+            if showLastEditedBanner {
+                Text(footerText)
+                    .font(.system(size: 14, weight: .semibold, design: .default))
+                    .tracking(2)
+                    .foregroundStyle(Color.black.opacity(0.20))
+                    .transition(
+                        .asymmetric(
+                            insertion: .opacity.combined(with: .scale(scale: 0.96)).combined(with: .offset(y: 4)),
+                            removal: .opacity.combined(with: .scale(scale: 0.88)).combined(with: .offset(y: 14))
+                        )
+                    )
+            }
         }
+        .animation(.spring(response: 0.52, dampingFraction: 0.78, blendDuration: 0.15), value: showLastEditedBanner)
     }
 
     private var editorToolbar: some View {
-        HStack(spacing: 20) {
+        HStack(spacing: 12) {
             Button(action: { sendEditorCommand(.bold) }) {
                 Image(systemName: "bold")
             }
@@ -142,7 +349,46 @@ struct ContentView: View {
             }
             .accessibilityLabel("Underline")
 
-            Spacer()
+            Button(action: { showFontPicker = true }) {
+                Image(systemName: "textformat")
+            }
+            .accessibilityLabel("Font")
+
+            Picker("Alignment", selection: $textAlignment) {
+                Image(systemName: "text.alignleft").tag(NoteTextAlignment.left)
+                Image(systemName: "text.aligncenter").tag(NoteTextAlignment.center)
+                Image(systemName: "text.alignright").tag(NoteTextAlignment.right)
+            }
+            .pickerStyle(.segmented)
+            .frame(maxWidth: 150)
+            .onChange(of: textAlignment) { _, value in
+                sendEditorCommand(.alignment(value))
+            }
+
+            Button(action: {
+                maximizePresentationSize.toggle()
+            }) {
+                Image(systemName: maximizePresentationSize ? "arrow.down.right.and.arrow.up.left" : "arrow.up.left.and.arrow.down.right")
+            }
+            .accessibilityLabel("Maximize presentation size")
+
+            Button(action: {
+                linePrefixMode.cycle()
+                sendEditorCommand(.refreshDerivedDisplay)
+            }) {
+                Image(systemName: linePrefixMode == .none ? "list.bullet" : (linePrefixMode == .bulleted ? "list.number" : "text.badge.xmark"))
+            }
+            .accessibilityLabel("Toggle line markers")
+
+            if hasDetectableContent {
+                Button {
+                    dataDetectorsEnabled.toggle()
+                } label: {
+                    Image(systemName: "link.circle")
+                }
+                .foregroundStyle(dataDetectorsEnabled ? Color.brandBlue : Color(.systemGray))
+                .accessibilityLabel("Smart links")
+            }
 
             Button("Done") {
                 editorHasFocus = false
@@ -150,7 +396,7 @@ struct ContentView: View {
                 UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
             }
             .font(.system(size: 20, weight: .semibold))
-            .foregroundStyle(Color.blue)
+            .foregroundStyle(Color.brandBlue)
         }
         .padding(.horizontal, 22)
         .frame(height: 56)
@@ -169,6 +415,26 @@ struct ContentView: View {
         return "NEVERNOTE FOCUS"
     }
 
+    private func scheduleLastEditedBannerAutoHide() {
+        showLastEditedBanner = true
+        let scheduleID = UUID()
+        lastEditedBannerScheduleID = scheduleID
+        DispatchQueue.main.asyncAfter(deadline: .now() + 15) {
+            guard lastEditedBannerScheduleID == scheduleID else { return }
+            withAnimation(.spring(response: 0.52, dampingFraction: 0.78, blendDuration: 0.15)) {
+                showLastEditedBanner = false
+            }
+        }
+    }
+
+    private func dismissLastEditedBannerForKeyboardOrTimeout() {
+        lastEditedBannerScheduleID = UUID()
+        guard showLastEditedBanner else { return }
+        withAnimation(.spring(response: 0.52, dampingFraction: 0.78, blendDuration: 0.15)) {
+            showLastEditedBanner = false
+        }
+    }
+
     private func ensureSingleNoteExists() {
         guard notes.isEmpty else { return }
         let newNote = NoteDocument()
@@ -178,7 +444,7 @@ struct ContentView: View {
 
     private func loadNoteIfNeeded() {
         guard let note = activeNote, !hasLoadedExistingNote else { return }
-        if let decoded = decodeRichText(note.richTextData), decoded.length > 0 {
+        if let decoded = NoteRichTextCodec.decode(note.richTextData), decoded.length > 0 {
             attributedText = decoded
         } else if !note.plainText.isEmpty {
             attributedText = NSAttributedString(string: note.plainText)
@@ -190,8 +456,52 @@ struct ContentView: View {
         guard let note = activeNote else { return }
         note.lastEditedAt = .now
         note.plainText = attributedText.string
-        note.richTextData = encodeRichText(attributedText) ?? Data()
+        note.pruneURLImagePreviewEntries(notContainedIn: note.plainText)
+        note.richTextData = NoteRichTextCodec.encode(attributedText) ?? Data()
         try? modelContext.save()
+    }
+
+    private func handleHTTPSImageLinkLongPress(url: URL, point: CGPoint, textView: UITextView) {
+        let key = NoteDocument.normalizedURLKey(url)
+        guard let vc = textView.nearestViewController() else { return }
+
+        let loading = UIAlertController(title: nil, message: "Checking image…", preferredStyle: .alert)
+        vc.present(loading, animated: true)
+
+        NoteImageURLPrefetcher.prefetchImage(from: url) { result in
+            loading.dismiss(animated: true) {
+                switch result {
+                case .success:
+                    let current = activeNote?.urlShowsImagePreview(key) ?? false
+                    let sheet = UIAlertController(
+                        title: "Image link",
+                        message: "Show this image below the note?",
+                        preferredStyle: .actionSheet
+                    )
+                    let toggleTitle = current ? "Hide image at bottom" : "Show image at bottom"
+                    sheet.addAction(UIAlertAction(title: toggleTitle, style: .default) { _ in
+                        activeNote?.setURLShowsImagePreview(key, show: !current)
+                        urlPreviewRefreshToken &+= 1
+                        persistNote()
+                    })
+                    sheet.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+                    if let pop = sheet.popoverPresentationController {
+                        pop.sourceView = textView
+                        pop.sourceRect = CGRect(x: point.x, y: point.y, width: 1, height: 1)
+                        pop.permittedArrowDirections = [.up, .down]
+                    }
+                    vc.present(sheet, animated: true)
+                case .failure(let error):
+                    let alert = UIAlertController(
+                        title: "Can't use this link as an image",
+                        message: error.localizedDescription,
+                        preferredStyle: .alert
+                    )
+                    alert.addAction(UIAlertAction(title: "OK", style: .default))
+                    vc.present(alert, animated: true)
+                }
+            }
+        }
     }
 
     private func sendEditorCommand(_ action: TextFormatAction) {
@@ -199,50 +509,301 @@ struct ContentView: View {
         editorCommand = EditorCommand(id: commandCounter, action: action)
     }
 
-    private func decodeRichText(_ data: Data) -> NSAttributedString? {
-        guard !data.isEmpty else { return nil }
-        return try? NSKeyedUnarchiver.unarchivedObject(ofClass: NSAttributedString.self, from: data)
+}
+
+private struct NoteBottomURLImagePreviews: View {
+    let urlKeys: [String]
+
+    var body: some View {
+        VStack(spacing: 14) {
+            ForEach(urlKeys, id: \.self) { key in
+                if let url = URL(string: key) {
+                    NoteBottomURLImageRow(url: url)
+                }
+            }
+        }
+    }
+}
+
+private struct NoteBottomURLImageRow: View {
+    let url: URL
+    @State private var image: UIImage?
+
+    var body: some View {
+        Group {
+            if let image {
+                Image(uiImage: image)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxWidth: .infinity)
+                    .frame(maxHeight: 200)
+                    .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+            }
+        }
+        .frame(maxWidth: .infinity)
+        .task(id: url) {
+            if let cached = NoteImageURLPrefetcher.cachedImage(for: url) {
+                image = cached
+                return
+            }
+            NoteImageURLPrefetcher.prefetchImage(from: url) { result in
+                if case .success(let img) = result {
+                    image = img
+                }
+            }
+        }
+    }
+}
+
+private extension UIView {
+    func nearestViewController() -> UIViewController? {
+        var responder: UIResponder? = self
+        while let current = responder {
+            if let vc = current as? UIViewController { return vc }
+            responder = current.next
+        }
+        return nil
+    }
+}
+
+private struct FontPickerSheet: View {
+    let currentToken: String
+    let recentTokens: [String]
+    let onSelect: (String) -> Void
+
+    @Environment(\.dismiss) private var dismiss
+    @State private var query = ""
+
+    private var filteredRecentFonts: [String] {
+        recentTokens
+            .filter { $0 != EditorFont.systemBoldToken }
+            .filter { EditorFont.sortedPostScriptNames.contains($0) }
+            .filter(matchesQuery)
     }
 
-    private func encodeRichText(_ value: NSAttributedString) -> Data? {
-        try? NSKeyedArchiver.archivedData(withRootObject: value, requiringSecureCoding: false)
+    private var filteredAllFonts: [String] {
+        let excluded = Set(filteredRecentFonts)
+        let all = EditorFont.sortedPostScriptNames.filter { !excluded.contains($0) }
+        guard !searchQuery.isEmpty else { return all }
+        return all.filter(matchesQuery)
+    }
+
+    private var searchQuery: String {
+        let q = query.trimmingCharacters(in: .whitespacesAndNewlines)
+        return q
+    }
+
+    private var shouldShowSystemBold: Bool {
+        searchQuery.isEmpty || EditorFont.systemBoldToken.localizedCaseInsensitiveContains(searchQuery)
+    }
+
+    private func matchesQuery(_ token: String) -> Bool {
+        guard !searchQuery.isEmpty else { return true }
+        return token.localizedCaseInsensitiveContains(searchQuery)
+    }
+
+    var body: some View {
+        NavigationStack {
+            List {
+                if shouldShowSystemBold {
+                    Section {
+                        fontRow(title: EditorFont.systemBoldToken, token: EditorFont.systemBoldToken)
+                    }
+                }
+
+                if !filteredRecentFonts.isEmpty {
+                    Section("Recent") {
+                        ForEach(filteredRecentFonts, id: \.self) { name in
+                            fontRow(title: name, token: name)
+                        }
+                    }
+                }
+
+                if !filteredAllFonts.isEmpty {
+                    Section("All Fonts") {
+                        ForEach(filteredAllFonts, id: \.self) { name in
+                            fontRow(title: name, token: name)
+                        }
+                    }
+                }
+            }
+            .searchable(text: $query, prompt: "Search fonts")
+            .navigationTitle("Font")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel") { dismiss() }
+                }
+            }
+        }
+    }
+
+    private func fontRow(title: String, token: String) -> some View {
+        Button {
+            onSelect(token)
+        } label: {
+            HStack {
+                Text(title)
+                    .font(Font(EditorFont.uiFont(forToken: token, size: EditorFont.editorPointSize)))
+                    .foregroundStyle(Color.primary)
+                    .lineLimit(1)
+                Spacer()
+                if token == currentToken {
+                    Image(systemName: "checkmark")
+                        .foregroundStyle(Color.brandBlue)
+                }
+            }
+        }
+    }
+}
+
+private struct ReadOnlyNoteTextView: UIViewRepresentable {
+    var attributedText: NSAttributedString
+    var textAlignment: NSTextAlignment
+    var dataDetectorTypes: UIDataDetectorTypes
+    var onHTTPSImageLinkLongPress: ((URL, CGPoint, UITextView) -> Void)?
+
+    func makeCoordinator() -> Coordinator {
+        Coordinator()
+    }
+
+    func makeUIView(context: Context) -> NoteWrappingTextView {
+        let textView = NoteWrappingTextView()
+        textView.isEditable = false
+        textView.allowsEditingTextAttributes = false
+        textView.isSelectable = true
+        textView.isScrollEnabled = false
+        textView.alwaysBounceHorizontal = false
+        textView.backgroundColor = .clear
+        textView.textAlignment = textAlignment
+        textView.textContainer.lineBreakMode = .byWordWrapping
+        textView.textContainer.lineFragmentPadding = 0
+        textView.textContainerInset = UIEdgeInsets(top: 12, left: 0, bottom: 12, right: 0)
+        textView.dataDetectorTypes = dataDetectorTypes
+        textView.tintColor = UIColor(red: 28.0 / 255.0, green: 128.0 / 255.0, blue: 152.0 / 255.0, alpha: 1.0)
+        textView.attributedText = attributedText
+        let longPress = UILongPressGestureRecognizer(target: context.coordinator, action: #selector(Coordinator.handleLinkLongPress(_:)))
+        longPress.minimumPressDuration = 0.45
+        textView.addGestureRecognizer(longPress)
+        context.coordinator.onHTTPSImageLinkLongPress = onHTTPSImageLinkLongPress
+        return textView
+    }
+
+    func updateUIView(_ uiView: NoteWrappingTextView, context: Context) {
+        context.coordinator.onHTTPSImageLinkLongPress = onHTTPSImageLinkLongPress
+        uiView.textAlignment = textAlignment
+        uiView.dataDetectorTypes = dataDetectorTypes
+        if !(uiView.attributedText?.isEqual(to: attributedText) ?? false) {
+            uiView.attributedText = attributedText
+        }
+    }
+
+    final class Coordinator: NSObject {
+        var onHTTPSImageLinkLongPress: ((URL, CGPoint, UITextView) -> Void)?
+
+        @objc fileprivate func handleLinkLongPress(_ gesture: UILongPressGestureRecognizer) {
+            guard gesture.state == .began, let textView = gesture.view as? UITextView else { return }
+            let point = gesture.location(in: textView)
+            guard let pos = textView.closestPosition(to: point) else { return }
+            let idx = textView.offset(from: textView.beginningOfDocument, to: pos)
+            guard textView.textStorage.length > 0 else { return }
+            let safeIdx = min(max(0, idx), textView.textStorage.length - 1)
+            var effective = NSRange()
+            let link = textView.textStorage.attribute(.link, at: safeIdx, effectiveRange: &effective)
+            guard let url = link as? URL ?? (link as? String).flatMap(URL.init(string:)) else { return }
+            guard let scheme = url.scheme?.lowercased(), scheme == "http" || scheme == "https" else { return }
+            onHTTPSImageLinkLongPress?(url, point, textView)
+        }
     }
 }
 
 private struct FocusTextView: View {
     let attributedText: NSAttributedString
+    let textAlignment: NoteTextAlignment
+    let maximizePresentationSize: Bool
+    var dataDetectorsEnabled: Bool
+    var onHTTPSImageLinkLongPress: ((URL, CGPoint, UITextView) -> Void)?
 
     var body: some View {
         GeometryReader { proxy in
             let width = max(proxy.size.width, 1)
             let availableHeight = max(proxy.size.height * 0.65, 1)
-            let measuredHeight = max(measureHeight(constrainedTo: width), 1)
-            let scale = min(1.0, availableHeight / measuredHeight)
-            let rendered = (try? AttributedString(attributedText, including: \.uiKit)) ?? AttributedString(attributedText.string)
+            let fitted = fittedAttributedText(maxWidth: width, maxHeight: availableHeight)
 
-            Text(rendered)
-                .multilineTextAlignment(.center)
-                .lineLimit(nil)
-                .scaleEffect(scale, anchor: .center)
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+            ReadOnlyNoteTextView(
+                attributedText: fitted,
+                textAlignment: textAlignment.nsTextAlignment,
+                dataDetectorTypes: dataDetectorsEnabled ? NoteDataDetectors.enabledTypes : [],
+                onHTTPSImageLinkLongPress: onHTTPSImageLinkLongPress
+            )
+            .frame(maxWidth: width)
+            .fixedSize(horizontal: false, vertical: true)
+            .frame(maxWidth: width, maxHeight: .infinity, alignment: frameAlignment)
         }
         .frame(maxWidth: .infinity, maxHeight: 420)
     }
 
-    private func measureHeight(constrainedTo width: CGFloat) -> CGFloat {
-        let bounds = attributedText.boundingRect(
+    private var frameAlignment: Alignment {
+        switch textAlignment {
+        case .left: return .leading
+        case .center: return .center
+        case .right: return .trailing
+        }
+    }
+
+    private func fittedAttributedText(maxWidth: CGFloat, maxHeight: CGFloat) -> NSAttributedString {
+        if maximizePresentationSize {
+            return maximizeToFit(maxWidth: maxWidth, maxHeight: maxHeight)
+        }
+
+        let measuredHeight = max(measureHeight(of: attributedText, constrainedTo: maxWidth), 1)
+        let scale = min(1.0, maxHeight / measuredHeight)
+        return scaleFonts(in: attributedText, scale: scale)
+    }
+
+    private func maximizeToFit(maxWidth: CGFloat, maxHeight: CGFloat) -> NSAttributedString {
+        var low: CGFloat = 0.08
+        var high: CGFloat = 10.0
+        for _ in 0 ..< 22 {
+            let mid = (low + high) / 2
+            let candidate = scaleFonts(in: attributedText, scale: mid)
+            if measureHeight(of: candidate, constrainedTo: maxWidth) <= maxHeight {
+                low = mid
+            } else {
+                high = mid
+            }
+        }
+        return scaleFonts(in: attributedText, scale: low)
+    }
+
+    private func measureHeight(of text: NSAttributedString, constrainedTo width: CGFloat) -> CGFloat {
+        let bounds = text.boundingRect(
             with: CGSize(width: width, height: .greatestFiniteMagnitude),
             options: [.usesLineFragmentOrigin, .usesFontLeading],
             context: nil
         )
         return ceil(bounds.height)
     }
+
+    private func scaleFonts(in text: NSAttributedString, scale: CGFloat) -> NSAttributedString {
+        let mutable = NSMutableAttributedString(attributedString: text)
+        let full = NSRange(location: 0, length: mutable.length)
+        mutable.enumerateAttribute(.font, in: full) { value, range, _ in
+            guard let font = value as? UIFont else { return }
+            let newSize = max(6, font.pointSize * scale)
+            mutable.addAttribute(.font, value: UIFont(descriptor: font.fontDescriptor, size: newSize), range: range)
+        }
+        return mutable
+    }
 }
 
-private enum TextFormatAction {
+private enum TextFormatAction: Equatable {
     case bold
     case italic
     case underline
+    case font(String)
+    case alignment(NoteTextAlignment)
+    case refreshDerivedDisplay
 }
 
 private struct EditorCommand: Equatable {
@@ -250,28 +811,173 @@ private struct EditorCommand: Equatable {
     let action: TextFormatAction
 }
 
-private struct RichTextEditor: UIViewRepresentable {
+/// `UITextView` + SwiftUI often reports a huge intrinsic width (single-line width), so the editor grows past the screen.
+/// This subclass pins the text container to the laid-out width and only contributes intrinsic height.
+private final class NoteWrappingTextView: UITextView {
+    private static let pastedImageFontSize: CGFloat = 24
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        syncTextContainerToBoundsWidth()
+        invalidateIntrinsicContentSize()
+    }
+
+    override func paste(_ sender: Any?) {
+        if let image = UIPasteboard.general.image ?? UIPasteboard.general.images?.first {
+            insertPastedImage(image)
+            return
+        }
+        let insertionIndex = selectedRange.location
+        let lengthBefore = textStorage.length
+        super.paste(sender)
+        let delta = textStorage.length - lengthBefore
+        guard delta > 0 else { return }
+        let pastedRange = NSRange(location: insertionIndex, length: delta)
+        let mutable = NSMutableAttributedString(attributedString: attributedText)
+        NoteHTTPPasteboardLinkFormatting.applyHTTPDetectedLinks(in: mutable, range: pastedRange)
+        attributedText = mutable
+        delegate?.textViewDidChange?(self)
+    }
+
+    func insertPastedImage(_ image: UIImage) {
+        let horizontalInset = textContainerInset.left + textContainerInset.right
+        let padding = textContainer.lineFragmentPadding * 2
+        let maxW = max(1, bounds.width - horizontalInset - padding)
+        let scale = min(1, maxW / max(image.size.width, 1))
+        let sz = CGSize(width: max(1, image.size.width * scale), height: max(1, image.size.height * scale))
+        let attachment = NSTextAttachment()
+        attachment.image = image
+        attachment.bounds = CGRect(origin: .zero, size: sz)
+        let attr = NSMutableAttributedString(attachment: attachment)
+        let baseFont = font ?? typingAttributes[.font] as? UIFont ?? UIFont.systemFont(ofSize: Self.pastedImageFontSize, weight: .bold)
+        attr.addAttribute(.font, value: baseFont, range: NSRange(location: 0, length: attr.length))
+        let mutable = NSMutableAttributedString(attributedString: attributedText)
+        let insertAt = selectedRange
+        mutable.replaceCharacters(in: insertAt, with: attr)
+        attributedText = mutable
+        selectedRange = NSRange(location: insertAt.location + attr.length, length: 0)
+        delegate?.textViewDidChange?(self)
+    }
+
+    private func syncTextContainerToBoundsWidth() {
+        guard bounds.width > 0 else { return }
+        let horizontalInset = textContainerInset.left + textContainerInset.right
+        let padding = textContainer.lineFragmentPadding * 2
+        let contentWidth = max(0, bounds.width - horizontalInset - padding)
+        textContainer.widthTracksTextView = false
+        textContainer.size = CGSize(width: contentWidth, height: .greatestFiniteMagnitude)
+    }
+
+    override var intrinsicContentSize: CGSize {
+        let w = bounds.width
+        guard w > 0 else {
+            return CGSize(width: UIView.noIntrinsicMetric, height: UIView.noIntrinsicMetric)
+        }
+        syncTextContainerToBoundsWidth()
+        let height = sizeThatFits(CGSize(width: w, height: .greatestFiniteMagnitude)).height
+        return CGSize(width: UIView.noIntrinsicMetric, height: height)
+    }
+
+    override var attributedText: NSAttributedString! {
+        get { super.attributedText }
+        set {
+            super.attributedText = newValue
+            invalidateIntrinsicContentSize()
+        }
+    }
+}
+
+/// Pins hosted content to the system keyboard accessory width (critical on iPad where the bar must match the keyboard).
+private final class FullWidthInputAccessoryView: UIView {
+    init(hosted: UIView) {
+        super.init(frame: .zero)
+        backgroundColor = .clear
+        hosted.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(hosted)
+        NSLayoutConstraint.activate([
+            hosted.leadingAnchor.constraint(equalTo: leadingAnchor),
+            hosted.trailingAnchor.constraint(equalTo: trailingAnchor),
+            hosted.topAnchor.constraint(equalTo: topAnchor),
+            hosted.bottomAnchor.constraint(equalTo: bottomAnchor),
+        ])
+    }
+
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+private struct RichTextEditor<Accessory: View>: UIViewRepresentable {
     @Binding var attributedText: NSAttributedString
     @Binding var isFirstResponder: Bool
+    var preferredFontName: String
+    var textAlignment: NoteTextAlignment
+    var linePrefixMode: NoteLinePrefixMode
     let command: EditorCommand?
+    let onHTTPSImageLinkLongPress: (URL, CGPoint, UITextView) -> Void
     let onChange: () -> Void
+    @ViewBuilder var accessory: () -> Accessory
 
-    func makeUIView(context: Context) -> UITextView {
-        let textView = UITextView()
+    func makeUIView(context: Context) -> NoteWrappingTextView {
+        let textView = NoteWrappingTextView()
         textView.delegate = context.coordinator
+        textView.allowsEditingTextAttributes = true
         textView.isScrollEnabled = false
+        textView.alwaysBounceHorizontal = false
         textView.backgroundColor = .clear
-        textView.textAlignment = .center
-        textView.font = UIFont.systemFont(ofSize: 24, weight: .bold)
-        textView.tintColor = .systemBlue
+        textView.textAlignment = textAlignment.nsTextAlignment
+        textView.textContainer.lineBreakMode = .byWordWrapping
+        textView.textContainer.lineFragmentPadding = 0
+        let initial = EditorFont.uiFont(forToken: preferredFontName, size: EditorFont.editorPointSize)
+        textView.font = initial
+        textView.typingAttributes = [
+            .font: initial,
+            .paragraphStyle: RichTextEditor.paragraphStyle(for: textAlignment)
+        ]
+        textView.tintColor = UIColor(red: 28.0 / 255.0, green: 128.0 / 255.0, blue: 152.0 / 255.0, alpha: 1.0)
         textView.textContainerInset = UIEdgeInsets(top: 12, left: 0, bottom: 12, right: 0)
-        textView.attributedText = attributedText
+        textView.attributedText = NoteTextFormatting.makeDisplayAttributedText(
+            from: attributedText,
+            alignment: textAlignment,
+            linePrefixMode: linePrefixMode
+        )
+        context.coordinator.lastSyncedPreferredFont = preferredFontName
+        let longPress = UILongPressGestureRecognizer(target: context.coordinator, action: #selector(Coordinator.handleLinkLongPress(_:)))
+        longPress.minimumPressDuration = 0.45
+        textView.addGestureRecognizer(longPress)
+
+        let accessoryHost = UIHostingController(rootView: AnyView(accessory()))
+        accessoryHost.view.backgroundColor = .clear
+        let accessoryBar = FullWidthInputAccessoryView(hosted: accessoryHost.view)
+        textView.inputAccessoryView = accessoryBar
+        context.coordinator.accessoryHostingController = accessoryHost
+
         return textView
     }
 
-    func updateUIView(_ uiView: UITextView, context: Context) {
-        if uiView.attributedText != attributedText {
-            uiView.attributedText = attributedText
+    func updateUIView(_ uiView: NoteWrappingTextView, context: Context) {
+        context.coordinator.parent = self
+        context.coordinator.focusBinding = $isFirstResponder
+
+        context.coordinator.accessoryHostingController?.rootView = AnyView(accessory())
+        context.coordinator.accessoryHostingController?.view.invalidateIntrinsicContentSize()
+
+        uiView.textAlignment = textAlignment.nsTextAlignment
+        context.coordinator.syncTypingAlignment(in: uiView)
+
+        let display = NoteTextFormatting.makeDisplayAttributedText(
+            from: attributedText,
+            alignment: textAlignment,
+            linePrefixMode: linePrefixMode
+        )
+        if uiView.attributedText != display {
+            uiView.attributedText = display
+        }
+
+        if context.coordinator.lastSyncedPreferredFont != preferredFontName {
+            context.coordinator.lastSyncedPreferredFont = preferredFontName
+            context.coordinator.syncPreferredFont(to: uiView)
         }
 
         if isFirstResponder && !uiView.isFirstResponder {
@@ -283,8 +989,12 @@ private struct RichTextEditor: UIViewRepresentable {
         if let command, context.coordinator.lastAppliedCommandId != command.id {
             context.coordinator.lastAppliedCommandId = command.id
             context.coordinator.apply(command: command.action, to: uiView)
-            attributedText = uiView.attributedText
-            onChange()
+            let updatedDisplay = uiView.attributedText ?? NSAttributedString()
+            let updated = NoteTextFormatting.stripPrefixesFromDisplayString(updatedDisplay, mode: linePrefixMode)
+            DispatchQueue.main.async {
+                attributedText = updated
+                onChange()
+            }
         }
     }
 
@@ -293,16 +1003,72 @@ private struct RichTextEditor: UIViewRepresentable {
     }
 
     final class Coordinator: NSObject, UITextViewDelegate {
-        var parent: RichTextEditor
+        var parent: RichTextEditor<Accessory>
         var lastAppliedCommandId: Int = 0
+        var lastSyncedPreferredFont: String = ""
+        var focusBinding: Binding<Bool>?
+        var accessoryHostingController: UIHostingController<AnyView>?
 
-        init(parent: RichTextEditor) {
+        init(parent: RichTextEditor<Accessory>) {
             self.parent = parent
         }
 
+        @objc func handleLinkLongPress(_ gesture: UILongPressGestureRecognizer) {
+            guard gesture.state == .began, let textView = gesture.view as? UITextView else { return }
+            let point = gesture.location(in: textView)
+            guard let pos = textView.closestPosition(to: point) else { return }
+            let idx = textView.offset(from: textView.beginningOfDocument, to: pos)
+            guard textView.textStorage.length > 0 else { return }
+            let safeIdx = min(max(0, idx), textView.textStorage.length - 1)
+            var effective = NSRange()
+            let link = textView.textStorage.attribute(.link, at: safeIdx, effectiveRange: &effective)
+            guard let url = link as? URL ?? (link as? String).flatMap(URL.init(string:)) else { return }
+            guard let scheme = url.scheme?.lowercased(), scheme == "http" || scheme == "https" else { return }
+            parent.onHTTPSImageLinkLongPress(url, point, textView)
+        }
+
+        func textViewDidBeginEditing(_ textView: UITextView) {
+            focusBinding?.wrappedValue = true
+        }
+
+        func textViewDidEndEditing(_ textView: UITextView) {
+            focusBinding?.wrappedValue = false
+        }
+
         func textViewDidChange(_ textView: UITextView) {
-            parent.attributedText = textView.attributedText
+            textView.invalidateIntrinsicContentSize()
+            let stripped = NoteTextFormatting.stripPrefixesFromDisplayString(textView.attributedText, mode: parent.linePrefixMode)
+            parent.attributedText = stripped
             parent.onChange()
+        }
+
+        func textViewDidChangeSelection(_ textView: UITextView) {
+            guard parent.linePrefixMode != .none else { return }
+            let clamped = clampedSelection(textView.selectedRange, in: textView)
+            if !NSEqualRanges(clamped, textView.selectedRange) {
+                textView.selectedRange = clamped
+            }
+        }
+
+        func textView(
+            _ textView: UITextView,
+            shouldChangeTextIn range: NSRange,
+            replacementText text: String
+        ) -> Bool {
+            guard parent.linePrefixMode != .none else { return true }
+            let locked = NoteTextFormatting.lockedPrefixRanges(in: textView.text as NSString, mode: parent.linePrefixMode)
+            return !locked.contains(where: { NSIntersectionRange($0, range).length > 0 })
+        }
+
+        func syncPreferredFont(to textView: UITextView) {
+            let token = parent.preferredFontName
+            let size = (textView.typingAttributes[.font] as? UIFont)?.pointSize ?? EditorFont.editorPointSize
+            let font = EditorFont.uiFont(forToken: token, size: size)
+            if textView.text.isEmpty {
+                textView.font = font
+            }
+            textView.typingAttributes[.font] = font
+            textView.invalidateIntrinsicContentSize()
         }
 
         func apply(command: TextFormatAction, to textView: UITextView) {
@@ -316,10 +1082,47 @@ private struct RichTextEditor: UIViewRepresentable {
                 toggleTrait(.traitItalic, in: mutable, selection: selection, typingAttributes: &textView.typingAttributes)
             case .underline:
                 toggleUnderline(in: mutable, selection: selection, typingAttributes: &textView.typingAttributes)
+            case .font(let token):
+                applyFontToken(token, in: mutable, selection: selection, typingAttributes: &textView.typingAttributes)
+            case .alignment(let alignment):
+                applyAlignment(alignment, in: mutable, selection: selection, typingAttributes: &textView.typingAttributes)
+                textView.textAlignment = alignment.nsTextAlignment
+            case .refreshDerivedDisplay:
+                break
             }
 
             textView.attributedText = mutable
             textView.selectedRange = selection
+            textView.invalidateIntrinsicContentSize()
+        }
+
+        private func defaultFallbackFont() -> UIFont {
+            EditorFont.uiFont(forToken: parent.preferredFontName, size: EditorFont.editorPointSize)
+        }
+
+        private func applyFontToken(
+            _ token: String,
+            in text: NSMutableAttributedString,
+            selection: NSRange,
+            typingAttributes: inout [NSAttributedString.Key: Any]
+        ) {
+            if selection.length == 0 {
+                let size = (typingAttributes[.font] as? UIFont)?.pointSize ?? EditorFont.editorPointSize
+                typingAttributes[.font] = EditorFont.uiFont(forToken: token, size: size)
+                return
+            }
+
+            text.enumerateAttribute(.font, in: selection) { value, range, _ in
+                let old = (value as? UIFont) ?? defaultFallbackFont()
+                let size = old.pointSize
+                let base = EditorFont.uiFont(forToken: token, size: size)
+                let traits = old.fontDescriptor.symbolicTraits
+                if let descriptor = base.fontDescriptor.withSymbolicTraits(traits) {
+                    text.addAttribute(.font, value: UIFont(descriptor: descriptor, size: size), range: range)
+                } else {
+                    text.addAttribute(.font, value: base, range: range)
+                }
+            }
         }
 
         private func toggleTrait(
@@ -329,13 +1132,13 @@ private struct RichTextEditor: UIViewRepresentable {
             typingAttributes: inout [NSAttributedString.Key: Any]
         ) {
             guard selection.length > 0 else {
-                let currentFont = (typingAttributes[.font] as? UIFont) ?? UIFont.systemFont(ofSize: 24, weight: .bold)
+                let currentFont = (typingAttributes[.font] as? UIFont) ?? defaultFallbackFont()
                 typingAttributes[.font] = toggledFont(from: currentFont, trait: trait)
                 return
             }
 
             text.enumerateAttribute(.font, in: selection) { value, range, _ in
-                let existing = (value as? UIFont) ?? UIFont.systemFont(ofSize: 24, weight: .bold)
+                let existing = (value as? UIFont) ?? defaultFallbackFont()
                 text.addAttribute(.font, value: toggledFont(from: existing, trait: trait), range: range)
             }
         }
@@ -369,6 +1172,54 @@ private struct RichTextEditor: UIViewRepresentable {
                 text.addAttribute(.underlineStyle, value: next, range: range)
             }
         }
+
+        private func applyAlignment(
+            _ alignment: NoteTextAlignment,
+            in text: NSMutableAttributedString,
+            selection: NSRange,
+            typingAttributes: inout [NSAttributedString.Key: Any]
+        ) {
+            let paragraphStyle = RichTextEditor.paragraphStyle(for: alignment)
+            let applyRange: NSRange
+            if selection.length > 0 {
+                applyRange = selection
+            } else {
+                applyRange = NSRange(location: 0, length: text.length)
+            }
+            if applyRange.length > 0 {
+                text.addAttribute(.paragraphStyle, value: paragraphStyle, range: applyRange)
+            }
+            typingAttributes[.paragraphStyle] = paragraphStyle
+        }
+
+        private func clampedSelection(_ selection: NSRange, in textView: UITextView) -> NSRange {
+            let locked = NoteTextFormatting.lockedPrefixRanges(in: textView.text as NSString, mode: parent.linePrefixMode)
+            guard !locked.isEmpty else { return selection }
+
+            var adjusted = selection
+            for range in locked {
+                if selection.length == 0 {
+                    if selection.location >= range.location && selection.location < NSMaxRange(range) {
+                        adjusted.location = NSMaxRange(range)
+                    }
+                } else if NSIntersectionRange(range, selection).length > 0 {
+                    adjusted.location = max(adjusted.location, NSMaxRange(range))
+                    adjusted.length = max(0, selection.length - NSIntersectionRange(range, selection).length)
+                }
+            }
+            return adjusted
+        }
+
+        func syncTypingAlignment(in textView: UITextView) {
+            textView.typingAttributes[.paragraphStyle] = RichTextEditor.paragraphStyle(for: parent.textAlignment)
+        }
+    }
+
+    private static func paragraphStyle(for alignment: NoteTextAlignment) -> NSParagraphStyle {
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = alignment.nsTextAlignment
+        paragraphStyle.lineBreakMode = .byWordWrapping
+        return paragraphStyle
     }
 }
 

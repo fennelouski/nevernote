@@ -13,7 +13,7 @@
 + (UIColor *)colorWithHexString:(NSString *)str {
     const char *cStr = [str cStringUsingEncoding:NSASCIIStringEncoding];
     long x = strtol(cStr+1, NULL, 16);
-    return [UIColor colorWithHex:x];
+    return [UIColor colorWithHex:(UInt32)x];
 }
 
 + (UIColor *)colorWithHex:(UInt32)col {
@@ -27,7 +27,7 @@
 #pragma mark - App icon
 
 + (UIColor *)appIconBlueColor {
-	return [UIColor colorWithRed:42.0/255.0 green:163.0/255.0 blue:218.0/255.0 alpha:1.0];
+	return [UIColor colorWithRed:28.0/255.0 green:128.0/255.0 blue:152.0/255.0 alpha:1.0];
 }
 
 #pragma mark - App colors
@@ -37,7 +37,7 @@
 }
 
 + (UIColor *)blueAppColor{
-    return [UIColor colorWithRed:0/255.0f green:122/255.0f blue:255/255.0f alpha:1.0f];
+    return [UIColor appIconBlueColor];
 }
 
 + (UIColor *)lightGrayAppColor {

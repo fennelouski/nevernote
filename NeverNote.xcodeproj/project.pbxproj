@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A2B3C4D5E6F789012345678 /* NNOnboardingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C3D4E5F6789012345678A1 /* NNOnboardingManager.m */; };
+		2B3C4D5E6F789012345678A1 /* NNOnboardingTooltipView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E5F6789012345678A1B2C3 /* NNOnboardingTooltipView.m */; };
+		33B70CB51399476FAEFB55D8 /* NNSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 478AA74701524D5BB5AE53F4 /* NNSettingsViewController.m */; };
+		3C4D5E6F789012345678A1B2 /* NNOnboardingCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = F6789012345678A1B2C3D4E5 /* NNOnboardingCoordinator.m */; };
 		8008A38B191BC5C10071B32D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8008A38A191BC5C10071B32D /* Default-568h@2x.png */; };
 		800D2E021947919700E904AA /* UIColor+AppColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 800D2E011947919700E904AA /* UIColor+AppColors.m */; };
 		8015691419B1189F00A4A083 /* NNListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8015691319B1189F00A4A083 /* NNListViewController.m */; };
@@ -23,7 +27,6 @@
 		805898791916641F00352439 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 805898781916641F00352439 /* UIKit.framework */; };
 		8058987B1916641F00352439 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8058987A1916641F00352439 /* CoreData.framework */; };
 		805898811916641F00352439 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8058987F1916641F00352439 /* InfoPlist.strings */; };
-		805898831916641F00352439 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 805898821916641F00352439 /* main.m */; };
 		805898871916641F00352439 /* NNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 805898861916641F00352439 /* NNAppDelegate.m */; };
 		8058988A1916641F00352439 /* NeverNote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 805898881916641F00352439 /* NeverNote.xcdatamodeld */; };
 		8058988C1916641F00352439 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8058988B1916641F00352439 /* Images.xcassets */; };
@@ -50,11 +53,27 @@
 		80B9E23B191AFDA1008B377C /* Launch Screen iPhone Portrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 80B9E235191AFDA1008B377C /* Launch Screen iPhone Portrait@2x.png */; };
 		80B9E23D191AFDF8008B377C /* Launch Screen iPhone Portrait 4-inch.png in Resources */ = {isa = PBXBuildFile; fileRef = 80B9E23C191AFDF8008B377C /* Launch Screen iPhone Portrait 4-inch.png */; };
 		80ECF9371964519E00EDABD1 /* NNColorObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 80ECF9361964519E00EDABD1 /* NNColorObject.m */; };
+		90AA00021000000000000001 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA00011000000000000001 /* ContentView.swift */; };
+		90AA00021000000000000002 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA00011000000000000002 /* Item.swift */; };
+		90AA00021000000000000003 /* NevernoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA00011000000000000003 /* NevernoteApp.swift */; };
+		90AA00031000000000000102 /* NoteTextImageRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA00031000000000000101 /* NoteTextImageRenderer.swift */; };
+		90AA00031000000000000104 /* ActivityShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA00031000000000000103 /* ActivityShareSheet.swift */; };
+		90AA00031000000000000106 /* ScreenshotSharePromptOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA00031000000000000105 /* ScreenshotSharePromptOverlay.swift */; };
+		90AA0003100000000000010A /* NoteImageURLPrefetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA00031000000000000109 /* NoteImageURLPrefetcher.swift */; };
 		9ECED7F59E864A5DAB31195E /* NNSettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DE51B2428F42E399C83D79 /* NNSettingsManager.m */; };
-		33B70CB51399476FAEFB55D8 /* NNSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 478AA74701524D5BB5AE53F4 /* NNSettingsViewController.m */; };
-		1A2B3C4D5E6F789012345678 /* NNOnboardingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C3D4E5F6789012345678A1 /* NNOnboardingManager.m */; };
-		2B3C4D5E6F789012345678A1 /* NNOnboardingTooltipView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E5F6789012345678A1B2C3 /* NNOnboardingTooltipView.m */; };
-		3C4D5E6F789012345678A1B2 /* NNOnboardingCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = F6789012345678A1B2C3D4E5 /* NNOnboardingCoordinator.m */; };
+		A7B1C2D3E4F5678901234567 /* NNLogoTraceView.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B1C2D3E4F5678901234569 /* NNLogoTraceView.m */; };
+		A10000010191664200352401 /* NoteRichTextCodec.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000020191664200352401 /* NoteRichTextCodec.swift */; };
+		A10000030191664200352401 /* NeverNoteCloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000040191664200352401 /* NeverNoteCloudKit.swift */; };
+		A10000050191664200352401 /* NoteRichTextCodec.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000020191664200352401 /* NoteRichTextCodec.swift */; };
+		A10000060191664200352401 /* NeverNoteCloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000040191664200352401 /* NeverNoteCloudKit.swift */; };
+		A100001B0191664200352401 /* NevernoteModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100001A0191664200352401 /* NevernoteModelContainer.swift */; };
+		A100001C0191664200352401 /* NevernoteModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100001A0191664200352401 /* NevernoteModelContainer.swift */; };
+		A10000070191664200352401 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA00011000000000000002 /* Item.swift */; };
+		A10000080191664200352401 /* NevernoteWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000090191664200352401 /* NevernoteWatchApp.swift */; };
+		A100000A0191664200352401 /* WatchRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100000B0191664200352401 /* WatchRootView.swift */; };
+		A100000E0191664200352401 /* NeverNoteWatchWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100000F0191664200352401 /* NeverNoteWatchWidget.swift */; };
+		A10000100191664200352401 /* NeverNote Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = A10000110191664200352401 /* NeverNote Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A10000120191664200352401 /* NeverNote Watch Widget Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A10000130191664200352401 /* NeverNote Watch Widget Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,9 +84,51 @@
 			remoteGlobalIDString = 805898701916641F00352439;
 			remoteInfo = NeverNote;
 		};
+		A10000140191664200352401 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 805898691916641F00352439 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A10000150191664200352401;
+			remoteInfo = "NeverNote Watch App";
+		};
+		A10000160191664200352401 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 805898691916641F00352439 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A10000170191664200352401;
+			remoteInfo = "NeverNote Watch Widget Extension";
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A100002D0191664200352401 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				A10000100191664200352401 /* NeverNote Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A10000290191664200352401 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A10000120191664200352401 /* NeverNote Watch Widget Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		30F8F0CBA3F646DDA8B85864 /* NNSettingsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNSettingsManager.h; sourceTree = "<group>"; };
+		478AA74701524D5BB5AE53F4 /* NNSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNSettingsViewController.m; sourceTree = "<group>"; };
+		60DE51B2428F42E399C83D79 /* NNSettingsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNSettingsManager.m; sourceTree = "<group>"; };
 		8008A38A191BC5C10071B32D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		800D2E001947919700E904AA /* UIColor+AppColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+AppColors.h"; sourceTree = "<group>"; };
 		800D2E011947919700E904AA /* UIColor+AppColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AppColors.m"; sourceTree = "<group>"; };
@@ -126,16 +187,33 @@
 		80B9E23C191AFDF8008B377C /* Launch Screen iPhone Portrait 4-inch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Launch Screen iPhone Portrait 4-inch.png"; sourceTree = "<group>"; };
 		80ECF9351964519E00EDABD1 /* NNColorObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNColorObject.h; sourceTree = "<group>"; };
 		80ECF9361964519E00EDABD1 /* NNColorObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNColorObject.m; sourceTree = "<group>"; };
-		30F8F0CBA3F646DDA8B85864 /* NNSettingsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNSettingsManager.h; sourceTree = "<group>"; };
-		60DE51B2428F42E399C83D79 /* NNSettingsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNSettingsManager.m; sourceTree = "<group>"; };
-		C49CBDEC93FC4C8192723291 /* NNSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNSettingsViewController.h; sourceTree = "<group>"; };
-		478AA74701524D5BB5AE53F4 /* NNSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNSettingsViewController.m; sourceTree = "<group>"; };
+		90AA00011000000000000001 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		90AA00011000000000000002 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		90AA00011000000000000003 /* NevernoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NevernoteApp.swift; sourceTree = "<group>"; };
+		90AA00031000000000000101 /* NoteTextImageRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTextImageRenderer.swift; sourceTree = "<group>"; };
+		90AA00031000000000000103 /* ActivityShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityShareSheet.swift; sourceTree = "<group>"; };
+		90AA00031000000000000105 /* ScreenshotSharePromptOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotSharePromptOverlay.swift; sourceTree = "<group>"; };
+		90AA00031000000000000107 /* NeverNote-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NeverNote-Bridging-Header.h"; sourceTree = "<group>"; };
+		90AA00031000000000000109 /* NoteImageURLPrefetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteImageURLPrefetcher.swift; sourceTree = "<group>"; };
 		A1B2C3D4E5F6789012345678 /* NNOnboardingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNOnboardingManager.h; sourceTree = "<group>"; };
+		A7B1C2D3E4F5678901234568 /* NNLogoTraceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNLogoTraceView.h; sourceTree = "<group>"; };
+		A7B1C2D3E4F5678901234569 /* NNLogoTraceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNLogoTraceView.m; sourceTree = "<group>"; };
 		B2C3D4E5F6789012345678A1 /* NNOnboardingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNOnboardingManager.m; sourceTree = "<group>"; };
 		C3D4E5F6789012345678A1B2 /* NNOnboardingTooltipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNOnboardingTooltipView.h; sourceTree = "<group>"; };
+		C49CBDEC93FC4C8192723291 /* NNSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNSettingsViewController.h; sourceTree = "<group>"; };
 		D4E5F6789012345678A1B2C3 /* NNOnboardingTooltipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNOnboardingTooltipView.m; sourceTree = "<group>"; };
 		E5F6789012345678A1B2C3D4 /* NNOnboardingCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNOnboardingCoordinator.h; sourceTree = "<group>"; };
 		F6789012345678A1B2C3D4E5 /* NNOnboardingCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNOnboardingCoordinator.m; sourceTree = "<group>"; };
+		A10000020191664200352401 /* NoteRichTextCodec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRichTextCodec.swift; sourceTree = "<group>"; };
+		A10000040191664200352401 /* NeverNoteCloudKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeverNoteCloudKit.swift; sourceTree = "<group>"; };
+		A100001A0191664200352401 /* NevernoteModelContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NevernoteModelContainer.swift; sourceTree = "<group>"; };
+		A10000090191664200352401 /* NevernoteWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NevernoteWatchApp.swift; sourceTree = "<group>"; };
+		A100000B0191664200352401 /* WatchRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchRootView.swift; sourceTree = "<group>"; };
+		A10000180191664200352401 /* NeverNoteWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NeverNoteWatch.entitlements; sourceTree = "<group>"; };
+		A100000F0191664200352401 /* NeverNoteWatchWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeverNoteWatchWidget.swift; sourceTree = "<group>"; };
+		A10000190191664200352401 /* NeverNote.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NeverNote.entitlements; sourceTree = "<group>"; };
+		A10000110191664200352401 /* NeverNote Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NeverNote Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A10000130191664200352401 /* NeverNote Watch Widget Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "NeverNote Watch Widget Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +240,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A10000240191664200352401 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A10000250191664200352401 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -169,7 +261,10 @@
 			isa = PBXGroup;
 			children = (
 				8008A38A191BC5C10071B32D /* Default-568h@2x.png */,
-				8058987C1916641F00352439 /* NeverNote */,
+				90AA00011000000000000004 /* NeverNote */,
+				A10000220191664200352401 /* NeverNoteWatch */,
+				A10000230191664200352401 /* NeverNoteWatchWidget */,
+				8058987C1916641F00352439 /* NeverNote1 */,
 				805898991916642000352439 /* NeverNoteTests */,
 				805898731916641F00352439 /* Frameworks */,
 				805898721916641F00352439 /* Products */,
@@ -180,6 +275,8 @@
 			isa = PBXGroup;
 			children = (
 				805898711916641F00352439 /* NeverNote.app */,
+				A10000110191664200352401 /* NeverNote Watch App.app */,
+				A10000130191664200352401 /* NeverNote Watch Widget Extension.appex */,
 				805898911916642000352439 /* NeverNoteTests.xctest */,
 			);
 			name = Products;
@@ -198,7 +295,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		8058987C1916641F00352439 /* NeverNote */ = {
+		8058987C1916641F00352439 /* NeverNote1 */ = {
 			isa = PBXGroup;
 			children = (
 				805898851916641F00352439 /* NNAppDelegate.h */,
@@ -237,6 +334,8 @@
 				D4E5F6789012345678A1B2C3 /* NNOnboardingTooltipView.m */,
 				E5F6789012345678A1B2C3D4 /* NNOnboardingCoordinator.h */,
 				F6789012345678A1B2C3D4E5 /* NNOnboardingCoordinator.m */,
+				A7B1C2D3E4F5678901234568 /* NNLogoTraceView.h */,
+				A7B1C2D3E4F5678901234569 /* NNLogoTraceView.m */,
 				8058988B1916641F00352439 /* Images.xcassets */,
 				805898881916641F00352439 /* NeverNote.xcdatamodeld */,
 				8058987D1916641F00352439 /* Supporting Files */,
@@ -311,6 +410,43 @@
 			name = Icon;
 			sourceTree = "<group>";
 		};
+		90AA00011000000000000004 /* NeverNote */ = {
+			isa = PBXGroup;
+			children = (
+				90AA00011000000000000001 /* ContentView.swift */,
+				90AA00011000000000000002 /* Item.swift */,
+				90AA00011000000000000003 /* NevernoteApp.swift */,
+				A10000020191664200352401 /* NoteRichTextCodec.swift */,
+				A10000040191664200352401 /* NeverNoteCloudKit.swift */,
+				A100001A0191664200352401 /* NevernoteModelContainer.swift */,
+				A10000190191664200352401 /* NeverNote.entitlements */,
+				90AA00031000000000000101 /* NoteTextImageRenderer.swift */,
+				90AA00031000000000000103 /* ActivityShareSheet.swift */,
+				90AA00031000000000000105 /* ScreenshotSharePromptOverlay.swift */,
+				90AA00031000000000000109 /* NoteImageURLPrefetcher.swift */,
+				90AA00031000000000000107 /* NeverNote-Bridging-Header.h */,
+			);
+			path = NeverNote;
+			sourceTree = "<group>";
+		};
+		A10000220191664200352401 /* NeverNoteWatch */ = {
+			isa = PBXGroup;
+			children = (
+				A10000090191664200352401 /* NevernoteWatchApp.swift */,
+				A100000B0191664200352401 /* WatchRootView.swift */,
+				A10000180191664200352401 /* NeverNoteWatch.entitlements */,
+			);
+			path = NeverNoteWatch;
+			sourceTree = "<group>";
+		};
+		A10000230191664200352401 /* NeverNoteWatchWidget */ = {
+			isa = PBXGroup;
+			children = (
+				A100000F0191664200352401 /* NeverNoteWatchWidget.swift */,
+			);
+			path = NeverNoteWatchWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -321,10 +457,12 @@
 				8058986D1916641F00352439 /* Sources */,
 				8058986E1916641F00352439 /* Frameworks */,
 				8058986F1916641F00352439 /* Resources */,
+				A100002D0191664200352401 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A100002E0191664200352401 /* PBXTargetDependency */,
 			);
 			name = NeverNote;
 			productName = NeverNote;
@@ -349,6 +487,41 @@
 			productReference = 805898911916642000352439 /* NeverNoteTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		A10000150191664200352401 /* NeverNote Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A10000260191664200352401 /* Build configuration list for PBXNativeTarget "NeverNote Watch App" */;
+			buildPhases = (
+				A10000270191664200352401 /* Sources */,
+				A10000240191664200352401 /* Frameworks */,
+				A10000280191664200352401 /* Resources */,
+				A10000290191664200352401 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A100002A0191664200352401 /* PBXTargetDependency */,
+			);
+			name = "NeverNote Watch App";
+			productName = "NeverNote Watch App";
+			productReference = A10000110191664200352401 /* NeverNote Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A10000170191664200352401 /* NeverNote Watch Widget Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A100002B0191664200352401 /* Build configuration list for PBXNativeTarget "NeverNote Watch Widget Extension" */;
+			buildPhases = (
+				A100002C0191664200352401 /* Sources */,
+				A10000250191664200352401 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "NeverNote Watch Widget Extension";
+			productName = "NeverNote Watch Widget Extension";
+			productReference = A10000130191664200352401 /* NeverNote Watch Widget Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -359,16 +532,29 @@
 				LastUpgradeCheck = 1500;
 				ORGANIZATIONNAME = "Nathan Fennel";
 				TargetAttributes = {
+					805898701916641F00352439 = {
+						DevelopmentTeam = EJLR2RPSV2;
+						ProvisioningStyle = Automatic;
+					};
 					805898901916642000352439 = {
 						TestTargetID = 805898701916641F00352439;
 					};
+					A10000150191664200352401 = {
+						DevelopmentTeam = EJLR2RPSV2;
+						ProvisioningStyle = Automatic;
+					};
+					A10000170191664200352401 = {
+						DevelopmentTeam = EJLR2RPSV2;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
-			buildConfigurationList = 8058986C1916641F00352439 /* Build configuration list for PBXProject "NeverNote" */;
+			buildConfigurationList = 8058986C1916641F00352439 /* Build configuration list for PBXProject "Nevernote" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 805898681916641F00352439;
@@ -377,6 +563,8 @@
 			projectRoot = "";
 			targets = (
 				805898701916641F00352439 /* NeverNote */,
+				A10000150191664200352401 /* NeverNote Watch App */,
+				A10000170191664200352401 /* NeverNote Watch Widget Extension */,
 				805898901916642000352439 /* NeverNoteTests */,
 			);
 		};
@@ -415,6 +603,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A10000280191664200352401 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -422,6 +617,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90AA00021000000000000003 /* NevernoteApp.swift in Sources */,
+				A10000010191664200352401 /* NoteRichTextCodec.swift in Sources */,
+				A10000030191664200352401 /* NeverNoteCloudKit.swift in Sources */,
+				A100001B0191664200352401 /* NevernoteModelContainer.swift in Sources */,
+				90AA00031000000000000102 /* NoteTextImageRenderer.swift in Sources */,
+				90AA00031000000000000104 /* ActivityShareSheet.swift in Sources */,
+				90AA00031000000000000106 /* ScreenshotSharePromptOverlay.swift in Sources */,
+				90AA0003100000000000010A /* NoteImageURLPrefetcher.swift in Sources */,
 				803137C21965F15B00B78BC5 /* UNICalendarPopOver.m in Sources */,
 				800D2E021947919700E904AA /* UIColor+AppColors.m in Sources */,
 				8015691419B1189F00A4A083 /* NNListViewController.m in Sources */,
@@ -433,15 +636,17 @@
 				805898871916641F00352439 /* NNAppDelegate.m in Sources */,
 				8056F5FF196591BE009CEA81 /* UNITaskCreatorViewController.m in Sources */,
 				80ECF9371964519E00EDABD1 /* NNColorObject.m in Sources */,
+				90AA00021000000000000001 /* ContentView.swift in Sources */,
+				90AA00021000000000000002 /* Item.swift in Sources */,
 				803137BC1965D08E00B78BC5 /* UNIOptionsView.m in Sources */,
 				803CDE4C196B157600C1C789 /* UNIRepeatOptionsView.m in Sources */,
 				803CDE46196AFFE600C1C789 /* UNITimeInputView.m in Sources */,
-				805898831916641F00352439 /* main.m in Sources */,
 				9ECED7F59E864A5DAB31195E /* NNSettingsManager.m in Sources */,
 				33B70CB51399476FAEFB55D8 /* NNSettingsViewController.m in Sources */,
 				1A2B3C4D5E6F789012345678 /* NNOnboardingManager.m in Sources */,
 				2B3C4D5E6F789012345678A1 /* NNOnboardingTooltipView.m in Sources */,
 				3C4D5E6F789012345678A1B2 /* NNOnboardingCoordinator.m in Sources */,
+				A7B1C2D3E4F5678901234567 /* NNLogoTraceView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,6 +658,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A10000270191664200352401 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000080191664200352401 /* NevernoteWatchApp.swift in Sources */,
+				A100000A0191664200352401 /* WatchRootView.swift in Sources */,
+				A10000050191664200352401 /* NoteRichTextCodec.swift in Sources */,
+				A10000060191664200352401 /* NeverNoteCloudKit.swift in Sources */,
+				A100001C0191664200352401 /* NevernoteModelContainer.swift in Sources */,
+				A10000070191664200352401 /* Item.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A100002C0191664200352401 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A100000E0191664200352401 /* NeverNoteWatchWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -460,6 +686,16 @@
 			isa = PBXTargetDependency;
 			target = 805898701916641F00352439 /* NeverNote */;
 			targetProxy = 805898971916642000352439 /* PBXContainerItemProxy */;
+		};
+		A100002E0191664200352401 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A10000150191664200352401 /* NeverNote Watch App */;
+			targetProxy = A10000140191664200352401 /* PBXContainerItemProxy */;
+		};
+		A100002A0191664200352401 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A10000170191664200352401 /* NeverNote Watch Widget Extension */;
+			targetProxy = A10000160191664200352401 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -559,12 +795,33 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ENABLE_APP_INTENTS_METADATA_GENERATION = NO;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EJLR2RPSV2;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "NeverNote/NeverNote-Prefix.pch";
-				INFOPLIST_FILE = "NeverNote/NeverNote-Info.plist";
+				GCC_PREFIX_HEADER = "NeverNote1/NeverNote-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"NEVERNOTE_SWIFTUI_ROOT=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "NeverNote1/NeverNote-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				CODE_SIGN_ENTITLEMENTS = NeverNote/NeverNote.entitlements;
+				OTHER_LDFLAGS = "$(inherited) -weak_framework AppIntents";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nathanfennel.NeverNote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "NeverNote/NeverNote-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -573,13 +830,159 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ENABLE_APP_INTENTS_METADATA_GENERATION = NO;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EJLR2RPSV2;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "NeverNote/NeverNote-Prefix.pch";
-				INFOPLIST_FILE = "NeverNote/NeverNote-Info.plist";
+				GCC_PREFIX_HEADER = "NeverNote1/NeverNote-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"NEVERNOTE_SWIFTUI_ROOT=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "NeverNote1/NeverNote-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				CODE_SIGN_ENTITLEMENTS = NeverNote/NeverNote.entitlements;
+				OTHER_LDFLAGS = "$(inherited) -weak_framework AppIntents";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nathanfennel.NeverNote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "NeverNote/NeverNote-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		A100002F0191664200352401 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = NeverNoteWatch/NeverNoteWatch.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = EJLR2RPSV2;
+				ENABLE_APP_INTENTS_METADATA_GENERATION = NO;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Nevernote;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.nathanfennel.NeverNote;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "$(inherited) -weak_framework AppIntents";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nathanfennel.NeverNote.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchos watchsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Debug;
+		};
+		A10000300191664200352401 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = NeverNoteWatch/NeverNoteWatch.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = EJLR2RPSV2;
+				ENABLE_APP_INTENTS_METADATA_GENERATION = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Nevernote;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.nathanfennel.NeverNote;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "$(inherited) -weak_framework AppIntents";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nathanfennel.NeverNote.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchos watchsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Release;
+		};
+		A10000310191664200352401 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = EJLR2RPSV2;
+				ENABLE_APP_INTENTS_METADATA_GENERATION = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Nevernote;
+				INFOPLIST_KEY_NSExtensionPointIdentifier = "com.apple.widgetkit-extension";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "$(inherited) -weak_framework AppIntents";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nathanfennel.NeverNote.watchkitapp.NeverNoteWatchWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchos watchsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Debug;
+		};
+		A10000320191664200352401 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = EJLR2RPSV2;
+				ENABLE_APP_INTENTS_METADATA_GENERATION = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Nevernote;
+				INFOPLIST_KEY_NSExtensionPointIdentifier = "com.apple.widgetkit-extension";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "$(inherited) -weak_framework AppIntents";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nathanfennel.NeverNote.watchkitapp.NeverNoteWatchWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchos watchsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
 			};
 			name = Release;
 		};
@@ -593,7 +996,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "NeverNote/NeverNote-Prefix.pch";
+				GCC_PREFIX_HEADER = "NeverNote1/NeverNote-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -615,7 +1018,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "NeverNote/NeverNote-Prefix.pch";
+				GCC_PREFIX_HEADER = "NeverNote1/NeverNote-Prefix.pch";
 				INFOPLIST_FILE = "NeverNoteTests/NeverNoteTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -626,7 +1029,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8058986C1916641F00352439 /* Build configuration list for PBXProject "NeverNote" */ = {
+		8058986C1916641F00352439 /* Build configuration list for PBXProject "Nevernote" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				805898A11916642000352439 /* Debug */,
@@ -649,6 +1052,24 @@
 			buildConfigurations = (
 				805898A71916642000352439 /* Debug */,
 				805898A81916642000352439 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A10000260191664200352401 /* Build configuration list for PBXNativeTarget "NeverNote Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A100002F0191664200352401 /* Debug */,
+				A10000300191664200352401 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A100002B0191664200352401 /* Build configuration list for PBXNativeTarget "NeverNote Watch Widget Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A10000310191664200352401 /* Debug */,
+				A10000320191664200352401 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -1,0 +1,5 @@
+# Legacy UIKit / Objective-C — excluded from default Cursor indexing (SwiftUI work uses NeverNote/).
+NeverNote1/**/*.m
+NeverNote1/**/*.h
+NeverNoteTests/**/*.m
+

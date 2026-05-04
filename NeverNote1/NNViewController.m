@@ -9,6 +9,7 @@
 #import "NNViewController.h"
 #import <CoreMotion/CoreMotion.h>
 #import "NNColorObject.h"
+#import "UIColor+AppColors.h"
 #import "NNSettingsManager.h"
 #import "NNSettingsViewController.h"
 
@@ -90,7 +91,6 @@ BOOL ONE_SHAKE = YES;
         [self.view setBackgroundColor:[UIColor systemBackgroundColor]];
 
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resetView) name:UIApplicationDidEnterBackgroundNotification object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setUpStatusBar:) name:UIApplicationDidChangeStatusBarOrientationNotification object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(settingsDidChange:) name:@"NNSettingsDidChangeNotification" object:nil];
@@ -118,6 +118,18 @@ BOOL ONE_SHAKE = YES;
     if (self.settingsManager.clearOnLaunchEnabled) {
         [self.textView setText:@""];
     }
+
+    if (@available(iOS 17.0, *)) {
+        __weak typeof(self) weakSelf = self;
+        [self registerForTraitChanges:@[UITraitUserInterfaceStyle.class] withHandler:^(__kindof id<UITraitEnvironment> _Nonnull traitEnvironment, UITraitCollection * _Nonnull previousTraitCollection) {
+            __strong typeof(weakSelf) self = weakSelf;
+            if (self == nil) { return; }
+            if (self.traitCollection.userInterfaceStyle != previousTraitCollection.userInterfaceStyle) {
+                [self updateAppearanceForCurrentTraitCollection];
+            }
+        }];
+    }
+
 }
 
 #pragma mark - Status Bar
@@ -136,15 +148,12 @@ BOOL ONE_SHAKE = YES;
 }
 
 - (CGFloat)safeTopInset {
-    CGFloat topInset = 0;
-    if (@available(iOS 11.0, *)) {
-        topInset = self.view.safeAreaInsets.top;
-        if (topInset == 0) {
-            topInset = [[UIApplication sharedApplication] statusBarFrame].size.height;
+    CGFloat topInset = self.view.safeAreaInsets.top;
+    if (topInset == 0) {
+        UIWindowScene *scene = self.view.window.windowScene;
+        if (scene != nil) {
+            topInset = scene.statusBarManager.statusBarFrame.size.height;
         }
-    } else {
-        topInset = ([[UIApplication sharedApplication] statusBarFrame].size.height <= 20.0f) ?
-                   [[UIApplication sharedApplication] statusBarFrame].size.height : 20.0f;
     }
     return topInset;
 }
@@ -181,18 +190,6 @@ BOOL ONE_SHAKE = YES;
 
 - (UIStatusBarAnimation)preferredStatusBarUpdateAnimation {
     return UIStatusBarAnimationFade;
-}
-
-- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
-    [super traitCollectionDidChange:previousTraitCollection];
-
-    if (@available(iOS 13.0, *)) {
-        // Respond to system dark mode changes
-        if (self.traitCollection.userInterfaceStyle != previousTraitCollection.userInterfaceStyle) {
-            // Update appearance to match system dark mode
-            [self updateAppearanceForCurrentTraitCollection];
-        }
-    }
 }
 
 - (void)updateAppearanceForCurrentTraitCollection {
@@ -302,7 +299,16 @@ BOOL ONE_SHAKE = YES;
     [self.motionManager stopAccelerometerUpdates];
 }
 
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+    __weak typeof(self) weakSelf = self;
+    [coordinator animateAlongsideTransition:nil completion:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
+        [weakSelf setUpStatusBar:nil];
+    }];
+}
+
 - (void)setUpStatusBar:(NSNotification *)notification {
+    (void)notification;
     // Update status bar appearance using modern API
     [self setNeedsStatusBarAppearanceUpdate];
 
@@ -647,6 +653,7 @@ BOOL ONE_SHAKE = YES;
     return _textView;
 }
 
+
 #pragma mark - Keyboard Toolbar
 
 - (UIToolbar *)keyboardToolbarUpperCaseLight {
@@ -878,7 +885,6 @@ BOOL ONE_SHAKE = YES;
 }
 
 - (void)animateLabel:(UILabel *)label {
-    [UILabel setAnimationBeginsFromCurrentState:YES];
     [label setCenter:_viewBackgroundLabel.center];
     [label setAlpha:0.0f];
     [label setTextColor:(_isDaylight) ? [UIColor darkGrayColor] : [UIColor whiteColor]];
@@ -1289,9 +1295,9 @@ BOOL ONE_SHAKE = YES;
      {
          dispatch_async(dispatch_get_main_queue(),
                         ^{
-                            int x = abs(self.motionManager.accelerometerData.acceleration.x);
-                            int y = abs(self.motionManager.accelerometerData.acceleration.y);
-                            int z = abs(self.motionManager.accelerometerData.acceleration.z);
+                            double x = fabs(self.motionManager.accelerometerData.acceleration.x);
+                            double y = fabs(self.motionManager.accelerometerData.acceleration.y);
+                            double z = fabs(self.motionManager.accelerometerData.acceleration.z);
                             
                             if (ONE_SHAKE) {
                                 if (x + y + z > KNOCK_ACCELERATION && _textView.text.length > 0) {
@@ -1363,7 +1369,7 @@ BOOL ONE_SHAKE = YES;
                                     
                                     else if (_bumpA && _bumpB && !_bumpD && _bumpNet) {
                                         _bumpC = YES;
-                                        if (abs([_lastDoubleBump timeIntervalSinceNow]) > 1.5) {
+                                        if (fabs([_lastDoubleBump timeIntervalSinceNow]) > 1.5) {
                                             _bumpA = NO;
                                             _bumpB = NO;
                                             _bumpC = NO;
@@ -1377,7 +1383,7 @@ BOOL ONE_SHAKE = YES;
                                     }
                                     
                                     if (_bumpA && _bumpB && _bumpC && _bumpD) {
-                                        if (abs([_lastDoubleBump timeIntervalSinceNow]) > 0.5) {
+                                        if (fabs([_lastDoubleBump timeIntervalSinceNow]) > 0.5) {
                                             _bumpA = NO;
                                             _bumpB = NO;
                                             _bumpC = NO;

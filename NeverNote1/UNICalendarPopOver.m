@@ -49,7 +49,8 @@
 - (UIToolbar *)blur {
     if (!_blur) {
         _blur = [[UIToolbar alloc] initWithFrame:self.frame];
-        [_blur setBarStyle:UIBarStyleBlackTranslucent];
+        [_blur setBarStyle:UIBarStyleBlack];
+        [_blur setTranslucent:YES];
         [_blur setTintColor:[UIColor blackColor]];
     }
     

@@ -30,7 +30,7 @@
 - (void)colorFromHex {
     const char *cStr = [self.hexValue cStringUsingEncoding:NSASCIIStringEncoding];
     long x = strtol(cStr+1, NULL, 16);
-    [self colorWithHex:x];
+    [self colorWithHex:(UInt32)x];
 }
 
 // takes 0x123456

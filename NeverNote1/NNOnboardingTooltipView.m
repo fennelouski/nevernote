@@ -88,7 +88,7 @@
     [self.nextButton setTitle:@"Next" forState:UIControlStateNormal];
     self.nextButton.titleLabel.font = [UIFont boldSystemFontOfSize:17.0];
     [self.nextButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    self.nextButton.backgroundColor = [UIColor systemBlueColor];
+    self.nextButton.backgroundColor = [UIColor appIconBlueColor];
     self.nextButton.layer.cornerRadius = 8.0;
     [self.nextButton addTarget:self action:@selector(nextButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView addSubview:self.nextButton];
@@ -97,7 +97,7 @@
     self.skipButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [self.skipButton setTitle:@"Skip" forState:UIControlStateNormal];
     self.skipButton.titleLabel.font = [UIFont systemFontOfSize:15.0];
-    [self.skipButton setTitleColor:[UIColor systemBlueColor] forState:UIControlStateNormal];
+    [self.skipButton setTitleColor:[UIColor appIconBlueColor] forState:UIControlStateNormal];
     [self.skipButton addTarget:self action:@selector(skipButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView addSubview:self.skipButton];
 }
@@ -248,9 +248,25 @@
 }
 
 - (void)show {
-    UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    if (!window) {
-        window = [UIApplication sharedApplication].windows.firstObject;
+    UIWindow *window = nil;
+    for (UIScene *scene in [UIApplication sharedApplication].connectedScenes) {
+        if (scene.activationState != UISceneActivationStateForegroundActive) {
+            continue;
+        }
+        if (![scene isKindOfClass:[UIWindowScene class]]) {
+            continue;
+        }
+        UIWindowScene *windowScene = (UIWindowScene *)scene;
+        for (UIWindow *w in windowScene.windows) {
+            if (w.isKeyWindow) {
+                window = w;
+                break;
+            }
+        }
+        if (window == nil) {
+            window = windowScene.windows.firstObject;
+        }
+        break;
     }
 
     if (!window) {

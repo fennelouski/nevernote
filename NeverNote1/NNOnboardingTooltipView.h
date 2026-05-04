@@ -48,6 +48,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// Whether to show the "Skip" button
 @property (nonatomic, assign) BOOL showsSkipButton;
 
+/// The primary action button ("Next" / "Get Started")
+@property (nonatomic, strong, readonly) UIButton *nextButton;
+
 /**
  * Convenience initializer with title and description
  */

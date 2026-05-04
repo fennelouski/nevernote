@@ -1,0 +1,21 @@
+---
+description: Primary app stack is SwiftUI; NeverNote1 Objective-C is legacy—do not drive new work there unless asked.
+alwaysApply: true
+---
+
+# Active development stack (Nevernote)
+
+## Default (prioritize this)
+
+- **UI and product logic**: [`NeverNote/`](NeverNote/) — SwiftUI app entry in `NevernoteApp.swift`, screens in `ContentView.swift`, models in `Item.swift` (paths as referenced by [`Nevernote.xcodeproj`](Nevernote.xcodeproj)).
+- **Build / run**: Project [`Nevernote.xcodeproj`](Nevernote.xcodeproj), scheme **NeverNote**, iOS Simulator (see [`.cursor/skills/build/SKILL.md`](.cursor/skills/build/SKILL.md)).
+
+## Legacy (do not extend by default)
+
+- **[`NeverNote1/`](NeverNote1/)** — UIKit / Objective-C sources, plist, storyboards, and assets used by the existing target. Treat as **frozen / reference-only** for migration and build compatibility.
+- **Do not** implement new features, refactors, or styling changes under `NeverNote1/` unless the user **explicitly** asks, or the change is required to fix a **build break** or **blocking runtime bug** in shipped code.
+- When the user asks for app behavior or visuals, implement in **SwiftUI under `NeverNote/`** first.
+
+## Tests
+
+- [`NeverNoteTests/`](NeverNoteTests/) is legacy Objective-C XCTest. Prefer adding new coverage alongside SwiftUI work only when the user requests tests; do not expand Obj-C tests by default.
