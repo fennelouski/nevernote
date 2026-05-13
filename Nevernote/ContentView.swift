@@ -112,11 +112,17 @@ struct ContentView: View {
 
     private var activeNote: NoteDocument? { notes.first }
     private var displayAttributedText: NSAttributedString {
-        NoteTextFormatting.makeDisplayAttributedText(
+        let prefixFallback = EditorFont.uiFont(forToken: editorFontName, size: EditorFont.editorPointSize)
+        return NoteTextFormatting.makeDisplayAttributedText(
             from: attributedText,
             alignment: textAlignment,
-            linePrefixMode: linePrefixMode
+            linePrefixMode: linePrefixMode,
+            prefixFallbackFont: prefixFallback
         )
+    }
+
+    private var useLinePrefixSegmentedControl: Bool {
+        UIDevice.current.userInterfaceIdiom == .pad
     }
 
     private var hasDetectableContent: Bool {
@@ -187,11 +193,17 @@ struct ContentView: View {
                 .zIndex(2)
             }
         }
+        .safeAreaInset(edge: .bottom, spacing: 0) {
+            if isEditing && editorHasFocus {
+                editorToolbar
+            }
+        }
         .animation(.easeInOut(duration: 0.22), value: showScreenshotPrompt)
         .onAppear {
             ensureSingleNoteExists()
             loadNoteIfNeeded()
             scheduleLastEditedBannerAutoHide()
+            focusEditorOnLaunch()
         }
         .onChange(of: notes.count) { _, _ in
             ensureSingleNoteExists()
@@ -287,8 +299,7 @@ struct ContentView: View {
                     onHTTPSImageLinkLongPress: { url, point, tv in
                         handleHTTPSImageLinkLongPress(url: url, point: point, textView: tv)
                     },
-                    onChange: persistNote,
-                    accessory: { editorToolbar }
+                    onChange: persistNote
                 )
                 .frame(maxWidth: .infinity, minHeight: 180, maxHeight: 360)
                 .clipped()
@@ -372,13 +383,29 @@ struct ContentView: View {
             }
             .accessibilityLabel("Maximize presentation size")
 
-            Button(action: {
-                linePrefixMode.cycle()
-                sendEditorCommand(.refreshDerivedDisplay)
-            }) {
-                Image(systemName: linePrefixMode == .none ? "list.bullet" : (linePrefixMode == .bulleted ? "list.number" : "text.badge.xmark"))
+            if useLinePrefixSegmentedControl {
+                Picker("Line markers", selection: $linePrefixMode) {
+                    Image(systemName: "paragraph").tag(NoteLinePrefixMode.none)
+                        .accessibilityLabel("Plain lines")
+                    Image(systemName: "list.bullet").tag(NoteLinePrefixMode.bulleted)
+                        .accessibilityLabel("Bulleted list")
+                    Image(systemName: "list.number").tag(NoteLinePrefixMode.numbered)
+                        .accessibilityLabel("Numbered list")
+                }
+                .pickerStyle(.segmented)
+                .frame(maxWidth: 150)
+                .onChange(of: linePrefixMode) { _, _ in
+                    sendEditorCommand(.refreshDerivedDisplay)
+                }
+            } else {
+                Button(action: {
+                    linePrefixMode.cycle()
+                    sendEditorCommand(.refreshDerivedDisplay)
+                }) {
+                    Image(systemName: linePrefixMode == .none ? "list.bullet" : (linePrefixMode == .bulleted ? "list.number" : "text.badge.xmark"))
+                }
+                .accessibilityLabel("Toggle line markers")
             }
-            .accessibilityLabel("Toggle line markers")
 
             if hasDetectableContent {
                 Button {
@@ -399,7 +426,7 @@ struct ContentView: View {
             .foregroundStyle(Color.brandBlue)
         }
         .padding(.horizontal, 22)
-        .frame(height: 56)
+        .padding(.vertical, 8)
         .background(Color.white.opacity(0.97))
         .overlay(alignment: .top) {
             Rectangle()
@@ -432,6 +459,14 @@ struct ContentView: View {
         guard showLastEditedBanner else { return }
         withAnimation(.spring(response: 0.52, dampingFraction: 0.78, blendDuration: 0.15)) {
             showLastEditedBanner = false
+        }
+    }
+
+    private func focusEditorOnLaunch() {
+        isEditing = true
+        // Delay one run-loop so the UITextView exists before requesting first responder.
+        DispatchQueue.main.async {
+            editorHasFocus = true
         }
     }
 
@@ -887,28 +922,7 @@ private final class NoteWrappingTextView: UITextView {
     }
 }
 
-/// Pins hosted content to the system keyboard accessory width (critical on iPad where the bar must match the keyboard).
-private final class FullWidthInputAccessoryView: UIView {
-    init(hosted: UIView) {
-        super.init(frame: .zero)
-        backgroundColor = .clear
-        hosted.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(hosted)
-        NSLayoutConstraint.activate([
-            hosted.leadingAnchor.constraint(equalTo: leadingAnchor),
-            hosted.trailingAnchor.constraint(equalTo: trailingAnchor),
-            hosted.topAnchor.constraint(equalTo: topAnchor),
-            hosted.bottomAnchor.constraint(equalTo: bottomAnchor),
-        ])
-    }
-
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
-private struct RichTextEditor<Accessory: View>: UIViewRepresentable {
+private struct RichTextEditor: UIViewRepresentable {
     @Binding var attributedText: NSAttributedString
     @Binding var isFirstResponder: Bool
     var preferredFontName: String
@@ -917,7 +931,6 @@ private struct RichTextEditor<Accessory: View>: UIViewRepresentable {
     let command: EditorCommand?
     let onHTTPSImageLinkLongPress: (URL, CGPoint, UITextView) -> Void
     let onChange: () -> Void
-    @ViewBuilder var accessory: () -> Accessory
 
     func makeUIView(context: Context) -> NoteWrappingTextView {
         let textView = NoteWrappingTextView()
@@ -937,21 +950,18 @@ private struct RichTextEditor<Accessory: View>: UIViewRepresentable {
         ]
         textView.tintColor = UIColor(red: 28.0 / 255.0, green: 128.0 / 255.0, blue: 152.0 / 255.0, alpha: 1.0)
         textView.textContainerInset = UIEdgeInsets(top: 12, left: 0, bottom: 12, right: 0)
+        let prefixFallback = EditorFont.uiFont(forToken: preferredFontName, size: EditorFont.editorPointSize)
         textView.attributedText = NoteTextFormatting.makeDisplayAttributedText(
             from: attributedText,
             alignment: textAlignment,
-            linePrefixMode: linePrefixMode
+            linePrefixMode: linePrefixMode,
+            prefixFallbackFont: prefixFallback
         )
         context.coordinator.lastSyncedPreferredFont = preferredFontName
         let longPress = UILongPressGestureRecognizer(target: context.coordinator, action: #selector(Coordinator.handleLinkLongPress(_:)))
         longPress.minimumPressDuration = 0.45
         textView.addGestureRecognizer(longPress)
-
-        let accessoryHost = UIHostingController(rootView: AnyView(accessory()))
-        accessoryHost.view.backgroundColor = .clear
-        let accessoryBar = FullWidthInputAccessoryView(hosted: accessoryHost.view)
-        textView.inputAccessoryView = accessoryBar
-        context.coordinator.accessoryHostingController = accessoryHost
+        textView.inputAccessoryView = nil
 
         return textView
     }
@@ -960,16 +970,15 @@ private struct RichTextEditor<Accessory: View>: UIViewRepresentable {
         context.coordinator.parent = self
         context.coordinator.focusBinding = $isFirstResponder
 
-        context.coordinator.accessoryHostingController?.rootView = AnyView(accessory())
-        context.coordinator.accessoryHostingController?.view.invalidateIntrinsicContentSize()
-
         uiView.textAlignment = textAlignment.nsTextAlignment
         context.coordinator.syncTypingAlignment(in: uiView)
 
+        let prefixFallback = EditorFont.uiFont(forToken: preferredFontName, size: EditorFont.editorPointSize)
         let display = NoteTextFormatting.makeDisplayAttributedText(
             from: attributedText,
             alignment: textAlignment,
-            linePrefixMode: linePrefixMode
+            linePrefixMode: linePrefixMode,
+            prefixFallbackFont: prefixFallback
         )
         if uiView.attributedText != display {
             uiView.attributedText = display
@@ -1003,13 +1012,12 @@ private struct RichTextEditor<Accessory: View>: UIViewRepresentable {
     }
 
     final class Coordinator: NSObject, UITextViewDelegate {
-        var parent: RichTextEditor<Accessory>
+        var parent: RichTextEditor
         var lastAppliedCommandId: Int = 0
         var lastSyncedPreferredFont: String = ""
         var focusBinding: Binding<Bool>?
-        var accessoryHostingController: UIHostingController<AnyView>?
 
-        init(parent: RichTextEditor<Accessory>) {
+        init(parent: RichTextEditor) {
             self.parent = parent
         }
 
