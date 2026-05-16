@@ -17,7 +17,7 @@ struct NevernoteApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .tint(Color(red: 28.0 / 255.0, green: 128.0 / 255.0, blue: 152.0 / 255.0))
+                .tint(Color(UIColor.brandBlueTint))
         }
         .modelContainer(sharedModelContainer)
     }

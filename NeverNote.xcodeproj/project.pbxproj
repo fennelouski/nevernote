@@ -60,6 +60,7 @@
 		90AA00031000000000000104 /* ActivityShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA00031000000000000103 /* ActivityShareSheet.swift */; };
 		90AA00031000000000000106 /* ScreenshotSharePromptOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA00031000000000000105 /* ScreenshotSharePromptOverlay.swift */; };
 		90AA0003100000000000010A /* NoteImageURLPrefetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA00031000000000000109 /* NoteImageURLPrefetcher.swift */; };
+		90AA0003100000000000010C /* NeverNoteTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA0003100000000000010B /* NeverNoteTheme.swift */; };
 		9ECED7F59E864A5DAB31195E /* NNSettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DE51B2428F42E399C83D79 /* NNSettingsManager.m */; };
 		A7B1C2D3E4F5678901234567 /* NNLogoTraceView.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B1C2D3E4F5678901234569 /* NNLogoTraceView.m */; };
 		A10000010191664200352401 /* NoteRichTextCodec.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000020191664200352401 /* NoteRichTextCodec.swift */; };
@@ -195,6 +196,7 @@
 		90AA00031000000000000105 /* ScreenshotSharePromptOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotSharePromptOverlay.swift; sourceTree = "<group>"; };
 		90AA00031000000000000107 /* NeverNote-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NeverNote-Bridging-Header.h"; sourceTree = "<group>"; };
 		90AA00031000000000000109 /* NoteImageURLPrefetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteImageURLPrefetcher.swift; sourceTree = "<group>"; };
+		90AA0003100000000000010B /* NeverNoteTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeverNoteTheme.swift; sourceTree = "<group>"; };
 		A1B2C3D4E5F6789012345678 /* NNOnboardingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNOnboardingManager.h; sourceTree = "<group>"; };
 		A7B1C2D3E4F5678901234568 /* NNLogoTraceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNLogoTraceView.h; sourceTree = "<group>"; };
 		A7B1C2D3E4F5678901234569 /* NNLogoTraceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNLogoTraceView.m; sourceTree = "<group>"; };
@@ -424,6 +426,7 @@
 				90AA00031000000000000103 /* ActivityShareSheet.swift */,
 				90AA00031000000000000105 /* ScreenshotSharePromptOverlay.swift */,
 				90AA00031000000000000109 /* NoteImageURLPrefetcher.swift */,
+				90AA0003100000000000010B /* NeverNoteTheme.swift */,
 				90AA00031000000000000107 /* NeverNote-Bridging-Header.h */,
 			);
 			path = NeverNote;
@@ -625,6 +628,7 @@
 				90AA00031000000000000104 /* ActivityShareSheet.swift in Sources */,
 				90AA00031000000000000106 /* ScreenshotSharePromptOverlay.swift in Sources */,
 				90AA0003100000000000010A /* NoteImageURLPrefetcher.swift in Sources */,
+				90AA0003100000000000010C /* NeverNoteTheme.swift in Sources */,
 				803137C21965F15B00B78BC5 /* UNICalendarPopOver.m in Sources */,
 				800D2E021947919700E904AA /* UIColor+AppColors.m in Sources */,
 				8015691419B1189F00A4A083 /* NNListViewController.m in Sources */,

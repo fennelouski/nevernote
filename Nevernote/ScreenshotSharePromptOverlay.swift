@@ -5,10 +5,6 @@
 
 import SwiftUI
 
-private extension Color {
-    static let brandBlue = Color(red: 28.0 / 255.0, green: 128.0 / 255.0, blue: 152.0 / 255.0)
-}
-
 struct ScreenshotSharePromptOverlay: View {
     let step: ScreenshotPromptStep
     var onShareText: () -> Void

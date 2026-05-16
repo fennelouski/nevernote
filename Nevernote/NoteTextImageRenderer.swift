@@ -202,7 +202,7 @@ enum NoteTextFormatting {
         prefixFallbackFont: UIFont
     ) -> NSAttributedString {
         guard linePrefixMode != .none else {
-            return applyingAlignment(base, alignment: alignment)
+            return strippingForegroundColor(applyingAlignment(base, alignment: alignment))
         }
 
         let baseNSString = base.string as NSString
@@ -237,7 +237,7 @@ enum NoteTextFormatting {
             idx = NSMaxRange(lineRange)
         }
 
-        return applyingAlignment(result, alignment: alignment)
+        return strippingForegroundColor(applyingAlignment(result, alignment: alignment))
     }
 
     private static func resolvedPrefixFont(
@@ -257,6 +257,12 @@ enum NoteTextFormatting {
             }
         }
         return found ?? fallback
+    }
+
+    private static func strippingForegroundColor(_ attributed: NSAttributedString) -> NSAttributedString {
+        let mutable = NSMutableAttributedString(attributedString: attributed)
+        mutable.removeAttribute(.foregroundColor, range: NSRange(location: 0, length: mutable.length))
+        return mutable
     }
 
     private static func applyingAlignment(_ attributed: NSAttributedString, alignment: NoteTextAlignment) -> NSAttributedString {
@@ -301,7 +307,7 @@ enum NoteTextFormatting {
             idx = NSMaxRange(lineRange)
         }
 
-        return result
+        return strippingForegroundColor(result)
     }
 
     static func lockedPrefixRanges(in display: NSString, mode: NoteLinePrefixMode) -> [NSRange] {

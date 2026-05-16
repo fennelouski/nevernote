@@ -9,13 +9,10 @@ import SwiftData
 import SwiftUI
 import UIKit
 
-private extension Color {
-    static let brandBlue = Color(red: 28.0 / 255.0, green: 128.0 / 255.0, blue: 152.0 / 255.0)
-}
-
 private enum NevernoteNotification {
     static let onboardingDidStart = Notification.Name("NNOnboardingDidStartNotification")
     static let onboardingDidComplete = Notification.Name("NNOnboardingDidCompleteNotification")
+    static let shakeUndo = Notification.Name("NNShakeUndoNotification")
 }
 
 enum ScreenshotPromptStep {
@@ -126,6 +123,7 @@ struct ContentView: View {
 
     @AppStorage(EditorFont.appStorageKey) private var editorFontName: String = EditorFont.systemBoldToken
     @AppStorage(NoteDataDetectors.appStorageKey) private var dataDetectorsEnabled = false
+    @ScaledMetric(relativeTo: .body) private var editorScaledPointSize: CGFloat = EditorFont.editorPointSize
 
     @State private var attributedText = NSAttributedString(string: "")
     @State private var isEditing = false
@@ -144,18 +142,19 @@ struct ContentView: View {
     @State private var showActivityShare = false
     @State private var activityItems: [Any] = []
     @State private var textAlignment: NoteTextAlignment = .center
-    @State private var maximizePresentationSize = false
+    @State private var maximizePresentationSize = true
     @State private var linePrefixMode: NoteLinePrefixMode = .none
-    @State private var isBoldActive = false
+    @State private var isBoldActive = true
     @State private var isItalicActive = false
     @State private var isUnderlineActive = false
     @State private var urlPreviewRefreshToken = 0
     /// When false, keyboard shelf chrome is hidden so a focused field without a visible keyboard does not show a large gray slab.
     @State private var softwareKeyboardVisible = false
+    @State private var undoAttributedText: NSAttributedString? = nil
 
     private var activeNote: NoteDocument? { notes.first }
     private var displayAttributedText: NSAttributedString {
-        let prefixFallback = EditorFont.uiFont(forToken: editorFontName, size: EditorFont.editorPointSize)
+        let prefixFallback = EditorFont.uiFont(forToken: editorFontName, size: editorScaledPointSize)
         return NoteTextFormatting.makeDisplayAttributedText(
             from: attributedText,
             alignment: textAlignment,
@@ -168,6 +167,10 @@ struct ContentView: View {
         UIDevice.current.userInterfaceIdiom == .pad
     }
 
+    private var hasContent: Bool {
+        !attributedText.string.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
+
     private var hasDetectableContent: Bool {
         NoteDataDetectors.textWouldTriggerDataDetectors(attributedText.string)
     }
@@ -178,13 +181,11 @@ struct ContentView: View {
         return NoteHTTPSLinkEnumeration.orderedLinkKeys(in: attributedText) { note.urlShowsImagePreview($0) }
     }
 
-    private var noteExportBackground: UIColor {
-        UIColor(red: 0.95, green: 0.95, blue: 0.96, alpha: 1)
-    }
+    private var noteExportBackground: UIColor { .noteExportBackground }
 
     var body: some View {
         ZStack {
-            Color(red: 0.95, green: 0.95, blue: 0.96).ignoresSafeArea()
+            Color.noteCanvas.ignoresSafeArea()
 
             if isEditing && editorHasFocus && softwareKeyboardVisible {
                 EditorKeyboardShelfBackdrop()
@@ -264,6 +265,12 @@ struct ContentView: View {
         }
         .onChange(of: textAlignment) { _, _ in persistNote() }
         .onChange(of: linePrefixMode) { _, _ in persistNote() }
+        .onChange(of: attributedText) { _, newValue in
+            if undoAttributedText != nil && !newValue.string.isEmpty {
+                undoAttributedText = nil
+                NoteWrappingTextView.customUndoAvailable = false
+            }
+        }
         .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification)) { _ in
             dismissLastEditedBannerForKeyboardOrTimeout()
             softwareKeyboardVisible = true
@@ -279,6 +286,9 @@ struct ContentView: View {
         }
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.userDidTakeScreenshotNotification)) { _ in
             handleScreenshotDetected()
+        }
+        .onReceive(NotificationCenter.default.publisher(for: NevernoteNotification.shakeUndo)) { _ in
+            restoreNote()
         }
         .sheet(isPresented: $showFontPicker) {
             FontPickerSheet(
@@ -320,27 +330,62 @@ struct ContentView: View {
     }
 
     private var topBar: some View {
-        HStack {
+        HStack(spacing: 16) {
             Text("Nevernote")
                 .font(.headline)
-                .foregroundStyle(Color.black.opacity(0.95))
+                .foregroundStyle(.primary)
+                .onTapGesture {
+                    guard hasContent else { return }
+                    if !editorHasFocus {
+                        editorHasFocus = true
+                    }
+                    sendEditorCommand(.selectAll)
+                }
 
             Spacer()
 
-            ShareLink(item: attributedText.string) {
-                Image(systemName: "square.and.arrow.up")
-                    .font(.system(size: 16, weight: .semibold))
+            if hasDetectableContent {
+                Button {
+                    dataDetectorsEnabled.toggle()
+                } label: {
+                    Image(systemName: dataDetectorsEnabled ? "link.circle.fill" : "link.circle")
+                        .font(.system(size: 16, weight: .semibold))
+                }
+                .foregroundStyle(dataDetectorsEnabled ? Color.brandBlue : Color(.systemGray))
+                .accessibilityLabel("Smart links")
             }
-            .disabled(attributedText.string.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
-            .accessibilityLabel("Share note")
+
+            if undoAttributedText != nil {
+                Button {
+                    restoreNote()
+                } label: {
+                    Image(systemName: "arrow.uturn.backward")
+                        .font(.system(size: 16, weight: .semibold))
+                }
+                .accessibilityLabel("Undo delete")
+            } else if hasContent {
+                Button(role: .destructive) {
+                    clearNote()
+                } label: {
+                    Image(systemName: "trash")
+                        .font(.system(size: 16, weight: .semibold))
+                }
+                .accessibilityLabel("Delete note")
+
+                ShareLink(item: attributedText.string) {
+                    Image(systemName: "square.and.arrow.up")
+                        .font(.system(size: 16, weight: .semibold))
+                }
+                .accessibilityLabel("Share note")
+            }
         }
         .foregroundStyle(Color.brandBlue)
         .padding(.horizontal, 18)
         .frame(height: 56)
-        .background(Color.white.opacity(0.96))
+        .background(Color.topBarBackground.opacity(0.96))
         .overlay(alignment: .bottom) {
             Rectangle()
-                .fill(Color.black.opacity(0.06))
+                .fill(Color.topBarDivider)
                 .frame(height: 1)
         }
     }
@@ -352,6 +397,7 @@ struct ContentView: View {
                     attributedText: $attributedText,
                     isFirstResponder: $editorHasFocus,
                     preferredFontName: editorFontName,
+                    pointSize: editorScaledPointSize,
                     textAlignment: textAlignment,
                     linePrefixMode: linePrefixMode,
                     command: editorCommand,
@@ -360,9 +406,11 @@ struct ContentView: View {
                     },
                     onChange: persistNote,
                     onFormattingStateChange: { bold, italic, underline in
-                        isBoldActive = bold
-                        isItalicActive = italic
-                        isUnderlineActive = underline
+                        DispatchQueue.main.async {
+                            isBoldActive = bold
+                            isItalicActive = italic
+                            isUnderlineActive = underline
+                        }
                     }
                 )
                 .frame(maxWidth: .infinity, minHeight: 180, maxHeight: 360)
@@ -395,7 +443,7 @@ struct ContentView: View {
                 Text(footerText)
                     .font(.system(size: 14, weight: .semibold, design: .default))
                     .tracking(2)
-                    .foregroundStyle(Color.black.opacity(0.20))
+                    .foregroundStyle(.secondary)
                     .transition(
                         .asymmetric(
                             insertion: .opacity.combined(with: .scale(scale: 0.96)).combined(with: .offset(y: 4)),
@@ -472,16 +520,6 @@ struct ContentView: View {
                     Image(systemName: linePrefixMode == .none ? "list.bullet" : (linePrefixMode == .bulleted ? "list.number" : "text.badge.xmark"))
                 }
                 .accessibilityLabel("Toggle line markers")
-            }
-
-            if hasDetectableContent {
-                Button {
-                    dataDetectorsEnabled.toggle()
-                } label: {
-                    Image(systemName: "link.circle")
-                }
-                .foregroundStyle(dataDetectorsEnabled ? Color.brandBlue : Color(.systemGray))
-                .accessibilityLabel("Smart links")
             }
 
             Button("Done") {
@@ -582,6 +620,21 @@ struct ContentView: View {
         textAlignment = NoteTextAlignment(rawValue: note.textAlignmentRawValue ?? "center") ?? .center
         linePrefixMode = NoteLinePrefixMode(rawValue: note.linePrefixModeRawValue ?? "none") ?? .none
         hasLoadedExistingNote = true
+    }
+
+    private func clearNote() {
+        undoAttributedText = attributedText
+        NoteWrappingTextView.customUndoAvailable = true
+        attributedText = NSAttributedString(string: "")
+        persistNote()
+    }
+
+    private func restoreNote() {
+        guard let saved = undoAttributedText else { return }
+        undoAttributedText = nil
+        NoteWrappingTextView.customUndoAvailable = false
+        attributedText = saved
+        persistNote()
     }
 
     private func persistNote() {
@@ -707,6 +760,7 @@ private struct FontPickerSheet: View {
 
     @Environment(\.dismiss) private var dismiss
     @State private var query = ""
+    @ScaledMetric(relativeTo: .body) private var previewPointSize: CGFloat = EditorFont.editorPointSize
 
     private var filteredRecentFonts: [String] {
         recentTokens
@@ -778,7 +832,7 @@ private struct FontPickerSheet: View {
         } label: {
             HStack {
                 Text(title)
-                    .font(Font(EditorFont.uiFont(forToken: token, size: EditorFont.editorPointSize)))
+                    .font(Font(EditorFont.uiFont(forToken: token, size: previewPointSize)))
                     .foregroundStyle(Color.primary)
                     .lineLimit(1)
                 Spacer()
@@ -814,8 +868,10 @@ private struct ReadOnlyNoteTextView: UIViewRepresentable {
         textView.textContainer.lineFragmentPadding = 0
         textView.textContainerInset = UIEdgeInsets(top: 12, left: 0, bottom: 12, right: 0)
         textView.dataDetectorTypes = dataDetectorTypes
-        textView.tintColor = UIColor(red: 28.0 / 255.0, green: 128.0 / 255.0, blue: 152.0 / 255.0, alpha: 1.0)
+        textView.tintColor = .brandBlueTint
+        textView.textColor = .noteBodyText
         textView.attributedText = attributedText
+        textView.textColor = .noteBodyText
         let longPress = UILongPressGestureRecognizer(target: context.coordinator, action: #selector(Coordinator.handleLinkLongPress(_:)))
         longPress.minimumPressDuration = 0.45
         textView.addGestureRecognizer(longPress)
@@ -829,6 +885,7 @@ private struct ReadOnlyNoteTextView: UIViewRepresentable {
         uiView.dataDetectorTypes = dataDetectorTypes
         if !(uiView.attributedText?.isEqual(to: attributedText) ?? false) {
             uiView.attributedText = attributedText
+            uiView.textColor = .noteBodyText
         }
     }
 
@@ -938,6 +995,7 @@ private enum TextFormatAction: Equatable {
     case font(String)
     case alignment(NoteTextAlignment)
     case refreshDerivedDisplay
+    case selectAll
 }
 
 private struct EditorCommand: Equatable {
@@ -949,6 +1007,15 @@ private struct EditorCommand: Equatable {
 /// This subclass pins the text container to the laid-out width and only contributes intrinsic height.
 private final class NoteWrappingTextView: UITextView {
     private static let pastedImageFontSize: CGFloat = 24
+    static var customUndoAvailable = false
+
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == .motionShake && Self.customUndoAvailable {
+            NotificationCenter.default.post(name: NevernoteNotification.shakeUndo, object: nil)
+            return
+        }
+        super.motionEnded(motion, with: event)
+    }
 
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -1025,6 +1092,7 @@ private struct RichTextEditor: UIViewRepresentable {
     @Binding var attributedText: NSAttributedString
     @Binding var isFirstResponder: Bool
     var preferredFontName: String
+    var pointSize: CGFloat
     var textAlignment: NoteTextAlignment
     var linePrefixMode: NoteLinePrefixMode
     let command: EditorCommand?
@@ -1042,21 +1110,23 @@ private struct RichTextEditor: UIViewRepresentable {
         textView.textAlignment = textAlignment.nsTextAlignment
         textView.textContainer.lineBreakMode = .byWordWrapping
         textView.textContainer.lineFragmentPadding = 0
-        let initial = EditorFont.uiFont(forToken: preferredFontName, size: EditorFont.editorPointSize)
+        let initial = EditorFont.uiFont(forToken: preferredFontName, size: pointSize)
         textView.font = initial
         textView.typingAttributes = [
             .font: initial,
             .paragraphStyle: RichTextEditor.paragraphStyle(for: textAlignment)
         ]
-        textView.tintColor = UIColor(red: 28.0 / 255.0, green: 128.0 / 255.0, blue: 152.0 / 255.0, alpha: 1.0)
+        textView.tintColor = .brandBlueTint
+        textView.textColor = .noteBodyText
         textView.textContainerInset = UIEdgeInsets(top: 12, left: 0, bottom: 12, right: 0)
-        let prefixFallback = EditorFont.uiFont(forToken: preferredFontName, size: EditorFont.editorPointSize)
+        let prefixFallback = EditorFont.uiFont(forToken: preferredFontName, size: pointSize)
         textView.attributedText = NoteTextFormatting.makeDisplayAttributedText(
             from: attributedText,
             alignment: textAlignment,
             linePrefixMode: linePrefixMode,
             prefixFallbackFont: prefixFallback
         )
+        textView.textColor = .noteBodyText
         context.coordinator.lastSyncedPreferredFont = preferredFontName
         let longPress = UILongPressGestureRecognizer(target: context.coordinator, action: #selector(Coordinator.handleLinkLongPress(_:)))
         longPress.minimumPressDuration = 0.45
@@ -1073,7 +1143,7 @@ private struct RichTextEditor: UIViewRepresentable {
         uiView.textAlignment = textAlignment.nsTextAlignment
         context.coordinator.syncTypingAlignment(in: uiView)
 
-        let prefixFallback = EditorFont.uiFont(forToken: preferredFontName, size: EditorFont.editorPointSize)
+        let prefixFallback = EditorFont.uiFont(forToken: preferredFontName, size: pointSize)
         let display = NoteTextFormatting.makeDisplayAttributedText(
             from: attributedText,
             alignment: textAlignment,
@@ -1082,6 +1152,7 @@ private struct RichTextEditor: UIViewRepresentable {
         )
         if uiView.attributedText != display {
             uiView.attributedText = display
+            uiView.textColor = .noteBodyText
         }
 
         if context.coordinator.lastSyncedPreferredFont != preferredFontName {
@@ -1090,15 +1161,16 @@ private struct RichTextEditor: UIViewRepresentable {
         }
 
         if isFirstResponder && !uiView.isFirstResponder {
-            uiView.becomeFirstResponder()
+            DispatchQueue.main.async { uiView.becomeFirstResponder() }
         } else if !isFirstResponder && uiView.isFirstResponder {
-            uiView.resignFirstResponder()
+            DispatchQueue.main.async { uiView.resignFirstResponder() }
         }
 
         if let command, context.coordinator.lastAppliedCommandId != command.id {
             context.coordinator.lastAppliedCommandId = command.id
             context.coordinator.apply(command: command.action, to: uiView)
             context.coordinator.emitFormattingState(uiView)
+            guard command.action != .selectAll else { return }
             let updatedDisplay = uiView.attributedText ?? NSAttributedString()
             let updated = NoteTextFormatting.stripPrefixesFromDisplayString(updatedDisplay, mode: linePrefixMode)
             DispatchQueue.main.async {
@@ -1182,7 +1254,7 @@ private struct RichTextEditor: UIViewRepresentable {
 
         func syncPreferredFont(to textView: UITextView) {
             let token = parent.preferredFontName
-            let size = (textView.typingAttributes[.font] as? UIFont)?.pointSize ?? EditorFont.editorPointSize
+            let size = (textView.typingAttributes[.font] as? UIFont)?.pointSize ?? parent.pointSize
             let font = EditorFont.uiFont(forToken: token, size: size)
             if textView.text.isEmpty {
                 textView.font = font
@@ -1209,6 +1281,13 @@ private struct RichTextEditor: UIViewRepresentable {
                 textView.textAlignment = alignment.nsTextAlignment
             case .refreshDerivedDisplay:
                 break
+            case .selectAll:
+                DispatchQueue.main.async { [weak textView] in
+                    guard let textView else { return }
+                    textView.selectedRange = NSRange(location: 0, length: textView.textStorage.length)
+                    self.emitFormattingState(textView)
+                }
+                return
             }
 
             textView.attributedText = mutable
@@ -1217,7 +1296,7 @@ private struct RichTextEditor: UIViewRepresentable {
         }
 
         private func defaultFallbackFont() -> UIFont {
-            EditorFont.uiFont(forToken: parent.preferredFontName, size: EditorFont.editorPointSize)
+            EditorFont.uiFont(forToken: parent.preferredFontName, size: parent.pointSize)
         }
 
         private func applyFontToken(
@@ -1227,7 +1306,7 @@ private struct RichTextEditor: UIViewRepresentable {
             typingAttributes: inout [NSAttributedString.Key: Any]
         ) {
             if selection.length == 0 {
-                let size = (typingAttributes[.font] as? UIFont)?.pointSize ?? EditorFont.editorPointSize
+                let size = (typingAttributes[.font] as? UIFont)?.pointSize ?? parent.pointSize
                 typingAttributes[.font] = EditorFont.uiFont(forToken: token, size: size)
                 return
             }
