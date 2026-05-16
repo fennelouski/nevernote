@@ -95,10 +95,18 @@ enum NoteTextImageRenderer {
         let inner = bounds.insetBy(dx: margin, dy: margin)
         guard inner.width > 4, inner.height > 4 else { return nil }
 
+        let prefixFallback: UIFont
+        if attributedText.length > 0,
+           let font = attributedText.attribute(.font, at: 0, effectiveRange: nil) as? UIFont {
+            prefixFallback = font
+        } else {
+            prefixFallback = UIFont.systemFont(ofSize: 24, weight: .bold)
+        }
         let styled = NoteTextFormatting.makeDisplayAttributedText(
             from: attributedText,
             alignment: alignment,
-            linePrefixMode: linePrefixMode
+            linePrefixMode: linePrefixMode,
+            prefixFallbackFont: prefixFallback
         )
         let fitted = fitTextToBounds(
             styled,
@@ -190,7 +198,8 @@ enum NoteTextFormatting {
     static func makeDisplayAttributedText(
         from base: NSAttributedString,
         alignment: NoteTextAlignment,
-        linePrefixMode: NoteLinePrefixMode
+        linePrefixMode: NoteLinePrefixMode,
+        prefixFallbackFont: UIFont
     ) -> NSAttributedString {
         guard linePrefixMode != .none else {
             return applyingAlignment(base, alignment: alignment)
@@ -212,7 +221,10 @@ enum NoteTextFormatting {
             if !isBlank {
                 nonEmptyLineCount += 1
                 let prefix = prefixString(for: linePrefixMode, lineNumber: nonEmptyLineCount)
-                result.append(NSAttributedString(string: prefix))
+                let prefixFont = resolvedPrefixFont(in: base, contentRange: contentRange, fallback: prefixFallbackFont)
+                let prefixAttr = NSMutableAttributedString(string: prefix)
+                prefixAttr.addAttribute(.font, value: prefixFont, range: NSRange(location: 0, length: prefixAttr.length))
+                result.append(prefixAttr)
             }
 
             if contentRange.length > 0 {
@@ -226,6 +238,25 @@ enum NoteTextFormatting {
         }
 
         return applyingAlignment(result, alignment: alignment)
+    }
+
+    private static func resolvedPrefixFont(
+        in base: NSAttributedString,
+        contentRange: NSRange,
+        fallback: UIFont
+    ) -> UIFont {
+        guard contentRange.length > 0 else { return fallback }
+        if let font = base.attribute(.font, at: contentRange.location, effectiveRange: nil) as? UIFont {
+            return font
+        }
+        var found: UIFont?
+        base.enumerateAttribute(.font, in: contentRange) { value, _, stop in
+            if let font = value as? UIFont {
+                found = font
+                stop.pointee = true
+            }
+        }
+        return found ?? fallback
     }
 
     private static func applyingAlignment(_ attributed: NSAttributedString, alignment: NoteTextAlignment) -> NSAttributedString {

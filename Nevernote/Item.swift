@@ -34,8 +34,10 @@ final class NoteDocument {
     var richTextData: Data
     var plainText: String
     var lastEditedAt: Date
-    /// JSON array of `NoteURLImagePreviewEntry` — toggles “show image at bottom” for http(s) links.
+    /// JSON array of `NoteURLImagePreviewEntry` — toggles "show image at bottom" for http(s) links.
     var urlImagePreviewStateJSON: Data
+    var textAlignmentRawValue: String?
+    var linePrefixModeRawValue: String?
 
     init(
         id: UUID = UUID(),

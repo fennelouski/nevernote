@@ -82,6 +82,44 @@ private enum NoteDataDetectors {
     }
 }
 
+private enum EditorToolbarPlacement {
+    case inline
+    case keyboardAdjacent
+}
+
+private enum EditorToolbarChrome {
+    /// Toolbar when shown inline in the editor stack (slightly lifted from the canvas).
+    static var uiColor: UIColor {
+        UIColor { trait in
+            trait.userInterfaceStyle == .dark ? .systemGray5 : .systemGray6
+        }
+    }
+
+    /// QuickType / keyboard plate — aligned lighter toward the system keyboard background.
+    static var keyboardShelfUIColor: UIColor {
+        UIColor { trait in
+            trait.userInterfaceStyle == .dark ? .systemGray5 : .systemGray6
+        }
+    }
+}
+
+/// Full-width layer behind the editor so keyboard-adjacent chrome can read continuous with the system keyboard.
+private struct EditorKeyboardShelfBackdrop: View {
+    var body: some View {
+        GeometryReader { geo in
+            VStack(spacing: 0) {
+                Spacer(minLength: 0)
+                Rectangle()
+                    .fill(Color(uiColor: EditorToolbarChrome.keyboardShelfUIColor))
+                    .frame(height: max(360, geo.size.height * 0.42))
+            }
+        }
+        .allowsHitTesting(false)
+        .ignoresSafeArea(.keyboard, edges: .bottom)
+        .ignoresSafeArea(.container, edges: .bottom)
+    }
+}
+
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query(sort: \NoteDocument.lastEditedAt, order: .reverse) private var notes: [NoteDocument]
@@ -108,7 +146,12 @@ struct ContentView: View {
     @State private var textAlignment: NoteTextAlignment = .center
     @State private var maximizePresentationSize = false
     @State private var linePrefixMode: NoteLinePrefixMode = .none
+    @State private var isBoldActive = false
+    @State private var isItalicActive = false
+    @State private var isUnderlineActive = false
     @State private var urlPreviewRefreshToken = 0
+    /// When false, keyboard shelf chrome is hidden so a focused field without a visible keyboard does not show a large gray slab.
+    @State private var softwareKeyboardVisible = false
 
     private var activeNote: NoteDocument? { notes.first }
     private var displayAttributedText: NSAttributedString {
@@ -143,6 +186,10 @@ struct ContentView: View {
         ZStack {
             Color(red: 0.95, green: 0.95, blue: 0.96).ignoresSafeArea()
 
+            if isEditing && editorHasFocus && softwareKeyboardVisible {
+                EditorKeyboardShelfBackdrop()
+            }
+
             VStack(spacing: 0) {
                 if isEditing {
                     topBar
@@ -155,7 +202,7 @@ struct ContentView: View {
                 Spacer(minLength: 20)
 
                 if isEditing && !editorHasFocus {
-                    editorToolbar
+                    editorToolbar(placement: .inline)
                 }
             }
 
@@ -195,10 +242,11 @@ struct ContentView: View {
         }
         .safeAreaInset(edge: .bottom, spacing: 0) {
             if isEditing && editorHasFocus {
-                editorToolbar
+                editorToolbar(placement: .keyboardAdjacent)
             }
         }
         .animation(.easeInOut(duration: 0.22), value: showScreenshotPrompt)
+        .animation(.easeInOut(duration: 0.2), value: softwareKeyboardVisible)
         .onAppear {
             ensureSingleNoteExists()
             loadNoteIfNeeded()
@@ -209,8 +257,19 @@ struct ContentView: View {
             ensureSingleNoteExists()
             loadNoteIfNeeded()
         }
+        .onChange(of: editorHasFocus) { _, focused in
+            if !focused {
+                softwareKeyboardVisible = false
+            }
+        }
+        .onChange(of: textAlignment) { _, _ in persistNote() }
+        .onChange(of: linePrefixMode) { _, _ in persistNote() }
         .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification)) { _ in
             dismissLastEditedBannerForKeyboardOrTimeout()
+            softwareKeyboardVisible = true
+        }
+        .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)) { _ in
+            softwareKeyboardVisible = false
         }
         .onReceive(NotificationCenter.default.publisher(for: NevernoteNotification.onboardingDidStart)) { _ in
             onboardingActive = true
@@ -299,7 +358,12 @@ struct ContentView: View {
                     onHTTPSImageLinkLongPress: { url, point, tv in
                         handleHTTPSImageLinkLongPress(url: url, point: point, textView: tv)
                     },
-                    onChange: persistNote
+                    onChange: persistNote,
+                    onFormattingStateChange: { bold, italic, underline in
+                        isBoldActive = bold
+                        isItalicActive = italic
+                        isUnderlineActive = underline
+                    }
                 )
                 .frame(maxWidth: .infinity, minHeight: 180, maxHeight: 360)
                 .clipped()
@@ -343,20 +407,23 @@ struct ContentView: View {
         .animation(.spring(response: 0.52, dampingFraction: 0.78, blendDuration: 0.15), value: showLastEditedBanner)
     }
 
-    private var editorToolbar: some View {
+    private var editorToolbarControls: some View {
         HStack(spacing: 12) {
             Button(action: { sendEditorCommand(.bold) }) {
                 Image(systemName: "bold")
+                    .foregroundStyle(isBoldActive ? Color.accentColor : Color.primary)
             }
             .accessibilityLabel("Bold")
 
             Button(action: { sendEditorCommand(.italic) }) {
                 Image(systemName: "italic")
+                    .foregroundStyle(isItalicActive ? Color.accentColor : Color.primary)
             }
             .accessibilityLabel("Italic")
 
             Button(action: { sendEditorCommand(.underline) }) {
                 Image(systemName: "underline")
+                    .foregroundStyle(isUnderlineActive ? Color.accentColor : Color.primary)
             }
             .accessibilityLabel("Underline")
 
@@ -425,13 +492,41 @@ struct ContentView: View {
             .font(.system(size: 20, weight: .semibold))
             .foregroundStyle(Color.brandBlue)
         }
-        .padding(.horizontal, 22)
-        .padding(.vertical, 8)
-        .background(Color.white.opacity(0.97))
-        .overlay(alignment: .top) {
+    }
+
+    @ViewBuilder
+    private func editorToolbarChromeBackground(placement: EditorToolbarPlacement, shelfActive: Bool) -> some View {
+        switch placement {
+        case .keyboardAdjacent:
+            if shelfActive {
+                Rectangle()
+                    .fill(Color(uiColor: EditorToolbarChrome.keyboardShelfUIColor))
+                    .ignoresSafeArea(.container, edges: .bottom)
+                    .ignoresSafeArea(.keyboard, edges: .bottom)
+            } else {
+                Rectangle()
+                    .fill(Color(uiColor: EditorToolbarChrome.uiColor))
+            }
+        case .inline:
             Rectangle()
-                .fill(Color.black.opacity(0.05))
-                .frame(height: 1)
+                .fill(Color(uiColor: EditorToolbarChrome.uiColor))
+        }
+    }
+
+    @ViewBuilder
+    private func editorToolbar(placement: EditorToolbarPlacement) -> some View {
+        let shelfActive = placement == .keyboardAdjacent && softwareKeyboardVisible
+        let chrome = editorToolbarControls
+            .padding(.horizontal, 22)
+            .padding(.vertical, 8)
+            .frame(maxWidth: .infinity)
+            .background { editorToolbarChromeBackground(placement: placement, shelfActive: shelfActive) }
+
+        switch placement {
+        case .keyboardAdjacent:
+            chrome.clipShape(Rectangle())
+        case .inline:
+            chrome
         }
     }
 
@@ -484,6 +579,8 @@ struct ContentView: View {
         } else if !note.plainText.isEmpty {
             attributedText = NSAttributedString(string: note.plainText)
         }
+        textAlignment = NoteTextAlignment(rawValue: note.textAlignmentRawValue ?? "center") ?? .center
+        linePrefixMode = NoteLinePrefixMode(rawValue: note.linePrefixModeRawValue ?? "none") ?? .none
         hasLoadedExistingNote = true
     }
 
@@ -493,6 +590,8 @@ struct ContentView: View {
         note.plainText = attributedText.string
         note.pruneURLImagePreviewEntries(notContainedIn: note.plainText)
         note.richTextData = NoteRichTextCodec.encode(attributedText) ?? Data()
+        note.textAlignmentRawValue = textAlignment.rawValue
+        note.linePrefixModeRawValue = linePrefixMode.rawValue
         try? modelContext.save()
     }
 
@@ -931,6 +1030,7 @@ private struct RichTextEditor: UIViewRepresentable {
     let command: EditorCommand?
     let onHTTPSImageLinkLongPress: (URL, CGPoint, UITextView) -> Void
     let onChange: () -> Void
+    let onFormattingStateChange: (Bool, Bool, Bool) -> Void
 
     func makeUIView(context: Context) -> NoteWrappingTextView {
         let textView = NoteWrappingTextView()
@@ -998,6 +1098,7 @@ private struct RichTextEditor: UIViewRepresentable {
         if let command, context.coordinator.lastAppliedCommandId != command.id {
             context.coordinator.lastAppliedCommandId = command.id
             context.coordinator.apply(command: command.action, to: uiView)
+            context.coordinator.emitFormattingState(uiView)
             let updatedDisplay = uiView.attributedText ?? NSAttributedString()
             let updated = NoteTextFormatting.stripPrefixesFromDisplayString(updatedDisplay, mode: linePrefixMode)
             DispatchQueue.main.async {
@@ -1048,14 +1149,25 @@ private struct RichTextEditor: UIViewRepresentable {
             let stripped = NoteTextFormatting.stripPrefixesFromDisplayString(textView.attributedText, mode: parent.linePrefixMode)
             parent.attributedText = stripped
             parent.onChange()
+            emitFormattingState(textView)
         }
 
         func textViewDidChangeSelection(_ textView: UITextView) {
+            emitFormattingState(textView)
             guard parent.linePrefixMode != .none else { return }
             let clamped = clampedSelection(textView.selectedRange, in: textView)
             if !NSEqualRanges(clamped, textView.selectedRange) {
                 textView.selectedRange = clamped
             }
+        }
+
+        func emitFormattingState(_ textView: UITextView) {
+            let attrs = textView.typingAttributes
+            let font = attrs[.font] as? UIFont
+            let isBold = font?.fontDescriptor.symbolicTraits.contains(.traitBold) ?? false
+            let isItalic = font?.fontDescriptor.symbolicTraits.contains(.traitItalic) ?? false
+            let isUnderline = (attrs[.underlineStyle] as? Int ?? 0) != 0
+            parent.onFormattingStateChange(isBold, isItalic, isUnderline)
         }
 
         func textView(
