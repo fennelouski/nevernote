@@ -52,17 +52,23 @@ enum NevernoteModelContainerFactory {
             url: cloudStoreURL(),
             cloudKitDatabase: .private(NevernoteCloudKit.containerIdentifier)
         )
-
         if let container = try? ModelContainer(for: schema, configurations: [cloudConfiguration]) {
             return container
         }
 
-        wipeStoreDirectory()
-        if let container = try? ModelContainer(for: schema, configurations: [cloudConfiguration]) {
+        // CloudKit unavailable (simulator, no account, no network) — open the same store
+        // file without sync so data written during a CloudKit session stays readable.
+        let cloudURLNoSync = ModelConfiguration(
+            cloudConfigurationName,
+            schema: schema,
+            url: cloudStoreURL(),
+            cloudKitDatabase: .none
+        )
+        if let container = try? ModelContainer(for: schema, configurations: [cloudURLNoSync]) {
             return container
         }
 
-        wipeStoreDirectory()
+        // Cloud store file unreadable — fall back to a separate local-only store.
         let localConfiguration = ModelConfiguration(
             localConfigurationName,
             schema: schema,
@@ -73,11 +79,7 @@ enum NevernoteModelContainerFactory {
             return container
         }
 
-        wipeStoreDirectory()
-        if let container = try? ModelContainer(for: schema, configurations: [localConfiguration]) {
-            return container
-        }
-
+        // Last resort: in-memory only — data won't survive relaunches but the app stays functional.
         let memoryConfiguration = ModelConfiguration(
             schema: schema,
             isStoredInMemoryOnly: true
