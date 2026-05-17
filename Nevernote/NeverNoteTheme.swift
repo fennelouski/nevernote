@@ -55,3 +55,22 @@ extension UIColor {
         editorToolbarChrome
     }
 }
+
+extension DynamicTypeSize {
+    var isAccessibilitySize: Bool {
+        switch self {
+        case .accessibility1, .accessibility2, .accessibility3, .accessibility4, .accessibility5:
+            true
+        default:
+            false
+        }
+    }
+}
+
+extension Text {
+    /// User-facing copy that wraps to multiple lines instead of truncating.
+    func neverNoteWrappingLabel(alignment: TextAlignment = .center) -> some View {
+        multilineTextAlignment(alignment)
+            .fixedSize(horizontal: false, vertical: true)
+    }
+}

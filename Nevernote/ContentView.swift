@@ -407,6 +407,7 @@ struct ContentView: View {
                     .font(.system(size: 14, weight: .semibold, design: .default))
                     .tracking(2)
                     .foregroundStyle(.secondary)
+                    .neverNoteWrappingLabel()
                     .transition(
                         .asymmetric(
                             insertion: .opacity.combined(with: .scale(scale: 0.96)).combined(with: .offset(y: 4)),

@@ -23,14 +23,14 @@ struct ScreenshotSharePromptOverlay: View {
                 case .chooseShareKind:
                     Text("Share your note?")
                         .font(.title2.weight(.bold))
-                        .multilineTextAlignment(.center)
+                        .neverNoteWrappingLabel()
                         .padding(.top, 22)
                         .padding(.horizontal, 20)
 
                     Text("You just took a screenshot. Share the note text, or create a clean image of your text only.")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
-                        .multilineTextAlignment(.center)
+                        .neverNoteWrappingLabel()
                         .padding(.top, 10)
                         .padding(.horizontal, 18)
 
@@ -38,6 +38,7 @@ struct ScreenshotSharePromptOverlay: View {
                         Button(action: onShareText) {
                             Text("Share note text")
                                 .font(.headline)
+                                .neverNoteWrappingLabel()
                                 .frame(maxWidth: .infinity)
                                 .padding(.vertical, 14)
                         }
@@ -47,6 +48,7 @@ struct ScreenshotSharePromptOverlay: View {
                         Button(action: onChooseImage) {
                             Text("Share as image of text")
                                 .font(.headline)
+                                .neverNoteWrappingLabel()
                                 .frame(maxWidth: .infinity)
                                 .padding(.vertical, 14)
                         }
@@ -59,12 +61,13 @@ struct ScreenshotSharePromptOverlay: View {
                 case .chooseAspect:
                     Text("Aspect ratio")
                         .font(.title2.weight(.bold))
+                        .neverNoteWrappingLabel()
                         .padding(.top, 22)
 
                     Text("The image will contain only your text and background — no buttons or frames.")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
-                        .multilineTextAlignment(.center)
+                        .neverNoteWrappingLabel()
                         .padding(.horizontal, 18)
                         .padding(.top, 8)
 
@@ -75,6 +78,7 @@ struct ScreenshotSharePromptOverlay: View {
                             } label: {
                                 Text(ratio.displayLabel)
                                     .font(.subheadline.weight(.semibold))
+                                    .neverNoteWrappingLabel()
                                     .frame(maxWidth: .infinity)
                                     .padding(.vertical, 12)
                             }
