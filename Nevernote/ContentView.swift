@@ -84,39 +84,6 @@ private enum EditorToolbarPlacement {
     case keyboardAdjacent
 }
 
-private enum EditorToolbarChrome {
-    /// Toolbar when shown inline in the editor stack (slightly lifted from the canvas).
-    static var uiColor: UIColor {
-        UIColor { trait in
-            trait.userInterfaceStyle == .dark ? .systemGray5 : .systemGray6
-        }
-    }
-
-    /// QuickType / keyboard plate — aligned lighter toward the system keyboard background.
-    static var keyboardShelfUIColor: UIColor {
-        UIColor { trait in
-            trait.userInterfaceStyle == .dark ? .systemGray5 : .systemGray6
-        }
-    }
-}
-
-/// Full-width layer behind the editor so keyboard-adjacent chrome can read continuous with the system keyboard.
-private struct EditorKeyboardShelfBackdrop: View {
-    var body: some View {
-        GeometryReader { geo in
-            VStack(spacing: 0) {
-                Spacer(minLength: 0)
-                Rectangle()
-                    .fill(Color(uiColor: EditorToolbarChrome.keyboardShelfUIColor))
-                    .frame(height: max(360, geo.size.height * 0.42))
-            }
-        }
-        .allowsHitTesting(false)
-        .ignoresSafeArea(.keyboard, edges: .bottom)
-        .ignoresSafeArea(.container, edges: .bottom)
-    }
-}
-
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query(sort: \NoteDocument.lastEditedAt, order: .reverse) private var notes: [NoteDocument]
@@ -186,10 +153,6 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             Color.noteCanvas.ignoresSafeArea()
-
-            if isEditing && editorHasFocus && softwareKeyboardVisible {
-                EditorKeyboardShelfBackdrop()
-            }
 
             VStack(spacing: 0) {
                 if isEditing {
@@ -378,8 +341,11 @@ struct ContentView: View {
         }
         .foregroundStyle(Color.brandBlue)
         .padding(.horizontal, 18)
-        .frame(height: 56)
-        .background(Color.topBarBackground.opacity(0.96))
+        .frame(minHeight: 56)
+        .background {
+            Color.topBarBackground
+                .ignoresSafeArea(edges: .top)
+        }
         .overlay(alignment: .bottom) {
             Rectangle()
                 .fill(Color.topBarDivider)
@@ -532,20 +498,19 @@ struct ContentView: View {
 
     @ViewBuilder
     private func editorToolbarChromeBackground(placement: EditorToolbarPlacement, shelfActive: Bool) -> some View {
-        switch placement {
-        case .keyboardAdjacent:
-            if shelfActive {
-                Rectangle()
-                    .fill(Color(uiColor: EditorToolbarChrome.keyboardShelfUIColor))
-                    .ignoresSafeArea(.container, edges: .bottom)
-                    .ignoresSafeArea(.keyboard, edges: .bottom)
-            } else {
-                Rectangle()
-                    .fill(Color(uiColor: EditorToolbarChrome.uiColor))
-            }
-        case .inline:
+        let fill = (placement == .keyboardAdjacent && shelfActive)
+            ? Color.editorKeyboardShelf
+            : Color.editorToolbarChrome
+
+        if placement == .keyboardAdjacent && shelfActive {
             Rectangle()
-                .fill(Color(uiColor: EditorToolbarChrome.uiColor))
+                .fill(fill)
+                .ignoresSafeArea(.container, edges: .bottom)
+                .ignoresSafeArea(.keyboard, edges: .bottom)
+        } else {
+            Rectangle()
+                .fill(fill)
+                .ignoresSafeArea(.container, edges: .bottom)
         }
     }
 

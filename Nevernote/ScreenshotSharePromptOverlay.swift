@@ -14,7 +14,7 @@ struct ScreenshotSharePromptOverlay: View {
 
     var body: some View {
         ZStack {
-            Color.black.opacity(0.55)
+            Color.screenshotOverlayDim
                 .ignoresSafeArea()
                 .onTapGesture { onCancel() }
 
