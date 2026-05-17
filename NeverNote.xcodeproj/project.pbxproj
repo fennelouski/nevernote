@@ -7,27 +7,137 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1A2B3C4D5E6F789012345678 /* NNOnboardingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C3D4E5F6789012345678A1 /* NNOnboardingManager.m */; };
-		2B3C4D5E6F789012345678A1 /* NNOnboardingTooltipView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E5F6789012345678A1B2C3 /* NNOnboardingTooltipView.m */; };
-		33B70CB51399476FAEFB55D8 /* NNSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 478AA74701524D5BB5AE53F4 /* NNSettingsViewController.m */; };
-		3C4D5E6F789012345678A1B2 /* NNOnboardingCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = F6789012345678A1B2C3D4E5 /* NNOnboardingCoordinator.m */; };
+		1A2B3C4D5E6F789012345678 /* NNOnboardingManager.m in Sources */ = {
+			isa = PBXBuildFile;
+			fileRef = B2C3D4E5F6789012345678A1 /* NNOnboardingManager.m */;
+			platformFilters = (
+				ios,
+			);
+		};
+		2B3C4D5E6F789012345678A1 /* NNOnboardingTooltipView.m in Sources */ = {
+			isa = PBXBuildFile;
+			fileRef = D4E5F6789012345678A1B2C3 /* NNOnboardingTooltipView.m */;
+			platformFilters = (
+				ios,
+			);
+		};
+		33B70CB51399476FAEFB55D8 /* NNSettingsViewController.m in Sources */ = {
+			isa = PBXBuildFile;
+			fileRef = 478AA74701524D5BB5AE53F4 /* NNSettingsViewController.m */;
+			platformFilters = (
+				ios,
+			);
+		};
+		3C4D5E6F789012345678A1B2 /* NNOnboardingCoordinator.m in Sources */ = {
+			isa = PBXBuildFile;
+			fileRef = F6789012345678A1B2C3D4E5 /* NNOnboardingCoordinator.m */;
+			platformFilters = (
+				ios,
+			);
+		};
 		8008A38B191BC5C10071B32D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8008A38A191BC5C10071B32D /* Default-568h@2x.png */; };
-		800D2E021947919700E904AA /* UIColor+AppColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 800D2E011947919700E904AA /* UIColor+AppColors.m */; };
-		8015691419B1189F00A4A083 /* NNListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8015691319B1189F00A4A083 /* NNListViewController.m */; };
-		803137BC1965D08E00B78BC5 /* UNIOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 803137BB1965D08E00B78BC5 /* UNIOptionsView.m */; };
-		803137BF1965D5CC00B78BC5 /* UNISuggestionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 803137BE1965D5CC00B78BC5 /* UNISuggestionView.m */; };
-		803137C21965F15B00B78BC5 /* UNICalendarPopOver.m in Sources */ = {isa = PBXBuildFile; fileRef = 803137C11965F15B00B78BC5 /* UNICalendarPopOver.m */; };
-		803137CB19660DAB00B78BC5 /* UNIAdditionalOptionsViewButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 803137CA19660DAB00B78BC5 /* UNIAdditionalOptionsViewButton.m */; };
-		803CDE46196AFFE600C1C789 /* UNITimeInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 803CDE45196AFFE600C1C789 /* UNITimeInputView.m */; };
-		803CDE49196B06A700C1C789 /* UNIAdditionalOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 803CDE48196B06A700C1C789 /* UNIAdditionalOptionsView.m */; };
-		803CDE4C196B157600C1C789 /* UNIRepeatOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 803CDE4B196B157600C1C789 /* UNIRepeatOptionsView.m */; };
-		8056F5FF196591BE009CEA81 /* UNITaskCreatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8056F5FE196591BE009CEA81 /* UNITaskCreatorViewController.m */; };
+		800D2E021947919700E904AA /* UIColor+AppColors.m in Sources */ = {
+			isa = PBXBuildFile;
+			fileRef = 800D2E011947919700E904AA /* UIColor+AppColors.m */;
+			platformFilters = (
+				ios,
+			);
+		};
+		8015691419B1189F00A4A083 /* NNListViewController.m in Sources */ = {
+			isa = PBXBuildFile;
+			fileRef = 8015691319B1189F00A4A083 /* NNListViewController.m */;
+			platformFilters = (
+				ios,
+			);
+		};
+		803137BC1965D08E00B78BC5 /* UNIOptionsView.m in Sources */ = {
+			isa = PBXBuildFile;
+			fileRef = 803137BB1965D08E00B78BC5 /* UNIOptionsView.m */;
+			platformFilters = (
+				ios,
+			);
+		};
+		803137BF1965D5CC00B78BC5 /* UNISuggestionView.m in Sources */ = {
+			isa = PBXBuildFile;
+			fileRef = 803137BE1965D5CC00B78BC5 /* UNISuggestionView.m */;
+			platformFilters = (
+				ios,
+			);
+		};
+		803137C21965F15B00B78BC5 /* UNICalendarPopOver.m in Sources */ = {
+			isa = PBXBuildFile;
+			fileRef = 803137C11965F15B00B78BC5 /* UNICalendarPopOver.m */;
+			platformFilters = (
+				ios,
+			);
+		};
+		803137CB19660DAB00B78BC5 /* UNIAdditionalOptionsViewButton.m in Sources */ = {
+			isa = PBXBuildFile;
+			fileRef = 803137CA19660DAB00B78BC5 /* UNIAdditionalOptionsViewButton.m */;
+			platformFilters = (
+				ios,
+			);
+		};
+		803CDE46196AFFE600C1C789 /* UNITimeInputView.m in Sources */ = {
+			isa = PBXBuildFile;
+			fileRef = 803CDE45196AFFE600C1C789 /* UNITimeInputView.m */;
+			platformFilters = (
+				ios,
+			);
+		};
+		803CDE49196B06A700C1C789 /* UNIAdditionalOptionsView.m in Sources */ = {
+			isa = PBXBuildFile;
+			fileRef = 803CDE48196B06A700C1C789 /* UNIAdditionalOptionsView.m */;
+			platformFilters = (
+				ios,
+			);
+		};
+		803CDE4C196B157600C1C789 /* UNIRepeatOptionsView.m in Sources */ = {
+			isa = PBXBuildFile;
+			fileRef = 803CDE4B196B157600C1C789 /* UNIRepeatOptionsView.m */;
+			platformFilters = (
+				ios,
+			);
+		};
+		804E511F2FB9E68800DAA686 /* EditorFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E511E2FB9E68800DAA686 /* EditorFont.swift */; };
+		804E51212FB9E69900DAA686 /* NoteDataDetectors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E51202FB9E69900DAA686 /* NoteDataDetectors.swift */; };
+		804E51382FB9E85000DAA686 /* NoteDataDetectorInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E51392FB9E85000DAA686 /* NoteDataDetectorInteraction.swift */; };
+		804E513A2FB9E86800DAA686 /* NoteDataDetectorConfirmationDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E513B2FB9E86800DAA686 /* NoteDataDetectorConfirmationDialog.swift */; };
+		804E51232FB9E6CE00DAA686 /* EditorToolbarPlacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E51222FB9E6CE00DAA686 /* EditorToolbarPlacement.swift */; };
+		804E51252FB9E6E100DAA686 /* NoteBottomURLImagePreviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E51242FB9E6E100DAA686 /* NoteBottomURLImagePreviews.swift */; };
+		804E51272FB9E6FD00DAA686 /* NoteBottomURLImageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E51262FB9E6FD00DAA686 /* NoteBottomURLImageRow.swift */; };
+		804E51292FB9E74100DAA686 /* RichTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E51282FB9E74100DAA686 /* RichTextEditor.swift */; };
+		804E512B2FB9E75D00DAA686 /* NoteWrappingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E512A2FB9E75D00DAA686 /* NoteWrappingTextView.swift */; };
+		804E512D2FB9E77C00DAA686 /* TextFormatAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E512C2FB9E77C00DAA686 /* TextFormatAction.swift */; };
+		804E512F2FB9E79000DAA686 /* FocusTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E512E2FB9E79000DAA686 /* FocusTextView.swift */; };
+		804E51312FB9E7D900DAA686 /* ReadOnlyNoteTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E51302FB9E7D900DAA686 /* ReadOnlyNoteTextView.swift */; };
+		804E51332FB9E7F200DAA686 /* FontPickerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E51322FB9E7F200DAA686 /* FontPickerSheet.swift */; };
+		804E51352FB9E82600DAA686 /* ScreenshotPromptStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E51342FB9E82600DAA686 /* ScreenshotPromptStep.swift */; };
+		804E51372FB9E83900DAA686 /* NevernoteNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E51362FB9E83900DAA686 /* NevernoteNotification.swift */; };
+		8056F5FF196591BE009CEA81 /* UNITaskCreatorViewController.m in Sources */ = {
+			isa = PBXBuildFile;
+			fileRef = 8056F5FE196591BE009CEA81 /* UNITaskCreatorViewController.m */;
+			platformFilters = (
+				ios,
+			);
+		};
 		805898751916641F00352439 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 805898741916641F00352439 /* Foundation.framework */; };
 		805898771916641F00352439 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 805898761916641F00352439 /* CoreGraphics.framework */; };
-		805898791916641F00352439 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 805898781916641F00352439 /* UIKit.framework */; };
+		805898791916641F00352439 /* UIKit.framework in Frameworks */ = {
+			isa = PBXBuildFile;
+			fileRef = 805898781916641F00352439 /* UIKit.framework */;
+			platformFilters = (
+				ios,
+			);
+		};
 		8058987B1916641F00352439 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8058987A1916641F00352439 /* CoreData.framework */; };
-		805898811916641F00352439 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8058987F1916641F00352439 /* InfoPlist.strings */; };
-		805898871916641F00352439 /* NNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 805898861916641F00352439 /* NNAppDelegate.m */; };
+		805898871916641F00352439 /* NNAppDelegate.m in Sources */ = {
+			isa = PBXBuildFile;
+			fileRef = 805898861916641F00352439 /* NNAppDelegate.m */;
+			platformFilters = (
+				ios,
+			);
+		};
 		8058988A1916641F00352439 /* NeverNote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 805898881916641F00352439 /* NeverNote.xcdatamodeld */; };
 		8058988C1916641F00352439 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8058988B1916641F00352439 /* Images.xcassets */; };
 		805898931916642000352439 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 805898921916642000352439 /* XCTest.framework */; };
@@ -35,9 +145,27 @@
 		805898951916642000352439 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 805898781916641F00352439 /* UIKit.framework */; };
 		805898961916642000352439 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8058987A1916641F00352439 /* CoreData.framework */; };
 		8058989E1916642000352439 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8058989C1916642000352439 /* InfoPlist.strings */; };
-		805898A01916642000352439 /* NeverNoteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8058989F1916642000352439 /* NeverNoteTests.m */; };
-		805898AB1916643400352439 /* NNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 805898AA1916643400352439 /* NNViewController.m */; };
-		805898B21919A21400352439 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 805898B11919A21400352439 /* CoreMotion.framework */; };
+		805898A01916642000352439 /* NeverNoteTests.m in Sources */ = {
+			isa = PBXBuildFile;
+			fileRef = 8058989F1916642000352439 /* NeverNoteTests.m */;
+			platformFilters = (
+				ios,
+			);
+		};
+		805898AB1916643400352439 /* NNViewController.m in Sources */ = {
+			isa = PBXBuildFile;
+			fileRef = 805898AA1916643400352439 /* NNViewController.m */;
+			platformFilters = (
+				ios,
+			);
+		};
+		805898B21919A21400352439 /* CoreMotion.framework in Frameworks */ = {
+			isa = PBXBuildFile;
+			fileRef = 805898B11919A21400352439 /* CoreMotion.framework */;
+			platformFilters = (
+				ios,
+			);
+		};
 		80B9E221191AF91B008B377C /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 80B9E220191AF91B008B377C /* icon.icns */; };
 		80B9E22A191AFC4A008B377C /* Icon 29.png in Resources */ = {isa = PBXBuildFile; fileRef = 80B9E224191AFC4A008B377C /* Icon 29.png */; };
 		80B9E22B191AFC4A008B377C /* Icon 40.png in Resources */ = {isa = PBXBuildFile; fileRef = 80B9E225191AFC4A008B377C /* Icon 40.png */; };
@@ -52,7 +180,13 @@
 		80B9E23A191AFDA1008B377C /* Launch Screen iPhone Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 80B9E234191AFDA1008B377C /* Launch Screen iPhone Portrait.png */; };
 		80B9E23B191AFDA1008B377C /* Launch Screen iPhone Portrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 80B9E235191AFDA1008B377C /* Launch Screen iPhone Portrait@2x.png */; };
 		80B9E23D191AFDF8008B377C /* Launch Screen iPhone Portrait 4-inch.png in Resources */ = {isa = PBXBuildFile; fileRef = 80B9E23C191AFDF8008B377C /* Launch Screen iPhone Portrait 4-inch.png */; };
-		80ECF9371964519E00EDABD1 /* NNColorObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 80ECF9361964519E00EDABD1 /* NNColorObject.m */; };
+		80ECF9371964519E00EDABD1 /* NNColorObject.m in Sources */ = {
+			isa = PBXBuildFile;
+			fileRef = 80ECF9361964519E00EDABD1 /* NNColorObject.m */;
+			platformFilters = (
+				ios,
+			);
+		};
 		90AA00021000000000000001 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA00011000000000000001 /* ContentView.swift */; };
 		90AA00021000000000000002 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA00011000000000000002 /* Item.swift */; };
 		90AA00021000000000000003 /* NevernoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA00011000000000000003 /* NevernoteApp.swift */; };
@@ -61,20 +195,59 @@
 		90AA00031000000000000106 /* ScreenshotSharePromptOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA00031000000000000105 /* ScreenshotSharePromptOverlay.swift */; };
 		90AA0003100000000000010A /* NoteImageURLPrefetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA00031000000000000109 /* NoteImageURLPrefetcher.swift */; };
 		90AA0003100000000000010C /* NeverNoteTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA0003100000000000010B /* NeverNoteTheme.swift */; };
-		9ECED7F59E864A5DAB31195E /* NNSettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DE51B2428F42E399C83D79 /* NNSettingsManager.m */; };
-		A7B1C2D3E4F5678901234567 /* NNLogoTraceView.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B1C2D3E4F5678901234569 /* NNLogoTraceView.m */; };
+		90AA00031000000000000110 /* NoteImagePermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA0003100000000000010F /* NoteImagePermissionManager.swift */; };
+		90AA00031000000000000112 /* NoteImageEducationalModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA00031000000000000111 /* NoteImageEducationalModal.swift */; };
+		90AA00031000000000000114 /* NoteImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA00031000000000000113 /* NoteImagePicker.swift */; };
+		90AA00031000000000000116 /* NoteImageOCR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA00031000000000000115 /* NoteImageOCR.swift */; };
+		90AA0003100000000000011E /* NoteImageQRDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA0003100000000000011D /* NoteImageQRDetection.swift */; };
+		90AA00031000000000000118 /* NoteImageFullScreenModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA00031000000000000117 /* NoteImageFullScreenModal.swift */; };
+		90AA0003100000000000011A /* MacInspectorPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA00031000000000000119 /* MacInspectorPanel.swift */; };
+		90AA0003100000000000011C /* MacPhotoImportInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA0003100000000000011B /* MacPhotoImportInspector.swift */; };
+		9ECED7F59E864A5DAB31195E /* NNSettingsManager.m in Sources */ = {
+			isa = PBXBuildFile;
+			fileRef = 60DE51B2428F42E399C83D79 /* NNSettingsManager.m */;
+			platformFilters = (
+				ios,
+			);
+		};
 		A10000010191664200352401 /* NoteRichTextCodec.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000020191664200352401 /* NoteRichTextCodec.swift */; };
 		A10000030191664200352401 /* NeverNoteCloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000040191664200352401 /* NeverNoteCloudKit.swift */; };
 		A10000050191664200352401 /* NoteRichTextCodec.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000020191664200352401 /* NoteRichTextCodec.swift */; };
 		A10000060191664200352401 /* NeverNoteCloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000040191664200352401 /* NeverNoteCloudKit.swift */; };
-		A100001B0191664200352401 /* NevernoteModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100001A0191664200352401 /* NevernoteModelContainer.swift */; };
-		A100001C0191664200352401 /* NevernoteModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100001A0191664200352401 /* NevernoteModelContainer.swift */; };
 		A10000070191664200352401 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA00011000000000000002 /* Item.swift */; };
 		A10000080191664200352401 /* NevernoteWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000090191664200352401 /* NevernoteWatchApp.swift */; };
 		A100000A0191664200352401 /* WatchRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100000B0191664200352401 /* WatchRootView.swift */; };
 		A100000E0191664200352401 /* NeverNoteWatchWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100000F0191664200352401 /* NeverNoteWatchWidget.swift */; };
-		A10000100191664200352401 /* NeverNote Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = A10000110191664200352401 /* NeverNote Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A10000100191664200352401 /* NeverNote Watch App.app in Embed Watch Content */ = {
+			isa = PBXBuildFile;
+			fileRef = A10000110191664200352401 /* NeverNote Watch App.app */;
+			platformFilters = (
+				ios,
+			);
+			settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); };
+		};
 		A10000120191664200352401 /* NeverNote Watch Widget Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A10000130191664200352401 /* NeverNote Watch Widget Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A100001B0191664200352401 /* NevernoteModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100001A0191664200352401 /* NevernoteModelContainer.swift */; };
+		A100001C0191664200352401 /* NevernoteModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100001A0191664200352401 /* NevernoteModelContainer.swift */; };
+		A7B1C2D3E4F5678901234567 /* NNLogoTraceView.m in Sources */ = {
+			isa = PBXBuildFile;
+			fileRef = A7B1C2D3E4F5678901234569 /* NNLogoTraceView.m */;
+			platformFilters = (
+				ios,
+			);
+		};
+		AABB00000000000000000002 /* ScreenshotLaunchSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB00000000000000000001 /* ScreenshotLaunchSupport.swift */; };
+		AABB00000000000000000004 /* WatchScreenshotLaunchSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB00000000000000000003 /* WatchScreenshotLaunchSupport.swift */; };
+		BLOC00021000000000000001 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = BLOC00011000000000000001 /* Localizable.xcstrings */; };
+		BLOC00021000000000000002 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = BLOC00011000000000000002 /* InfoPlist.xcstrings */; };
+		BLOC00021000000000000003 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = BLOC00011000000000000001 /* Localizable.xcstrings */; };
+		BLOC00021000000000000004 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = BLOC00011000000000000001 /* Localizable.xcstrings */; };
+		BLOC00021000000000000005 /* ScreenshotDemoStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BLOC00011000000000000003 /* ScreenshotDemoStrings.swift */; };
+		BLOC00021000000000000006 /* ScreenshotDemoStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BLOC00011000000000000003 /* ScreenshotDemoStrings.swift */; };
+		PLAT00021000000000000001 /* NeverNotePlatform.swift in Sources */ = {isa = PBXBuildFile; fileRef = PLAT00011000000000000001 /* NeverNotePlatform.swift */; };
+		KB00021000000000000001 /* NeverNoteKeyboardShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = KB00011000000000000001 /* NeverNoteKeyboardShortcuts.swift */; };
+		MAC00021000000000000001 /* NoteTextViewsMac.swift in Sources */ = {isa = PBXBuildFile; fileRef = MAC00011000000000000001 /* NoteTextViewsMac.swift */; };
+		HTTP00021000000000000001 /* NoteHTTPPasteboardLinkFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = HTTP00011000000000000001 /* NoteHTTPPasteboardLinkFormatting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +261,9 @@
 		A10000140191664200352401 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 805898691916641F00352439 /* Project object */;
+			platformFilters = (
+				ios,
+			);
 			proxyType = 1;
 			remoteGlobalIDString = A10000150191664200352401;
 			remoteInfo = "NeverNote Watch App";
@@ -102,17 +278,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		A100002D0191664200352401 /* Embed Watch Content */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 16;
-			files = (
-				A10000100191664200352401 /* NeverNote Watch App.app in Embed Watch Content */,
-			);
-			name = "Embed Watch Content";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A10000290191664200352401 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -122,6 +287,20 @@
 				A10000120191664200352401 /* NeverNote Watch Widget Extension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A100002D0191664200352401 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				A10000100191664200352401 /* NeverNote Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			platformFilters = (
+				ios,
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -149,6 +328,21 @@
 		803CDE48196B06A700C1C789 /* UNIAdditionalOptionsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNIAdditionalOptionsView.m; sourceTree = "<group>"; };
 		803CDE4A196B157600C1C789 /* UNIRepeatOptionsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNIRepeatOptionsView.h; sourceTree = "<group>"; };
 		803CDE4B196B157600C1C789 /* UNIRepeatOptionsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNIRepeatOptionsView.m; sourceTree = "<group>"; };
+		804E511E2FB9E68800DAA686 /* EditorFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorFont.swift; sourceTree = "<group>"; };
+		804E51202FB9E69900DAA686 /* NoteDataDetectors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDataDetectors.swift; sourceTree = "<group>"; };
+		804E51392FB9E85000DAA686 /* NoteDataDetectorInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDataDetectorInteraction.swift; sourceTree = "<group>"; };
+		804E513B2FB9E86800DAA686 /* NoteDataDetectorConfirmationDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDataDetectorConfirmationDialog.swift; sourceTree = "<group>"; };
+		804E51222FB9E6CE00DAA686 /* EditorToolbarPlacement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorToolbarPlacement.swift; sourceTree = "<group>"; };
+		804E51242FB9E6E100DAA686 /* NoteBottomURLImagePreviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteBottomURLImagePreviews.swift; sourceTree = "<group>"; };
+		804E51262FB9E6FD00DAA686 /* NoteBottomURLImageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteBottomURLImageRow.swift; sourceTree = "<group>"; };
+		804E51282FB9E74100DAA686 /* RichTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichTextEditor.swift; sourceTree = "<group>"; };
+		804E512A2FB9E75D00DAA686 /* NoteWrappingTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteWrappingTextView.swift; sourceTree = "<group>"; };
+		804E512C2FB9E77C00DAA686 /* TextFormatAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFormatAction.swift; sourceTree = "<group>"; };
+		804E512E2FB9E79000DAA686 /* FocusTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusTextView.swift; sourceTree = "<group>"; };
+		804E51302FB9E7D900DAA686 /* ReadOnlyNoteTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadOnlyNoteTextView.swift; sourceTree = "<group>"; };
+		804E51322FB9E7F200DAA686 /* FontPickerSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontPickerSheet.swift; sourceTree = "<group>"; };
+		804E51342FB9E82600DAA686 /* ScreenshotPromptStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotPromptStep.swift; sourceTree = "<group>"; };
+		804E51362FB9E83900DAA686 /* NevernoteNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NevernoteNotification.swift; sourceTree = "<group>"; };
 		8056F5FD196591BE009CEA81 /* UNITaskCreatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNITaskCreatorViewController.h; sourceTree = "<group>"; };
 		8056F5FE196591BE009CEA81 /* UNITaskCreatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNITaskCreatorViewController.m; sourceTree = "<group>"; };
 		805898711916641F00352439 /* NeverNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeverNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -197,25 +391,42 @@
 		90AA00031000000000000107 /* NeverNote-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NeverNote-Bridging-Header.h"; sourceTree = "<group>"; };
 		90AA00031000000000000109 /* NoteImageURLPrefetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteImageURLPrefetcher.swift; sourceTree = "<group>"; };
 		90AA0003100000000000010B /* NeverNoteTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeverNoteTheme.swift; sourceTree = "<group>"; };
+		90AA0003100000000000010F /* NoteImagePermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteImagePermissionManager.swift; sourceTree = "<group>"; };
+		90AA00031000000000000111 /* NoteImageEducationalModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteImageEducationalModal.swift; sourceTree = "<group>"; };
+		90AA00031000000000000113 /* NoteImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteImagePicker.swift; sourceTree = "<group>"; };
+		90AA00031000000000000115 /* NoteImageOCR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteImageOCR.swift; sourceTree = "<group>"; };
+		90AA0003100000000000011D /* NoteImageQRDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteImageQRDetection.swift; sourceTree = "<group>"; };
+		90AA00031000000000000117 /* NoteImageFullScreenModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteImageFullScreenModal.swift; sourceTree = "<group>"; };
+		90AA00031000000000000119 /* MacInspectorPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacInspectorPanel.swift; sourceTree = "<group>"; };
+		90AA0003100000000000011B /* MacPhotoImportInspector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacPhotoImportInspector.swift; sourceTree = "<group>"; };
+		A10000020191664200352401 /* NoteRichTextCodec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRichTextCodec.swift; sourceTree = "<group>"; };
+		A10000040191664200352401 /* NeverNoteCloudKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeverNoteCloudKit.swift; sourceTree = "<group>"; };
+		A10000090191664200352401 /* NevernoteWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NevernoteWatchApp.swift; sourceTree = "<group>"; };
+		A100000B0191664200352401 /* WatchRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchRootView.swift; sourceTree = "<group>"; };
+		A100000F0191664200352401 /* NeverNoteWatchWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeverNoteWatchWidget.swift; sourceTree = "<group>"; };
+		A10000110191664200352401 /* NeverNote Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NeverNote Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A10000130191664200352401 /* NeverNote Watch Widget Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "NeverNote Watch Widget Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A10000180191664200352401 /* NeverNoteWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NeverNoteWatch.entitlements; sourceTree = "<group>"; };
+		A10000190191664200352401 /* NeverNote.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NeverNote.entitlements; sourceTree = "<group>"; };
+		A100001A0191664200352401 /* NevernoteModelContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NevernoteModelContainer.swift; sourceTree = "<group>"; };
 		A1B2C3D4E5F6789012345678 /* NNOnboardingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNOnboardingManager.h; sourceTree = "<group>"; };
 		A7B1C2D3E4F5678901234568 /* NNLogoTraceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNLogoTraceView.h; sourceTree = "<group>"; };
 		A7B1C2D3E4F5678901234569 /* NNLogoTraceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNLogoTraceView.m; sourceTree = "<group>"; };
+		AABB00000000000000000001 /* ScreenshotLaunchSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotLaunchSupport.swift; sourceTree = "<group>"; };
+		AABB00000000000000000003 /* WatchScreenshotLaunchSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchScreenshotLaunchSupport.swift; sourceTree = "<group>"; };
 		B2C3D4E5F6789012345678A1 /* NNOnboardingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNOnboardingManager.m; sourceTree = "<group>"; };
+		BLOC00011000000000000001 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		BLOC00011000000000000002 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
+		BLOC00011000000000000003 /* ScreenshotDemoStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotDemoStrings.swift; sourceTree = "<group>"; };
 		C3D4E5F6789012345678A1B2 /* NNOnboardingTooltipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNOnboardingTooltipView.h; sourceTree = "<group>"; };
 		C49CBDEC93FC4C8192723291 /* NNSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNSettingsViewController.h; sourceTree = "<group>"; };
 		D4E5F6789012345678A1B2C3 /* NNOnboardingTooltipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNOnboardingTooltipView.m; sourceTree = "<group>"; };
 		E5F6789012345678A1B2C3D4 /* NNOnboardingCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNOnboardingCoordinator.h; sourceTree = "<group>"; };
 		F6789012345678A1B2C3D4E5 /* NNOnboardingCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNOnboardingCoordinator.m; sourceTree = "<group>"; };
-		A10000020191664200352401 /* NoteRichTextCodec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRichTextCodec.swift; sourceTree = "<group>"; };
-		A10000040191664200352401 /* NeverNoteCloudKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeverNoteCloudKit.swift; sourceTree = "<group>"; };
-		A100001A0191664200352401 /* NevernoteModelContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NevernoteModelContainer.swift; sourceTree = "<group>"; };
-		A10000090191664200352401 /* NevernoteWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NevernoteWatchApp.swift; sourceTree = "<group>"; };
-		A100000B0191664200352401 /* WatchRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchRootView.swift; sourceTree = "<group>"; };
-		A10000180191664200352401 /* NeverNoteWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NeverNoteWatch.entitlements; sourceTree = "<group>"; };
-		A100000F0191664200352401 /* NeverNoteWatchWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeverNoteWatchWidget.swift; sourceTree = "<group>"; };
-		A10000190191664200352401 /* NeverNote.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NeverNote.entitlements; sourceTree = "<group>"; };
-		A10000110191664200352401 /* NeverNote Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NeverNote Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A10000130191664200352401 /* NeverNote Watch Widget Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "NeverNote Watch Widget Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		PLAT00011000000000000001 /* NeverNotePlatform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeverNotePlatform.swift; sourceTree = "<group>"; };
+		KB00011000000000000001 /* NeverNoteKeyboardShortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeverNoteKeyboardShortcuts.swift; sourceTree = "<group>"; };
+		MAC00011000000000000001 /* NoteTextViewsMac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTextViewsMac.swift; sourceTree = "<group>"; };
+		HTTP00011000000000000001 /* NoteHTTPPasteboardLinkFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteHTTPPasteboardLinkFormatting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -416,6 +627,25 @@
 			isa = PBXGroup;
 			children = (
 				90AA00011000000000000001 /* ContentView.swift */,
+				PLAT00011000000000000001 /* NeverNotePlatform.swift */,
+				KB00011000000000000001 /* NeverNoteKeyboardShortcuts.swift */,
+				MAC00011000000000000001 /* NoteTextViewsMac.swift */,
+				HTTP00011000000000000001 /* NoteHTTPPasteboardLinkFormatting.swift */,
+				804E51362FB9E83900DAA686 /* NevernoteNotification.swift */,
+				804E51342FB9E82600DAA686 /* ScreenshotPromptStep.swift */,
+				804E51322FB9E7F200DAA686 /* FontPickerSheet.swift */,
+				804E51302FB9E7D900DAA686 /* ReadOnlyNoteTextView.swift */,
+				804E512E2FB9E79000DAA686 /* FocusTextView.swift */,
+				804E512C2FB9E77C00DAA686 /* TextFormatAction.swift */,
+				804E512A2FB9E75D00DAA686 /* NoteWrappingTextView.swift */,
+				804E51282FB9E74100DAA686 /* RichTextEditor.swift */,
+				804E51262FB9E6FD00DAA686 /* NoteBottomURLImageRow.swift */,
+				804E51242FB9E6E100DAA686 /* NoteBottomURLImagePreviews.swift */,
+				804E51222FB9E6CE00DAA686 /* EditorToolbarPlacement.swift */,
+				804E51202FB9E69900DAA686 /* NoteDataDetectors.swift */,
+				804E51392FB9E85000DAA686 /* NoteDataDetectorInteraction.swift */,
+				804E513B2FB9E86800DAA686 /* NoteDataDetectorConfirmationDialog.swift */,
+				804E511E2FB9E68800DAA686 /* EditorFont.swift */,
 				90AA00011000000000000002 /* Item.swift */,
 				90AA00011000000000000003 /* NevernoteApp.swift */,
 				A10000020191664200352401 /* NoteRichTextCodec.swift */,
@@ -427,7 +657,19 @@
 				90AA00031000000000000105 /* ScreenshotSharePromptOverlay.swift */,
 				90AA00031000000000000109 /* NoteImageURLPrefetcher.swift */,
 				90AA0003100000000000010B /* NeverNoteTheme.swift */,
+				90AA0003100000000000010F /* NoteImagePermissionManager.swift */,
+				90AA00031000000000000111 /* NoteImageEducationalModal.swift */,
+				90AA00031000000000000113 /* NoteImagePicker.swift */,
+				90AA00031000000000000115 /* NoteImageOCR.swift */,
+				90AA0003100000000000011D /* NoteImageQRDetection.swift */,
+				90AA00031000000000000117 /* NoteImageFullScreenModal.swift */,
+				90AA00031000000000000119 /* MacInspectorPanel.swift */,
+				90AA0003100000000000011B /* MacPhotoImportInspector.swift */,
 				90AA00031000000000000107 /* NeverNote-Bridging-Header.h */,
+				AABB00000000000000000001 /* ScreenshotLaunchSupport.swift */,
+				BLOC00011000000000000003 /* ScreenshotDemoStrings.swift */,
+				BLOC00011000000000000001 /* Localizable.xcstrings */,
+				BLOC00011000000000000002 /* InfoPlist.xcstrings */,
 			);
 			path = NeverNote;
 			sourceTree = "<group>";
@@ -438,6 +680,7 @@
 				A10000090191664200352401 /* NevernoteWatchApp.swift */,
 				A100000B0191664200352401 /* WatchRootView.swift */,
 				A10000180191664200352401 /* NeverNoteWatch.entitlements */,
+				AABB00000000000000000003 /* WatchScreenshotLaunchSupport.swift */,
 			);
 			path = NeverNoteWatch;
 			sourceTree = "<group>";
@@ -515,6 +758,7 @@
 			buildPhases = (
 				A100002C0191664200352401 /* Sources */,
 				A10000250191664200352401 /* Frameworks */,
+				BLOC00031000000000000001 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -558,7 +802,63 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				English,
+				Base,
 				en,
+				"en-US",
+				"en-GB",
+				"en-AU",
+				"en-CA",
+				"en-IN",
+				"ar",
+				"bn",
+				"ca",
+				"zh-Hans",
+				"zh-Hant",
+				"zh-HK",
+				"hr",
+				"cs",
+				"da",
+				"nl",
+				"fi",
+				"fr",
+				"fr-CA",
+				"de",
+				"el",
+				"gu",
+				"he",
+				"hi",
+				"hu",
+				"id",
+				"it",
+				"ja",
+				"kn",
+				"ko",
+				"ml",
+				"mr",
+				"ms",
+				"nb",
+				"no",
+				"or",
+				"pa",
+				"pl",
+				"pt-BR",
+				"pt-PT",
+				"ro",
+				"ru",
+				"sk",
+				"sl",
+				"es",
+				"es-ES",
+				"es-MX",
+				"es-419",
+				"sv",
+				"ta",
+				"te",
+				"th",
+				"tr",
+				"uk",
+				"ur",
+				"vi",
 			);
 			mainGroup = 805898681916641F00352439;
 			productRefGroup = 805898721916641F00352439 /* Products */;
@@ -578,7 +878,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				805898811916641F00352439 /* InfoPlist.strings in Resources */,
+				BLOC00021000000000000001 /* Localizable.xcstrings in Resources */,
+				BLOC00021000000000000002 /* InfoPlist.xcstrings in Resources */,
 				80B9E23D191AFDF8008B377C /* Launch Screen iPhone Portrait 4-inch.png in Resources */,
 				80B9E23A191AFDA1008B377C /* Launch Screen iPhone Portrait.png in Resources */,
 				80B9E22F191AFC4A008B377C /* Icon 152.png in Resources */,
@@ -610,6 +911,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BLOC00021000000000000003 /* Localizable.xcstrings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BLOC00031000000000000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BLOC00021000000000000004 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,36 +930,65 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				PLAT00021000000000000001 /* NeverNotePlatform.swift in Sources */,
+				KB00021000000000000001 /* NeverNoteKeyboardShortcuts.swift in Sources */,
+				MAC00021000000000000001 /* NoteTextViewsMac.swift in Sources */,
+				HTTP00021000000000000001 /* NoteHTTPPasteboardLinkFormatting.swift in Sources */,
+				804E512F2FB9E79000DAA686 /* FocusTextView.swift in Sources */,
 				90AA00021000000000000003 /* NevernoteApp.swift in Sources */,
 				A10000010191664200352401 /* NoteRichTextCodec.swift in Sources */,
+				804E511F2FB9E68800DAA686 /* EditorFont.swift in Sources */,
 				A10000030191664200352401 /* NeverNoteCloudKit.swift in Sources */,
+				804E51272FB9E6FD00DAA686 /* NoteBottomURLImageRow.swift in Sources */,
+				804E51292FB9E74100DAA686 /* RichTextEditor.swift in Sources */,
 				A100001B0191664200352401 /* NevernoteModelContainer.swift in Sources */,
 				90AA00031000000000000102 /* NoteTextImageRenderer.swift in Sources */,
 				90AA00031000000000000104 /* ActivityShareSheet.swift in Sources */,
 				90AA00031000000000000106 /* ScreenshotSharePromptOverlay.swift in Sources */,
 				90AA0003100000000000010A /* NoteImageURLPrefetcher.swift in Sources */,
+				804E512D2FB9E77C00DAA686 /* TextFormatAction.swift in Sources */,
 				90AA0003100000000000010C /* NeverNoteTheme.swift in Sources */,
+				90AA00031000000000000110 /* NoteImagePermissionManager.swift in Sources */,
+				90AA00031000000000000112 /* NoteImageEducationalModal.swift in Sources */,
+				90AA00031000000000000114 /* NoteImagePicker.swift in Sources */,
+				90AA00031000000000000116 /* NoteImageOCR.swift in Sources */,
+				90AA0003100000000000011E /* NoteImageQRDetection.swift in Sources */,
+				90AA00031000000000000118 /* NoteImageFullScreenModal.swift in Sources */,
+				90AA0003100000000000011A /* MacInspectorPanel.swift in Sources */,
+				90AA0003100000000000011C /* MacPhotoImportInspector.swift in Sources */,
 				803137C21965F15B00B78BC5 /* UNICalendarPopOver.m in Sources */,
 				800D2E021947919700E904AA /* UIColor+AppColors.m in Sources */,
+				804E51352FB9E82600DAA686 /* ScreenshotPromptStep.swift in Sources */,
 				8015691419B1189F00A4A083 /* NNListViewController.m in Sources */,
 				803137CB19660DAB00B78BC5 /* UNIAdditionalOptionsViewButton.m in Sources */,
 				803137BF1965D5CC00B78BC5 /* UNISuggestionView.m in Sources */,
+				804E51252FB9E6E100DAA686 /* NoteBottomURLImagePreviews.swift in Sources */,
 				805898AB1916643400352439 /* NNViewController.m in Sources */,
 				8058988A1916641F00352439 /* NeverNote.xcdatamodeld in Sources */,
 				803CDE49196B06A700C1C789 /* UNIAdditionalOptionsView.m in Sources */,
 				805898871916641F00352439 /* NNAppDelegate.m in Sources */,
 				8056F5FF196591BE009CEA81 /* UNITaskCreatorViewController.m in Sources */,
+				804E51232FB9E6CE00DAA686 /* EditorToolbarPlacement.swift in Sources */,
 				80ECF9371964519E00EDABD1 /* NNColorObject.m in Sources */,
 				90AA00021000000000000001 /* ContentView.swift in Sources */,
+				804E51372FB9E83900DAA686 /* NevernoteNotification.swift in Sources */,
+				AABB00000000000000000002 /* ScreenshotLaunchSupport.swift in Sources */,
+				BLOC00021000000000000005 /* ScreenshotDemoStrings.swift in Sources */,
 				90AA00021000000000000002 /* Item.swift in Sources */,
 				803137BC1965D08E00B78BC5 /* UNIOptionsView.m in Sources */,
+				804E51212FB9E69900DAA686 /* NoteDataDetectors.swift in Sources */,
+				804E51382FB9E85000DAA686 /* NoteDataDetectorInteraction.swift in Sources */,
+				804E513A2FB9E86800DAA686 /* NoteDataDetectorConfirmationDialog.swift in Sources */,
 				803CDE4C196B157600C1C789 /* UNIRepeatOptionsView.m in Sources */,
 				803CDE46196AFFE600C1C789 /* UNITimeInputView.m in Sources */,
 				9ECED7F59E864A5DAB31195E /* NNSettingsManager.m in Sources */,
+				804E51312FB9E7D900DAA686 /* ReadOnlyNoteTextView.swift in Sources */,
 				33B70CB51399476FAEFB55D8 /* NNSettingsViewController.m in Sources */,
 				1A2B3C4D5E6F789012345678 /* NNOnboardingManager.m in Sources */,
 				2B3C4D5E6F789012345678A1 /* NNOnboardingTooltipView.m in Sources */,
 				3C4D5E6F789012345678A1B2 /* NNOnboardingCoordinator.m in Sources */,
+				804E512B2FB9E75D00DAA686 /* NoteWrappingTextView.swift in Sources */,
+				804E51332FB9E7F200DAA686 /* FontPickerSheet.swift in Sources */,
 				A7B1C2D3E4F5678901234567 /* NNLogoTraceView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -667,11 +1006,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A10000080191664200352401 /* NevernoteWatchApp.swift in Sources */,
+				AABB00000000000000000004 /* WatchScreenshotLaunchSupport.swift in Sources */,
 				A100000A0191664200352401 /* WatchRootView.swift in Sources */,
 				A10000050191664200352401 /* NoteRichTextCodec.swift in Sources */,
 				A10000060191664200352401 /* NeverNoteCloudKit.swift in Sources */,
 				A100001C0191664200352401 /* NevernoteModelContainer.swift in Sources */,
 				A10000070191664200352401 /* Item.swift in Sources */,
+				BLOC00021000000000000006 /* ScreenshotDemoStrings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -691,15 +1032,18 @@
 			target = 805898701916641F00352439 /* NeverNote */;
 			targetProxy = 805898971916642000352439 /* PBXContainerItemProxy */;
 		};
-		A100002E0191664200352401 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A10000150191664200352401 /* NeverNote Watch App */;
-			targetProxy = A10000140191664200352401 /* PBXContainerItemProxy */;
-		};
 		A100002A0191664200352401 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A10000170191664200352401 /* NeverNote Watch Widget Extension */;
 			targetProxy = A10000160191664200352401 /* PBXContainerItemProxy */;
+		};
+		A100002E0191664200352401 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilters = (
+				ios,
+			);
+			target = A10000150191664200352401 /* NeverNote Watch App */;
+			targetProxy = A10000140191664200352401 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -799,14 +1143,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ENABLE_APP_INTENTS_METADATA_GENERATION = NO;
+				CODE_SIGN_ENTITLEMENTS = NeverNote/NeverNote.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EJLR2RPSV2;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				ENABLE_APP_INTENTS_METADATA_GENERATION = NO;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				"GCC_PRECOMPILE_PREFIX_HEADER[sdk=macosx*]" = NO;
 				GCC_PREFIX_HEADER = "NeverNote1/NeverNote-Prefix.pch";
+				"SWIFT_OBJC_BRIDGING_HEADER[sdk=macosx*]" = "NeverNote/NeverNote-Bridging-Header.h";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"NEVERNOTE_SWIFTUI_ROOT=1",
 					"$(inherited)",
@@ -814,8 +1162,11 @@
 				INFOPLIST_FILE = "NeverNote1/NeverNote-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				CODE_SIGN_ENTITLEMENTS = NeverNote/NeverNote.entitlements;
-				OTHER_LDFLAGS = "$(inherited) -weak_framework AppIntents";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-weak_framework",
+					AppIntents,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nathanfennel.NeverNote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
@@ -823,6 +1174,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "NeverNote/NeverNote-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
@@ -834,14 +1186,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ENABLE_APP_INTENTS_METADATA_GENERATION = NO;
+				CODE_SIGN_ENTITLEMENTS = NeverNote/NeverNote.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EJLR2RPSV2;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				ENABLE_APP_INTENTS_METADATA_GENERATION = NO;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				"GCC_PRECOMPILE_PREFIX_HEADER[sdk=macosx*]" = NO;
 				GCC_PREFIX_HEADER = "NeverNote1/NeverNote-Prefix.pch";
+				"SWIFT_OBJC_BRIDGING_HEADER[sdk=macosx*]" = "NeverNote/NeverNote-Bridging-Header.h";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"NEVERNOTE_SWIFTUI_ROOT=1",
 					"$(inherited)",
@@ -849,8 +1205,11 @@
 				INFOPLIST_FILE = "NeverNote1/NeverNote-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				CODE_SIGN_ENTITLEMENTS = NeverNote/NeverNote.entitlements;
-				OTHER_LDFLAGS = "$(inherited) -weak_framework AppIntents";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-weak_framework",
+					AppIntents,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nathanfennel.NeverNote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
@@ -858,135 +1217,11 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "NeverNote/NeverNote-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		A100002F0191664200352401 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = NeverNoteWatch/NeverNoteWatch.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = EJLR2RPSV2;
-				ENABLE_APP_INTENTS_METADATA_GENERATION = NO;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Nevernote;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.nathanfennel.NeverNote;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				OTHER_LDFLAGS = "$(inherited) -weak_framework AppIntents";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nathanfennel.NeverNote.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "watchos watchsimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 11.0;
-			};
-			name = Debug;
-		};
-		A10000300191664200352401 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = NeverNoteWatch/NeverNoteWatch.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = EJLR2RPSV2;
-				ENABLE_APP_INTENTS_METADATA_GENERATION = NO;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Nevernote;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.nathanfennel.NeverNote;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				OTHER_LDFLAGS = "$(inherited) -weak_framework AppIntents";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nathanfennel.NeverNote.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "watchos watchsimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 11.0;
-			};
-			name = Release;
-		};
-		A10000310191664200352401 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = EJLR2RPSV2;
-				ENABLE_APP_INTENTS_METADATA_GENERATION = NO;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Nevernote;
-				INFOPLIST_KEY_NSExtensionPointIdentifier = "com.apple.widgetkit-extension";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				OTHER_LDFLAGS = "$(inherited) -weak_framework AppIntents";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nathanfennel.NeverNote.watchkitapp.NeverNoteWatchWidget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "watchos watchsimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 11.0;
-			};
-			name = Debug;
-		};
-		A10000320191664200352401 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = EJLR2RPSV2;
-				ENABLE_APP_INTENTS_METADATA_GENERATION = NO;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Nevernote;
-				INFOPLIST_KEY_NSExtensionPointIdentifier = "com.apple.widgetkit-extension";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				OTHER_LDFLAGS = "$(inherited) -weak_framework AppIntents";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nathanfennel.NeverNote.watchkitapp.NeverNoteWatchWidget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "watchos watchsimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 11.0;
 			};
 			name = Release;
 		};
@@ -1027,6 +1262,133 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+		A100002F0191664200352401 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = NeverNoteWatch/NeverNoteWatch.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = EJLR2RPSV2;
+				ENABLE_APP_INTENTS_METADATA_GENERATION = NO;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Nevernote;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.nathanfennel.NeverNote;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-weak_framework",
+					AppIntents,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nathanfennel.NeverNote.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchos watchsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Debug;
+		};
+		A10000300191664200352401 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = NeverNoteWatch/NeverNoteWatch.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = EJLR2RPSV2;
+				ENABLE_APP_INTENTS_METADATA_GENERATION = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Nevernote;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.nathanfennel.NeverNote;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-weak_framework",
+					AppIntents,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nathanfennel.NeverNote.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchos watchsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Release;
+		};
+		A10000310191664200352401 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = EJLR2RPSV2;
+				ENABLE_APP_INTENTS_METADATA_GENERATION = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Nevernote;
+				INFOPLIST_KEY_NSExtensionPointIdentifier = "com.apple.widgetkit-extension";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-weak_framework",
+					AppIntents,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nathanfennel.NeverNote.watchkitapp.NeverNoteWatchWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchos watchsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Debug;
+		};
+		A10000320191664200352401 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = EJLR2RPSV2;
+				ENABLE_APP_INTENTS_METADATA_GENERATION = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Nevernote;
+				INFOPLIST_KEY_NSExtensionPointIdentifier = "com.apple.widgetkit-extension";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-weak_framework",
+					AppIntents,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nathanfennel.NeverNote.watchkitapp.NeverNoteWatchWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchos watchsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
 			};
 			name = Release;
 		};

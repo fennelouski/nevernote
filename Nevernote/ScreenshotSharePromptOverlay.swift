@@ -44,6 +44,7 @@ struct ScreenshotSharePromptOverlay: View {
                         }
                         .buttonStyle(.borderedProminent)
                         .tint(Color.brandBlue)
+                        .neverNoteShortcut(.shareScreenshotText)
 
                         Button(action: onChooseImage) {
                             Text("Share as image of text")
@@ -54,6 +55,7 @@ struct ScreenshotSharePromptOverlay: View {
                         }
                         .buttonStyle(.bordered)
                         .tint(Color.brandBlue)
+                        .neverNoteShortcut(.shareScreenshotImage)
                     }
                     .padding(.horizontal, 18)
                     .padding(.top, 22)
@@ -72,7 +74,7 @@ struct ScreenshotSharePromptOverlay: View {
                         .padding(.top, 8)
 
                     LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
-                        ForEach(NoteExportAspectRatio.allCases) { ratio in
+                        ForEach(Array(NoteExportAspectRatio.allCases.enumerated()), id: \.element.id) { index, ratio in
                             Button {
                                 onPickAspect(ratio)
                             } label: {
@@ -84,6 +86,7 @@ struct ScreenshotSharePromptOverlay: View {
                             }
                             .buttonStyle(.bordered)
                             .tint(Color.brandBlue)
+                            .neverNoteShortcut(aspectShortcut(for: index))
                         }
                     }
                     .padding(.horizontal, 16)
@@ -92,6 +95,7 @@ struct ScreenshotSharePromptOverlay: View {
 
                 Button("Cancel", role: .cancel, action: onCancel)
                     .font(.body.weight(.medium))
+                    .neverNoteShortcut(.cancel)
                     .padding(.top, 20)
                     .padding(.bottom, 18)
             }
@@ -100,5 +104,15 @@ struct ScreenshotSharePromptOverlay: View {
             .padding(.horizontal, 24)
         }
         .transition(.opacity.combined(with: .scale(scale: 0.96)))
+    }
+
+    private func aspectShortcut(for index: Int) -> NeverNoteShortcut {
+        switch index {
+        case 0: return .screenshotAspect1
+        case 1: return .screenshotAspect2
+        case 2: return .screenshotAspect3
+        case 3: return .screenshotAspect4
+        default: return .screenshotAspect5
+        }
     }
 }
