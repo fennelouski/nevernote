@@ -196,11 +196,8 @@ struct ContentView: View {
                     topBar
                 }
 
-                Spacer(minLength: 20)
-
                 noteCanvas
-
-                Spacer(minLength: 20)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
 
                 if isEditing && !editorHasFocus {
                     editorToolbar(placement: .inline)
@@ -392,47 +389,47 @@ struct ContentView: View {
 
     private var noteCanvas: some View {
         VStack(spacing: 18) {
-            if isEditing {
-                RichTextEditor(
-                    attributedText: $attributedText,
-                    isFirstResponder: $editorHasFocus,
-                    preferredFontName: editorFontName,
-                    pointSize: editorScaledPointSize,
-                    textAlignment: textAlignment,
-                    linePrefixMode: linePrefixMode,
-                    command: editorCommand,
-                    onHTTPSImageLinkLongPress: { url, point, tv in
-                        handleHTTPSImageLinkLongPress(url: url, point: point, textView: tv)
-                    },
-                    onChange: persistNote,
-                    onFormattingStateChange: { bold, italic, underline in
-                        DispatchQueue.main.async {
-                            isBoldActive = bold
-                            isItalicActive = italic
-                            isUnderlineActive = underline
+            Group {
+                if isEditing {
+                    RichTextEditor(
+                        attributedText: $attributedText,
+                        isFirstResponder: $editorHasFocus,
+                        preferredFontName: editorFontName,
+                        pointSize: editorScaledPointSize,
+                        textAlignment: textAlignment,
+                        linePrefixMode: linePrefixMode,
+                        command: editorCommand,
+                        onHTTPSImageLinkLongPress: { url, point, tv in
+                            handleHTTPSImageLinkLongPress(url: url, point: point, textView: tv)
+                        },
+                        onChange: persistNote,
+                        onFormattingStateChange: { bold, italic, underline in
+                            DispatchQueue.main.async {
+                                isBoldActive = bold
+                                isItalicActive = italic
+                                isUnderlineActive = underline
+                            }
                         }
-                    }
-                )
-                .frame(maxWidth: .infinity, minHeight: 180, maxHeight: 360)
-                .clipped()
-                .padding(.horizontal, 26)
-            } else {
-                FocusTextView(
-                    attributedText: displayAttributedText,
-                    textAlignment: textAlignment,
-                    maximizePresentationSize: maximizePresentationSize,
-                    dataDetectorsEnabled: dataDetectorsEnabled,
-                    onHTTPSImageLinkLongPress: { url, point, tv in
-                        handleHTTPSImageLinkLongPress(url: url, point: point, textView: tv)
-                    }
-                )
-                    .padding(.horizontal, 24)
+                    )
+                } else {
+                    FocusTextView(
+                        attributedText: displayAttributedText,
+                        textAlignment: textAlignment,
+                        maximizePresentationSize: maximizePresentationSize,
+                        dataDetectorsEnabled: dataDetectorsEnabled,
+                        onHTTPSImageLinkLongPress: { url, point, tv in
+                            handleHTTPSImageLinkLongPress(url: url, point: point, textView: tv)
+                        }
+                    )
                     .contentShape(Rectangle())
                     .onTapGesture {
                         editorHasFocus = true
                         isEditing = true
                     }
+                }
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+            .padding(.horizontal, 24)
 
             if !bottomPreviewURLKeys.isEmpty {
                 NoteBottomURLImagePreviews(urlKeys: bottomPreviewURLKeys)
@@ -452,6 +449,7 @@ struct ContentView: View {
                     )
             }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .animation(.spring(response: 0.52, dampingFraction: 0.78, blendDuration: 0.15), value: showLastEditedBanner)
     }
 
@@ -860,7 +858,8 @@ private struct ReadOnlyNoteTextView: UIViewRepresentable {
         textView.isEditable = false
         textView.allowsEditingTextAttributes = false
         textView.isSelectable = true
-        textView.isScrollEnabled = false
+        textView.isScrollEnabled = true
+        textView.showsVerticalScrollIndicator = false
         textView.alwaysBounceHorizontal = false
         textView.backgroundColor = .clear
         textView.textAlignment = textAlignment
@@ -918,7 +917,7 @@ private struct FocusTextView: View {
     var body: some View {
         GeometryReader { proxy in
             let width = max(proxy.size.width, 1)
-            let availableHeight = max(proxy.size.height * 0.65, 1)
+            let availableHeight = max(proxy.size.height, 1)
             let fitted = fittedAttributedText(maxWidth: width, maxHeight: availableHeight)
 
             ReadOnlyNoteTextView(
@@ -927,11 +926,9 @@ private struct FocusTextView: View {
                 dataDetectorTypes: dataDetectorsEnabled ? NoteDataDetectors.enabledTypes : [],
                 onHTTPSImageLinkLongPress: onHTTPSImageLinkLongPress
             )
-            .frame(maxWidth: width)
-            .fixedSize(horizontal: false, vertical: true)
-            .frame(maxWidth: width, maxHeight: .infinity, alignment: frameAlignment)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: frameAlignment)
         }
-        .frame(maxWidth: .infinity, maxHeight: 420)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 
     private var frameAlignment: Alignment {
@@ -1070,6 +1067,9 @@ private final class NoteWrappingTextView: UITextView {
     }
 
     override var intrinsicContentSize: CGSize {
+        if isScrollEnabled {
+            return CGSize(width: UIView.noIntrinsicMetric, height: UIView.noIntrinsicMetric)
+        }
         let w = bounds.width
         guard w > 0 else {
             return CGSize(width: UIView.noIntrinsicMetric, height: UIView.noIntrinsicMetric)
@@ -1104,7 +1104,8 @@ private struct RichTextEditor: UIViewRepresentable {
         let textView = NoteWrappingTextView()
         textView.delegate = context.coordinator
         textView.allowsEditingTextAttributes = true
-        textView.isScrollEnabled = false
+        textView.isScrollEnabled = true
+        textView.showsVerticalScrollIndicator = false
         textView.alwaysBounceHorizontal = false
         textView.backgroundColor = .clear
         textView.textAlignment = textAlignment.nsTextAlignment
