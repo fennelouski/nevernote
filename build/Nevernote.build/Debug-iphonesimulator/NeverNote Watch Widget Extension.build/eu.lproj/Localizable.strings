@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>16:9</key>
+	<string>16:9</string>
+	<key>9:16</key>
+	<string>9:16</string>
+	<key>Add</key>
+	<string>Gehitu</string>
+	<key>Add Photo</key>
+	<string>Gehitu argazkia</string>
+	<key>Add text</key>
+	<string>Gehitu testua</string>
+	<key>Align center</key>
+	<string>Erdiratu</string>
+	<key>Align left</key>
+	<string>Ezkerreratu</string>
+	<key>Align right</key>
+	<string>Eskuineratu</string>
+	<key>Alignment</key>
+	<string>Lerrokadura</string>
+	<key>All Fonts</key>
+	<string>Letra tipo guztiak</string>
+	<key>Aspect ratio</key>
+	<string>Irudi proportzioa</string>
+	<key>Bold</key>
+	<string>Lodia</string>
+	<key>Bulleted list</key>
+	<string>Zerrenda puntuekin</string>
+	<key>Camera</key>
+	<string>Kamera</string>
+	<key>Can't use this link as an image</key>
+	<string>Ezin da esteka hau irudi gisa erabili</string>
+	<key>Cancel</key>
+	<string>Utzi</string>
+	<key>Checking image…</key>
+	<string>Irudia egiaztatzen…</string>
+	<key>Continue</key>
+	<string>Jarraitu</string>
+	<key>Could not load that link.</key>
+	<string>Ezin izan da esteka hori kargatu.</string>
+	<key>Delete note</key>
+	<string>Ezabatu oharra</string>
+	<key>Dictate or type</key>
+	<string>Diktatu edo idatzi</string>
+	<key>Done</key>
+	<string>Eginda</string>
+	<key>Enter text before dismissing the keyboard</key>
+	<string>Idatzi testua teklatua ixten aurretik</string>
+	<key>Font</key>
+	<string>Letra tipoa</string>
+	<key>Help and support</key>
+	<string>Laguntza eta euskarria</string>
+	<key>Hide image at bottom</key>
+	<string>Ezkutatu irudia behean</string>
+	<key>Hide keyboard</key>
+	<string>Ezkutatu teklatua</string>
+	<key>Image is too large.</key>
+	<string>Irudia handiegia da.</string>
+	<key>Image link</key>
+	<string>Irudi esteka</string>
+	<key>Import Text from a Photo</key>
+	<string>Inportatu testua argazki batetik</string>
+	<key>Import text from photo</key>
+	<string>Inportatu testua argazkitik</string>
+	<key>Italic</key>
+	<string>Etzana</string>
+	<key>LAST EDITED %@.</key>
+	<string>AZKEN ALDAKETA %@.</string>
+	<key>Landscape</key>
+	<string>Horizontala</string>
+	<key>Line markers</key>
+	<string>Lerro markatzaileak</string>
+	<key>Maximize presentation size</key>
+	<string>Maximizatu aurkezpenaren tamaina</string>
+	<key>More formatting</key>
+	<string>Formatu gehiago</string>
+	<key>NEVERNOTE FOCUS</key>
+	<string>NEVERNOTE FOCUS</string>
+	<key>Nevernote</key>
+	<string>Nevernote</string>
+	<key>Not Now</key>
+	<string>Orain ez</string>
+	<key>Numbered list</key>
+	<string>Zerrenda zenbakiekin</string>
+	<key>OK</key>
+	<string>Ados</string>
+	<key>Open Nevernote to read or capture a note.</key>
+	<string>Ireki Nevernote ohar bat irakurtzeko edo hartzeko.</string>
+	<key>Photo Library</key>
+	<string>Argazki liburutegia</string>
+	<key>Plain lines</key>
+	<string>Lerro hutsak</string>
+	<key>Portrait</key>
+	<string>Bertikala</string>
+	<key>Recent</key>
+	<string>Berriak</string>
+	<key>Reset</key>
+	<string>Berrezarri</string>
+	<key>Save</key>
+	<string>Gorde</string>
+	<key>Search fonts</key>
+	<string>Bilatu letra tipoak</string>
+	<key>Share as image of text</key>
+	<string>Partekatu testuaren irudi gisa</string>
+	<key>Share note</key>
+	<string>Partekatu oharra</string>
+	<key>Share note text</key>
+	<string>Partekatu oharraren testua</string>
+	<key>Share your note?</key>
+	<string>Partekatu zure oharra?</string>
+	<key>Show image at bottom</key>
+	<string>Erakutsi irudia behean</string>
+	<key>Show this image below the note?</key>
+	<string>Erakutsi irudi hau oharraren azpian?</string>
+	<key>Size</key>
+	<string>Tamaina</string>
+	<key>Smart links</key>
+	<string>Esteka adimendunak</string>
+	<key>Square</key>
+	<string>Karratua</string>
+	<key>System Bold</key>
+	<string>Sistema lodia</string>
+	<key>Take a photo or choose one from your library. NeverNote will read any text in the image and add it to your note.</key>
+	<string>Atera argazki bat edo aukeratu bat zure liburutegitik. NeverNote-k irudiko edozein testu irakurriko du eta zure oharrari gehituko dio.</string>
+	<key>That link is not an image.</key>
+	<string>Esteka hori ez da irudi bat.</string>
+	<key>The image will contain only your text and background — no buttons or frames.</key>
+	<string>Irudian zure testua eta atzeko planoa baino ez dira agertuko — ez botoirik, ez markorik.</string>
+	<key>Toggle line markers</key>
+	<string>Txandakatu lerro markatzaileak</string>
+	<key>Underline</key>
+	<string>Azpimarra</string>
+	<key>Undo delete</key>
+	<string>Desegin ezabaketa</string>
+	<key>View captured image</key>
+	<string>Ikusi hartutako irudia</string>
+	<key>You just took a screenshot. Share the note text, or create a clean image of your text only.</key>
+	<string>Pantaila argazkia atera berri duzu. Partekatu oharraren testua, edo sortu zure testuaren irudi garbia soilik.</string>
+	<key>screenshot.demo.0</key>
+	<string>Ireki.
+Idatzi.
+Eginda</string>
+	<key>screenshot.demo.1</key>
+	<string>Deia bitartean zenbaki azkar bat hartzeko ezin hobea.</string>
+	<key>screenshot.demo.2</key>
+	<string>Zure berehalako pentsamentuentzako leku garbi bat besterik ez.</string>
+	<key>screenshot.demo.3</key>
+	<string>Karpetarik ez.
+Etiketarik ez.
+Arreta galtzeko arrazoi barik.</string>
+	<key>screenshot.demo.4</key>
+	<string>Pentsamendu iheskor bat hartzeko modurik azkarrena.</string>
+</dict>
+</plist>

@@ -1,0 +1,23 @@
+{
+  "/Users/nathanfennel/Documents/GitHub/Nevernote/NeverNote/NeverNoteTheme.swift" : {
+    "const-values" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-iphonesimulator/NeverNote.build/Objects-normal/arm64/NeverNoteTheme.swiftconstvalues",
+    "dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-iphonesimulator/NeverNote.build/Objects-normal/arm64/NeverNoteTheme.d",
+    "diagnostics" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-iphonesimulator/NeverNote.build/Objects-normal/arm64/NeverNoteTheme.dia",
+    "object" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-iphonesimulator/NeverNote.build/Objects-normal/arm64/NeverNoteTheme.o",
+    "swift-dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-iphonesimulator/NeverNote.build/Objects-normal/arm64/NeverNoteTheme.swiftdeps"
+  },
+  "/Users/nathanfennel/Documents/GitHub/Nevernote/NeverNote/NoteImageURLPrefetcher.swift" : {
+    "const-values" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-iphonesimulator/NeverNote.build/Objects-normal/arm64/NoteImageURLPrefetcher.swiftconstvalues",
+    "dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-iphonesimulator/NeverNote.build/Objects-normal/arm64/NoteImageURLPrefetcher.d",
+    "diagnostics" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-iphonesimulator/NeverNote.build/Objects-normal/arm64/NoteImageURLPrefetcher.dia",
+    "object" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-iphonesimulator/NeverNote.build/Objects-normal/arm64/NoteImageURLPrefetcher.o",
+    "swift-dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-iphonesimulator/NeverNote.build/Objects-normal/arm64/NoteImageURLPrefetcher.swiftdeps"
+  },
+  "/Users/nathanfennel/Documents/GitHub/Nevernote/NeverNote/ScreenshotSharePromptOverlay.swift" : {
+    "const-values" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-iphonesimulator/NeverNote.build/Objects-normal/arm64/ScreenshotSharePromptOverlay.swiftconstvalues",
+    "dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-iphonesimulator/NeverNote.build/Objects-normal/arm64/ScreenshotSharePromptOverlay.d",
+    "diagnostics" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-iphonesimulator/NeverNote.build/Objects-normal/arm64/ScreenshotSharePromptOverlay.dia",
+    "object" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-iphonesimulator/NeverNote.build/Objects-normal/arm64/ScreenshotSharePromptOverlay.o",
+    "swift-dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-iphonesimulator/NeverNote.build/Objects-normal/arm64/ScreenshotSharePromptOverlay.swiftdeps"
+  }
+}

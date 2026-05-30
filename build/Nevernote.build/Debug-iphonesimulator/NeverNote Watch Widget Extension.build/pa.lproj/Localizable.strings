@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>16:9</key>
+	<string>16:9</string>
+	<key>9:16</key>
+	<string>9:16</string>
+	<key>Add</key>
+	<string>ਸ਼ਾਮਲ ਕਰੋ</string>
+	<key>Add Photo</key>
+	<string>ਫੋਟੋ ਸ਼ਾਮਲ ਕਰੋ</string>
+	<key>Add text</key>
+	<string>ਟੈਕਸਟ ਸ਼ਾਮਲ ਕਰੋ</string>
+	<key>Align center</key>
+	<string>ਕੇਂਦਰ ਸੰਰੇਖਿਤ</string>
+	<key>Align left</key>
+	<string>ਖੱਬੇ ਸੰਰੇਖਿਤ</string>
+	<key>Align right</key>
+	<string>ਸੱਜੇ ਸੰਰੇਖਿਤ</string>
+	<key>Alignment</key>
+	<string>ਅਲਾਈਨਮੈਂਟ</string>
+	<key>All Fonts</key>
+	<string>ਸਾਰੇ ਫੌਂਟ</string>
+	<key>Aspect ratio</key>
+	<string>ਆਕਾਰ ਅਨੁਪਾਤ</string>
+	<key>Bold</key>
+	<string>ਬੋਲਡ</string>
+	<key>Bulleted list</key>
+	<string>ਬੁਲੇਟਿਡ ਸੂਚੀ</string>
+	<key>Camera</key>
+	<string>ਕੈਮਰਾ</string>
+	<key>Can't use this link as an image</key>
+	<string>ਇਸ ਲਿੰਕ ਨੂੰ ਚਿੱਤਰ ਵਜੋਂ ਨਹੀਂ ਵਰਤਿਆ ਜਾ ਸਕਦਾ</string>
+	<key>Cancel</key>
+	<string>ਰੱਦ ਕਰੋ</string>
+	<key>Checking image…</key>
+	<string>ਚਿੱਤਰ ਦੀ ਜਾਂਚ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ...</string>
+	<key>Continue</key>
+	<string>ਜਾਰੀ ਰੱਖੋ</string>
+	<key>Could not load that link.</key>
+	<string>ਉਸ ਲਿੰਕ ਨੂੰ ਲੋਡ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਿਆ।</string>
+	<key>Delete note</key>
+	<string>ਨੋਟ ਮਿਟਾਓ</string>
+	<key>Dictate or type</key>
+	<string>ਲਿਖੋ ਜਾਂ ਟਾਈਪ ਕਰੋ</string>
+	<key>Done</key>
+	<string>ਹੋ ਗਿਆ</string>
+	<key>Enter text before dismissing the keyboard</key>
+	<string>ਕੀਬੋਰਡ ਬੰਦ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ ਟੈਕਸਟ ਦਰਜ ਕਰੋ</string>
+	<key>Font</key>
+	<string>ਫੌਂਟ</string>
+	<key>Help and support</key>
+	<string>ਮਦਦ ਅਤੇ ਸਹਾਇਤਾ</string>
+	<key>Hide image at bottom</key>
+	<string>ਹੇਠਾਂ ਚਿੱਤਰ ਨੂੰ ਲੁਕਾਓ</string>
+	<key>Hide keyboard</key>
+	<string>ਕੀਬੋਰਡ ਲੁਕਾਓ</string>
+	<key>Image is too large.</key>
+	<string>ਚਿੱਤਰ ਬਹੁਤ ਵੱਡਾ ਹੈ।</string>
+	<key>Image link</key>
+	<string>ਚਿੱਤਰ ਲਿੰਕ</string>
+	<key>Import Text from a Photo</key>
+	<string>ਫੋਟੋ ਤੋਂ ਟੈਕਸਟ ਇੰਪੋਰਟ ਕਰੋ</string>
+	<key>Import text from photo</key>
+	<string>ਫੋਟੋ ਤੋਂ ਟੈਕਸਟ ਆਯਾਤ ਕਰੋ</string>
+	<key>Italic</key>
+	<string>ਇਟਾਲਿਕ</string>
+	<key>LAST EDITED %@.</key>
+	<string>ਆਖਰੀ ਵਾਰ ਸੰਪਾਦਿਤ ਕੀਤਾ ਗਿਆ %@.</string>
+	<key>Landscape</key>
+	<string>ਲੈਂਡਸਕੇਪ</string>
+	<key>Line markers</key>
+	<string>ਲਾਈਨ ਮਾਰਕਰ</string>
+	<key>Maximize presentation size</key>
+	<string>ਪੇਸ਼ਕਾਰੀ ਦਾ ਆਕਾਰ ਵੱਧ ਤੋਂ ਵੱਧ ਕਰੋ</string>
+	<key>More formatting</key>
+	<string>ਹੋਰ ਫਾਰਮੈਟਿੰਗ</string>
+	<key>NEVERNOTE FOCUS</key>
+	<string>Nevernote ਫੋਕਸ</string>
+	<key>Nevernote</key>
+	<string>Nevernote</string>
+	<key>Not Now</key>
+	<string>ਹਾਲੇ ਨਹੀਂ</string>
+	<key>Numbered list</key>
+	<string>ਨੰਬਰ ਵਾਲੀ ਸੂਚੀ</string>
+	<key>OK</key>
+	<string>ਠੀਕ ਹੈ</string>
+	<key>Open Nevernote to read or capture a note.</key>
+	<string>ਨੋਟ ਪੜ੍ਹਨ ਜਾਂ ਕੈਪਚਰ ਕਰਨ ਲਈ Nevernote ਖੋਲ੍ਹੋ।</string>
+	<key>Photo Library</key>
+	<string>ਫੋਟੋ ਲਾਇਬ੍ਰੇਰੀ</string>
+	<key>Plain lines</key>
+	<string>ਸਾਦੀਆਂ ਲਾਈਨਾਂ</string>
+	<key>Portrait</key>
+	<string>ਪੋਰਟਰੇਟ</string>
+	<key>Recent</key>
+	<string>ਹਾਲੀਆ</string>
+	<key>Reset</key>
+	<string>ਰੀਸੈਟ ਕਰੋ</string>
+	<key>Save</key>
+	<string>ਸੇਵ ਕਰੋ</string>
+	<key>Search fonts</key>
+	<string>ਫੌਂਟ ਖੋਜੋ</string>
+	<key>Share as image of text</key>
+	<string>ਟੈਕਸਟ ਦੇ ਚਿੱਤਰ ਵਜੋਂ ਸਾਂਝਾ ਕਰੋ</string>
+	<key>Share note</key>
+	<string>ਨੋਟ ਸਾਂਝਾ ਕਰੋ</string>
+	<key>Share note text</key>
+	<string>ਨੋਟ ਟੈਕਸਟ ਸਾਂਝਾ ਕਰੋ</string>
+	<key>Share your note?</key>
+	<string>ਕੀ ਆਪਣਾ ਨੋਟ ਸਾਂਝਾ ਕਰਨਾ ਹੈ?</string>
+	<key>Show image at bottom</key>
+	<string>ਹੇਠਾਂ ਚਿੱਤਰ ਦਿਖਾਓ</string>
+	<key>Show this image below the note?</key>
+	<string>ਨੋਟ ਦੇ ਹੇਠਾਂ ਇਹ ਚਿੱਤਰ ਦਿਖਾਉਣਾ ਹੈ?</string>
+	<key>Size</key>
+	<string>ਆਕਾਰ</string>
+	<key>Smart links</key>
+	<string>ਸਮਾਰਟ ਲਿੰਕ</string>
+	<key>Square</key>
+	<string>ਵਰਗ</string>
+	<key>System Bold</key>
+	<string>ਸਿਸਟਮ ਬੋਲਡ</string>
+	<key>Take a photo or choose one from your library. NeverNote will read any text in the image and add it to your note.</key>
+	<string>ਇੱਕ ਫੋਟੋ ਲਓ ਜਾਂ ਆਪਣੀ ਲਾਇਬ੍ਰੇਰੀ ਵਿੱਚੋਂ ਇੱਕ ਚੁਣੋ। NeverNote ਚਿੱਤਰ ਵਿੱਚ ਕਿਸੇ ਵੀ ਟੈਕਸਟ ਨੂੰ ਪੜ੍ਹੇਗਾ ਅਤੇ ਇਸਨੂੰ ਤੁਹਾਡੇ ਨੋਟ ਵਿੱਚ ਸ਼ਾਮਲ ਕਰੇਗਾ।</string>
+	<key>That link is not an image.</key>
+	<string>ਉਹ ਲਿੰਕ ਇੱਕ ਚਿੱਤਰ ਨਹੀਂ ਹੈ।</string>
+	<key>The image will contain only your text and background — no buttons or frames.</key>
+	<string>ਚਿੱਤਰ ਵਿੱਚ ਸਿਰਫ਼ ਤੁਹਾਡਾ ਟੈਕਸਟ ਅਤੇ ਬੈਕਗ੍ਰਾਊਂਡ ਹੋਵੇਗਾ — ਕੋਈ ਬਟਨ ਜਾਂ ਫ੍ਰੇਮ ਨਹੀਂ।</string>
+	<key>Toggle line markers</key>
+	<string>ਲਾਈਨ ਮਾਰਕਰਾਂ ਨੂੰ ਟੌਗਲ ਕਰੋ</string>
+	<key>Underline</key>
+	<string>ਰੇਖਾਂਕਿਤ ਕਰੋ</string>
+	<key>Undo delete</key>
+	<string>ਮਿਟਾਉਣਾ ਅਣਕੀਤਾ ਕਰੋ</string>
+	<key>View captured image</key>
+	<string>ਕੈਪਚਰ ਕੀਤੀ ਤਸਵੀਰ ਵੇਖੋ</string>
+	<key>You just took a screenshot. Share the note text, or create a clean image of your text only.</key>
+	<string>ਤੁਸੀਂ ਹੁਣੇ ਇੱਕ ਸਕ੍ਰੀਨਸ਼ੌਟ ਲਿਆ ਹੈ। ਨੋਟ ਟੈਕਸਟ ਨੂੰ ਸਾਂਝਾ ਕਰੋ, ਜਾਂ ਸਿਰਫ ਆਪਣੇ ਟੈਕਸਟ ਦੀ ਇੱਕ ਸਾਫ਼ ਚਿੱਤਰ ਬਣਾਓ।</string>
+	<key>screenshot.demo.0</key>
+	<string>ਖੋਲ੍ਹੋ।
+ਟਾਈਪ ਕਰੋ।
+ਹੋ ਗਿਆ</string>
+	<key>screenshot.demo.1</key>
+	<string>ਇੱਕ ਕਾਲ ਦੇ ਦੌਰਾਨ ਇੱਕ ਤੇਜ਼ ਨੰਬਰ ਫੜਨ ਲਈ ਸੰਪੂਰਣ.</string>
+	<key>screenshot.demo.2</key>
+	<string>ਤੁਹਾਡੇ ਤਤਕਾਲੀ ਵਿਚਾਰਾਂ ਲਈ ਸਿਰਫ਼ ਇੱਕ ਸਾਫ਼ ਥਾਂ।</string>
+	<key>screenshot.demo.3</key>
+	<string>ਕੋਈ ਫੋਲਡਰ ਨਹੀਂ।
+ਕੋਈ ਟੈਗ ਨਹੀਂ।
+ਕੋਈ ਭਟਕਣਾ ਨਹੀਂ।</string>
+	<key>screenshot.demo.4</key>
+	<string>ਇੱਕ ਅਸਥਾਈ ਵਿਚਾਰ ਨੂੰ ਹਾਸਲ ਕਰਨ ਦਾ ਸਭ ਤੋਂ ਤੇਜ਼ ਤਰੀਕਾ।</string>
+</dict>
+</plist>

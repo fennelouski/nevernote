@@ -312,6 +312,14 @@ struct NeverNoteAppCommands: Commands {
             Divider()
             menuItem(String(localized: "Close Image"), shortcut: .closeImage, action: h.closeImage)
         }
+
+        #if DEBUG
+        CommandMenu(String(localized: "Developer")) {
+            Button(String(localized: "Feature Flags…")) {
+                NotificationCenter.default.post(name: NevernoteNotification.showFeatureFlags, object: nil)
+            }
+        }
+        #endif
     }
 
     private func menuItem(

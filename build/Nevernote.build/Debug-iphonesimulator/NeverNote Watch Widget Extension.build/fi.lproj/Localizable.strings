@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>16:9</key>
+	<string>16:9</string>
+	<key>9:16</key>
+	<string>9:16</string>
+	<key>Add</key>
+	<string>Lisätä</string>
+	<key>Add Photo</key>
+	<string>Lisää valokuva</string>
+	<key>Add text</key>
+	<string>Lisää tekstiä</string>
+	<key>Align center</key>
+	<string>Tasaa keskelle</string>
+	<key>Align left</key>
+	<string>Tasaa vasemmalle</string>
+	<key>Align right</key>
+	<string>Tasaa oikealle</string>
+	<key>Alignment</key>
+	<string>Tasaus</string>
+	<key>All Fonts</key>
+	<string>Kaikki kirjasimet</string>
+	<key>Aspect ratio</key>
+	<string>Kuvasuhde</string>
+	<key>Bold</key>
+	<string>Lihavoitu</string>
+	<key>Bulleted list</key>
+	<string>Luettelomerkitty luettelo</string>
+	<key>Camera</key>
+	<string>Kamera</string>
+	<key>Can't use this link as an image</key>
+	<string>Tätä linkkiä ei voi käyttää kuvana</string>
+	<key>Cancel</key>
+	<string>Peruuta</string>
+	<key>Checking image…</key>
+	<string>Tarkistetaan kuvaa…</string>
+	<key>Continue</key>
+	<string>Jatkaa</string>
+	<key>Could not load that link.</key>
+	<string>Linkkiä ei voitu ladata.</string>
+	<key>Delete note</key>
+	<string>Poista muistiinpano</string>
+	<key>Dictate or type</key>
+	<string>Sano tai kirjoita</string>
+	<key>Done</key>
+	<string>Tehty</string>
+	<key>Enter text before dismissing the keyboard</key>
+	<string>Kirjoita tekstiä ennen näppäimistön sulkemista</string>
+	<key>Font</key>
+	<string>Fontti</string>
+	<key>Help and support</key>
+	<string>Apua ja tukea</string>
+	<key>Hide image at bottom</key>
+	<string>Piilota kuva alareunasta</string>
+	<key>Hide keyboard</key>
+	<string>Piilota näppäimistö</string>
+	<key>Image is too large.</key>
+	<string>Kuva on liian suuri.</string>
+	<key>Image link</key>
+	<string>Kuvalinkki</string>
+	<key>Import Text from a Photo</key>
+	<string>Tuo tekstiä valokuvasta</string>
+	<key>Import text from photo</key>
+	<string>Tuo tekstiä valokuvasta</string>
+	<key>Italic</key>
+	<string>Kursiivi</string>
+	<key>LAST EDITED %@.</key>
+	<string>VIIMEINEN MUOKATTU %@.</string>
+	<key>Landscape</key>
+	<string>Maisema</string>
+	<key>Line markers</key>
+	<string>Viivamerkit</string>
+	<key>Maximize presentation size</key>
+	<string>Maksimoi esityksen koko</string>
+	<key>More formatting</key>
+	<string>Lisää muotoilua</string>
+	<key>NEVERNOTE FOCUS</key>
+	<string>NEVERNOTE FOCUS</string>
+	<key>Nevernote</key>
+	<string>Nevernote</string>
+	<key>Not Now</key>
+	<string>Ei nyt</string>
+	<key>Numbered list</key>
+	<string>Numeroitu luettelo</string>
+	<key>OK</key>
+	<string>OK</string>
+	<key>Open Nevernote to read or capture a note.</key>
+	<string>Avaa Nevernote lukeaksesi tai tallentaaksesi muistiinpanon.</string>
+	<key>Photo Library</key>
+	<string>Valokuvakirjasto</string>
+	<key>Plain lines</key>
+	<string>Yksinkertaiset linjat</string>
+	<key>Portrait</key>
+	<string>Muotokuva</string>
+	<key>Recent</key>
+	<string>Viimeaikaiset</string>
+	<key>Reset</key>
+	<string>Nollaa</string>
+	<key>Save</key>
+	<string>Tallentaa</string>
+	<key>Search fonts</key>
+	<string>Hae fontteja</string>
+	<key>Share as image of text</key>
+	<string>Jaa tekstin kuvana</string>
+	<key>Share note</key>
+	<string>Jaa muistiinpano</string>
+	<key>Share note text</key>
+	<string>Jaa muistiinpanon teksti</string>
+	<key>Share your note?</key>
+	<string>Jaa muistiinpanosi?</string>
+	<key>Show image at bottom</key>
+	<string>Näytä kuva alareunassa</string>
+	<key>Show this image below the note?</key>
+	<string>Näytetäänkö tämä kuva huomautuksen alla?</string>
+	<key>Size</key>
+	<string>Koko</string>
+	<key>Smart links</key>
+	<string>Älykkäät linkit</string>
+	<key>Square</key>
+	<string>Neliö</string>
+	<key>System Bold</key>
+	<string>Järjestelmä Lihavoitu</string>
+	<key>Take a photo or choose one from your library. NeverNote will read any text in the image and add it to your note.</key>
+	<string>Ota valokuva tai valitse yksi kirjastostasi. NeverNote lukee minkä tahansa kuvan tekstin ja lisää sen muistiinpanoosi.</string>
+	<key>That link is not an image.</key>
+	<string>Tuo linkki ei ole kuva.</string>
+	<key>The image will contain only your text and background — no buttons or frames.</key>
+	<string>Kuva sisältää vain tekstin ja taustan – ei painikkeita tai kehyksiä.</string>
+	<key>Toggle line markers</key>
+	<string>Vaihda viivamerkit</string>
+	<key>Underline</key>
+	<string>Korostaa</string>
+	<key>Undo delete</key>
+	<string>Kumoa poistaminen</string>
+	<key>View captured image</key>
+	<string>Katso otettu kuva</string>
+	<key>You just took a screenshot. Share the note text, or create a clean image of your text only.</key>
+	<string>Otit juuri kuvakaappauksen. Jaa muistiinpanokeksti tai luo puhdas kuva vain tekstistäsi.</string>
+	<key>screenshot.demo.0</key>
+	<string>Avata.
+Tyyppi.
+Tehty</string>
+	<key>screenshot.demo.1</key>
+	<string>Täydellinen nopeaan numeroon puhelun aikana.</string>
+	<key>screenshot.demo.2</key>
+	<string>Vain puhdas tila välittömille ajatuksillesi.</string>
+	<key>screenshot.demo.3</key>
+	<string>Ei kansioita.
+Ei tunnisteita.
+Ei häiriötekijöitä.</string>
+	<key>screenshot.demo.4</key>
+	<string>Nopein tapa vangita ohikiitävä ajatus.</string>
+</dict>
+</plist>

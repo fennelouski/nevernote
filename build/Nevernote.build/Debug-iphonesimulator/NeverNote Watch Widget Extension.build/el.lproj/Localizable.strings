@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>16:9</key>
+	<string>16:9</string>
+	<key>9:16</key>
+	<string>9:16</string>
+	<key>Add</key>
+	<string>Προσθέτω</string>
+	<key>Add Photo</key>
+	<string>Προσθήκη φωτογραφίας</string>
+	<key>Add text</key>
+	<string>Προσθήκη κειμένου</string>
+	<key>Align center</key>
+	<string>Κεντρική στοίχιση</string>
+	<key>Align left</key>
+	<string>Αριστερή στοίχιση</string>
+	<key>Align right</key>
+	<string>Δεξιά στοίχιση</string>
+	<key>Alignment</key>
+	<string>Ευθυγραμμία</string>
+	<key>All Fonts</key>
+	<string>Όλες οι γραμματοσειρές</string>
+	<key>Aspect ratio</key>
+	<string>Λόγος διαστάσεων</string>
+	<key>Bold</key>
+	<string>Έντονα</string>
+	<key>Bulleted list</key>
+	<string>Λίστα με κουκκίδες</string>
+	<key>Camera</key>
+	<string>Κάμερα</string>
+	<key>Can't use this link as an image</key>
+	<string>Δεν είναι δυνατή η χρήση αυτού του συνδέσμου ως εικόνας</string>
+	<key>Cancel</key>
+	<string>Ματαίωση</string>
+	<key>Checking image…</key>
+	<string>Έλεγχος εικόνας…</string>
+	<key>Continue</key>
+	<string>Συνεχίζω</string>
+	<key>Could not load that link.</key>
+	<string>Δεν ήταν δυνατή η φόρτωση αυτού του συνδέσμου.</string>
+	<key>Delete note</key>
+	<string>Διαγραφή σημείωσης</string>
+	<key>Dictate or type</key>
+	<string>Υπαγορεύστε ή πληκτρολογήστε</string>
+	<key>Done</key>
+	<string>Γινώμενος</string>
+	<key>Enter text before dismissing the keyboard</key>
+	<string>Εισάγετε κείμενο πριν κλείσετε το πληκτρολόγιο</string>
+	<key>Font</key>
+	<string>Γραμματοσειρά</string>
+	<key>Help and support</key>
+	<string>Βοήθεια και υποστήριξη</string>
+	<key>Hide image at bottom</key>
+	<string>Απόκρυψη εικόνας στο κάτω μέρος</string>
+	<key>Hide keyboard</key>
+	<string>Απόκρυψη πληκτρολογίου</string>
+	<key>Image is too large.</key>
+	<string>Η εικόνα είναι πολύ μεγάλη.</string>
+	<key>Image link</key>
+	<string>Σύνδεσμος εικόνας</string>
+	<key>Import Text from a Photo</key>
+	<string>Εισαγωγή κειμένου από φωτογραφία</string>
+	<key>Import text from photo</key>
+	<string>Εισαγωγή κειμένου από φωτογραφία</string>
+	<key>Italic</key>
+	<string>Πλάγια γραφή</string>
+	<key>LAST EDITED %@.</key>
+	<string>ΤΕΛΕΥΤΑΙΑ ΕΠΕΞΕΡΓΑΣΙΑ %@.</string>
+	<key>Landscape</key>
+	<string>Τοπίο</string>
+	<key>Line markers</key>
+	<string>Γραμμικοί δείκτες</string>
+	<key>Maximize presentation size</key>
+	<string>Μεγιστοποιήστε το μέγεθος της παρουσίασης</string>
+	<key>More formatting</key>
+	<string>Περισσότερη μορφοποίηση</string>
+	<key>NEVERNOTE FOCUS</key>
+	<string>NEVERNOTE FOCUS</string>
+	<key>Nevernote</key>
+	<string>Nevernote</string>
+	<key>Not Now</key>
+	<string>Όχι τώρα</string>
+	<key>Numbered list</key>
+	<string>Αριθμημένη λίστα</string>
+	<key>OK</key>
+	<string>ΕΝΤΑΞΕΙ</string>
+	<key>Open Nevernote to read or capture a note.</key>
+	<string>Ανοίξτε το Nevernote για να διαβάσετε ή να καταγράψετε μια σημείωση.</string>
+	<key>Photo Library</key>
+	<string>Βιβλιοθήκη φωτογραφιών</string>
+	<key>Plain lines</key>
+	<string>Απλές γραμμές</string>
+	<key>Portrait</key>
+	<string>Πορτρέτο</string>
+	<key>Recent</key>
+	<string>Πρόσφατος</string>
+	<key>Reset</key>
+	<string>Επαναφορά</string>
+	<key>Save</key>
+	<string>Εκτός</string>
+	<key>Search fonts</key>
+	<string>Αναζήτηση γραμματοσειρών</string>
+	<key>Share as image of text</key>
+	<string>Κοινή χρήση ως εικόνα κειμένου</string>
+	<key>Share note</key>
+	<string>Κοινή χρήση σημείωσης</string>
+	<key>Share note text</key>
+	<string>Κοινή χρήση κειμένου σημείωσης</string>
+	<key>Share your note?</key>
+	<string>Μοιραστείτε τη σημείωσή σας;</string>
+	<key>Show image at bottom</key>
+	<string>Εμφάνιση εικόνας στο κάτω μέρος</string>
+	<key>Show this image below the note?</key>
+	<string>Εμφάνιση αυτής της εικόνας κάτω από τη σημείωση;</string>
+	<key>Size</key>
+	<string>Μέγεθος</string>
+	<key>Smart links</key>
+	<string>Έξυπνοι σύνδεσμοι</string>
+	<key>Square</key>
+	<string>Πλατεία</string>
+	<key>System Bold</key>
+	<string>Έντονο σύστημα</string>
+	<key>Take a photo or choose one from your library. NeverNote will read any text in the image and add it to your note.</key>
+	<string>Τραβήξτε μια φωτογραφία ή επιλέξτε μία από τη βιβλιοθήκη σας. Το NeverNote θα διαβάσει οποιοδήποτε κείμενο στην εικόνα και θα το προσθέσει στη σημείωσή σας.</string>
+	<key>That link is not an image.</key>
+	<string>Αυτός ο σύνδεσμος δεν είναι εικόνα.</string>
+	<key>The image will contain only your text and background — no buttons or frames.</key>
+	<string>Η εικόνα θα περιέχει μόνο το κείμενο και το φόντο σας — χωρίς κουμπιά ή πλαίσια.</string>
+	<key>Toggle line markers</key>
+	<string>Εναλλαγή γραμμών δεικτών</string>
+	<key>Underline</key>
+	<string>Υπογραμμίζω</string>
+	<key>Undo delete</key>
+	<string>Αναίρεση διαγραφής</string>
+	<key>View captured image</key>
+	<string>Προβολή τραβηγμένης εικόνας</string>
+	<key>You just took a screenshot. Share the note text, or create a clean image of your text only.</key>
+	<string>Μόλις τραβήξατε ένα στιγμιότυπο οθόνης. Μοιραστείτε το κείμενο της σημείωσης ή δημιουργήστε μια καθαρή εικόνα μόνο του κειμένου σας.</string>
+	<key>screenshot.demo.0</key>
+	<string>Ανοιχτό.
+Τύπος.
+Γινώμενος</string>
+	<key>screenshot.demo.1</key>
+	<string>Ιδανικό για να πιάσετε έναν γρήγορο αριθμό κατά τη διάρκεια μιας κλήσης.</string>
+	<key>screenshot.demo.2</key>
+	<string>Απλά ένας καθαρός χώρος για τις άμεσες σκέψεις σας.</string>
+	<key>screenshot.demo.3</key>
+	<string>Χωρίς φακέλους.
+Χωρίς ετικέτες.
+Χωρίς περισπασμούς.</string>
+	<key>screenshot.demo.4</key>
+	<string>Ο πιο γρήγορος τρόπος για να συλλάβετε μια φευγαλέα σκέψη.</string>
+</dict>
+</plist>

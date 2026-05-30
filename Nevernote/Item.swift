@@ -38,6 +38,7 @@ final class NoteDocument {
     var urlImagePreviewStateJSON: Data
     var textAlignmentRawValue: String?
     var linePrefixModeRawValue: String?
+    var capturedImageData: Data?
 
     init(
         id: UUID = UUID(),

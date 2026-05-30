@@ -1,0 +1,139 @@
+{
+  "" : {
+    "diagnostics" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NeverNote-primary.dia",
+    "emit-module-dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NeverNote-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NeverNote-primary-emit-module.dia",
+    "pch" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NeverNote-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NeverNote-primary.swiftdeps"
+  },
+  "/Users/nathanfennel/Documents/GitHub/Nevernote/NeverNote/ActivityShareSheet.swift" : {
+    "const-values" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/ActivityShareSheet.swiftconstvalues",
+    "dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/ActivityShareSheet.d",
+    "diagnostics" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/ActivityShareSheet.dia",
+    "index-unit-output-path" : "/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/ActivityShareSheet.o",
+    "llvm-bc" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/ActivityShareSheet.bc",
+    "object" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/ActivityShareSheet.o",
+    "swift-dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/ActivityShareSheet.swiftdeps",
+    "swiftmodule" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/ActivityShareSheet~partial.swiftmodule"
+  },
+  "/Users/nathanfennel/Documents/GitHub/Nevernote/NeverNote/ContentView.swift" : {
+    "const-values" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/ContentView.swiftconstvalues",
+    "dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/ContentView.d",
+    "diagnostics" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/ContentView.dia",
+    "index-unit-output-path" : "/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/ContentView.o",
+    "llvm-bc" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/ContentView.bc",
+    "object" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/ContentView.o",
+    "swift-dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/ContentView.swiftdeps",
+    "swiftmodule" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/ContentView~partial.swiftmodule"
+  },
+  "/Users/nathanfennel/Documents/GitHub/Nevernote/NeverNote/Item.swift" : {
+    "const-values" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/Item.swiftconstvalues",
+    "dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/Item.d",
+    "diagnostics" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/Item.dia",
+    "index-unit-output-path" : "/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/Item.o",
+    "llvm-bc" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/Item.bc",
+    "object" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/Item.o",
+    "swift-dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/Item.swiftdeps",
+    "swiftmodule" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/Item~partial.swiftmodule"
+  },
+  "/Users/nathanfennel/Documents/GitHub/Nevernote/NeverNote/NeverNoteCloudKit.swift" : {
+    "const-values" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NeverNoteCloudKit.swiftconstvalues",
+    "dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NeverNoteCloudKit.d",
+    "diagnostics" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NeverNoteCloudKit.dia",
+    "index-unit-output-path" : "/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NeverNoteCloudKit.o",
+    "llvm-bc" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NeverNoteCloudKit.bc",
+    "object" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NeverNoteCloudKit.o",
+    "swift-dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NeverNoteCloudKit.swiftdeps",
+    "swiftmodule" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NeverNoteCloudKit~partial.swiftmodule"
+  },
+  "/Users/nathanfennel/Documents/GitHub/Nevernote/NeverNote/NeverNoteLinks.swift" : {
+    "const-values" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NeverNoteLinks.swiftconstvalues",
+    "dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NeverNoteLinks.d",
+    "diagnostics" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NeverNoteLinks.dia",
+    "index-unit-output-path" : "/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NeverNoteLinks.o",
+    "llvm-bc" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NeverNoteLinks.bc",
+    "object" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NeverNoteLinks.o",
+    "swift-dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NeverNoteLinks.swiftdeps",
+    "swiftmodule" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NeverNoteLinks~partial.swiftmodule"
+  },
+  "/Users/nathanfennel/Documents/GitHub/Nevernote/NeverNote/NeverNoteTheme.swift" : {
+    "const-values" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NeverNoteTheme.swiftconstvalues",
+    "dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NeverNoteTheme.d",
+    "diagnostics" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NeverNoteTheme.dia",
+    "index-unit-output-path" : "/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NeverNoteTheme.o",
+    "llvm-bc" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NeverNoteTheme.bc",
+    "object" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NeverNoteTheme.o",
+    "swift-dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NeverNoteTheme.swiftdeps",
+    "swiftmodule" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NeverNoteTheme~partial.swiftmodule"
+  },
+  "/Users/nathanfennel/Documents/GitHub/Nevernote/NeverNote/NevernoteApp.swift" : {
+    "const-values" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NevernoteApp.swiftconstvalues",
+    "dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NevernoteApp.d",
+    "diagnostics" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NevernoteApp.dia",
+    "index-unit-output-path" : "/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NevernoteApp.o",
+    "llvm-bc" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NevernoteApp.bc",
+    "object" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NevernoteApp.o",
+    "swift-dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NevernoteApp.swiftdeps",
+    "swiftmodule" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NevernoteApp~partial.swiftmodule"
+  },
+  "/Users/nathanfennel/Documents/GitHub/Nevernote/NeverNote/NevernoteModelContainer.swift" : {
+    "const-values" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NevernoteModelContainer.swiftconstvalues",
+    "dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NevernoteModelContainer.d",
+    "diagnostics" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NevernoteModelContainer.dia",
+    "index-unit-output-path" : "/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NevernoteModelContainer.o",
+    "llvm-bc" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NevernoteModelContainer.bc",
+    "object" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NevernoteModelContainer.o",
+    "swift-dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NevernoteModelContainer.swiftdeps",
+    "swiftmodule" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NevernoteModelContainer~partial.swiftmodule"
+  },
+  "/Users/nathanfennel/Documents/GitHub/Nevernote/NeverNote/NoteImageURLPrefetcher.swift" : {
+    "const-values" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NoteImageURLPrefetcher.swiftconstvalues",
+    "dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NoteImageURLPrefetcher.d",
+    "diagnostics" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NoteImageURLPrefetcher.dia",
+    "index-unit-output-path" : "/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NoteImageURLPrefetcher.o",
+    "llvm-bc" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NoteImageURLPrefetcher.bc",
+    "object" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NoteImageURLPrefetcher.o",
+    "swift-dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NoteImageURLPrefetcher.swiftdeps",
+    "swiftmodule" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NoteImageURLPrefetcher~partial.swiftmodule"
+  },
+  "/Users/nathanfennel/Documents/GitHub/Nevernote/NeverNote/NoteRichTextCodec.swift" : {
+    "const-values" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NoteRichTextCodec.swiftconstvalues",
+    "dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NoteRichTextCodec.d",
+    "diagnostics" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NoteRichTextCodec.dia",
+    "index-unit-output-path" : "/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NoteRichTextCodec.o",
+    "llvm-bc" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NoteRichTextCodec.bc",
+    "object" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NoteRichTextCodec.o",
+    "swift-dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NoteRichTextCodec.swiftdeps",
+    "swiftmodule" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NoteRichTextCodec~partial.swiftmodule"
+  },
+  "/Users/nathanfennel/Documents/GitHub/Nevernote/NeverNote/NoteTextImageRenderer.swift" : {
+    "const-values" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NoteTextImageRenderer.swiftconstvalues",
+    "dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NoteTextImageRenderer.d",
+    "diagnostics" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NoteTextImageRenderer.dia",
+    "index-unit-output-path" : "/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NoteTextImageRenderer.o",
+    "llvm-bc" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NoteTextImageRenderer.bc",
+    "object" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NoteTextImageRenderer.o",
+    "swift-dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NoteTextImageRenderer.swiftdeps",
+    "swiftmodule" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/NoteTextImageRenderer~partial.swiftmodule"
+  },
+  "/Users/nathanfennel/Documents/GitHub/Nevernote/NeverNote/ScreenshotSharePromptOverlay.swift" : {
+    "const-values" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/ScreenshotSharePromptOverlay.swiftconstvalues",
+    "dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/ScreenshotSharePromptOverlay.d",
+    "diagnostics" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/ScreenshotSharePromptOverlay.dia",
+    "index-unit-output-path" : "/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/ScreenshotSharePromptOverlay.o",
+    "llvm-bc" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/ScreenshotSharePromptOverlay.bc",
+    "object" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/ScreenshotSharePromptOverlay.o",
+    "swift-dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/ScreenshotSharePromptOverlay.swiftdeps",
+    "swiftmodule" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/ScreenshotSharePromptOverlay~partial.swiftmodule"
+  },
+  "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "const-values" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftconstvalues",
+    "dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/GeneratedAssetSymbols.d",
+    "diagnostics" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/GeneratedAssetSymbols.dia",
+    "index-unit-output-path" : "/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "swift-dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftdeps",
+    "swiftmodule" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Release-iphoneos/NeverNote.build/Objects-normal/arm64/GeneratedAssetSymbols~partial.swiftmodule"
+  }
+}

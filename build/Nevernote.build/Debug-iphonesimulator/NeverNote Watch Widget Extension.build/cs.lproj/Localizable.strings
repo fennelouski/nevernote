@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>16:9</key>
+	<string>16:9</string>
+	<key>9:16</key>
+	<string>9:16</string>
+	<key>Add</key>
+	<string>Přidat</string>
+	<key>Add Photo</key>
+	<string>Přidat fotku</string>
+	<key>Add text</key>
+	<string>Přidejte text</string>
+	<key>Align center</key>
+	<string>Zarovnat na střed</string>
+	<key>Align left</key>
+	<string>Zarovnat doleva</string>
+	<key>Align right</key>
+	<string>Zarovnat doprava</string>
+	<key>Alignment</key>
+	<string>Zarovnání</string>
+	<key>All Fonts</key>
+	<string>Všechna písma</string>
+	<key>Aspect ratio</key>
+	<string>Poměr stran</string>
+	<key>Bold</key>
+	<string>Tučné</string>
+	<key>Bulleted list</key>
+	<string>Seznam s odrážkami</string>
+	<key>Camera</key>
+	<string>Fotoaparát</string>
+	<key>Can't use this link as an image</key>
+	<string>Tento odkaz nelze použít jako obrázek</string>
+	<key>Cancel</key>
+	<string>Zrušit</string>
+	<key>Checking image…</key>
+	<string>Kontrola obrázku…</string>
+	<key>Continue</key>
+	<string>Pokračovat</string>
+	<key>Could not load that link.</key>
+	<string>Tento odkaz se nepodařilo načíst.</string>
+	<key>Delete note</key>
+	<string>Smazat poznámku</string>
+	<key>Dictate or type</key>
+	<string>Diktovat nebo psát</string>
+	<key>Done</key>
+	<string>Hotovo</string>
+	<key>Enter text before dismissing the keyboard</key>
+	<string>Před zavřením klávesnice zadejte text</string>
+	<key>Font</key>
+	<string>Písmo</string>
+	<key>Help and support</key>
+	<string>Pomoc a podpora</string>
+	<key>Hide image at bottom</key>
+	<string>Skrýt obrázek dole</string>
+	<key>Hide keyboard</key>
+	<string>Skrýt klávesnici</string>
+	<key>Image is too large.</key>
+	<string>Obrázek je příliš velký.</string>
+	<key>Image link</key>
+	<string>Odkaz na obrázek</string>
+	<key>Import Text from a Photo</key>
+	<string>Import textu z fotografie</string>
+	<key>Import text from photo</key>
+	<string>Import textu z fotografie</string>
+	<key>Italic</key>
+	<string>kurzíva</string>
+	<key>LAST EDITED %@.</key>
+	<string>POSLEDNÍ UPRAVENO %@.</string>
+	<key>Landscape</key>
+	<string>Krajina</string>
+	<key>Line markers</key>
+	<string>Linkové značky</string>
+	<key>Maximize presentation size</key>
+	<string>Maximalizujte velikost prezentace</string>
+	<key>More formatting</key>
+	<string>Více formátování</string>
+	<key>NEVERNOTE FOCUS</key>
+	<string>NEVERNOTE FOCUS</string>
+	<key>Nevernote</key>
+	<string>Nevernote</string>
+	<key>Not Now</key>
+	<string>Teď ne</string>
+	<key>Numbered list</key>
+	<string>Číslovaný seznam</string>
+	<key>OK</key>
+	<string>OK</string>
+	<key>Open Nevernote to read or capture a note.</key>
+	<string>Otevřete Nevernote a přečtěte si nebo zaznamenejte poznámku.</string>
+	<key>Photo Library</key>
+	<string>Knihovna fotografií</string>
+	<key>Plain lines</key>
+	<string>Obyčejné čáry</string>
+	<key>Portrait</key>
+	<string>Portrét</string>
+	<key>Recent</key>
+	<string>Nedávné</string>
+	<key>Reset</key>
+	<string>Resetovat</string>
+	<key>Save</key>
+	<string>Uložit</string>
+	<key>Search fonts</key>
+	<string>Hledat písma</string>
+	<key>Share as image of text</key>
+	<string>Sdílet jako obrázek textu</string>
+	<key>Share note</key>
+	<string>Sdílejte poznámku</string>
+	<key>Share note text</key>
+	<string>Sdílejte text poznámky</string>
+	<key>Share your note?</key>
+	<string>Sdílet svou poznámku?</string>
+	<key>Show image at bottom</key>
+	<string>Zobrazit obrázek dole</string>
+	<key>Show this image below the note?</key>
+	<string>Zobrazit tento obrázek pod poznámkou?</string>
+	<key>Size</key>
+	<string>Velikost</string>
+	<key>Smart links</key>
+	<string>Chytré odkazy</string>
+	<key>Square</key>
+	<string>Náměstí</string>
+	<key>System Bold</key>
+	<string>Systém Tučné</string>
+	<key>Take a photo or choose one from your library. NeverNote will read any text in the image and add it to your note.</key>
+	<string>Pořiďte fotku nebo si vyberte jednu ze své knihovny. NeverNote přečte jakýkoli text v obrázku a přidá jej do vaší poznámky.</string>
+	<key>That link is not an image.</key>
+	<string>Ten odkaz není obrázek.</string>
+	<key>The image will contain only your text and background — no buttons or frames.</key>
+	<string>Obrázek bude obsahovat pouze váš text a pozadí – žádná tlačítka ani rámečky.</string>
+	<key>Toggle line markers</key>
+	<string>Přepínání značek čar</string>
+	<key>Underline</key>
+	<string>Zdůraznit</string>
+	<key>Undo delete</key>
+	<string>Vrátit smazání zpět</string>
+	<key>View captured image</key>
+	<string>Zobrazit pořízený snímek</string>
+	<key>You just took a screenshot. Share the note text, or create a clean image of your text only.</key>
+	<string>Právě jste udělali snímek obrazovky. Sdílejte text poznámky nebo vytvořte čistý obrázek pouze svého textu.</string>
+	<key>screenshot.demo.0</key>
+	<string>OTEVŘENO.
+Typ.
+Hotovo</string>
+	<key>screenshot.demo.1</key>
+	<string>Ideální pro rychlé zachycení čísla během hovoru.</string>
+	<key>screenshot.demo.2</key>
+	<string>Prostě čistý prostor pro vaše bezprostřední myšlenky.</string>
+	<key>screenshot.demo.3</key>
+	<string>Žádné složky.
+Žádné značky.
+Žádné rozptýlení.</string>
+	<key>screenshot.demo.4</key>
+	<string>Nejrychlejší způsob, jak zachytit letmou myšlenku.</string>
+</dict>
+</plist>

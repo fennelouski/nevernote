@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>16:9</key>
+	<string>१६:९</string>
+	<key>9:16</key>
+	<string>९:१६</string>
+	<key>Add</key>
+	<string>ॲड</string>
+	<key>Add Photo</key>
+	<string>फोटो जोडा</string>
+	<key>Add text</key>
+	<string>मजकूर जोडा</string>
+	<key>Align center</key>
+	<string>मध्यभागी संरेखित करा</string>
+	<key>Align left</key>
+	<string>डावीकडे संरेखित करा</string>
+	<key>Align right</key>
+	<string>उजवीकडे संरेखित करा</string>
+	<key>Alignment</key>
+	<string>संरेखन</string>
+	<key>All Fonts</key>
+	<string>सर्व फॉन्ट</string>
+	<key>Aspect ratio</key>
+	<string>आस्पेक्ट रेशो</string>
+	<key>Bold</key>
+	<string>ठळक</string>
+	<key>Bulleted list</key>
+	<string>बुलेट केलेली यादी</string>
+	<key>Camera</key>
+	<string>कॅमेरा</string>
+	<key>Can't use this link as an image</key>
+	<string>ही लिंक इमेज म्हणून वापरू शकत नाही</string>
+	<key>Cancel</key>
+	<string>रद्द करा</string>
+	<key>Checking image…</key>
+	<string>इमेज तपासत आहे...</string>
+	<key>Continue</key>
+	<string>चालू ठेवा</string>
+	<key>Could not load that link.</key>
+	<string>ती लिंक लोड करू शकलो नाही.</string>
+	<key>Delete note</key>
+	<string>टीप हटवा</string>
+	<key>Dictate or type</key>
+	<string>हुकूम द्या किंवा टाइप करा</string>
+	<key>Done</key>
+	<string>झाले</string>
+	<key>Enter text before dismissing the keyboard</key>
+	<string>कीबोर्ड बंद करण्यापूर्वी मजकूर प्रविष्ट करा</string>
+	<key>Font</key>
+	<string>फॉन्ट</string>
+	<key>Help and support</key>
+	<string>मदत आणि समर्थन</string>
+	<key>Hide image at bottom</key>
+	<string>तळाशी प्रतिमा लपवा</string>
+	<key>Hide keyboard</key>
+	<string>कीबोर्ड लपवा</string>
+	<key>Image is too large.</key>
+	<string>प्रतिमा खूप मोठी आहे.</string>
+	<key>Image link</key>
+	<string>इमेज लिंक</string>
+	<key>Import Text from a Photo</key>
+	<string>फोटोमधून मजकूर आयात करा</string>
+	<key>Import text from photo</key>
+	<string>फोटोमधून मजकूर आयात करा</string>
+	<key>Italic</key>
+	<string>तिर्यक</string>
+	<key>LAST EDITED %@.</key>
+	<string>शेवटचे संपादित %@.</string>
+	<key>Landscape</key>
+	<string>लँडस्केप</string>
+	<key>Line markers</key>
+	<string>रेषा मार्कर</string>
+	<key>Maximize presentation size</key>
+	<string>सादरीकरणाचा आकार वाढवा</string>
+	<key>More formatting</key>
+	<string>अधिक स्वरूपण</string>
+	<key>NEVERNOTE FOCUS</key>
+	<string>Nevernote फोकस</string>
+	<key>Nevernote</key>
+	<string>Nevernote</string>
+	<key>Not Now</key>
+	<string>आता नाही</string>
+	<key>Numbered list</key>
+	<string>क्रमांकित यादी</string>
+	<key>OK</key>
+	<string>ठीक आहे</string>
+	<key>Open Nevernote to read or capture a note.</key>
+	<string>नोट वाचण्यासाठी किंवा कॅप्चर करण्यासाठी Nevernote उघडा.</string>
+	<key>Photo Library</key>
+	<string>फोटो लायब्ररी</string>
+	<key>Plain lines</key>
+	<string>साध्या रेषा</string>
+	<key>Portrait</key>
+	<string>पोर्ट्रेट</string>
+	<key>Recent</key>
+	<string>अलीकडील</string>
+	<key>Reset</key>
+	<string>रीसेट करा</string>
+	<key>Save</key>
+	<string>जतन करा</string>
+	<key>Search fonts</key>
+	<string>फॉन्ट शोधा</string>
+	<key>Share as image of text</key>
+	<string>मजकूराची प्रतिमा म्हणून सामायिक करा</string>
+	<key>Share note</key>
+	<string>नोट शेअर करा</string>
+	<key>Share note text</key>
+	<string>टीप मजकूर सामायिक करा</string>
+	<key>Share your note?</key>
+	<string>तुमची टीप शेअर करायची?</string>
+	<key>Show image at bottom</key>
+	<string>तळाशी प्रतिमा दर्शवा</string>
+	<key>Show this image below the note?</key>
+	<string>टीप खाली ही प्रतिमा दाखवायची?</string>
+	<key>Size</key>
+	<string>आकार</string>
+	<key>Smart links</key>
+	<string>स्मार्ट लिंक्स</string>
+	<key>Square</key>
+	<string>चौरस</string>
+	<key>System Bold</key>
+	<string>प्रणाली बोल्ड</string>
+	<key>Take a photo or choose one from your library. NeverNote will read any text in the image and add it to your note.</key>
+	<string>एक फोटो घ्या किंवा तुमच्या लायब्ररीमधून एक निवडा. NeverNote इमेजमधील कोणताही मजकूर वाचेल आणि तो तुमच्या नोटमध्ये जोडेल.</string>
+	<key>That link is not an image.</key>
+	<string>ती लिंक प्रतिमा नाही.</string>
+	<key>The image will contain only your text and background — no buttons or frames.</key>
+	<string>प्रतिमेमध्ये फक्त तुमचा मजकूर आणि पार्श्वभूमी असेल — कोणतेही बटण किंवा फ्रेम नाहीत.</string>
+	<key>Toggle line markers</key>
+	<string>लाइन मार्कर टॉगल करा</string>
+	<key>Underline</key>
+	<string>अधोरेखित करा</string>
+	<key>Undo delete</key>
+	<string>हटवणे पूर्ववत करा</string>
+	<key>View captured image</key>
+	<string>कॅप्चर केलेली प्रतिमा पहा</string>
+	<key>You just took a screenshot. Share the note text, or create a clean image of your text only.</key>
+	<string>तुम्ही फक्त स्क्रीनशॉट घेतला. नोटचा मजकूर शेअर करा किंवा फक्त तुमच्या मजकुराची स्वच्छ प्रतिमा तयार करा.</string>
+	<key>screenshot.demo.0</key>
+	<string>उघडा.
+प्रकार.
+झाले</string>
+	<key>screenshot.demo.1</key>
+	<string>कॉल दरम्यान द्रुत नंबर पकडण्यासाठी योग्य.</string>
+	<key>screenshot.demo.2</key>
+	<string>तुमच्या तात्काळ विचारांसाठी फक्त एक स्वच्छ जागा.</string>
+	<key>screenshot.demo.3</key>
+	<string>फोल्डर नाहीत.
+कोणतेही टॅग नाहीत.
+विक्षेप नाही.</string>
+	<key>screenshot.demo.4</key>
+	<string>क्षणभंगुर विचार कॅप्चर करण्याचा सर्वात जलद मार्ग.</string>
+</dict>
+</plist>

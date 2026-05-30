@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>16:9</key>
+	<string>16:9</string>
+	<key>9:16</key>
+	<string>9:16</string>
+	<key>Add</key>
+	<string>Cuir leis</string>
+	<key>Add Photo</key>
+	<string>Cuir grianghraf leis</string>
+	<key>Add text</key>
+	<string>Cuir téacs leis</string>
+	<key>Align center</key>
+	<string>Ailínigh go lár</string>
+	<key>Align left</key>
+	<string>Ailínigh ar chlé</string>
+	<key>Align right</key>
+	<string>Ailínigh ar dheis</string>
+	<key>Alignment</key>
+	<string>Ailíniú</string>
+	<key>All Fonts</key>
+	<string>Gach Cló</string>
+	<key>Aspect ratio</key>
+	<string>Cóimheas gné</string>
+	<key>Bold</key>
+	<string>Trom</string>
+	<key>Bulleted list</key>
+	<string>Liosta le poncanna</string>
+	<key>Camera</key>
+	<string>Ceamara</string>
+	<key>Can't use this link as an image</key>
+	<string>Ní féidir an nasc seo a úsáid mar íomhá</string>
+	<key>Cancel</key>
+	<string>Cealaigh</string>
+	<key>Checking image…</key>
+	<string>Ag seiceáil íomhá…</string>
+	<key>Continue</key>
+	<string>Lean ar aghaidh</string>
+	<key>Could not load that link.</key>
+	<string>Níorbh fhéidir an nasc sin a lódáil.</string>
+	<key>Delete note</key>
+	<string>Scrios nóta</string>
+	<key>Dictate or type</key>
+	<string>Deachtaigh nó clóscríobh</string>
+	<key>Done</key>
+	<string>Déanta</string>
+	<key>Enter text before dismissing the keyboard</key>
+	<string>Cuir isteach téacs sula ndúnann tú an méarchlár</string>
+	<key>Font</key>
+	<string>Cló</string>
+	<key>Help and support</key>
+	<string>Cabhair agus tacaíocht</string>
+	<key>Hide image at bottom</key>
+	<string>Folaigh íomhá ag an mbun</string>
+	<key>Hide keyboard</key>
+	<string>Folaigh an méarchlár</string>
+	<key>Image is too large.</key>
+	<string>Tá an íomhá ró-mhór.</string>
+	<key>Image link</key>
+	<string>Nasc íomhá</string>
+	<key>Import Text from a Photo</key>
+	<string>Iompórtáil Téacs ó Ghrianghraf</string>
+	<key>Import text from photo</key>
+	<string>Iompórtáil téacs ó ghrianghraf</string>
+	<key>Italic</key>
+	<string>Iodálach</string>
+	<key>LAST EDITED %@.</key>
+	<string>CURTHA IN EAGAR DEIREANACH %@.</string>
+	<key>Landscape</key>
+	<string>Tírdhreach</string>
+	<key>Line markers</key>
+	<string>Marcóirí líne</string>
+	<key>Maximize presentation size</key>
+	<string>Uasmhéadaigh méid na cur i láthair</string>
+	<key>More formatting</key>
+	<string>Formáidiú breise</string>
+	<key>NEVERNOTE FOCUS</key>
+	<string>NEVERNOTE FOCUS</string>
+	<key>Nevernote</key>
+	<string>Nevernote</string>
+	<key>Not Now</key>
+	<string>Ní Anois</string>
+	<key>Numbered list</key>
+	<string>Liosta uimhrithe</string>
+	<key>OK</key>
+	<string>Ceart go leor</string>
+	<key>Open Nevernote to read or capture a note.</key>
+	<string>Oscail Nevernote chun nóta a léamh nó a ghabháil.</string>
+	<key>Photo Library</key>
+	<string>Leabharlann grianghraf</string>
+	<key>Plain lines</key>
+	<string>Línte simplí</string>
+	<key>Portrait</key>
+	<string>Portráid</string>
+	<key>Recent</key>
+	<string>Le déanaí</string>
+	<key>Reset</key>
+	<string>Athshocraigh</string>
+	<key>Save</key>
+	<string>Sábháil</string>
+	<key>Search fonts</key>
+	<string>Cuardaigh clónna</string>
+	<key>Share as image of text</key>
+	<string>Comhroinn mar íomhá de théacs</string>
+	<key>Share note</key>
+	<string>Comhroinn nóta</string>
+	<key>Share note text</key>
+	<string>Comhroinn téacs nóta</string>
+	<key>Share your note?</key>
+	<string>Comhroinn do nóta?</string>
+	<key>Show image at bottom</key>
+	<string>Taispeáin íomhá ag an mbun</string>
+	<key>Show this image below the note?</key>
+	<string>An íomhá seo a thaispeáint faoin nóta?</string>
+	<key>Size</key>
+	<string>Méid</string>
+	<key>Smart links</key>
+	<string>Naisc chliste</string>
+	<key>Square</key>
+	<string>Cearnach</string>
+	<key>System Bold</key>
+	<string>Córas trom</string>
+	<key>Take a photo or choose one from your library. NeverNote will read any text in the image and add it to your note.</key>
+	<string>Tóg grianghraf nó roghnaigh ceann ó do leabharlann. Léifidh NeverNote aon téacs san íomhá agus cuirfidh sé le do nóta é.</string>
+	<key>That link is not an image.</key>
+	<string>Ní íomhá é an nasc sin.</string>
+	<key>The image will contain only your text and background — no buttons or frames.</key>
+	<string>Ní bheidh san íomhá ach do théacs agus do chúlra — gan cnaipí ná frámaí.</string>
+	<key>Toggle line markers</key>
+	<string>Scoraigh marcóirí líne</string>
+	<key>Underline</key>
+	<string>Fo-líne</string>
+	<key>Undo delete</key>
+	<string>Cealaigh scriosadh</string>
+	<key>View captured image</key>
+	<string>Féach ar an íomhá gabhadh</string>
+	<key>You just took a screenshot. Share the note text, or create a clean image of your text only.</key>
+	<string>Ghlac tú grianghraf scáileáin díreach anois. Comhroinn téacs an nóta, nó cruthaigh íomhá ghlan de do théacs amháin.</string>
+	<key>screenshot.demo.0</key>
+	<string>Oscail.
+Clóscríobh.
+Déanta</string>
+	<key>screenshot.demo.1</key>
+	<string>Foirfe chun uimhir thapa a ghabháil le linn glao.</string>
+	<key>screenshot.demo.2</key>
+	<string>Spás glan do do chuid smaointe láithreacha.</string>
+	<key>screenshot.demo.3</key>
+	<string>Gan fillteáin.
+Gan clibeanna.
+Gan cur isteach.</string>
+	<key>screenshot.demo.4</key>
+	<string>An bealach is tapúla chun smaoineamh gearr a ghabháil.</string>
+</dict>
+</plist>

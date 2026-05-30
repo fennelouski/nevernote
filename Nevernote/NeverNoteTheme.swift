@@ -4,29 +4,64 @@
 //
 
 import SwiftUI
+#if canImport(UIKit)
 import UIKit
+#elseif canImport(AppKit)
+import AppKit
+#endif
 
 extension Color {
     static let brandBlue = Color(red: 28.0 / 255.0, green: 128.0 / 255.0, blue: 152.0 / 255.0)
 
     /// Full-bleed app canvas behind all content layers.
-    static let noteCanvas = Color(UIColor.systemGroupedBackground)
+    static let noteCanvas: Color = {
+        #if canImport(UIKit)
+        Color(UIColor.systemGroupedBackground)
+        #else
+        Color(nsColor: .windowBackgroundColor)
+        #endif
+    }()
 
     /// Editing top chrome; extends under the status bar.
-    static let topBarBackground = Color(UIColor.systemBackground)
+    static let topBarBackground: Color = {
+        #if canImport(UIKit)
+        Color(UIColor.systemBackground)
+        #else
+        Color(nsColor: .controlBackgroundColor)
+        #endif
+    }()
 
-    static let topBarDivider = Color(UIColor.separator)
+    static let topBarDivider: Color = {
+        #if canImport(UIKit)
+        Color(UIColor.separator)
+        #else
+        Color(nsColor: .separatorColor)
+        #endif
+    }()
 
     /// Inline / unfocused bottom formatting toolbar.
-    static let editorToolbarChrome = Color(UIColor.editorToolbarChrome)
+    static let editorToolbarChrome: Color = {
+        #if canImport(UIKit)
+        Color(UIColor.editorToolbarChrome)
+        #else
+        Color(nsColor: .editorToolbarChrome)
+        #endif
+    }()
 
     /// Keyboard-adjacent toolbar and shelf above the system keyboard.
-    static let editorKeyboardShelf = Color(UIColor.editorKeyboardShelf)
+    static let editorKeyboardShelf: Color = {
+        #if canImport(UIKit)
+        Color(UIColor.editorKeyboardShelf)
+        #else
+        Color(nsColor: .editorKeyboardShelf)
+        #endif
+    }()
 
     /// Screenshot share prompt scrim.
     static let screenshotOverlayDim = Color.black.opacity(0.55)
 }
 
+#if canImport(UIKit)
 extension UIColor {
     static let brandBlueTint = UIColor(red: 28.0 / 255.0, green: 128.0 / 255.0, blue: 152.0 / 255.0, alpha: 1)
 
@@ -55,6 +90,7 @@ extension UIColor {
         editorToolbarChrome
     }
 }
+#endif
 
 extension DynamicTypeSize {
     var isAccessibilitySize: Bool {

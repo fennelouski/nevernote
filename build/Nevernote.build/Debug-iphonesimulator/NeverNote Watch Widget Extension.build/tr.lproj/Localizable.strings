@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>16:9</key>
+	<string>16:9</string>
+	<key>9:16</key>
+	<string>9:16</string>
+	<key>Add</key>
+	<string>Eklemek</string>
+	<key>Add Photo</key>
+	<string>Fotoğraf Ekle</string>
+	<key>Add text</key>
+	<string>Metin ekle</string>
+	<key>Align center</key>
+	<string>Ortala</string>
+	<key>Align left</key>
+	<string>Sola hizala</string>
+	<key>Align right</key>
+	<string>Sağa hizala</string>
+	<key>Alignment</key>
+	<string>Hizalama</string>
+	<key>All Fonts</key>
+	<string>Tüm Yazı Tipleri</string>
+	<key>Aspect ratio</key>
+	<string>En boy oranı</string>
+	<key>Bold</key>
+	<string>Kalın</string>
+	<key>Bulleted list</key>
+	<string>Madde işaretli liste</string>
+	<key>Camera</key>
+	<string>Kamera</string>
+	<key>Can't use this link as an image</key>
+	<string>Bu bağlantı resim olarak kullanılamıyor</string>
+	<key>Cancel</key>
+	<string>İptal etmek</string>
+	<key>Checking image…</key>
+	<string>Resim kontrol ediliyor…</string>
+	<key>Continue</key>
+	<string>Devam etmek</string>
+	<key>Could not load that link.</key>
+	<string>Bu bağlantı yüklenemedi.</string>
+	<key>Delete note</key>
+	<string>Notu sil</string>
+	<key>Dictate or type</key>
+	<string>Dikte edin veya yazın</string>
+	<key>Done</key>
+	<string>Tamamlamak</string>
+	<key>Enter text before dismissing the keyboard</key>
+	<string>Klavyeyi kapatmadan önce metin girin</string>
+	<key>Font</key>
+	<string>Yazı tipi</string>
+	<key>Help and support</key>
+	<string>Yardım ve destek</string>
+	<key>Hide image at bottom</key>
+	<string>Alttaki resmi gizle</string>
+	<key>Hide keyboard</key>
+	<string>Klavyeyi gizle</string>
+	<key>Image is too large.</key>
+	<string>Resim çok büyük.</string>
+	<key>Image link</key>
+	<string>Resim bağlantısı</string>
+	<key>Import Text from a Photo</key>
+	<string>Fotoğraftan Metin İçe Aktarma</string>
+	<key>Import text from photo</key>
+	<string>Fotoğraftan metni içe aktar</string>
+	<key>Italic</key>
+	<string>İtalik</string>
+	<key>LAST EDITED %@.</key>
+	<string>SON DÜZENLENEN %@.</string>
+	<key>Landscape</key>
+	<string>Manzara</string>
+	<key>Line markers</key>
+	<string>Çizgi işaretçileri</string>
+	<key>Maximize presentation size</key>
+	<string>Sunum boyutunu en üst düzeye çıkarın</string>
+	<key>More formatting</key>
+	<string>Daha fazla biçimlendirme</string>
+	<key>NEVERNOTE FOCUS</key>
+	<string>NEVERNOTE FOCUS</string>
+	<key>Nevernote</key>
+	<string>Nevernote</string>
+	<key>Not Now</key>
+	<string>Şimdi değil</string>
+	<key>Numbered list</key>
+	<string>Numaralı liste</string>
+	<key>OK</key>
+	<string>TAMAM</string>
+	<key>Open Nevernote to read or capture a note.</key>
+	<string>Bir notu okumak veya yakalamak için Nevernote'u açın.</string>
+	<key>Photo Library</key>
+	<string>Fotoğraf Kitaplığı</string>
+	<key>Plain lines</key>
+	<string>Düz çizgiler</string>
+	<key>Portrait</key>
+	<string>Portre</string>
+	<key>Recent</key>
+	<string>Son</string>
+	<key>Reset</key>
+	<string>Sıfırla</string>
+	<key>Save</key>
+	<string>Kaydetmek</string>
+	<key>Search fonts</key>
+	<string>Yazı tiplerini arayın</string>
+	<key>Share as image of text</key>
+	<string>Metin resmi olarak paylaş</string>
+	<key>Share note</key>
+	<string>Notu paylaş</string>
+	<key>Share note text</key>
+	<string>Not metnini paylaş</string>
+	<key>Share your note?</key>
+	<string>Notunuzu paylaşmak ister misiniz?</string>
+	<key>Show image at bottom</key>
+	<string>Resmi altta göster</string>
+	<key>Show this image below the note?</key>
+	<string>Bu resim notun altında gösterilsin mi?</string>
+	<key>Size</key>
+	<string>Boyut</string>
+	<key>Smart links</key>
+	<string>Akıllı bağlantılar</string>
+	<key>Square</key>
+	<string>Kare</string>
+	<key>System Bold</key>
+	<string>Sistem Kalın</string>
+	<key>Take a photo or choose one from your library. NeverNote will read any text in the image and add it to your note.</key>
+	<string>Bir fotoğraf çekin veya kitaplığınızdan bir fotoğraf seçin. NeverNote, görseldeki herhangi bir metni okuyacak ve notunuza ekleyecektir.</string>
+	<key>That link is not an image.</key>
+	<string>Bu bağlantı bir resim değil.</string>
+	<key>The image will contain only your text and background — no buttons or frames.</key>
+	<string>Resim yalnızca metninizi ve arka planınızı içerecektir; düğme veya çerçeve olmayacaktır.</string>
+	<key>Toggle line markers</key>
+	<string>Satır işaretçilerini aç/kapat</string>
+	<key>Underline</key>
+	<string>Altı çizili</string>
+	<key>Undo delete</key>
+	<string>Silmeyi geri al</string>
+	<key>View captured image</key>
+	<string>Yakalanan görüntüyü görüntüle</string>
+	<key>You just took a screenshot. Share the note text, or create a clean image of your text only.</key>
+	<string>Az önce bir ekran görüntüsü aldınız. Not metnini paylaşın veya yalnızca metninizin temiz bir görüntüsünü oluşturun.</string>
+	<key>screenshot.demo.0</key>
+	<string>Açık.
+Tip.
+Tamamlamak</string>
+	<key>screenshot.demo.1</key>
+	<string>Bir arama sırasında hızlı bir numarayı yakalamak için mükemmeldir.</string>
+	<key>screenshot.demo.2</key>
+	<string>Anlık düşünceleriniz için sadece temiz bir alan.</string>
+	<key>screenshot.demo.3</key>
+	<string>Klasör yok.
+Etiket yok.
+Dikkat dağıtıcı hiçbir şey yok.</string>
+	<key>screenshot.demo.4</key>
+	<string>Kısacık bir düşünceyi yakalamanın en hızlı yolu.</string>
+</dict>
+</plist>

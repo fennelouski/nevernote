@@ -4,6 +4,7 @@
 //
 
 import SwiftUI
+#if canImport(UIKit)
 import UIKit
 
 /// Presents `UIActivityViewController` from SwiftUI (popover-safe on iPad when `sourceRect` is set).
@@ -40,3 +41,26 @@ struct ActivityShareSheet: UIViewControllerRepresentable {
 
     func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {}
 }
+#elseif os(macOS)
+import AppKit
+
+struct ActivityShareSheet: View {
+    let activityItems: [Any]
+    @Binding var isPresented: Bool
+    var sourceRect: CGRect?
+
+    var body: some View {
+        EmptyView()
+            .onAppear {
+                let picker = NSSharingServicePicker(items: activityItems)
+                if let window = NSApp.keyWindow, let contentView = window.contentView {
+                    let anchor = sourceRect ?? CGRect(x: contentView.bounds.midX, y: contentView.bounds.midY, width: 1, height: 1)
+                    picker.show(relativeTo: anchor, of: contentView, preferredEdge: .minY)
+                }
+                DispatchQueue.main.async {
+                    isPresented = false
+                }
+            }
+    }
+}
+#endif

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>16:9</key>
+	<string>16:9</string>
+	<key>9:16</key>
+	<string>9:16</string>
+	<key>Add</key>
+	<string>Добавяне</string>
+	<key>Add Photo</key>
+	<string>Добавяне на снимка</string>
+	<key>Add text</key>
+	<string>Добавяне на текст</string>
+	<key>Align center</key>
+	<string>Центрирано</string>
+	<key>Align left</key>
+	<string>Ляво подравняване</string>
+	<key>Align right</key>
+	<string>Дясно подравняване</string>
+	<key>Alignment</key>
+	<string>Подравняване</string>
+	<key>All Fonts</key>
+	<string>Всички шрифтове</string>
+	<key>Aspect ratio</key>
+	<string>Съотношение на страните</string>
+	<key>Bold</key>
+	<string>Удебелен</string>
+	<key>Bulleted list</key>
+	<string>Списък с точки</string>
+	<key>Camera</key>
+	<string>Камера</string>
+	<key>Can't use this link as an image</key>
+	<string>Не може да се използва тази връзка като изображение</string>
+	<key>Cancel</key>
+	<string>Отказ</string>
+	<key>Checking image…</key>
+	<string>Проверка на изображението…</string>
+	<key>Continue</key>
+	<string>Продължи</string>
+	<key>Could not load that link.</key>
+	<string>Не може да се зареди тази връзка.</string>
+	<key>Delete note</key>
+	<string>Изтриване на бележка</string>
+	<key>Dictate or type</key>
+	<string>Диктувайте или пишете</string>
+	<key>Done</key>
+	<string>Готово</string>
+	<key>Enter text before dismissing the keyboard</key>
+	<string>Въведете текст преди да скриете клавиатурата</string>
+	<key>Font</key>
+	<string>Шрифт</string>
+	<key>Help and support</key>
+	<string>Помощ и поддръжка</string>
+	<key>Hide image at bottom</key>
+	<string>Скриване на изображението в долната част</string>
+	<key>Hide keyboard</key>
+	<string>Скрий клавиатурата</string>
+	<key>Image is too large.</key>
+	<string>Изображението е твърде голямо.</string>
+	<key>Image link</key>
+	<string>Връзка към изображение</string>
+	<key>Import Text from a Photo</key>
+	<string>Импортиране на текст от снимка</string>
+	<key>Import text from photo</key>
+	<string>Импортиране на текст от снимка</string>
+	<key>Italic</key>
+	<string>Курсив</string>
+	<key>LAST EDITED %@.</key>
+	<string>ПОСЛЕДНО РЕДАКТИРАНО %@.</string>
+	<key>Landscape</key>
+	<string>Хоризонтална ориентация</string>
+	<key>Line markers</key>
+	<string>Маркери за редове</string>
+	<key>Maximize presentation size</key>
+	<string>Максимален размер на презентацията</string>
+	<key>More formatting</key>
+	<string>Още форматиране</string>
+	<key>NEVERNOTE FOCUS</key>
+	<string>NEVERNOTE FOCUS</string>
+	<key>Nevernote</key>
+	<string>Nevernote</string>
+	<key>Not Now</key>
+	<string>Не сега</string>
+	<key>Numbered list</key>
+	<string>Номериран списък</string>
+	<key>OK</key>
+	<string>ОК</string>
+	<key>Open Nevernote to read or capture a note.</key>
+	<string>Отворете Nevernote, за да прочетете или запишете бележка.</string>
+	<key>Photo Library</key>
+	<string>Фотобиблиотека</string>
+	<key>Plain lines</key>
+	<string>Обикновени линии</string>
+	<key>Portrait</key>
+	<string>Вертикална ориентация</string>
+	<key>Recent</key>
+	<string>Скорошни</string>
+	<key>Reset</key>
+	<string>Нулиране</string>
+	<key>Save</key>
+	<string>Запазване</string>
+	<key>Search fonts</key>
+	<string>Търсене на шрифтове</string>
+	<key>Share as image of text</key>
+	<string>Споделяне като изображение на текст</string>
+	<key>Share note</key>
+	<string>Споделяне на бележка</string>
+	<key>Share note text</key>
+	<string>Споделяне на текст на бележка</string>
+	<key>Share your note?</key>
+	<string>Споделете бележката си?</string>
+	<key>Show image at bottom</key>
+	<string>Показване на изображението в долната част</string>
+	<key>Show this image below the note?</key>
+	<string>Показване на това изображение под бележката?</string>
+	<key>Size</key>
+	<string>Размер</string>
+	<key>Smart links</key>
+	<string>Умни връзки</string>
+	<key>Square</key>
+	<string>Квадрат</string>
+	<key>System Bold</key>
+	<string>Системно удебелен</string>
+	<key>Take a photo or choose one from your library. NeverNote will read any text in the image and add it to your note.</key>
+	<string>Направете снимка или изберете такава от вашата библиотека. NeverNote ще прочете всеки текст в изображението и ще го добави към бележката ви.</string>
+	<key>That link is not an image.</key>
+	<string>Тази връзка не е изображение.</string>
+	<key>The image will contain only your text and background — no buttons or frames.</key>
+	<string>Изображението ще съдържа само вашия текст и фон — без бутони или рамки.</string>
+	<key>Toggle line markers</key>
+	<string>Превключване на маркери за редове</string>
+	<key>Underline</key>
+	<string>Подчертаване</string>
+	<key>Undo delete</key>
+	<string>Отмяна на изтриването</string>
+	<key>View captured image</key>
+	<string>Преглед на заснетото изображение</string>
+	<key>You just took a screenshot. Share the note text, or create a clean image of your text only.</key>
+	<string>Току-що направихте екранна снимка. Споделете текста на бележката или създайте чисто изображение само от вашия текст.</string>
+	<key>screenshot.demo.0</key>
+	<string>Отвори.
+Пиши.
+Готово</string>
+	<key>screenshot.demo.1</key>
+	<string>Перфектно за бързо записване на номер по време на разговор.</string>
+	<key>screenshot.demo.2</key>
+	<string>Просто чисто пространство за непосредствените ви мисли.</string>
+	<key>screenshot.demo.3</key>
+	<string>Без папки.
+Без тагове.
+Без разсейване.</string>
+	<key>screenshot.demo.4</key>
+	<string>Най-бързият начин да запишете мимолетна мисъл.</string>
+</dict>
+</plist>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>16:9</key>
+	<string>16: 9</string>
+	<key>9:16</key>
+	<string>9:16</string>
+	<key>Add</key>
+	<string>ଯୋଡନ୍ତୁ |</string>
+	<key>Add Photo</key>
+	<string>ଫଟୋ ଯୋଡନ୍ତୁ |</string>
+	<key>Add text</key>
+	<string>ପାଠ ଯୋଡନ୍ତୁ |</string>
+	<key>Align center</key>
+	<string>କେନ୍ଦ୍ର ସଂରେଖ</string>
+	<key>Align left</key>
+	<string>ବାମ ସଂରେଖ</string>
+	<key>Align right</key>
+	<string>ଡାହାଣ ସଂରେଖ</string>
+	<key>Alignment</key>
+	<string>ଶ୍ରେଣୀବଦ୍ଧତା |</string>
+	<key>All Fonts</key>
+	<string>ସମସ୍ତ ଫଣ୍ଟ |</string>
+	<key>Aspect ratio</key>
+	<string>ଅନୁପାତ ଅନୁପାତ</string>
+	<key>Bold</key>
+	<string>ବୋଲ୍ଡ |</string>
+	<key>Bulleted list</key>
+	<string>ବୁଲେଟେଡ୍ ତାଲିକା |</string>
+	<key>Camera</key>
+	<string>କ୍ୟାମେରା |</string>
+	<key>Can't use this link as an image</key>
+	<string>ଏହି ଲିଙ୍କକୁ ଏକ ପ୍ରତିଛବି ଭାବରେ ବ୍ୟବହାର କରିପାରିବ ନାହିଁ |</string>
+	<key>Cancel</key>
+	<string>ବାତିଲ୍ କରନ୍ତୁ |</string>
+	<key>Checking image…</key>
+	<string>ପ୍ରତିଛବି ଯାଞ୍ଚ କରୁଛି…</string>
+	<key>Continue</key>
+	<string>ଜାରି ରଖ |</string>
+	<key>Could not load that link.</key>
+	<string>ସେହି ଲିଙ୍କ୍ ଲୋଡ୍ ହୋଇପାରିଲା ନାହିଁ |</string>
+	<key>Delete note</key>
+	<string>ନୋଟ୍ ଡିଲିଟ୍ କରନ୍ତୁ |</string>
+	<key>Dictate or type</key>
+	<string>ଡିକେଟ୍ କିମ୍ବା ଟାଇପ୍ କରନ୍ତୁ |</string>
+	<key>Done</key>
+	<string>ସମାପ୍ତ</string>
+	<key>Enter text before dismissing the keyboard</key>
+	<string>କୀବୋର୍ଡ ବନ୍ଦ କରିବା ପୂର୍ବରୁ ଟେକ୍ସ୍ଟ ଲିଖନ୍ତୁ</string>
+	<key>Font</key>
+	<string>ଫଣ୍ଟ</string>
+	<key>Help and support</key>
+	<string>ସାହାଯ୍ୟ ଏବଂ ସମର୍ଥନ</string>
+	<key>Hide image at bottom</key>
+	<string>ତଳେ ପ୍ରତିଛବି ଲୁଚାନ୍ତୁ |</string>
+	<key>Hide keyboard</key>
+	<string>କୀବୋର୍ଡ ଲୁଚାନ୍ତୁ</string>
+	<key>Image is too large.</key>
+	<string>ପ୍ରତିଛବି ବହୁତ ବଡ ଅଟେ |</string>
+	<key>Image link</key>
+	<string>ପ୍ରତିଛବି ଲିଙ୍କ୍ |</string>
+	<key>Import Text from a Photo</key>
+	<string>ଏକ ଫଟୋରୁ ପାଠ ଆମଦାନୀ କରନ୍ତୁ |</string>
+	<key>Import text from photo</key>
+	<string>ଫଟୋରୁ ପାଠ ଆମଦାନୀ କରନ୍ତୁ |</string>
+	<key>Italic</key>
+	<string>ଇଟାଲିକ୍ |</string>
+	<key>LAST EDITED %@.</key>
+	<string>ଶେଷ ସମ୍ପାଦିତ% @।</string>
+	<key>Landscape</key>
+	<string>ଲ୍ୟାଣ୍ଡସ୍କେପ୍</string>
+	<key>Line markers</key>
+	<string>ରେଖା ମାର୍କର୍ସ |</string>
+	<key>Maximize presentation size</key>
+	<string>ଉପସ୍ଥାପନା ଆକାରକୁ ସର୍ବାଧିକ କରନ୍ତୁ |</string>
+	<key>More formatting</key>
+	<string>ଅଧିକ ଫର୍ମାଟିଙ୍ଗ</string>
+	<key>NEVERNOTE FOCUS</key>
+	<string>NEVERNOTE FOCUS</string>
+	<key>Nevernote</key>
+	<string>Nevernote</string>
+	<key>Not Now</key>
+	<string>ବର୍ତ୍ତମାନ ନୁହେଁ |</string>
+	<key>Numbered list</key>
+	<string>ସଂଖ୍ୟାଯୁକ୍ତ ତାଲିକା |</string>
+	<key>OK</key>
+	<string>ଠିକ ଅଛି |</string>
+	<key>Open Nevernote to read or capture a note.</key>
+	<string>ଏକ ନୋଟ୍ ପ read ିବା କିମ୍ବା କ୍ୟାପଚର୍ କରିବାକୁ କେବେବି ନୋଟ୍ ଖୋଲନ୍ତୁ |</string>
+	<key>Photo Library</key>
+	<string>ଫଟୋ ଲାଇବ୍ରେରୀ |</string>
+	<key>Plain lines</key>
+	<string>ସରଳ ରେଖା |</string>
+	<key>Portrait</key>
+	<string>ଚିତ୍ର</string>
+	<key>Recent</key>
+	<string>ସମ୍ପ୍ରତି</string>
+	<key>Reset</key>
+	<string>ପୁନ et ସେଟ୍ କରନ୍ତୁ |</string>
+	<key>Save</key>
+	<string>ସଞ୍ଚୟ କରନ୍ତୁ |</string>
+	<key>Search fonts</key>
+	<string>ଫଣ୍ଟ ଖୋଜ |</string>
+	<key>Share as image of text</key>
+	<string>ପାଠ୍ୟର ପ୍ରତିଛବି ଭାବରେ ଅଂଶୀଦାର କରନ୍ତୁ |</string>
+	<key>Share note</key>
+	<string>ନୋଟ୍ ଅଂଶୀଦାର କରନ୍ତୁ |</string>
+	<key>Share note text</key>
+	<string>ନୋଟ୍ ପାଠ୍ୟ ଅଂଶୀଦାର କରନ୍ତୁ |</string>
+	<key>Share your note?</key>
+	<string>ଆପଣଙ୍କର ନୋଟ୍ ଅଂଶୀଦାର କରନ୍ତୁ?</string>
+	<key>Show image at bottom</key>
+	<string>ନିମ୍ନରେ ପ୍ରତିଛବି ଦେଖାନ୍ତୁ |</string>
+	<key>Show this image below the note?</key>
+	<string>ଏହି ପ୍ରତିଛବିକୁ ନୋଟ୍ ତଳେ ଦେଖାନ୍ତୁ?</string>
+	<key>Size</key>
+	<string>ଆକାର |</string>
+	<key>Smart links</key>
+	<string>ସ୍ମାର୍ଟ ଲିଙ୍କ୍ |</string>
+	<key>Square</key>
+	<string>ବର୍ଗ</string>
+	<key>System Bold</key>
+	<string>ସିଷ୍ଟମ୍ ବୋଲ୍ଡ |</string>
+	<key>Take a photo or choose one from your library. NeverNote will read any text in the image and add it to your note.</key>
+	<string>ଏକ ଫଟୋ ନିଅନ୍ତୁ କିମ୍ବା ଆପଣଙ୍କ ଲାଇବ୍ରେରୀରୁ ଗୋଟିଏ ବାଛନ୍ତୁ | କଦାପି ନୋଟ୍ ପ୍ରତିଛବିରେ କ text ଣସି ପାଠ ପ read ିବ ନାହିଁ ଏବଂ ଏହାକୁ ତୁମ ନୋଟରେ ଯୋଗ କରିବ |</string>
+	<key>That link is not an image.</key>
+	<string>ସେହି ଲିଙ୍କ୍ ଏକ ପ୍ରତିଛବି ନୁହେଁ |</string>
+	<key>The image will contain only your text and background — no buttons or frames.</key>
+	<string>ପ୍ରତିଛବିଟି କେବଳ ଆପଣଙ୍କର ପାଠ୍ୟ ଏବଂ ପୃଷ୍ଠଭୂମି ଧାରଣ କରିବ - କ but ଣସି ବଟନ୍ କିମ୍ବା ଫ୍ରେମ୍ ନାହିଁ |</string>
+	<key>Toggle line markers</key>
+	<string>ରେଖା ମାର୍କରଗୁଡିକ ଟୋଗଲ୍ କରନ୍ତୁ |</string>
+	<key>Underline</key>
+	<string>ଅଣ୍ଡରଲାଇନ୍ |</string>
+	<key>Undo delete</key>
+	<string>ଡିଲିଟ୍ କରନ୍ତୁ |</string>
+	<key>View captured image</key>
+	<string>କଏଦ ହୋଇଥିବା ପ୍ରତିଛବି ଦେଖନ୍ତୁ |</string>
+	<key>You just took a screenshot. Share the note text, or create a clean image of your text only.</key>
+	<string>ଆପଣ କେବଳ ଏକ ସ୍କ୍ରିନସଟ୍ ନେଇଛନ୍ତି | ନୋଟ୍ ପାଠ୍ୟ ଅଂଶୀଦାର କରନ୍ତୁ, କିମ୍ବା କେବଳ ଆପଣଙ୍କ ପାଠ୍ୟର ଏକ ସ୍ୱଚ୍ଛ ପ୍ରତିଛବି ସୃଷ୍ଟି କରନ୍ତୁ |</string>
+	<key>screenshot.demo.0</key>
+	<string>ଖୋଲନ୍ତୁ |
+ଟାଇପ୍ କରନ୍ତୁ |
+ସମାପ୍ତ</string>
+	<key>screenshot.demo.1</key>
+	<string>କଲ୍ ସମୟରେ ଶୀଘ୍ର ନମ୍ବର ଧରିବା ପାଇଁ ଉପଯୁକ୍ତ |</string>
+	<key>screenshot.demo.2</key>
+	<string>ତୁମର ତୁରନ୍ତ ଚିନ୍ତାଧାରା ପାଇଁ କେବଳ ଏକ ପରିଷ୍କାର ସ୍ଥାନ |</string>
+	<key>screenshot.demo.3</key>
+	<string>କ folder ଣସି ଫୋଲ୍ଡର ନାହିଁ |
+କ tags ଣସି ଟ୍ୟାଗ୍ ନାହିଁ |
+କ distr ଣସି ବିଘ୍ନ ନାହିଁ |</string>
+	<key>screenshot.demo.4</key>
+	<string>ଏକ କ୍ଷୀଣ ଚିନ୍ତାଧାରାକୁ ଧରିବା ପାଇଁ ଦ୍ରୁତତମ ଉପାୟ |</string>
+</dict>
+</plist>

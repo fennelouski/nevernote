@@ -18,6 +18,11 @@ struct NevernoteApp: App {
     #endif
     var sharedModelContainer: ModelContainer = NevernoteModelContainerFactory.makeContainer()
 
+    @State private var featureFlags = FeatureFlags()
+    #if DEBUG
+    @State private var showFeatureFlagsDebug = false
+    #endif
+
     init() {
         #if DEBUG
         NeverNoteShortcut.assertAllBindingsAreUnique()
@@ -28,6 +33,20 @@ struct NevernoteApp: App {
         WindowGroup {
             ContentView()
                 .tint(Color.nevernoteBrandBlue)
+                .environment(featureFlags)
+                #if DEBUG
+                .sheet(isPresented: $showFeatureFlagsDebug) {
+                    FeatureFlagsDebugSheet(featureFlags: featureFlags)
+                }
+                .onReceive(NotificationCenter.default.publisher(for: NevernoteNotification.showFeatureFlags)) { _ in
+                    showFeatureFlagsDebug = true
+                }
+                .onAppear {
+                    if FeatureFlagLaunchOverrides.shouldShowFeatureFlagsPanel {
+                        showFeatureFlagsDebug = true
+                    }
+                }
+                #endif
         }
         .modelContainer(sharedModelContainer)
         #if os(macOS)

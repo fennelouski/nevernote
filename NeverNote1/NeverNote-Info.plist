@@ -47,5 +47,9 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>NeverNote uses the camera to photograph text and import it into your note.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>NeverNote accesses your photo library to import text from a photo into your note.</string>
 </dict>
 </plist>

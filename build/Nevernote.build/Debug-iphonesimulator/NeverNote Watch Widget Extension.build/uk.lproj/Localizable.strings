@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>16:9</key>
+	<string>16:9</string>
+	<key>9:16</key>
+	<string>9:16</string>
+	<key>Add</key>
+	<string>додати</string>
+	<key>Add Photo</key>
+	<string>Додати фото</string>
+	<key>Add text</key>
+	<string>Додайте текст</string>
+	<key>Align center</key>
+	<string>Вирівняти по центру</string>
+	<key>Align left</key>
+	<string>Вирівняти по лівому краю</string>
+	<key>Align right</key>
+	<string>Вирівняти по правому краю</string>
+	<key>Alignment</key>
+	<string>Вирівнювання</string>
+	<key>All Fonts</key>
+	<string>Всі шрифти</string>
+	<key>Aspect ratio</key>
+	<string>Співвідношення сторін</string>
+	<key>Bold</key>
+	<string>Жирний</string>
+	<key>Bulleted list</key>
+	<string>Маркірований список</string>
+	<key>Camera</key>
+	<string>Камера</string>
+	<key>Can't use this link as an image</key>
+	<string>Не можна використовувати це посилання як зображення</string>
+	<key>Cancel</key>
+	<string>Скасувати</string>
+	<key>Checking image…</key>
+	<string>Перевірка зображення…</string>
+	<key>Continue</key>
+	<string>Продовжити</string>
+	<key>Could not load that link.</key>
+	<string>Не вдалося завантажити це посилання.</string>
+	<key>Delete note</key>
+	<string>Видалити замітку</string>
+	<key>Dictate or type</key>
+	<string>Продиктуйте або введіть</string>
+	<key>Done</key>
+	<string>Готово</string>
+	<key>Enter text before dismissing the keyboard</key>
+	<string>Введіть текст перед закриттям клавіатури</string>
+	<key>Font</key>
+	<string>Шрифт</string>
+	<key>Help and support</key>
+	<string>Допомога та підтримка</string>
+	<key>Hide image at bottom</key>
+	<string>Сховати зображення внизу</string>
+	<key>Hide keyboard</key>
+	<string>Сховати клавіатуру</string>
+	<key>Image is too large.</key>
+	<string>Зображення завелике.</string>
+	<key>Image link</key>
+	<string>Посилання на зображення</string>
+	<key>Import Text from a Photo</key>
+	<string>Імпорт тексту з фотографії</string>
+	<key>Import text from photo</key>
+	<string>Імпорт тексту з фотографії</string>
+	<key>Italic</key>
+	<string>Курсив</string>
+	<key>LAST EDITED %@.</key>
+	<string>ОСТАННЯ РЕДАГУВАННЯ %@.</string>
+	<key>Landscape</key>
+	<string>Пейзаж</string>
+	<key>Line markers</key>
+	<string>Маркери ліній</string>
+	<key>Maximize presentation size</key>
+	<string>Збільште розмір презентації</string>
+	<key>More formatting</key>
+	<string>Більше форматування</string>
+	<key>NEVERNOTE FOCUS</key>
+	<string>NEVERNOTE FOCUS</string>
+	<key>Nevernote</key>
+	<string>Nevernote</string>
+	<key>Not Now</key>
+	<string>Не зараз</string>
+	<key>Numbered list</key>
+	<string>Нумерований список</string>
+	<key>OK</key>
+	<string>добре</string>
+	<key>Open Nevernote to read or capture a note.</key>
+	<string>Відкрийте Nevernote, щоб прочитати або записати нотатку.</string>
+	<key>Photo Library</key>
+	<string>Бібліотека фотографій</string>
+	<key>Plain lines</key>
+	<string>Рівні лінії</string>
+	<key>Portrait</key>
+	<string>Портрет</string>
+	<key>Recent</key>
+	<string>Останні</string>
+	<key>Reset</key>
+	<string>Скинути</string>
+	<key>Save</key>
+	<string>зберегти</string>
+	<key>Search fonts</key>
+	<string>Пошук шрифтів</string>
+	<key>Share as image of text</key>
+	<string>Поділитися як зображення тексту</string>
+	<key>Share note</key>
+	<string>Поділитися приміткою</string>
+	<key>Share note text</key>
+	<string>Поділитися текстом нотатки</string>
+	<key>Share your note?</key>
+	<string>Поділитися своєю заміткою?</string>
+	<key>Show image at bottom</key>
+	<string>Показати зображення внизу</string>
+	<key>Show this image below the note?</key>
+	<string>Показати це зображення під приміткою?</string>
+	<key>Size</key>
+	<string>Розмір</string>
+	<key>Smart links</key>
+	<string>Розумні посилання</string>
+	<key>Square</key>
+	<string>Квадратний</string>
+	<key>System Bold</key>
+	<string>Системний жирний</string>
+	<key>Take a photo or choose one from your library. NeverNote will read any text in the image and add it to your note.</key>
+	<string>Зробіть фотографію або виберіть фотографію зі своєї бібліотеки. NeverNote прочитає будь-який текст на зображенні та додасть його до вашої нотатки.</string>
+	<key>That link is not an image.</key>
+	<string>Це посилання не є зображенням.</string>
+	<key>The image will contain only your text and background — no buttons or frames.</key>
+	<string>Зображення міститиме лише ваш текст і фон — без кнопок і рамок.</string>
+	<key>Toggle line markers</key>
+	<string>Перемикати маркери ліній</string>
+	<key>Underline</key>
+	<string>Підкреслити</string>
+	<key>Undo delete</key>
+	<string>Скасувати видалення</string>
+	<key>View captured image</key>
+	<string>Переглянути зроблене зображення</string>
+	<key>You just took a screenshot. Share the note text, or create a clean image of your text only.</key>
+	<string>Ви щойно зробили скріншот. Поділіться текстом нотатки або створіть лише чисте зображення свого тексту.</string>
+	<key>screenshot.demo.0</key>
+	<string>ВІДЧИНЕНО.
+Тип.
+Готово</string>
+	<key>screenshot.demo.1</key>
+	<string>Ідеально підходить для швидкого пошуку номера під час розмови.</string>
+	<key>screenshot.demo.2</key>
+	<string>Просто чистий простір для ваших миттєвих думок.</string>
+	<key>screenshot.demo.3</key>
+	<string>Немає папок.
+Без тегів.
+Ніяких відволікань.</string>
+	<key>screenshot.demo.4</key>
+	<string>Найшвидший спосіб вловити швидкоплинну думку.</string>
+</dict>
+</plist>

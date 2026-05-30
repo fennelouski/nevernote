@@ -45,8 +45,8 @@ struct NevernoteComplication: Widget {
             NevernoteComplicationView(entry: entry)
                 .containerBackground(.fill.tertiary, for: .widget)
         }
-        .configurationDisplayName("Nevernote")
-        .description("Open Nevernote to read or capture a note.")
+        .configurationDisplayName(LocalizedStringResource("Nevernote"))
+        .description(LocalizedStringResource("Open Nevernote to read or capture a note."))
         .supportedFamilies([
             .accessoryCircular,
             .accessoryCorner,

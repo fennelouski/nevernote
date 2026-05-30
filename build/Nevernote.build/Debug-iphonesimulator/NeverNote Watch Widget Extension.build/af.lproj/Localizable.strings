@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>16:9</key>
+	<string>16:9</string>
+	<key>9:16</key>
+	<string>9:16</string>
+	<key>Add</key>
+	<string>Voeg by</string>
+	<key>Add Photo</key>
+	<string>Voeg foto by</string>
+	<key>Add text</key>
+	<string>Voeg teks by</string>
+	<key>Align center</key>
+	<string>Sentreer</string>
+	<key>Align left</key>
+	<string>Links belyn</string>
+	<key>Align right</key>
+	<string>Regs belyn</string>
+	<key>Alignment</key>
+	<string>Uitlyn</string>
+	<key>All Fonts</key>
+	<string>Alle lettertipes</string>
+	<key>Aspect ratio</key>
+	<string>Aspekverhouding</string>
+	<key>Bold</key>
+	<string>Vet</string>
+	<key>Bulleted list</key>
+	<string>Kolpuntlys</string>
+	<key>Camera</key>
+	<string>Kamera</string>
+	<key>Can't use this link as an image</key>
+	<string>Kan hierdie skakel nie as 'n prent gebruik nie</string>
+	<key>Cancel</key>
+	<string>Kanselleer</string>
+	<key>Checking image…</key>
+	<string>Beeld word gekontroleer…</string>
+	<key>Continue</key>
+	<string>Gaan voort</string>
+	<key>Could not load that link.</key>
+	<string>Kon nie daardie skakel laai nie.</string>
+	<key>Delete note</key>
+	<string>Verwyder nota</string>
+	<key>Dictate or type</key>
+	<string>Dikteer of tik</string>
+	<key>Done</key>
+	<string>Klaar</string>
+	<key>Enter text before dismissing the keyboard</key>
+	<string>Voer teks in voor jy die sleutelbord sluit</string>
+	<key>Font</key>
+	<string>Lettertipe</string>
+	<key>Help and support</key>
+	<string>Hulp en ondersteuning</string>
+	<key>Hide image at bottom</key>
+	<string>Versteek beeld onderaan</string>
+	<key>Hide keyboard</key>
+	<string>Versteek sleutelbord</string>
+	<key>Image is too large.</key>
+	<string>Beeld is te groot.</string>
+	<key>Image link</key>
+	<string>Beeldskakel</string>
+	<key>Import Text from a Photo</key>
+	<string>Voer teks in van 'n foto</string>
+	<key>Import text from photo</key>
+	<string>Voer teks in van foto</string>
+	<key>Italic</key>
+	<string>Kursief</string>
+	<key>LAST EDITED %@.</key>
+	<string>LAAS GEWYSIG %@.</string>
+	<key>Landscape</key>
+	<string>Landskap</string>
+	<key>Line markers</key>
+	<string>Lynmerkers</string>
+	<key>Maximize presentation size</key>
+	<string>Vergroot aanbieding grootte</string>
+	<key>More formatting</key>
+	<string>Meer opmaak</string>
+	<key>NEVERNOTE FOCUS</key>
+	<string>NEVERNOTE FOCUS</string>
+	<key>Nevernote</key>
+	<string>Nevernote</string>
+	<key>Not Now</key>
+	<string>Nie nou nie</string>
+	<key>Numbered list</key>
+	<string>Genommerde lys</string>
+	<key>OK</key>
+	<string>OK</string>
+	<key>Open Nevernote to read or capture a note.</key>
+	<string>Maak Nevernote oop om 'n nota te lees of vas te lê.</string>
+	<key>Photo Library</key>
+	<string>Fotobiblioteek</string>
+	<key>Plain lines</key>
+	<string>Eenvoudige lyne</string>
+	<key>Portrait</key>
+	<string>Portret</string>
+	<key>Recent</key>
+	<string>Onlangse</string>
+	<key>Reset</key>
+	<string>Herstel</string>
+	<key>Save</key>
+	<string>Stoor</string>
+	<key>Search fonts</key>
+	<string>Soek lettertipes</string>
+	<key>Share as image of text</key>
+	<string>Deel as beeld van teks</string>
+	<key>Share note</key>
+	<string>Deel nota</string>
+	<key>Share note text</key>
+	<string>Deel notateks</string>
+	<key>Share your note?</key>
+	<string>Deel jou nota?</string>
+	<key>Show image at bottom</key>
+	<string>Wys beeld onderaan</string>
+	<key>Show this image below the note?</key>
+	<string>Wys hierdie beeld onder die nota?</string>
+	<key>Size</key>
+	<string>Grootte</string>
+	<key>Smart links</key>
+	<string>Slim skakels</string>
+	<key>Square</key>
+	<string>Vierkant</string>
+	<key>System Bold</key>
+	<string>Stelsel vet</string>
+	<key>Take a photo or choose one from your library. NeverNote will read any text in the image and add it to your note.</key>
+	<string>Neem 'n foto of kies een uit jou biblioteek. NeverNote sal enige teks in die beeld lees en dit by jou nota voeg.</string>
+	<key>That link is not an image.</key>
+	<string>Daardie skakel is nie 'n beeld nie.</string>
+	<key>The image will contain only your text and background — no buttons or frames.</key>
+	<string>Die beeld sal slegs jou teks en agtergrond bevat — geen knoppies of rame nie.</string>
+	<key>Toggle line markers</key>
+	<string>Skakel lynmerkers</string>
+	<key>Underline</key>
+	<string>Onderstreep</string>
+	<key>Undo delete</key>
+	<string>Maak verwydering ongedaan</string>
+	<key>View captured image</key>
+	<string>Bekyk vasge legde beeld</string>
+	<key>You just took a screenshot. Share the note text, or create a clean image of your text only.</key>
+	<string>Jy het pas 'n skermkiekie geneem. Deel die notateks, of skep 'n skoon beeld van slegs jou teks.</string>
+	<key>screenshot.demo.0</key>
+	<string>Maak oop.
+Tik.
+Klaar</string>
+	<key>screenshot.demo.1</key>
+	<string>Perfek om 'n vinnige nommer tydens 'n oproep te vang.</string>
+	<key>screenshot.demo.2</key>
+	<string>Net 'n skoon spasie vir jou onmiddellike gedagtes.</string>
+	<key>screenshot.demo.3</key>
+	<string>Geen vouers.
+Geen etikette.
+Geen afleidings.</string>
+	<key>screenshot.demo.4</key>
+	<string>Die vinnigste manier om 'n vlugtige gedagte vas te lê.</string>
+</dict>
+</plist>

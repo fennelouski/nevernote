@@ -3,7 +3,12 @@
 //  Nevernote
 //
 
+import Foundation
+#if canImport(UIKit)
 import UIKit
+#elseif canImport(AppKit)
+import AppKit
+#endif
 
 enum NoteImageURLPrefetcherError: LocalizedError {
     case invalidResponse
@@ -14,11 +19,11 @@ enum NoteImageURLPrefetcherError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .invalidResponse:
-            return "Could not load that link."
+            return String(localized: "Could not load that link.")
         case .tooLarge:
-            return "Image is too large."
+            return String(localized: "Image is too large.")
         case .notImageData:
-            return "That link is not an image."
+            return String(localized: "That link is not an image.")
         case .network(let e):
             return e.localizedDescription
         }
@@ -27,17 +32,17 @@ enum NoteImageURLPrefetcherError: LocalizedError {
 
 enum NoteImageURLPrefetcher {
     private static let maxBytes = 4 * 1024 * 1024
-    private static let cache = NSCache<NSURL, UIImage>()
+    private static let cache = NSCache<NSURL, PlatformImage>()
 
-    static func cachedImage(for url: URL) -> UIImage? {
+    static func cachedImage(for url: URL) -> PlatformImage? {
         cache.object(forKey: url as NSURL)
     }
 
-    static func storeInCache(_ image: UIImage, for url: URL) {
+    static func storeInCache(_ image: PlatformImage, for url: URL) {
         cache.setObject(image, forKey: url as NSURL)
     }
 
-    static func prefetchImage(from url: URL, completion: @escaping (Result<UIImage, NoteImageURLPrefetcherError>) -> Void) {
+    static func prefetchImage(from url: URL, completion: @escaping (Result<PlatformImage, NoteImageURLPrefetcherError>) -> Void) {
         if let img = cachedImage(for: url) {
             DispatchQueue.main.async { completion(.success(img)) }
             return
@@ -73,7 +78,7 @@ enum NoteImageURLPrefetcher {
                 DispatchQueue.main.async { completion(.failure(.tooLarge)) }
                 return
             }
-            guard let image = UIImage(data: data) else {
+            guard let image = NeverNotePlatform.platformImage(from: data) else {
                 DispatchQueue.main.async { completion(.failure(.notImageData)) }
                 return
             }
@@ -91,41 +96,24 @@ enum NoteHTTPSLinkEnumeration {
         let full = NSRange(location: 0, length: attributed.length)
         guard full.length > 0 else { return [] }
 
-        attributed.enumerateAttribute(.link, in: full, options: []) { value, range, _ in
-            guard let url = value as? URL ?? (value as? String).flatMap({ URL(string: $0) }) else { return }
-            guard let scheme = url.scheme?.lowercased(), scheme == "http" || scheme == "https" else { return }
+        attributed.enumerateAttribute(.link, in: full) { value, range, _ in
+            let urlString: String?
+            if let url = value as? URL {
+                urlString = url.absoluteString
+            } else if let str = value as? String {
+                urlString = str
+            } else {
+                urlString = nil
+            }
+            guard let urlString,
+                  let url = URL(string: urlString) else { return }
             let key = NoteDocument.normalizedURLKey(url)
             guard include(key) else { return }
-            let loc = range.location
-            if let existing = firstLocation[key] {
-                if loc < existing { firstLocation[key] = loc }
-            } else {
-                firstLocation[key] = loc
+            if firstLocation[key] == nil {
+                firstLocation[key] = range.location
             }
         }
 
-        return firstLocation.keys.sorted { (firstLocation[$0] ?? 0) < (firstLocation[$1] ?? 0) }
-    }
-}
-
-enum NoteHTTPPasteboardLinkFormatting {
-    static func applyHTTPDetectedLinks(in mutable: NSMutableAttributedString, range: NSRange) {
-        guard range.length > 0, NSMaxRange(range) <= mutable.length else { return }
-        let substring = (mutable.string as NSString).substring(with: range)
-        guard let detector = try? NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue) else { return }
-        let len = (substring as NSString).length
-        guard len > 0 else { return }
-
-        var rangesToApply: [(NSRange, URL)] = []
-        detector.enumerateMatches(in: substring, options: [], range: NSRange(location: 0, length: len)) { match, _, _ in
-            guard let match, let url = match.url else { return }
-            guard let scheme = url.scheme?.lowercased(), scheme == "http" || scheme == "https" else { return }
-            rangesToApply.append((match.range, url))
-        }
-        for (localRange, url) in rangesToApply.reversed() {
-            let global = NSRange(location: range.location + localRange.location, length: localRange.length)
-            guard NSMaxRange(global) <= mutable.length else { continue }
-            mutable.addAttribute(.link, value: url, range: global)
-        }
+        return firstLocation.sorted { $0.value < $1.value }.map(\.key)
     }
 }

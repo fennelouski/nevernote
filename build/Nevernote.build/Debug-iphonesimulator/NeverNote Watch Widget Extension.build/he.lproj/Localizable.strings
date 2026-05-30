@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>16:9</key>
+	<string>16:9</string>
+	<key>9:16</key>
+	<string>9:16</string>
+	<key>Add</key>
+	<string>לְהוֹסִיף</string>
+	<key>Add Photo</key>
+	<string>הוסף תמונה</string>
+	<key>Add text</key>
+	<string>הוסף טקסט</string>
+	<key>Align center</key>
+	<string>יישור למרכז</string>
+	<key>Align left</key>
+	<string>יישור שמאלה</string>
+	<key>Align right</key>
+	<string>יישור ימינה</string>
+	<key>Alignment</key>
+	<string>מַעֲרָך</string>
+	<key>All Fonts</key>
+	<string>כל הגופנים</string>
+	<key>Aspect ratio</key>
+	<string>יחס גובה-רוחב</string>
+	<key>Bold</key>
+	<string>נוֹעָז</string>
+	<key>Bulleted list</key>
+	<string>רשימת תבליטים</string>
+	<key>Camera</key>
+	<string>מַצלֵמָה</string>
+	<key>Can't use this link as an image</key>
+	<string>לא יכול להשתמש בקישור הזה כתמונה</string>
+	<key>Cancel</key>
+	<string>לְבַטֵל</string>
+	<key>Checking image…</key>
+	<string>בודק תמונה...</string>
+	<key>Continue</key>
+	<string>לְהַמשִׁיך</string>
+	<key>Could not load that link.</key>
+	<string>לא ניתן לטעון את הקישור.</string>
+	<key>Delete note</key>
+	<string>מחק הערה</string>
+	<key>Dictate or type</key>
+	<string>תכתיב או הקלד</string>
+	<key>Done</key>
+	<string>נַעֲשָׂה</string>
+	<key>Enter text before dismissing the keyboard</key>
+	<string>הזן טקסט לפני סגירת המקלדת</string>
+	<key>Font</key>
+	<string>גוֹפָן</string>
+	<key>Help and support</key>
+	<string>עזרה ותמיכה</string>
+	<key>Hide image at bottom</key>
+	<string>הסתר תמונה למטה</string>
+	<key>Hide keyboard</key>
+	<string>הסתר מקלדת</string>
+	<key>Image is too large.</key>
+	<string>התמונה גדולה מדי.</string>
+	<key>Image link</key>
+	<string>קישור לתמונה</string>
+	<key>Import Text from a Photo</key>
+	<string>ייבא טקסט מתמונה</string>
+	<key>Import text from photo</key>
+	<string>ייבא טקסט מהתמונה</string>
+	<key>Italic</key>
+	<string>נטוי</string>
+	<key>LAST EDITED %@.</key>
+	<string>נערך לאחרונה %@.</string>
+	<key>Landscape</key>
+	<string>נוֹף</string>
+	<key>Line markers</key>
+	<string>סמני קו</string>
+	<key>Maximize presentation size</key>
+	<string>מקסימום גודל מצגת</string>
+	<key>More formatting</key>
+	<string>עיצוב נוסף</string>
+	<key>NEVERNOTE FOCUS</key>
+	<string>Nevernote מיקוד</string>
+	<key>Nevernote</key>
+	<string>Nevernote</string>
+	<key>Not Now</key>
+	<string>לא עכשיו</string>
+	<key>Numbered list</key>
+	<string>רשימה ממוספרת</string>
+	<key>OK</key>
+	<string>בְּסֵדֶר</string>
+	<key>Open Nevernote to read or capture a note.</key>
+	<string>פתח את Nevernote כדי לקרוא או ללכוד הערה.</string>
+	<key>Photo Library</key>
+	<string>ספריית תמונות</string>
+	<key>Plain lines</key>
+	<string>קווים פשוטים</string>
+	<key>Portrait</key>
+	<string>דְיוֹקָן</string>
+	<key>Recent</key>
+	<string>לאחרונה</string>
+	<key>Reset</key>
+	<string>אִתחוּל</string>
+	<key>Save</key>
+	<string>לְהַצִיל</string>
+	<key>Search fonts</key>
+	<string>חפש גופנים</string>
+	<key>Share as image of text</key>
+	<string>שתף כתמונה של טקסט</string>
+	<key>Share note</key>
+	<string>שתף הערה</string>
+	<key>Share note text</key>
+	<string>שתף טקסט של הערה</string>
+	<key>Share your note?</key>
+	<string>לשתף את ההערה שלך?</string>
+	<key>Show image at bottom</key>
+	<string>הצג תמונה למטה</string>
+	<key>Show this image below the note?</key>
+	<string>האם להציג את התמונה הזו מתחת לפתק?</string>
+	<key>Size</key>
+	<string>גוֹדֶל</string>
+	<key>Smart links</key>
+	<string>קישורים חכמים</string>
+	<key>Square</key>
+	<string>מְרוּבָּע</string>
+	<key>System Bold</key>
+	<string>מערכת מודגשת</string>
+	<key>Take a photo or choose one from your library. NeverNote will read any text in the image and add it to your note.</key>
+	<string>צלם תמונה או בחר תמונה מהספרייה שלך. NeverNote יקרא כל טקסט בתמונה ויוסיף אותו להערה שלך.</string>
+	<key>That link is not an image.</key>
+	<string>הקישור הזה הוא לא תמונה.</string>
+	<key>The image will contain only your text and background — no buttons or frames.</key>
+	<string>התמונה תכיל רק את הטקסט והרקע שלך - ללא כפתורים או מסגרות.</string>
+	<key>Toggle line markers</key>
+	<string>החלף את סמני הקו</string>
+	<key>Underline</key>
+	<string>לָשִׂים דָגֵשׁ</string>
+	<key>Undo delete</key>
+	<string>בטל מחיקה</string>
+	<key>View captured image</key>
+	<string>צפה בתמונה שצולמה</string>
+	<key>You just took a screenshot. Share the note text, or create a clean image of your text only.</key>
+	<string>הרגע צילמת מסך. שתף את טקסט ההערה, או צור תמונה נקייה של הטקסט שלך בלבד.</string>
+	<key>screenshot.demo.0</key>
+	<string>לִפְתוֹחַ.
+סוּג.
+נַעֲשָׂה</string>
+	<key>screenshot.demo.1</key>
+	<string>מושלם לתפיסת מספר מהיר במהלך שיחה.</string>
+	<key>screenshot.demo.2</key>
+	<string>רק מקום נקי למחשבות המיידיות שלך.</string>
+	<key>screenshot.demo.3</key>
+	<string>אין תיקיות.
+אין תגים.
+אין הסחות דעת.</string>
+	<key>screenshot.demo.4</key>
+	<string>הדרך המהירה ביותר ללכוד מחשבה חולפת.</string>
+</dict>
+</plist>

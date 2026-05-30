@@ -1,0 +1,19 @@
+{
+  "" : {
+    "diagnostics" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Debug-iphonesimulator/NeverNote Watch Widget Extension.build/Objects-normal/x86_64/NeverNote Watch Widget Extension-primary.dia",
+    "emit-module-dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Debug-iphonesimulator/NeverNote Watch Widget Extension.build/Objects-normal/x86_64/NeverNote Watch Widget Extension-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Debug-iphonesimulator/NeverNote Watch Widget Extension.build/Objects-normal/x86_64/NeverNote Watch Widget Extension-primary-emit-module.dia",
+    "pch" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Debug-iphonesimulator/NeverNote Watch Widget Extension.build/Objects-normal/x86_64/NeverNote Watch Widget Extension-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Debug-iphonesimulator/NeverNote Watch Widget Extension.build/Objects-normal/x86_64/NeverNote Watch Widget Extension-primary.swiftdeps"
+  },
+  "/Users/nathanfennel/Documents/GitHub/Nevernote/NeverNoteWatchWidget/NeverNoteWatchWidget.swift" : {
+    "const-values" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Debug-iphonesimulator/NeverNote Watch Widget Extension.build/Objects-normal/x86_64/NeverNoteWatchWidget.swiftconstvalues",
+    "dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Debug-iphonesimulator/NeverNote Watch Widget Extension.build/Objects-normal/x86_64/NeverNoteWatchWidget.d",
+    "diagnostics" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Debug-iphonesimulator/NeverNote Watch Widget Extension.build/Objects-normal/x86_64/NeverNoteWatchWidget.dia",
+    "index-unit-output-path" : "/Nevernote.build/Debug-iphonesimulator/NeverNote Watch Widget Extension.build/Objects-normal/x86_64/NeverNoteWatchWidget.o",
+    "llvm-bc" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Debug-iphonesimulator/NeverNote Watch Widget Extension.build/Objects-normal/x86_64/NeverNoteWatchWidget.bc",
+    "object" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Debug-iphonesimulator/NeverNote Watch Widget Extension.build/Objects-normal/x86_64/NeverNoteWatchWidget.o",
+    "swift-dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Debug-iphonesimulator/NeverNote Watch Widget Extension.build/Objects-normal/x86_64/NeverNoteWatchWidget.swiftdeps",
+    "swiftmodule" : "/Users/nathanfennel/Documents/GitHub/Nevernote/build/Nevernote.build/Debug-iphonesimulator/NeverNote Watch Widget Extension.build/Objects-normal/x86_64/NeverNoteWatchWidget~partial.swiftmodule"
+  }
+}

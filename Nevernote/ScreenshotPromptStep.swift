@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+enum ScreenshotPromptStep {
+    case chooseShareKind
+    case chooseAspect
+}

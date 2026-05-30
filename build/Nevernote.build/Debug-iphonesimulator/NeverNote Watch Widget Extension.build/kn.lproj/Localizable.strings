@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>16:9</key>
+	<string>16:9</string>
+	<key>9:16</key>
+	<string>9:16</string>
+	<key>Add</key>
+	<string>ಸೇರಿಸಿ</string>
+	<key>Add Photo</key>
+	<string>ಫೋಟೋ ಸೇರಿಸಿ</string>
+	<key>Add text</key>
+	<string>ಪಠ್ಯವನ್ನು ಸೇರಿಸಿ</string>
+	<key>Align center</key>
+	<string>ಮಧ್ಯ ಜೋಡಿಸಿ</string>
+	<key>Align left</key>
+	<string>ಎಡ ಜೋಡಿಸಿ</string>
+	<key>Align right</key>
+	<string>ಬಲ ಜೋಡಿಸಿ</string>
+	<key>Alignment</key>
+	<string>ಜೋಡಣೆ</string>
+	<key>All Fonts</key>
+	<string>ಎಲ್ಲಾ ಫಾಂಟ್‌ಗಳು</string>
+	<key>Aspect ratio</key>
+	<string>ಆಕಾರ ಅನುಪಾತ</string>
+	<key>Bold</key>
+	<string>ದಪ್ಪ</string>
+	<key>Bulleted list</key>
+	<string>ಬುಲೆಟ್ ಪಟ್ಟಿ</string>
+	<key>Camera</key>
+	<string>ಕ್ಯಾಮೆರಾ</string>
+	<key>Can't use this link as an image</key>
+	<string>ಈ ಲಿಂಕ್ ಅನ್ನು ಚಿತ್ರವಾಗಿ ಬಳಸಲು ಸಾಧ್ಯವಿಲ್ಲ</string>
+	<key>Cancel</key>
+	<string>ರದ್ದುಮಾಡು</string>
+	<key>Checking image…</key>
+	<string>ಚಿತ್ರವನ್ನು ಪರಿಶೀಲಿಸಲಾಗುತ್ತಿದೆ...</string>
+	<key>Continue</key>
+	<string>ಮುಂದುವರಿಸಿ</string>
+	<key>Could not load that link.</key>
+	<string>ಆ ಲಿಂಕ್ ಅನ್ನು ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.</string>
+	<key>Delete note</key>
+	<string>ಟಿಪ್ಪಣಿ ಅಳಿಸಿ</string>
+	<key>Dictate or type</key>
+	<string>ನಿರ್ದೇಶಿಸಿ ಅಥವಾ ಟೈಪ್ ಮಾಡಿ</string>
+	<key>Done</key>
+	<string>ಮುಗಿದಿದೆ</string>
+	<key>Enter text before dismissing the keyboard</key>
+	<string>ಕೀಬೋರ್ಡ್ ಮುಚ್ಚುವ ಮೊದಲು ಪಠ್ಯ ನಮೂದಿಸಿ</string>
+	<key>Font</key>
+	<string>ಫಾಂಟ್</string>
+	<key>Help and support</key>
+	<string>ಸಹಾಯ ಮತ್ತು ಬೆಂಬಲ</string>
+	<key>Hide image at bottom</key>
+	<string>ಕೆಳಭಾಗದಲ್ಲಿ ಚಿತ್ರವನ್ನು ಮರೆಮಾಡಿ</string>
+	<key>Hide keyboard</key>
+	<string>ಕೀಬೋರ್ಡ್ ಮರೆಮಾಡಿ</string>
+	<key>Image is too large.</key>
+	<string>ಚಿತ್ರ ತುಂಬಾ ದೊಡ್ಡದಾಗಿದೆ.</string>
+	<key>Image link</key>
+	<string>ಚಿತ್ರದ ಲಿಂಕ್</string>
+	<key>Import Text from a Photo</key>
+	<string>ಫೋಟೋದಿಂದ ಪಠ್ಯವನ್ನು ಆಮದು ಮಾಡಿ</string>
+	<key>Import text from photo</key>
+	<string>ಫೋಟೋದಿಂದ ಪಠ್ಯವನ್ನು ಆಮದು ಮಾಡಿ</string>
+	<key>Italic</key>
+	<string>ಇಟಾಲಿಕ್</string>
+	<key>LAST EDITED %@.</key>
+	<string>ಕೊನೆಯದಾಗಿ ಸಂಪಾದಿಸಿದ್ದು %@.</string>
+	<key>Landscape</key>
+	<string>ಭೂದೃಶ್ಯ</string>
+	<key>Line markers</key>
+	<string>ಲೈನ್ ಗುರುತುಗಳು</string>
+	<key>Maximize presentation size</key>
+	<string>ಪ್ರಸ್ತುತಿ ಗಾತ್ರವನ್ನು ಗರಿಷ್ಠಗೊಳಿಸಿ</string>
+	<key>More formatting</key>
+	<string>ಹೆಚ್ಚಿನ ಫಾರ್ಮ್ಯಾಟಿಂಗ್</string>
+	<key>NEVERNOTE FOCUS</key>
+	<string>Nevernote ಫೋಕಸ್</string>
+	<key>Nevernote</key>
+	<string>Nevernote</string>
+	<key>Not Now</key>
+	<string>ಈಗ ಅಲ್ಲ</string>
+	<key>Numbered list</key>
+	<string>ಸಂಖ್ಯೆಯ ಪಟ್ಟಿ</string>
+	<key>OK</key>
+	<string>ಸರಿ</string>
+	<key>Open Nevernote to read or capture a note.</key>
+	<string>ಟಿಪ್ಪಣಿಯನ್ನು ಓದಲು ಅಥವಾ ಸೆರೆಹಿಡಿಯಲು ನೆವರ್‌ನೋಟ್ ತೆರೆಯಿರಿ.</string>
+	<key>Photo Library</key>
+	<string>ಫೋಟೋ ಲೈಬ್ರರಿ</string>
+	<key>Plain lines</key>
+	<string>ಸರಳ ಸಾಲುಗಳು</string>
+	<key>Portrait</key>
+	<string>ಭಾವಚಿತ್ರ</string>
+	<key>Recent</key>
+	<string>ಇತ್ತೀಚಿನ</string>
+	<key>Reset</key>
+	<string>ಮರುಹೊಂದಿಸಿ</string>
+	<key>Save</key>
+	<string>ಉಳಿಸಿ</string>
+	<key>Search fonts</key>
+	<string>ಫಾಂಟ್‌ಗಳನ್ನು ಹುಡುಕಿ</string>
+	<key>Share as image of text</key>
+	<string>ಪಠ್ಯದ ಚಿತ್ರವಾಗಿ ಹಂಚಿಕೊಳ್ಳಿ</string>
+	<key>Share note</key>
+	<string>ಟಿಪ್ಪಣಿಯನ್ನು ಹಂಚಿಕೊಳ್ಳಿ</string>
+	<key>Share note text</key>
+	<string>ಟಿಪ್ಪಣಿ ಪಠ್ಯವನ್ನು ಹಂಚಿಕೊಳ್ಳಿ</string>
+	<key>Share your note?</key>
+	<string>ನಿಮ್ಮ ಟಿಪ್ಪಣಿಯನ್ನು ಹಂಚಿಕೊಳ್ಳುವುದೇ?</string>
+	<key>Show image at bottom</key>
+	<string>ಕೆಳಭಾಗದಲ್ಲಿ ಚಿತ್ರವನ್ನು ತೋರಿಸಿ</string>
+	<key>Show this image below the note?</key>
+	<string>ಟಿಪ್ಪಣಿಯ ಕೆಳಗೆ ಈ ಚಿತ್ರವನ್ನು ತೋರಿಸುವುದೇ?</string>
+	<key>Size</key>
+	<string>ಗಾತ್ರ</string>
+	<key>Smart links</key>
+	<string>ಸ್ಮಾರ್ಟ್ ಲಿಂಕ್‌ಗಳು</string>
+	<key>Square</key>
+	<string>ಚೌಕ</string>
+	<key>System Bold</key>
+	<string>ಸಿಸ್ಟಮ್ ಬೋಲ್ಡ್</string>
+	<key>Take a photo or choose one from your library. NeverNote will read any text in the image and add it to your note.</key>
+	<string>ಫೋಟೋ ತೆಗೆದುಕೊಳ್ಳಿ ಅಥವಾ ನಿಮ್ಮ ಲೈಬ್ರರಿಯಿಂದ ಒಂದನ್ನು ಆಯ್ಕೆಮಾಡಿ. NeverNote ಚಿತ್ರದಲ್ಲಿನ ಯಾವುದೇ ಪಠ್ಯವನ್ನು ಓದುತ್ತದೆ ಮತ್ತು ಅದನ್ನು ನಿಮ್ಮ ಟಿಪ್ಪಣಿಗೆ ಸೇರಿಸುತ್ತದೆ.</string>
+	<key>That link is not an image.</key>
+	<string>ಆ ಲಿಂಕ್ ಚಿತ್ರವಲ್ಲ.</string>
+	<key>The image will contain only your text and background — no buttons or frames.</key>
+	<string>ಚಿತ್ರವು ನಿಮ್ಮ ಪಠ್ಯ ಮತ್ತು ಹಿನ್ನೆಲೆಯನ್ನು ಮಾತ್ರ ಒಳಗೊಂಡಿರುತ್ತದೆ - ಯಾವುದೇ ಬಟನ್‌ಗಳು ಅಥವಾ ಫ್ರೇಮ್‌ಗಳಿಲ್ಲ.</string>
+	<key>Toggle line markers</key>
+	<string>ಲೈನ್ ಮಾರ್ಕರ್‌ಗಳನ್ನು ಟಾಗಲ್ ಮಾಡಿ</string>
+	<key>Underline</key>
+	<string>ಅಂಡರ್ಲೈನ್</string>
+	<key>Undo delete</key>
+	<string>ಅಳಿಸುವಿಕೆಯನ್ನು ರದ್ದುಗೊಳಿಸಿ</string>
+	<key>View captured image</key>
+	<string>ಸೆರೆಹಿಡಿದ ಚಿತ್ರವನ್ನು ವೀಕ್ಷಿಸಿ</string>
+	<key>You just took a screenshot. Share the note text, or create a clean image of your text only.</key>
+	<string>ನೀವು ಈಗಷ್ಟೇ ಸ್ಕ್ರೀನ್‌ಶಾಟ್ ತೆಗೆದುಕೊಂಡಿದ್ದೀರಿ. ಟಿಪ್ಪಣಿ ಪಠ್ಯವನ್ನು ಹಂಚಿಕೊಳ್ಳಿ ಅಥವಾ ನಿಮ್ಮ ಪಠ್ಯದ ಶುದ್ಧ ಚಿತ್ರವನ್ನು ಮಾತ್ರ ರಚಿಸಿ.</string>
+	<key>screenshot.demo.0</key>
+	<string>ತೆರೆಯಿರಿ.
+ಟೈಪ್ ಮಾಡಿ.
+ಮುಗಿದಿದೆ</string>
+	<key>screenshot.demo.1</key>
+	<string>ಕರೆ ಸಮಯದಲ್ಲಿ ತ್ವರಿತ ಸಂಖ್ಯೆಯನ್ನು ಹಿಡಿಯಲು ಸೂಕ್ತವಾಗಿದೆ.</string>
+	<key>screenshot.demo.2</key>
+	<string>ನಿಮ್ಮ ತಕ್ಷಣದ ಆಲೋಚನೆಗಳಿಗೆ ಕೇವಲ ಒಂದು ಕ್ಲೀನ್ ಸ್ಪೇಸ್.</string>
+	<key>screenshot.demo.3</key>
+	<string>ಫೋಲ್ಡರ್‌ಗಳಿಲ್ಲ.
+ಟ್ಯಾಗ್‌ಗಳಿಲ್ಲ.
+ಯಾವುದೇ ಗೊಂದಲಗಳಿಲ್ಲ.</string>
+	<key>screenshot.demo.4</key>
+	<string>ಕ್ಷಣಿಕವಾದ ಆಲೋಚನೆಯನ್ನು ಸೆರೆಹಿಡಿಯಲು ವೇಗವಾದ ಮಾರ್ಗ.</string>
+</dict>
+</plist>

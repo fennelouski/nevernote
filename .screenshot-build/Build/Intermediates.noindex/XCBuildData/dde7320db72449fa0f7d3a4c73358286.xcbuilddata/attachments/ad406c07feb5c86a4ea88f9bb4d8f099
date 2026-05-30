@@ -1,0 +1,79 @@
+{
+  "" : {
+    "diagnostics" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/NeverNote Watch App-primary.dia",
+    "emit-module-dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/NeverNote Watch App-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/NeverNote Watch App-primary-emit-module.dia",
+    "pch" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/NeverNote Watch App-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/NeverNote Watch App-primary.swiftdeps"
+  },
+  "/Users/nathanfennel/Documents/GitHub/Nevernote/NeverNote/Item.swift" : {
+    "const-values" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/Item.swiftconstvalues",
+    "dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/Item.d",
+    "diagnostics" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/Item.dia",
+    "index-unit-output-path" : "/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/Item.o",
+    "llvm-bc" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/Item.bc",
+    "object" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/Item.o",
+    "swift-dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/Item.swiftdeps",
+    "swiftmodule" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/Item~partial.swiftmodule"
+  },
+  "/Users/nathanfennel/Documents/GitHub/Nevernote/NeverNote/NeverNoteCloudKit.swift" : {
+    "const-values" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/NeverNoteCloudKit.swiftconstvalues",
+    "dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/NeverNoteCloudKit.d",
+    "diagnostics" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/NeverNoteCloudKit.dia",
+    "index-unit-output-path" : "/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/NeverNoteCloudKit.o",
+    "llvm-bc" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/NeverNoteCloudKit.bc",
+    "object" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/NeverNoteCloudKit.o",
+    "swift-dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/NeverNoteCloudKit.swiftdeps",
+    "swiftmodule" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/NeverNoteCloudKit~partial.swiftmodule"
+  },
+  "/Users/nathanfennel/Documents/GitHub/Nevernote/NeverNote/NevernoteModelContainer.swift" : {
+    "const-values" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/NevernoteModelContainer.swiftconstvalues",
+    "dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/NevernoteModelContainer.d",
+    "diagnostics" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/NevernoteModelContainer.dia",
+    "index-unit-output-path" : "/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/NevernoteModelContainer.o",
+    "llvm-bc" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/NevernoteModelContainer.bc",
+    "object" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/NevernoteModelContainer.o",
+    "swift-dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/NevernoteModelContainer.swiftdeps",
+    "swiftmodule" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/NevernoteModelContainer~partial.swiftmodule"
+  },
+  "/Users/nathanfennel/Documents/GitHub/Nevernote/NeverNote/NoteRichTextCodec.swift" : {
+    "const-values" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/NoteRichTextCodec.swiftconstvalues",
+    "dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/NoteRichTextCodec.d",
+    "diagnostics" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/NoteRichTextCodec.dia",
+    "index-unit-output-path" : "/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/NoteRichTextCodec.o",
+    "llvm-bc" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/NoteRichTextCodec.bc",
+    "object" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/NoteRichTextCodec.o",
+    "swift-dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/NoteRichTextCodec.swiftdeps",
+    "swiftmodule" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/NoteRichTextCodec~partial.swiftmodule"
+  },
+  "/Users/nathanfennel/Documents/GitHub/Nevernote/NeverNoteWatch/NevernoteWatchApp.swift" : {
+    "const-values" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/NevernoteWatchApp.swiftconstvalues",
+    "dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/NevernoteWatchApp.d",
+    "diagnostics" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/NevernoteWatchApp.dia",
+    "index-unit-output-path" : "/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/NevernoteWatchApp.o",
+    "llvm-bc" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/NevernoteWatchApp.bc",
+    "object" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/NevernoteWatchApp.o",
+    "swift-dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/NevernoteWatchApp.swiftdeps",
+    "swiftmodule" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/NevernoteWatchApp~partial.swiftmodule"
+  },
+  "/Users/nathanfennel/Documents/GitHub/Nevernote/NeverNoteWatch/WatchRootView.swift" : {
+    "const-values" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/WatchRootView.swiftconstvalues",
+    "dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/WatchRootView.d",
+    "diagnostics" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/WatchRootView.dia",
+    "index-unit-output-path" : "/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/WatchRootView.o",
+    "llvm-bc" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/WatchRootView.bc",
+    "object" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/WatchRootView.o",
+    "swift-dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/WatchRootView.swiftdeps",
+    "swiftmodule" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/WatchRootView~partial.swiftmodule"
+  },
+  "/Users/nathanfennel/Documents/GitHub/Nevernote/NeverNoteWatch/WatchScreenshotLaunchSupport.swift" : {
+    "const-values" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/WatchScreenshotLaunchSupport.swiftconstvalues",
+    "dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/WatchScreenshotLaunchSupport.d",
+    "diagnostics" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/WatchScreenshotLaunchSupport.dia",
+    "index-unit-output-path" : "/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/WatchScreenshotLaunchSupport.o",
+    "llvm-bc" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/WatchScreenshotLaunchSupport.bc",
+    "object" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/WatchScreenshotLaunchSupport.o",
+    "swift-dependencies" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/WatchScreenshotLaunchSupport.swiftdeps",
+    "swiftmodule" : "/Users/nathanfennel/Documents/GitHub/Nevernote/.screenshot-build/Build/Intermediates.noindex/Nevernote.build/Debug-watchsimulator/NeverNote Watch App.build/Objects-normal/x86_64/WatchScreenshotLaunchSupport~partial.swiftmodule"
+  }
+}

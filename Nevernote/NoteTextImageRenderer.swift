@@ -3,7 +3,12 @@
 //  Nevernote
 //
 
+import Foundation
+#if canImport(UIKit)
 import UIKit
+#elseif canImport(AppKit)
+import AppKit
+#endif
 
 enum NoteTextAlignment: String, CaseIterable, Identifiable {
     case left
@@ -59,11 +64,11 @@ enum NoteExportAspectRatio: String, CaseIterable, Identifiable {
 
     var displayLabel: String {
         switch self {
-        case .portrait3_4: return "Portrait"
-        case .story9_16: return "9:16"
-        case .square1_1: return "Square"
-        case .landscape16_9: return "16:9"
-        case .landscape4_3: return "Landscape"
+        case .portrait3_4: return String(localized: "Portrait")
+        case .story9_16: return String(localized: "9:16")
+        case .square1_1: return String(localized: "Square")
+        case .landscape16_9: return String(localized: "16:9")
+        case .landscape4_3: return String(localized: "Landscape")
         }
     }
 }
@@ -74,12 +79,12 @@ enum NoteTextImageRenderer {
 
     static func renderImage(
         attributedText: NSAttributedString,
-        backgroundColor: UIColor,
+        backgroundColor: PlatformColor,
         aspect: NoteExportAspectRatio,
         alignment: NoteTextAlignment,
         linePrefixMode: NoteLinePrefixMode,
         maximizePresentationSize: Bool
-    ) -> UIImage? {
+    ) -> PlatformImage? {
         let ratio = aspect.widthToHeight
         let pixelWidth: CGFloat
         let pixelHeight: CGFloat
@@ -95,12 +100,12 @@ enum NoteTextImageRenderer {
         let inner = bounds.insetBy(dx: margin, dy: margin)
         guard inner.width > 4, inner.height > 4 else { return nil }
 
-        let prefixFallback: UIFont
+        let prefixFallback: PlatformFont
         if attributedText.length > 0,
-           let font = attributedText.attribute(.font, at: 0, effectiveRange: nil) as? UIFont {
+           let font = attributedText.attribute(.font, at: 0, effectiveRange: nil) as? PlatformFont {
             prefixFallback = font
         } else {
-            prefixFallback = UIFont.systemFont(ofSize: 24, weight: .bold)
+            prefixFallback = EditorFont.platformFont(forToken: EditorFont.systemBoldStorageToken, size: 24)
         }
         let styled = NoteTextFormatting.makeDisplayAttributedText(
             from: attributedText,
@@ -114,6 +119,7 @@ enum NoteTextImageRenderer {
             maxHeight: inner.height,
             maximize: maximizePresentationSize
         )
+        #if canImport(UIKit)
         let format = UIGraphicsImageRendererFormat.default()
         format.opaque = true
         format.scale = 1
@@ -135,6 +141,22 @@ enum NoteTextImageRenderer {
             fitted.draw(with: drawRect, options: [.usesLineFragmentOrigin, .usesFontLeading], context: nil)
             ctx.cgContext.restoreGState()
         }
+        #else
+        let image = NSImage(size: bounds.size)
+        image.lockFocus()
+        backgroundColor.setFill()
+        bounds.fill()
+        let textRect = fitted.boundingRect(
+            with: CGSize(width: inner.width, height: .greatestFiniteMagnitude),
+            options: [.usesLineFragmentOrigin, .usesFontLeading],
+            context: nil
+        )
+        let drawY = inner.midY - textRect.height / 2
+        let drawRect = CGRect(x: inner.minX, y: drawY, width: inner.width, height: textRect.height)
+        fitted.draw(with: drawRect, options: [.usesLineFragmentOrigin, .usesFontLeading], context: nil)
+        image.unlockFocus()
+        return image
+        #endif
     }
 
     private static func fitTextToBounds(
@@ -149,7 +171,8 @@ enum NoteTextImageRenderer {
             for _ in 0 ..< 22 {
                 let mid = (low + high) / 2
                 let candidate = scaleFonts(in: attributed, scale: mid)
-                if measureHeight(candidate, width: maxWidth) <= maxHeight {
+                if measureHeight(candidate, width: maxWidth) <= maxHeight
+                    && measureWidestWord(candidate) <= maxWidth {
                     low = mid
                 } else {
                     high = mid
@@ -178,14 +201,36 @@ enum NoteTextImageRenderer {
         return ceil(r.height)
     }
 
+    private static func measureWidestWord(_ attributed: NSAttributedString) -> CGFloat {
+        var maxWidth: CGFloat = 0
+        (attributed.string as NSString).enumerateSubstrings(
+            in: NSRange(location: 0, length: attributed.length),
+            options: [.byWords, .substringNotRequired]
+        ) { _, range, _, _ in
+            guard range.length > 0 else { return }
+            let substr = attributed.attributedSubstring(from: range)
+            let bounds = substr.boundingRect(
+                with: CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude),
+                options: [.usesLineFragmentOrigin, .usesFontLeading],
+                context: nil
+            )
+            maxWidth = max(maxWidth, ceil(bounds.width))
+        }
+        return maxWidth
+    }
+
     private static func scaleFonts(in attributed: NSAttributedString, scale: CGFloat) -> NSAttributedString {
         let m = NSMutableAttributedString(attributedString: attributed)
         let full = NSRange(location: 0, length: m.length)
         m.enumerateAttribute(.font, in: full) { value, range, _ in
-            guard let font = value as? UIFont else { return }
+            guard let font = value as? PlatformFont else { return }
             let newSize = max(6, font.pointSize * scale)
             let desc = font.fontDescriptor
+            #if canImport(UIKit)
             let newFont = UIFont(descriptor: desc, size: newSize)
+            #else
+            let newFont = NSFont(descriptor: desc, size: newSize) ?? font
+            #endif
             m.addAttribute(.font, value: newFont, range: range)
         }
         return m
@@ -199,7 +244,7 @@ enum NoteTextFormatting {
         from base: NSAttributedString,
         alignment: NoteTextAlignment,
         linePrefixMode: NoteLinePrefixMode,
-        prefixFallbackFont: UIFont
+        prefixFallbackFont: PlatformFont
     ) -> NSAttributedString {
         guard linePrefixMode != .none else {
             return strippingForegroundColor(applyingAlignment(base, alignment: alignment))
@@ -243,15 +288,15 @@ enum NoteTextFormatting {
     private static func resolvedPrefixFont(
         in base: NSAttributedString,
         contentRange: NSRange,
-        fallback: UIFont
-    ) -> UIFont {
+        fallback: PlatformFont
+    ) -> PlatformFont {
         guard contentRange.length > 0 else { return fallback }
-        if let font = base.attribute(.font, at: contentRange.location, effectiveRange: nil) as? UIFont {
+        if let font = base.attribute(.font, at: contentRange.location, effectiveRange: nil) as? PlatformFont {
             return font
         }
-        var found: UIFont?
+        var found: PlatformFont?
         base.enumerateAttribute(.font, in: contentRange) { value, _, stop in
-            if let font = value as? UIFont {
+            if let font = value as? PlatformFont {
                 found = font
                 stop.pointee = true
             }
@@ -262,6 +307,15 @@ enum NoteTextFormatting {
     private static func strippingForegroundColor(_ attributed: NSAttributedString) -> NSAttributedString {
         let mutable = NSMutableAttributedString(attributedString: attributed)
         mutable.removeAttribute(.foregroundColor, range: NSRange(location: 0, length: mutable.length))
+        return mutable
+    }
+
+    /// Re-applies body text color after attributed-string transforms (e.g. font scaling) that break `textView.textColor` inheritance.
+    static func applyingBodyTextColor(_ attributed: NSAttributedString) -> NSAttributedString {
+        let mutable = NSMutableAttributedString(attributedString: attributed)
+        let full = NSRange(location: 0, length: mutable.length)
+        guard full.length > 0 else { return mutable }
+        mutable.addAttribute(.foregroundColor, value: PlatformColor.noteBodyText, range: full)
         return mutable
     }
 

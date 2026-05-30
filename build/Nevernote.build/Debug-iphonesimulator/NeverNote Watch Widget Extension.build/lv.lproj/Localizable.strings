@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>16:9</key>
+	<string>16:9</string>
+	<key>9:16</key>
+	<string>9:16</string>
+	<key>Add</key>
+	<string>Pievienot</string>
+	<key>Add Photo</key>
+	<string>Pievienot fotoattēlu</string>
+	<key>Add text</key>
+	<string>Pievienot tekstu</string>
+	<key>Align center</key>
+	<string>Centrēt</string>
+	<key>Align left</key>
+	<string>Izlīdzināt pa kreisi</string>
+	<key>Align right</key>
+	<string>Izlīdzināt pa labi</string>
+	<key>Alignment</key>
+	<string>Līdzinājums</string>
+	<key>All Fonts</key>
+	<string>Visi fonti</string>
+	<key>Aspect ratio</key>
+	<string>Proporcijas</string>
+	<key>Bold</key>
+	<string>Treknraksts</string>
+	<key>Bulleted list</key>
+	<string>Saraksts ar aizzīmēm</string>
+	<key>Camera</key>
+	<string>Kamera</string>
+	<key>Can't use this link as an image</key>
+	<string>Šo saiti nevar izmantot kā attēlu</string>
+	<key>Cancel</key>
+	<string>Atcelt</string>
+	<key>Checking image…</key>
+	<string>Attēla pārbaude…</string>
+	<key>Continue</key>
+	<string>Turpināt</string>
+	<key>Could not load that link.</key>
+	<string>Nevarēja ielādēt šo saiti.</string>
+	<key>Delete note</key>
+	<string>Dzēst piezīmi</string>
+	<key>Dictate or type</key>
+	<string>Diktēt vai rakstīt</string>
+	<key>Done</key>
+	<string>Gatavs</string>
+	<key>Enter text before dismissing the keyboard</key>
+	<string>Ievadiet tekstu pirms tastatūras aizvēršanas</string>
+	<key>Font</key>
+	<string>Fonts</string>
+	<key>Help and support</key>
+	<string>Palīdzība un atbalsts</string>
+	<key>Hide image at bottom</key>
+	<string>Slēpt attēlu apakšā</string>
+	<key>Hide keyboard</key>
+	<string>Slēpt tastatūru</string>
+	<key>Image is too large.</key>
+	<string>Attēls ir pārāk liels.</string>
+	<key>Image link</key>
+	<string>Attēla saite</string>
+	<key>Import Text from a Photo</key>
+	<string>Importēt tekstu no fotoattēla</string>
+	<key>Import text from photo</key>
+	<string>Importēt tekstu no fotoattēla</string>
+	<key>Italic</key>
+	<string>Kursīvs</string>
+	<key>LAST EDITED %@.</key>
+	<string>PĒDĒJO REIZI REDIĢĒTS %@.</string>
+	<key>Landscape</key>
+	<string>Ainava</string>
+	<key>Line markers</key>
+	<string>Rindu marķieri</string>
+	<key>Maximize presentation size</key>
+	<string>Maksimizēt prezentācijas izmēru</string>
+	<key>More formatting</key>
+	<string>Vairāk formatēšana</string>
+	<key>NEVERNOTE FOCUS</key>
+	<string>NEVERNOTE FOCUS</string>
+	<key>Nevernote</key>
+	<string>Nevernote</string>
+	<key>Not Now</key>
+	<string>Ne tagad</string>
+	<key>Numbered list</key>
+	<string>Numurēts saraksts</string>
+	<key>OK</key>
+	<string>Labi</string>
+	<key>Open Nevernote to read or capture a note.</key>
+	<string>Atveriet Nevernote, lai lasītu vai tvertu piezīmi.</string>
+	<key>Photo Library</key>
+	<string>Fotoattēlu bibliotēka</string>
+	<key>Plain lines</key>
+	<string>Vienkāršas līnijas</string>
+	<key>Portrait</key>
+	<string>Portrets</string>
+	<key>Recent</key>
+	<string>Neseni</string>
+	<key>Reset</key>
+	<string>Atiestatīt</string>
+	<key>Save</key>
+	<string>Saglabāt</string>
+	<key>Search fonts</key>
+	<string>Meklēt fontus</string>
+	<key>Share as image of text</key>
+	<string>Kopīgot kā teksta attēlu</string>
+	<key>Share note</key>
+	<string>Kopīgot piezīmi</string>
+	<key>Share note text</key>
+	<string>Kopīgot piezīmes tekstu</string>
+	<key>Share your note?</key>
+	<string>Kopīgot savu piezīmi?</string>
+	<key>Show image at bottom</key>
+	<string>Rādīt attēlu apakšā</string>
+	<key>Show this image below the note?</key>
+	<string>Rādīt šo attēlu zem piezīmes?</string>
+	<key>Size</key>
+	<string>Izmērs</string>
+	<key>Smart links</key>
+	<string>Viedās saites</string>
+	<key>Square</key>
+	<string>Kvadrāts</string>
+	<key>System Bold</key>
+	<string>Sistēmas treknraksts</string>
+	<key>Take a photo or choose one from your library. NeverNote will read any text in the image and add it to your note.</key>
+	<string>Uzņemiet foto vai izvēlieties to no savas bibliotēkas. NeverNote nolasīs jebkuru tekstu attēlā un pievienos to jūsu piezīmei.</string>
+	<key>That link is not an image.</key>
+	<string>Šī saite nav attēls.</string>
+	<key>The image will contain only your text and background — no buttons or frames.</key>
+	<string>Attēlā būs tikai jūsu teksts un fons — bez pogām vai rāmjiem.</string>
+	<key>Toggle line markers</key>
+	<string>Pārslēgt rindu marķierus</string>
+	<key>Underline</key>
+	<string>Pasvītrots</string>
+	<key>Undo delete</key>
+	<string>Atsaukt dzēšanu</string>
+	<key>View captured image</key>
+	<string>Skatīt tvertu attēlu</string>
+	<key>You just took a screenshot. Share the note text, or create a clean image of your text only.</key>
+	<string>Jūs tikko uzņēmāt ekrānuzņēmumu. Kopīgojiet piezīmes tekstu vai izveidojiet tīru tikai sava teksta attēlu.</string>
+	<key>screenshot.demo.0</key>
+	<string>Atvērt.
+Rakstīt.
+Gatavs</string>
+	<key>screenshot.demo.1</key>
+	<string>Ideāli, lai ātrā zvana laikā norakstītu numuru.</string>
+	<key>screenshot.demo.2</key>
+	<string>Tikai tīra vieta jūsu tūlītējām domām.</string>
+	<key>screenshot.demo.3</key>
+	<string>Nav mapju.
+Nav birku.
+Nav traucēkļu.</string>
+	<key>screenshot.demo.4</key>
+	<string>Ātrākais veids, kā fiksēt aizejošu domu.</string>
+</dict>
+</plist>

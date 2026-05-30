@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>16:9</key>
+	<string>16:9</string>
+	<key>9:16</key>
+	<string>9:16</string>
+	<key>Add</key>
+	<string>افزودن</string>
+	<key>Add Photo</key>
+	<string>افزودن عکس</string>
+	<key>Add text</key>
+	<string>افزودن متن</string>
+	<key>Align center</key>
+	<string>تراز وسط</string>
+	<key>Align left</key>
+	<string>تراز چپ</string>
+	<key>Align right</key>
+	<string>تراز راست</string>
+	<key>Alignment</key>
+	<string>تراز</string>
+	<key>All Fonts</key>
+	<string>همه فونت‌ها</string>
+	<key>Aspect ratio</key>
+	<string>نسبت تصویر</string>
+	<key>Bold</key>
+	<string>ضخیم</string>
+	<key>Bulleted list</key>
+	<string>فهرست گلوله‌ای</string>
+	<key>Camera</key>
+	<string>دوربین</string>
+	<key>Can't use this link as an image</key>
+	<string>نمی‌توان از این لینک به عنوان تصویر استفاده کرد</string>
+	<key>Cancel</key>
+	<string>لغو</string>
+	<key>Checking image…</key>
+	<string>بررسی تصویر…</string>
+	<key>Continue</key>
+	<string>ادامه</string>
+	<key>Could not load that link.</key>
+	<string>این لینک بارگذاری نشد.</string>
+	<key>Delete note</key>
+	<string>حذف یادداشت</string>
+	<key>Dictate or type</key>
+	<string>دیکته کنید یا بنویسید</string>
+	<key>Done</key>
+	<string>انجام شد</string>
+	<key>Enter text before dismissing the keyboard</key>
+	<string>قبل از بستن صفحه‌کلید متن وارد کنید</string>
+	<key>Font</key>
+	<string>فونت</string>
+	<key>Help and support</key>
+	<string>راهنما و پشتیبانی</string>
+	<key>Hide image at bottom</key>
+	<string>پنهان کردن تصویر در پایین</string>
+	<key>Hide keyboard</key>
+	<string>پنهان کردن صفحه‌کلید</string>
+	<key>Image is too large.</key>
+	<string>تصویر خیلی بزرگ است.</string>
+	<key>Image link</key>
+	<string>لینک تصویر</string>
+	<key>Import Text from a Photo</key>
+	<string>وارد کردن متن از عکس</string>
+	<key>Import text from photo</key>
+	<string>وارد کردن متن از عکس</string>
+	<key>Italic</key>
+	<string>کج</string>
+	<key>LAST EDITED %@.</key>
+	<string>آخرین ویرایش %@.</string>
+	<key>Landscape</key>
+	<string>افقی</string>
+	<key>Line markers</key>
+	<string>نشانگرهای خط</string>
+	<key>Maximize presentation size</key>
+	<string>بزرگ‌نمایی اندازه ارائه</string>
+	<key>More formatting</key>
+	<string>قالب‌بندی بیشتر</string>
+	<key>NEVERNOTE FOCUS</key>
+	<string>Nevernote تمرکز</string>
+	<key>Nevernote</key>
+	<string>Nevernote</string>
+	<key>Not Now</key>
+	<string>الان نه</string>
+	<key>Numbered list</key>
+	<string>فهرست شماره‌دار</string>
+	<key>OK</key>
+	<string>تأیید</string>
+	<key>Open Nevernote to read or capture a note.</key>
+	<string>Nevernote را برای خواندن یا ضبط یادداشت باز کنید.</string>
+	<key>Photo Library</key>
+	<string>کتابخانه عکس</string>
+	<key>Plain lines</key>
+	<string>خطوط ساده</string>
+	<key>Portrait</key>
+	<string>عمودی</string>
+	<key>Recent</key>
+	<string>اخیر</string>
+	<key>Reset</key>
+	<string>بازنشانی</string>
+	<key>Save</key>
+	<string>ذخیره</string>
+	<key>Search fonts</key>
+	<string>جستجوی فونت‌ها</string>
+	<key>Share as image of text</key>
+	<string>اشتراک‌گذاری به عنوان تصویر متن</string>
+	<key>Share note</key>
+	<string>اشتراک‌گذاری یادداشت</string>
+	<key>Share note text</key>
+	<string>اشتراک‌گذاری متن یادداشت</string>
+	<key>Share your note?</key>
+	<string>یادداشت خود را به اشتراک بگذارید؟</string>
+	<key>Show image at bottom</key>
+	<string>نمایش تصویر در پایین</string>
+	<key>Show this image below the note?</key>
+	<string>این تصویر را زیر یادداشت نشان دهید؟</string>
+	<key>Size</key>
+	<string>اندازه</string>
+	<key>Smart links</key>
+	<string>لینک‌های هوشمند</string>
+	<key>Square</key>
+	<string>مربع</string>
+	<key>System Bold</key>
+	<string>ضخیم سیستم</string>
+	<key>Take a photo or choose one from your library. NeverNote will read any text in the image and add it to your note.</key>
+	<string>عکس بگیرید یا یکی را از کتابخانه‌تان انتخاب کنید. NeverNote هر متنی در تصویر را می‌خواند و به یادداشت شما اضافه می‌کند.</string>
+	<key>That link is not an image.</key>
+	<string>آن لینک یک تصویر نیست.</string>
+	<key>The image will contain only your text and background — no buttons or frames.</key>
+	<string>تصویر فقط شامل متن و پس‌زمینه شما خواهد بود — بدون دکمه یا قاب.</string>
+	<key>Toggle line markers</key>
+	<string>تغییر وضعیت نشانگرهای خط</string>
+	<key>Underline</key>
+	<string>زیرخط</string>
+	<key>Undo delete</key>
+	<string>لغو حذف</string>
+	<key>View captured image</key>
+	<string>مشاهده تصویر ضبط‌شده</string>
+	<key>You just took a screenshot. Share the note text, or create a clean image of your text only.</key>
+	<string>شما تازه یک اسکرین‌شات گرفتید. متن یادداشت را به اشتراک بگذارید، یا یک تصویر تمیز فقط از متن خود بسازید.</string>
+	<key>screenshot.demo.0</key>
+	<string>باز کنید.
+بنویسید.
+انجام شد</string>
+	<key>screenshot.demo.1</key>
+	<string>برای گرفتن یک شماره سریع در حین تماس عالی است.</string>
+	<key>screenshot.demo.2</key>
+	<string>فضایی تمیز برای افکار فوری شما.</string>
+	<key>screenshot.demo.3</key>
+	<string>بدون پوشه.
+بدون برچسب.
+بدون حواس‌پرتی.</string>
+	<key>screenshot.demo.4</key>
+	<string>سریع‌ترین راه برای ثبت یک فکر گذرا.</string>
+</dict>
+</plist>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>16:9</key>
+	<string>16:9</string>
+	<key>9:16</key>
+	<string>9:16</string>
+	<key>Add</key>
+	<string>Tilføje</string>
+	<key>Add Photo</key>
+	<string>Tilføj billede</string>
+	<key>Add text</key>
+	<string>Tilføj tekst</string>
+	<key>Align center</key>
+	<string>Centerjuster</string>
+	<key>Align left</key>
+	<string>Venstrejuster</string>
+	<key>Align right</key>
+	<string>Højrejuster</string>
+	<key>Alignment</key>
+	<string>Justering</string>
+	<key>All Fonts</key>
+	<string>Alle skrifttyper</string>
+	<key>Aspect ratio</key>
+	<string>Størrelsesforhold</string>
+	<key>Bold</key>
+	<string>Fed</string>
+	<key>Bulleted list</key>
+	<string>Punktliste</string>
+	<key>Camera</key>
+	<string>Kamera</string>
+	<key>Can't use this link as an image</key>
+	<string>Kan ikke bruge dette link som et billede</string>
+	<key>Cancel</key>
+	<string>Ophæve</string>
+	<key>Checking image…</key>
+	<string>Tjekker billede...</string>
+	<key>Continue</key>
+	<string>Fortsætte</string>
+	<key>Could not load that link.</key>
+	<string>Det link kunne ikke indlæses.</string>
+	<key>Delete note</key>
+	<string>Slet note</string>
+	<key>Dictate or type</key>
+	<string>Dikter eller skriv</string>
+	<key>Done</key>
+	<string>Færdig</string>
+	<key>Enter text before dismissing the keyboard</key>
+	<string>Indtast tekst inden du lukker tastaturet</string>
+	<key>Font</key>
+	<string>Skrifttype</string>
+	<key>Help and support</key>
+	<string>Hjælp og støtte</string>
+	<key>Hide image at bottom</key>
+	<string>Skjul billedet nederst</string>
+	<key>Hide keyboard</key>
+	<string>Skjul tastatur</string>
+	<key>Image is too large.</key>
+	<string>Billedet er for stort.</string>
+	<key>Image link</key>
+	<string>Billed link</string>
+	<key>Import Text from a Photo</key>
+	<string>Importer tekst fra et foto</string>
+	<key>Import text from photo</key>
+	<string>Importer tekst fra foto</string>
+	<key>Italic</key>
+	<string>Kursiv</string>
+	<key>LAST EDITED %@.</key>
+	<string>SIDST REDIGERET %@.</string>
+	<key>Landscape</key>
+	<string>Landskab</string>
+	<key>Line markers</key>
+	<string>Linjemarkører</string>
+	<key>Maximize presentation size</key>
+	<string>Maksimer præsentationsstørrelsen</string>
+	<key>More formatting</key>
+	<string>Mere formatering</string>
+	<key>NEVERNOTE FOCUS</key>
+	<string>NEVERNOTE FOCUS</string>
+	<key>Nevernote</key>
+	<string>Nevernote</string>
+	<key>Not Now</key>
+	<string>Ikke nu</string>
+	<key>Numbered list</key>
+	<string>Nummereret liste</string>
+	<key>OK</key>
+	<string>OK</string>
+	<key>Open Nevernote to read or capture a note.</key>
+	<string>Åbn Nevernote for at læse eller fange en note.</string>
+	<key>Photo Library</key>
+	<string>Fotobibliotek</string>
+	<key>Plain lines</key>
+	<string>Ensfarvede linjer</string>
+	<key>Portrait</key>
+	<string>Portræt</string>
+	<key>Recent</key>
+	<string>Nylig</string>
+	<key>Reset</key>
+	<string>Nulstil</string>
+	<key>Save</key>
+	<string>Spare</string>
+	<key>Search fonts</key>
+	<string>Søg skrifttyper</string>
+	<key>Share as image of text</key>
+	<string>Del som billede af tekst</string>
+	<key>Share note</key>
+	<string>Del note</string>
+	<key>Share note text</key>
+	<string>Del notetekst</string>
+	<key>Share your note?</key>
+	<string>Vil du dele din note?</string>
+	<key>Show image at bottom</key>
+	<string>Vis billede nederst</string>
+	<key>Show this image below the note?</key>
+	<string>Vis dette billede under noten?</string>
+	<key>Size</key>
+	<string>Størrelse</string>
+	<key>Smart links</key>
+	<string>Smarte links</string>
+	<key>Square</key>
+	<string>Firkant</string>
+	<key>System Bold</key>
+	<string>System fed</string>
+	<key>Take a photo or choose one from your library. NeverNote will read any text in the image and add it to your note.</key>
+	<string>Tag et billede, eller vælg et fra dit bibliotek. NeverNote vil læse enhver tekst i billedet og tilføje den til din note.</string>
+	<key>That link is not an image.</key>
+	<string>Det link er ikke et billede.</string>
+	<key>The image will contain only your text and background — no buttons or frames.</key>
+	<string>Billedet vil kun indeholde din tekst og baggrund - ingen knapper eller rammer.</string>
+	<key>Toggle line markers</key>
+	<string>Skift linjemarkører</string>
+	<key>Underline</key>
+	<string>Understrege</string>
+	<key>Undo delete</key>
+	<string>Fortryd sletning</string>
+	<key>View captured image</key>
+	<string>Se det optagne billede</string>
+	<key>You just took a screenshot. Share the note text, or create a clean image of your text only.</key>
+	<string>Du har lige taget et skærmbillede. Del noteteksten, eller lav kun et rent billede af din tekst.</string>
+	<key>screenshot.demo.0</key>
+	<string>Åben.
+Type.
+Færdig</string>
+	<key>screenshot.demo.1</key>
+	<string>Perfekt til at fange et hurtigt nummer under et opkald.</string>
+	<key>screenshot.demo.2</key>
+	<string>Bare et rent rum for dine umiddelbare tanker.</string>
+	<key>screenshot.demo.3</key>
+	<string>Ingen mapper.
+Ingen tags.
+Ingen distraktioner.</string>
+	<key>screenshot.demo.4</key>
+	<string>Den hurtigste måde at fange en flygtig tanke på.</string>
+</dict>
+</plist>

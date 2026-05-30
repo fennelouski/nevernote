@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>16:9</key>
+	<string>16:9</string>
+	<key>9:16</key>
+	<string>9:16</string>
+	<key>Add</key>
+	<string>เพิ่ม</string>
+	<key>Add Photo</key>
+	<string>เพิ่มรูปภาพ</string>
+	<key>Add text</key>
+	<string>เพิ่มข้อความ</string>
+	<key>Align center</key>
+	<string>จัดกึ่งกลาง</string>
+	<key>Align left</key>
+	<string>จัดชิดซ้าย</string>
+	<key>Align right</key>
+	<string>จัดชิดขวา</string>
+	<key>Alignment</key>
+	<string>การจัดตำแหน่ง</string>
+	<key>All Fonts</key>
+	<string>แบบอักษรทั้งหมด</string>
+	<key>Aspect ratio</key>
+	<string>อัตราส่วนภาพ</string>
+	<key>Bold</key>
+	<string>ตัวหนา</string>
+	<key>Bulleted list</key>
+	<string>รายการหัวข้อย่อย</string>
+	<key>Camera</key>
+	<string>กล้อง</string>
+	<key>Can't use this link as an image</key>
+	<string>ไม่สามารถใช้ลิงค์นี้เป็นรูปภาพได้</string>
+	<key>Cancel</key>
+	<string>ยกเลิก</string>
+	<key>Checking image…</key>
+	<string>กำลังตรวจสอบรูปภาพ...</string>
+	<key>Continue</key>
+	<string>ดำเนินการต่อ</string>
+	<key>Could not load that link.</key>
+	<string>ไม่สามารถโหลดลิงก์นั้นได้</string>
+	<key>Delete note</key>
+	<string>ลบบันทึก</string>
+	<key>Dictate or type</key>
+	<string>การเขียนตามคำบอกหรือประเภท</string>
+	<key>Done</key>
+	<string>เสร็จแล้ว</string>
+	<key>Enter text before dismissing the keyboard</key>
+	<string>ป้อนข้อความก่อนปิดแป้นพิมพ์</string>
+	<key>Font</key>
+	<string>แบบอักษร</string>
+	<key>Help and support</key>
+	<string>ช่วยเหลือและสนับสนุน</string>
+	<key>Hide image at bottom</key>
+	<string>ซ่อนภาพที่ด้านล่าง</string>
+	<key>Hide keyboard</key>
+	<string>ซ่อนแป้นพิมพ์</string>
+	<key>Image is too large.</key>
+	<string>รูปภาพมีขนาดใหญ่เกินไป</string>
+	<key>Image link</key>
+	<string>ลิงค์รูปภาพ</string>
+	<key>Import Text from a Photo</key>
+	<string>นำเข้าข้อความจากภาพถ่าย</string>
+	<key>Import text from photo</key>
+	<string>นำเข้าข้อความจากภาพถ่าย</string>
+	<key>Italic</key>
+	<string>ตัวเอียง</string>
+	<key>LAST EDITED %@.</key>
+	<string>แก้ไขล่าสุด %@</string>
+	<key>Landscape</key>
+	<string>ภูมิประเทศ</string>
+	<key>Line markers</key>
+	<string>เครื่องหมายเส้น</string>
+	<key>Maximize presentation size</key>
+	<string>เพิ่มขนาดการนำเสนอให้สูงสุด</string>
+	<key>More formatting</key>
+	<string>การจัดรูปแบบเพิ่มเติม</string>
+	<key>NEVERNOTE FOCUS</key>
+	<string>Nevernote โฟกัส</string>
+	<key>Nevernote</key>
+	<string>Nevernote</string>
+	<key>Not Now</key>
+	<string>ไม่ใช่ตอนนี้</string>
+	<key>Numbered list</key>
+	<string>รายการลำดับเลข</string>
+	<key>OK</key>
+	<string>ตกลง</string>
+	<key>Open Nevernote to read or capture a note.</key>
+	<string>เปิด Nevernote เพื่ออ่านหรือบันทึกบันทึก</string>
+	<key>Photo Library</key>
+	<string>ห้องสมุดรูปภาพ</string>
+	<key>Plain lines</key>
+	<string>เส้นธรรมดา</string>
+	<key>Portrait</key>
+	<string>ภาพเหมือน</string>
+	<key>Recent</key>
+	<string>ล่าสุด</string>
+	<key>Reset</key>
+	<string>รีเซ็ต</string>
+	<key>Save</key>
+	<string>บันทึก</string>
+	<key>Search fonts</key>
+	<string>ค้นหาแบบอักษร</string>
+	<key>Share as image of text</key>
+	<string>แบ่งปันเป็นภาพของข้อความ</string>
+	<key>Share note</key>
+	<string>แบ่งปันบันทึก</string>
+	<key>Share note text</key>
+	<string>แบ่งปันข้อความบันทึก</string>
+	<key>Share your note?</key>
+	<string>แบ่งปันบันทึกย่อของคุณ?</string>
+	<key>Show image at bottom</key>
+	<string>แสดงภาพที่ด้านล่าง</string>
+	<key>Show this image below the note?</key>
+	<string>แสดงภาพนี้ใต้บันทึกย่อ?</string>
+	<key>Size</key>
+	<string>ขนาด</string>
+	<key>Smart links</key>
+	<string>ลิงค์อัจฉริยะ</string>
+	<key>Square</key>
+	<string>สี่เหลี่ยม</string>
+	<key>System Bold</key>
+	<string>ระบบตัวหนา</string>
+	<key>Take a photo or choose one from your library. NeverNote will read any text in the image and add it to your note.</key>
+	<string>ถ่ายภาพหรือเลือกจากห้องสมุดของคุณ NeverNote จะอ่านข้อความใดๆ ในภาพและเพิ่มลงในบันทึกย่อของคุณ</string>
+	<key>That link is not an image.</key>
+	<string>ลิงก์นั้นไม่ใช่รูปภาพ</string>
+	<key>The image will contain only your text and background — no buttons or frames.</key>
+	<string>รูปภาพจะมีเฉพาะข้อความและพื้นหลังของคุณเท่านั้น ไม่มีปุ่มหรือกรอบ</string>
+	<key>Toggle line markers</key>
+	<string>สลับเครื่องหมายเส้น</string>
+	<key>Underline</key>
+	<string>ขีดเส้นใต้</string>
+	<key>Undo delete</key>
+	<string>ยกเลิกการลบ</string>
+	<key>View captured image</key>
+	<string>ดูภาพที่จับได้</string>
+	<key>You just took a screenshot. Share the note text, or create a clean image of your text only.</key>
+	<string>คุณเพิ่งจับภาพหน้าจอ แบ่งปันข้อความบันทึกหรือสร้างภาพข้อความของคุณที่สะอาดตาเท่านั้น</string>
+	<key>screenshot.demo.0</key>
+	<string>เปิด.
+พิมพ์.
+เสร็จแล้ว</string>
+	<key>screenshot.demo.1</key>
+	<string>เหมาะสำหรับการรับหมายเลขด่วนระหว่างการโทร</string>
+	<key>screenshot.demo.2</key>
+	<string>พื้นที่สะอาดสำหรับความคิดของคุณทันที</string>
+	<key>screenshot.demo.3</key>
+	<string>ไม่มีโฟลเดอร์
+ไม่มีแท็ก
+ไม่มีการรบกวน</string>
+	<key>screenshot.demo.4</key>
+	<string>วิธีที่เร็วที่สุดในการจับความคิดชั่วขณะ</string>
+</dict>
+</plist>

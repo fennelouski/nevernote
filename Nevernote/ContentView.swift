@@ -17,6 +17,7 @@ struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.scenePhase) private var scenePhase
     @Environment(\.locale) private var locale
+    @Environment(FeatureFlags.self) private var featureFlags
     @Query(sort: \NoteDocument.lastEditedAt, order: .reverse) private var notes: [NoteDocument]
 
     @AppStorage(EditorFont.appStorageKey) private var editorFontName: String = EditorFont.systemBoldStorageToken
@@ -64,6 +65,12 @@ struct ContentView: View {
     @State private var pendingDataDetectorInteraction: NoteDataDetectorInteraction?
     @State private var isProcessingImage = false
     @State private var permissionManager = NoteImagePermissionManager()
+    @State private var translationSourceLocaleIdentifier: String?
+    @State private var translationTargetLocaleIdentifier: String?
+    @State private var showTranslateButton = false
+    @State private var isTranslating = false
+    @State private var translationRequestID: UUID?
+    @State private var translationEligibilityTask: Task<Void, Never>?
     #if os(macOS)
     @State private var macSidePanel: MacInspectorPanel?
     @State private var macConfirmationOnConfirm: (() -> Void)?
@@ -140,6 +147,10 @@ struct ContentView: View {
                 .accessibilityHidden(true)
             }
 
+            #if DEBUG
+            featureFlagsDebugButton
+            #endif
+
             if showScreenshotPrompt {
                 ScreenshotSharePromptOverlay(
                     step: screenshotPromptStep,
@@ -198,6 +209,7 @@ struct ContentView: View {
                 scheduleLastEditedBannerAutoHide()
                 focusEditorOnLaunch()
             }
+            scheduleTranslationEligibilityUpdate()
         }
         .onChange(of: scenePhase) { _, newPhase in
             if newPhase == .active { permissionManager.refreshStatus() }
@@ -222,6 +234,22 @@ struct ContentView: View {
                 NoteWrappingTextView.customUndoAvailable = false
             }
         }
+        .onChange(of: attributedText.string) { _, _ in
+            scheduleTranslationEligibilityUpdate()
+        }
+        .noteEditorTranslationHost(
+            isSupported: NoteOnDeviceTranslation.isFrameworkAvailable,
+            sourceIdentifier: translationSourceLocaleIdentifier,
+            targetIdentifier: translationTargetLocaleIdentifier,
+            requestID: translationRequestID,
+            attributedText: $attributedText,
+            fontToken: editorFontName,
+            pointSize: editorScaledPointSize,
+            isTranslating: $isTranslating,
+            onPersist: persistNote,
+            onClearOffer: clearTranslationOffer,
+            onEligibilityRefresh: { await updateTranslationEligibility() }
+        )
         #if canImport(UIKit)
         .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification)) { _ in
             dismissLastEditedBannerForKeyboardOrTimeout()
@@ -577,6 +605,41 @@ struct ContentView: View {
                 .foregroundStyle(dataDetectorsEnabled ? Color.brandBlue : Color.secondary)
                 .accessibilityLabel("Smart links")
                 .neverNoteShortcut(.toggleSmartLinks)
+            }
+
+            if featureFlags.isEnabled(.onDeviceNoteTranslation),
+               NoteOnDeviceTranslation.isFrameworkAvailable,
+               showTranslateButton,
+               let sourceLocaleID = translationSourceLocaleIdentifier,
+               let targetLocaleID = translationTargetLocaleIdentifier {
+                Button {
+                    beginNoteTranslation()
+                } label: {
+                    if isTranslating {
+                        ProgressView()
+                            .tint(Color.brandBlue)
+                    } else {
+                        let sourceFlag = NoteLocaleFlagEmoji.flagEmoji(forLocaleIdentifier: sourceLocaleID)
+                            ?? NoteLocaleFlagEmoji.displayFallbackEmoji
+                        let targetFlag = NoteLocaleFlagEmoji.flagEmoji(forLocaleIdentifier: targetLocaleID)
+                            ?? NoteLocaleFlagEmoji.displayFallbackEmoji
+                        HStack(spacing: 4) {
+                            Text(sourceFlag)
+                            Image(systemName: "arrow.right")
+                            Text(targetFlag)
+                        }
+                        .font(.system(size: 16, weight: .semibold))
+                    }
+                }
+                .foregroundStyle(Color.brandBlue)
+                .disabled(isTranslating)
+                .accessibilityLabel(
+                    NoteLocaleFlagEmoji.accessibilityLabel(
+                        sourceIdentifier: sourceLocaleID,
+                        targetIdentifier: targetLocaleID
+                    )
+                )
+                .accessibilityHint(isTranslating ? String(localized: "Translating…") : "")
             }
 
             if let capturedImage {
@@ -1232,9 +1295,95 @@ struct ContentView: View {
         #endif
     }
 
+    #if DEBUG
+    @ViewBuilder
+    private var featureFlagsDebugButton: some View {
+        if !ScreenshotMode.isActive {
+            VStack {
+                HStack {
+                    Spacer()
+                    Button {
+                        NotificationCenter.default.post(
+                            name: NevernoteNotification.showFeatureFlags,
+                            object: nil
+                        )
+                    } label: {
+                        Image(systemName: "flag.fill")
+                            .font(.caption)
+                            .padding(8)
+                    }
+                    .buttonStyle(.plain)
+                    .foregroundStyle(.secondary)
+                    .accessibilityLabel("Feature Flags")
+                }
+                Spacer()
+            }
+            .padding(8)
+            .zIndex(1)
+        }
+    }
+    #endif
+
     private func sendEditorCommand(_ action: TextFormatAction) {
         commandCounter += 1
         editorCommand = EditorCommand(id: commandCounter, action: action)
+    }
+
+    private func scheduleTranslationEligibilityUpdate() {
+        translationEligibilityTask?.cancel()
+        translationEligibilityTask = Task { @MainActor in
+            try? await Task.sleep(for: .milliseconds(300))
+            guard !Task.isCancelled else { return }
+            await updateTranslationEligibility()
+        }
+    }
+
+    @MainActor
+    private func updateTranslationEligibility() async {
+        guard featureFlags.isEnabled(.onDeviceNoteTranslation),
+              NoteOnDeviceTranslation.isFrameworkAvailable else {
+            clearTranslationOffer()
+            return
+        }
+        let text = attributedText.string
+        guard hasContent else {
+            clearTranslationOffer()
+            return
+        }
+        guard NoteTranslationEligibility.meetsWordThreshold(text) else {
+            clearTranslationOffer()
+            return
+        }
+        guard let detected = NoteLanguageDetection.detectDominantLanguage(in: text) else {
+            clearTranslationOffer()
+            return
+        }
+        guard NoteTranslationEligibility.isForeignLanguage(detectedCode: detected.languageCode) else {
+            clearTranslationOffer()
+            return
+        }
+        switch await NoteOnDeviceTranslation.resolveTargetLanguage(detected: detected) {
+        case .resolved(_, localeIdentifier: let targetLocaleID):
+            translationSourceLocaleIdentifier = detected.sourceLocaleIdentifier
+            translationTargetLocaleIdentifier = targetLocaleID
+            showTranslateButton = true
+        case .unavailable:
+            clearTranslationOffer()
+        }
+    }
+
+    private func clearTranslationOffer() {
+        showTranslateButton = false
+        translationSourceLocaleIdentifier = nil
+        translationTargetLocaleIdentifier = nil
+        translationRequestID = nil
+    }
+
+    private func beginNoteTranslation() {
+        guard translationSourceLocaleIdentifier != nil,
+              translationTargetLocaleIdentifier != nil else { return }
+        isTranslating = true
+        translationRequestID = UUID()
     }
 
     @ViewBuilder
@@ -1249,5 +1398,6 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+        .environment(FeatureFlags())
         .modelContainer(for: NoteDocument.self, inMemory: true)
 }

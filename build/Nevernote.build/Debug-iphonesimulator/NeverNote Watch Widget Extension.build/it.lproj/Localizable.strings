@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>16:9</key>
+	<string>16:9</string>
+	<key>9:16</key>
+	<string>9:16</string>
+	<key>Add</key>
+	<string>Aggiungere</string>
+	<key>Add Photo</key>
+	<string>Aggiungi foto</string>
+	<key>Add text</key>
+	<string>Aggiungi testo</string>
+	<key>Align center</key>
+	<string>Allinea al centro</string>
+	<key>Align left</key>
+	<string>Allinea a sinistra</string>
+	<key>Align right</key>
+	<string>Allinea a destra</string>
+	<key>Alignment</key>
+	<string>Allineamento</string>
+	<key>All Fonts</key>
+	<string>Tutti i caratteri</string>
+	<key>Aspect ratio</key>
+	<string>Proporzioni</string>
+	<key>Bold</key>
+	<string>Grassetto</string>
+	<key>Bulleted list</key>
+	<string>Elenco puntato</string>
+	<key>Camera</key>
+	<string>Telecamera</string>
+	<key>Can't use this link as an image</key>
+	<string>Impossibile utilizzare questo collegamento come immagine</string>
+	<key>Cancel</key>
+	<string>Cancellare</string>
+	<key>Checking image…</key>
+	<string>Controllo dell'immagine…</string>
+	<key>Continue</key>
+	<string>Continuare</string>
+	<key>Could not load that link.</key>
+	<string>Impossibile caricare quel collegamento.</string>
+	<key>Delete note</key>
+	<string>Elimina nota</string>
+	<key>Dictate or type</key>
+	<string>Dettare o digitare</string>
+	<key>Done</key>
+	<string>Fatto</string>
+	<key>Enter text before dismissing the keyboard</key>
+	<string>Inserisci testo prima di chiudere la tastiera</string>
+	<key>Font</key>
+	<string>Font</string>
+	<key>Help and support</key>
+	<string>Aiuto e supporto</string>
+	<key>Hide image at bottom</key>
+	<string>Nascondi l'immagine in basso</string>
+	<key>Hide keyboard</key>
+	<string>Nascondi tastiera</string>
+	<key>Image is too large.</key>
+	<string>L'immagine è troppo grande.</string>
+	<key>Image link</key>
+	<string>Collegamento immagine</string>
+	<key>Import Text from a Photo</key>
+	<string>Importa testo da una foto</string>
+	<key>Import text from photo</key>
+	<string>Importa testo dalla foto</string>
+	<key>Italic</key>
+	<string>Corsivo</string>
+	<key>LAST EDITED %@.</key>
+	<string>ULTIMA MODIFICAZIONE %@.</string>
+	<key>Landscape</key>
+	<string>Paesaggio</string>
+	<key>Line markers</key>
+	<string>Indicatori di linea</string>
+	<key>Maximize presentation size</key>
+	<string>Massimizza le dimensioni della presentazione</string>
+	<key>More formatting</key>
+	<string>Più formattazione</string>
+	<key>NEVERNOTE FOCUS</key>
+	<string>NEVERNOTE FOCUS</string>
+	<key>Nevernote</key>
+	<string>Nevernote</string>
+	<key>Not Now</key>
+	<string>Non adesso</string>
+	<key>Numbered list</key>
+	<string>Elenco numerato</string>
+	<key>OK</key>
+	<string>OK</string>
+	<key>Open Nevernote to read or capture a note.</key>
+	<string>Apri Nevernote per leggere o acquisire una nota.</string>
+	<key>Photo Library</key>
+	<string>Libreria fotografica</string>
+	<key>Plain lines</key>
+	<string>Linee semplici</string>
+	<key>Portrait</key>
+	<string>Ritratto</string>
+	<key>Recent</key>
+	<string>Recente</string>
+	<key>Reset</key>
+	<string>Reset</string>
+	<key>Save</key>
+	<string>Salva</string>
+	<key>Search fonts</key>
+	<string>Cerca caratteri</string>
+	<key>Share as image of text</key>
+	<string>Condividi come immagine di testo</string>
+	<key>Share note</key>
+	<string>Condividi nota</string>
+	<key>Share note text</key>
+	<string>Condividi il testo della nota</string>
+	<key>Share your note?</key>
+	<string>Condividi la tua nota?</string>
+	<key>Show image at bottom</key>
+	<string>Mostra l'immagine in basso</string>
+	<key>Show this image below the note?</key>
+	<string>Mostrare questa immagine sotto la nota?</string>
+	<key>Size</key>
+	<string>Misurare</string>
+	<key>Smart links</key>
+	<string>Collegamenti intelligenti</string>
+	<key>Square</key>
+	<string>Piazza</string>
+	<key>System Bold</key>
+	<string>Sistema audace</string>
+	<key>Take a photo or choose one from your library. NeverNote will read any text in the image and add it to your note.</key>
+	<string>Scatta una foto o scegline una dalla tua libreria. NeverNote leggerà qualsiasi testo nell'immagine e lo aggiungerà alla tua nota.</string>
+	<key>That link is not an image.</key>
+	<string>Quel collegamento non è un'immagine.</string>
+	<key>The image will contain only your text and background — no buttons or frames.</key>
+	<string>L'immagine conterrà solo il testo e lo sfondo, senza pulsanti o cornici.</string>
+	<key>Toggle line markers</key>
+	<string>Attiva/disattiva gli indicatori di linea</string>
+	<key>Underline</key>
+	<string>Sottolineare</string>
+	<key>Undo delete</key>
+	<string>Annulla l'eliminazione</string>
+	<key>View captured image</key>
+	<string>Visualizza l'immagine catturata</string>
+	<key>You just took a screenshot. Share the note text, or create a clean image of your text only.</key>
+	<string>Hai appena fatto uno screenshot. Condividi il testo della nota o crea un'immagine pulita solo del tuo testo.</string>
+	<key>screenshot.demo.0</key>
+	<string>Apri.
+Scrivi.
+Fatto</string>
+	<key>screenshot.demo.1</key>
+	<string>Perfetto per prendere un numero veloce durante una chiamata.</string>
+	<key>screenshot.demo.2</key>
+	<string>Solo uno spazio pulito per i tuoi pensieri immediati.</string>
+	<key>screenshot.demo.3</key>
+	<string>Nessuna cartella.
+Nessun tag.
+Nessuna distrazione.</string>
+	<key>screenshot.demo.4</key>
+	<string>Il modo più veloce per catturare un pensiero fugace.</string>
+</dict>
+</plist>

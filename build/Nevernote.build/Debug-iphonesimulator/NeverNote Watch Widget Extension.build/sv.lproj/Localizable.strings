@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>16:9</key>
+	<string>16:9</string>
+	<key>9:16</key>
+	<string>9:16</string>
+	<key>Add</key>
+	<string>Tillägga</string>
+	<key>Add Photo</key>
+	<string>Lägg till foto</string>
+	<key>Add text</key>
+	<string>Lägg till text</string>
+	<key>Align center</key>
+	<string>Centrera</string>
+	<key>Align left</key>
+	<string>Vänsterjustera</string>
+	<key>Align right</key>
+	<string>Högerjustera</string>
+	<key>Alignment</key>
+	<string>Inriktning</string>
+	<key>All Fonts</key>
+	<string>Alla teckensnitt</string>
+	<key>Aspect ratio</key>
+	<string>Bildförhållande</string>
+	<key>Bold</key>
+	<string>Fet</string>
+	<key>Bulleted list</key>
+	<string>Punktlista</string>
+	<key>Camera</key>
+	<string>Kamera</string>
+	<key>Can't use this link as an image</key>
+	<string>Kan inte använda denna länk som bild</string>
+	<key>Cancel</key>
+	<string>Avbryt</string>
+	<key>Checking image…</key>
+	<string>Kontrollerar bild...</string>
+	<key>Continue</key>
+	<string>Fortsätta</string>
+	<key>Could not load that link.</key>
+	<string>Det gick inte att ladda den länken.</string>
+	<key>Delete note</key>
+	<string>Ta bort anteckning</string>
+	<key>Dictate or type</key>
+	<string>Diktera eller skriv</string>
+	<key>Done</key>
+	<string>Gjort</string>
+	<key>Enter text before dismissing the keyboard</key>
+	<string>Ange text innan du stänger tangentbordet</string>
+	<key>Font</key>
+	<string>Font</string>
+	<key>Help and support</key>
+	<string>Hjälp och stöd</string>
+	<key>Hide image at bottom</key>
+	<string>Dölj bilden längst ner</string>
+	<key>Hide keyboard</key>
+	<string>Dölj tangentbord</string>
+	<key>Image is too large.</key>
+	<string>Bilden är för stor.</string>
+	<key>Image link</key>
+	<string>Bildlänk</string>
+	<key>Import Text from a Photo</key>
+	<string>Importera text från ett foto</string>
+	<key>Import text from photo</key>
+	<string>Importera text från foto</string>
+	<key>Italic</key>
+	<string>Kursiv</string>
+	<key>LAST EDITED %@.</key>
+	<string>SENAST REDIGERAD %@.</string>
+	<key>Landscape</key>
+	<string>Landskap</string>
+	<key>Line markers</key>
+	<string>Linjemarkörer</string>
+	<key>Maximize presentation size</key>
+	<string>Maximera presentationsstorleken</string>
+	<key>More formatting</key>
+	<string>Mer formatering</string>
+	<key>NEVERNOTE FOCUS</key>
+	<string>NEVERNOTE FOCUS</string>
+	<key>Nevernote</key>
+	<string>Nevernote</string>
+	<key>Not Now</key>
+	<string>Inte nu</string>
+	<key>Numbered list</key>
+	<string>Numrerad lista</string>
+	<key>OK</key>
+	<string>OK</string>
+	<key>Open Nevernote to read or capture a note.</key>
+	<string>Öppna Nevernote för att läsa eller fånga en anteckning.</string>
+	<key>Photo Library</key>
+	<string>Fotobibliotek</string>
+	<key>Plain lines</key>
+	<string>Enkla linjer</string>
+	<key>Portrait</key>
+	<string>Porträtt</string>
+	<key>Recent</key>
+	<string>Ny</string>
+	<key>Reset</key>
+	<string>Återställa</string>
+	<key>Save</key>
+	<string>Spara</string>
+	<key>Search fonts</key>
+	<string>Sök teckensnitt</string>
+	<key>Share as image of text</key>
+	<string>Dela som bild av text</string>
+	<key>Share note</key>
+	<string>Dela anteckning</string>
+	<key>Share note text</key>
+	<string>Dela anteckningstext</string>
+	<key>Share your note?</key>
+	<string>Dela din anteckning?</string>
+	<key>Show image at bottom</key>
+	<string>Visa bilden längst ner</string>
+	<key>Show this image below the note?</key>
+	<string>Visa den här bilden under anteckningen?</string>
+	<key>Size</key>
+	<string>Storlek</string>
+	<key>Smart links</key>
+	<string>Smarta länkar</string>
+	<key>Square</key>
+	<string>Fyrkant</string>
+	<key>System Bold</key>
+	<string>System Fet</string>
+	<key>Take a photo or choose one from your library. NeverNote will read any text in the image and add it to your note.</key>
+	<string>Ta ett foto eller välj ett från ditt bibliotek. NeverNote kommer att läsa all text i bilden och lägga till den i din anteckning.</string>
+	<key>That link is not an image.</key>
+	<string>Den länken är inte en bild.</string>
+	<key>The image will contain only your text and background — no buttons or frames.</key>
+	<string>Bilden kommer bara att innehålla din text och bakgrund – inga knappar eller ramar.</string>
+	<key>Toggle line markers</key>
+	<string>Växla linjemarkörer</string>
+	<key>Underline</key>
+	<string>Betona</string>
+	<key>Undo delete</key>
+	<string>Ångra borttagning</string>
+	<key>View captured image</key>
+	<string>Visa den tagna bilden</string>
+	<key>You just took a screenshot. Share the note text, or create a clean image of your text only.</key>
+	<string>Du tog precis en skärmdump. Dela anteckningstexten eller skapa en ren bild av endast din text.</string>
+	<key>screenshot.demo.0</key>
+	<string>Öppna.
+Typ.
+Gjort</string>
+	<key>screenshot.demo.1</key>
+	<string>Perfekt för att fånga ett snabbt nummer under ett samtal.</string>
+	<key>screenshot.demo.2</key>
+	<string>Bara ett rent utrymme för dina omedelbara tankar.</string>
+	<key>screenshot.demo.3</key>
+	<string>Inga mappar.
+Inga taggar.
+Inga distraktioner.</string>
+	<key>screenshot.demo.4</key>
+	<string>Det snabbaste sättet att fånga en flyktig tanke.</string>
+</dict>
+</plist>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>16:9</key>
+	<string>16:9</string>
+	<key>9:16</key>
+	<string>9:16</string>
+	<key>Add</key>
+	<string>Add</string>
+	<key>Add Photo</key>
+	<string>Add Photo</string>
+	<key>Add text</key>
+	<string>Add text</string>
+	<key>Align center</key>
+	<string>Align center</string>
+	<key>Align left</key>
+	<string>Align left</string>
+	<key>Align right</key>
+	<string>Align right</string>
+	<key>Alignment</key>
+	<string>Alignment</string>
+	<key>All Fonts</key>
+	<string>All Fonts</string>
+	<key>Aspect ratio</key>
+	<string>Aspect ratio</string>
+	<key>Bold</key>
+	<string>Bold</string>
+	<key>Bulleted list</key>
+	<string>Bulleted list</string>
+	<key>Camera</key>
+	<string>Camera</string>
+	<key>Can't use this link as an image</key>
+	<string>Can't use this link as an image</string>
+	<key>Cancel</key>
+	<string>Cancel</string>
+	<key>Checking image…</key>
+	<string>Checking image…</string>
+	<key>Continue</key>
+	<string>Continue</string>
+	<key>Could not load that link.</key>
+	<string>Could not load that link.</string>
+	<key>Delete note</key>
+	<string>Delete note</string>
+	<key>Dictate or type</key>
+	<string>Dictate or type</string>
+	<key>Done</key>
+	<string>Done</string>
+	<key>Enter text before dismissing the keyboard</key>
+	<string>Enter text before dismissing the keyboard</string>
+	<key>Font</key>
+	<string>Font</string>
+	<key>Help and support</key>
+	<string>Help and support</string>
+	<key>Hide image at bottom</key>
+	<string>Hide image at bottom</string>
+	<key>Hide keyboard</key>
+	<string>Hide keyboard</string>
+	<key>Image is too large.</key>
+	<string>Image is too large.</string>
+	<key>Image link</key>
+	<string>Image link</string>
+	<key>Import Text from a Photo</key>
+	<string>Import Text from a Photo</string>
+	<key>Import text from photo</key>
+	<string>Import text from photo</string>
+	<key>Italic</key>
+	<string>Italic</string>
+	<key>LAST EDITED %@.</key>
+	<string>LAST EDITED %@.</string>
+	<key>Landscape</key>
+	<string>Landscape</string>
+	<key>Line markers</key>
+	<string>Line markers</string>
+	<key>Maximize presentation size</key>
+	<string>Maximize presentation size</string>
+	<key>More formatting</key>
+	<string>More formatting</string>
+	<key>NEVERNOTE FOCUS</key>
+	<string>NEVERNOTE FOCUS</string>
+	<key>Nevernote</key>
+	<string>Nevernote</string>
+	<key>Not Now</key>
+	<string>Not Now</string>
+	<key>Numbered list</key>
+	<string>Numbered list</string>
+	<key>OK</key>
+	<string>OK</string>
+	<key>Open Nevernote to read or capture a note.</key>
+	<string>Open Nevernote to read or capture a note.</string>
+	<key>Photo Library</key>
+	<string>Photo Library</string>
+	<key>Plain lines</key>
+	<string>Plain lines</string>
+	<key>Portrait</key>
+	<string>Portrait</string>
+	<key>Recent</key>
+	<string>Recent</string>
+	<key>Reset</key>
+	<string>Reset</string>
+	<key>Save</key>
+	<string>Save</string>
+	<key>Search fonts</key>
+	<string>Search fonts</string>
+	<key>Share as image of text</key>
+	<string>Share as image of text</string>
+	<key>Share note</key>
+	<string>Share note</string>
+	<key>Share note text</key>
+	<string>Share note text</string>
+	<key>Share your note?</key>
+	<string>Share your note?</string>
+	<key>Show image at bottom</key>
+	<string>Show image at bottom</string>
+	<key>Show this image below the note?</key>
+	<string>Show this image below the note?</string>
+	<key>Size</key>
+	<string>Size</string>
+	<key>Smart links</key>
+	<string>Smart links</string>
+	<key>Square</key>
+	<string>Square</string>
+	<key>System Bold</key>
+	<string>System Bold</string>
+	<key>Take a photo or choose one from your library. NeverNote will read any text in the image and add it to your note.</key>
+	<string>Take a photo or choose one from your library. NeverNote will read any text in the image and add it to your note.</string>
+	<key>That link is not an image.</key>
+	<string>That link is not an image.</string>
+	<key>The image will contain only your text and background — no buttons or frames.</key>
+	<string>The image will contain only your text and background — no buttons or frames.</string>
+	<key>Toggle line markers</key>
+	<string>Toggle line markers</string>
+	<key>Underline</key>
+	<string>Underline</string>
+	<key>Undo delete</key>
+	<string>Undo delete</string>
+	<key>View captured image</key>
+	<string>View captured image</string>
+	<key>You just took a screenshot. Share the note text, or create a clean image of your text only.</key>
+	<string>You just took a screenshot. Share the note text, or create a clean image of your text only.</string>
+	<key>screenshot.demo.0</key>
+	<string>Open.
+Type.
+Done</string>
+	<key>screenshot.demo.1</key>
+	<string>Perfect for catching a quick number during a call.</string>
+	<key>screenshot.demo.2</key>
+	<string>Just a clean space for your immediate thoughts.</string>
+	<key>screenshot.demo.3</key>
+	<string>No folders.
+No tags.
+No distractions.</string>
+	<key>screenshot.demo.4</key>
+	<string>The fastest way to capture a fleeting thought.</string>
+</dict>
+</plist>

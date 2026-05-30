@@ -3,106 +3,26 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1A2B3C4D5E6F789012345678 /* NNOnboardingManager.m in Sources */ = {
-			isa = PBXBuildFile;
-			fileRef = B2C3D4E5F6789012345678A1 /* NNOnboardingManager.m */;
-			platformFilters = (
-				ios,
-			);
-		};
-		2B3C4D5E6F789012345678A1 /* NNOnboardingTooltipView.m in Sources */ = {
-			isa = PBXBuildFile;
-			fileRef = D4E5F6789012345678A1B2C3 /* NNOnboardingTooltipView.m */;
-			platformFilters = (
-				ios,
-			);
-		};
-		33B70CB51399476FAEFB55D8 /* NNSettingsViewController.m in Sources */ = {
-			isa = PBXBuildFile;
-			fileRef = 478AA74701524D5BB5AE53F4 /* NNSettingsViewController.m */;
-			platformFilters = (
-				ios,
-			);
-		};
-		3C4D5E6F789012345678A1B2 /* NNOnboardingCoordinator.m in Sources */ = {
-			isa = PBXBuildFile;
-			fileRef = F6789012345678A1B2C3D4E5 /* NNOnboardingCoordinator.m */;
-			platformFilters = (
-				ios,
-			);
-		};
+		1A2B3C4D5E6F789012345678 /* NNOnboardingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C3D4E5F6789012345678A1 /* NNOnboardingManager.m */; platformFilter = ios; };
+		2B3C4D5E6F789012345678A1 /* NNOnboardingTooltipView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E5F6789012345678A1B2C3 /* NNOnboardingTooltipView.m */; platformFilter = ios; };
+		33B70CB51399476FAEFB55D8 /* NNSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 478AA74701524D5BB5AE53F4 /* NNSettingsViewController.m */; platformFilter = ios; };
+		3C4D5E6F789012345678A1B2 /* NNOnboardingCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = F6789012345678A1B2C3D4E5 /* NNOnboardingCoordinator.m */; platformFilter = ios; };
 		8008A38B191BC5C10071B32D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8008A38A191BC5C10071B32D /* Default-568h@2x.png */; };
-		800D2E021947919700E904AA /* UIColor+AppColors.m in Sources */ = {
-			isa = PBXBuildFile;
-			fileRef = 800D2E011947919700E904AA /* UIColor+AppColors.m */;
-			platformFilters = (
-				ios,
-			);
-		};
-		8015691419B1189F00A4A083 /* NNListViewController.m in Sources */ = {
-			isa = PBXBuildFile;
-			fileRef = 8015691319B1189F00A4A083 /* NNListViewController.m */;
-			platformFilters = (
-				ios,
-			);
-		};
-		803137BC1965D08E00B78BC5 /* UNIOptionsView.m in Sources */ = {
-			isa = PBXBuildFile;
-			fileRef = 803137BB1965D08E00B78BC5 /* UNIOptionsView.m */;
-			platformFilters = (
-				ios,
-			);
-		};
-		803137BF1965D5CC00B78BC5 /* UNISuggestionView.m in Sources */ = {
-			isa = PBXBuildFile;
-			fileRef = 803137BE1965D5CC00B78BC5 /* UNISuggestionView.m */;
-			platformFilters = (
-				ios,
-			);
-		};
-		803137C21965F15B00B78BC5 /* UNICalendarPopOver.m in Sources */ = {
-			isa = PBXBuildFile;
-			fileRef = 803137C11965F15B00B78BC5 /* UNICalendarPopOver.m */;
-			platformFilters = (
-				ios,
-			);
-		};
-		803137CB19660DAB00B78BC5 /* UNIAdditionalOptionsViewButton.m in Sources */ = {
-			isa = PBXBuildFile;
-			fileRef = 803137CA19660DAB00B78BC5 /* UNIAdditionalOptionsViewButton.m */;
-			platformFilters = (
-				ios,
-			);
-		};
-		803CDE46196AFFE600C1C789 /* UNITimeInputView.m in Sources */ = {
-			isa = PBXBuildFile;
-			fileRef = 803CDE45196AFFE600C1C789 /* UNITimeInputView.m */;
-			platformFilters = (
-				ios,
-			);
-		};
-		803CDE49196B06A700C1C789 /* UNIAdditionalOptionsView.m in Sources */ = {
-			isa = PBXBuildFile;
-			fileRef = 803CDE48196B06A700C1C789 /* UNIAdditionalOptionsView.m */;
-			platformFilters = (
-				ios,
-			);
-		};
-		803CDE4C196B157600C1C789 /* UNIRepeatOptionsView.m in Sources */ = {
-			isa = PBXBuildFile;
-			fileRef = 803CDE4B196B157600C1C789 /* UNIRepeatOptionsView.m */;
-			platformFilters = (
-				ios,
-			);
-		};
+		800D2E021947919700E904AA /* UIColor+AppColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 800D2E011947919700E904AA /* UIColor+AppColors.m */; platformFilter = ios; };
+		8015691419B1189F00A4A083 /* NNListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8015691319B1189F00A4A083 /* NNListViewController.m */; platformFilter = ios; };
+		803137BC1965D08E00B78BC5 /* UNIOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 803137BB1965D08E00B78BC5 /* UNIOptionsView.m */; platformFilter = ios; };
+		803137BF1965D5CC00B78BC5 /* UNISuggestionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 803137BE1965D5CC00B78BC5 /* UNISuggestionView.m */; platformFilter = ios; };
+		803137C21965F15B00B78BC5 /* UNICalendarPopOver.m in Sources */ = {isa = PBXBuildFile; fileRef = 803137C11965F15B00B78BC5 /* UNICalendarPopOver.m */; platformFilter = ios; };
+		803137CB19660DAB00B78BC5 /* UNIAdditionalOptionsViewButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 803137CA19660DAB00B78BC5 /* UNIAdditionalOptionsViewButton.m */; platformFilter = ios; };
+		803CDE46196AFFE600C1C789 /* UNITimeInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 803CDE45196AFFE600C1C789 /* UNITimeInputView.m */; platformFilter = ios; };
+		803CDE49196B06A700C1C789 /* UNIAdditionalOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 803CDE48196B06A700C1C789 /* UNIAdditionalOptionsView.m */; platformFilter = ios; };
+		803CDE4C196B157600C1C789 /* UNIRepeatOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 803CDE4B196B157600C1C789 /* UNIRepeatOptionsView.m */; platformFilter = ios; };
 		804E511F2FB9E68800DAA686 /* EditorFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E511E2FB9E68800DAA686 /* EditorFont.swift */; };
 		804E51212FB9E69900DAA686 /* NoteDataDetectors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E51202FB9E69900DAA686 /* NoteDataDetectors.swift */; };
-		804E51382FB9E85000DAA686 /* NoteDataDetectorInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E51392FB9E85000DAA686 /* NoteDataDetectorInteraction.swift */; };
-		804E513A2FB9E86800DAA686 /* NoteDataDetectorConfirmationDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E513B2FB9E86800DAA686 /* NoteDataDetectorConfirmationDialog.swift */; };
 		804E51232FB9E6CE00DAA686 /* EditorToolbarPlacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E51222FB9E6CE00DAA686 /* EditorToolbarPlacement.swift */; };
 		804E51252FB9E6E100DAA686 /* NoteBottomURLImagePreviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E51242FB9E6E100DAA686 /* NoteBottomURLImagePreviews.swift */; };
 		804E51272FB9E6FD00DAA686 /* NoteBottomURLImageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E51262FB9E6FD00DAA686 /* NoteBottomURLImageRow.swift */; };
@@ -114,30 +34,14 @@
 		804E51332FB9E7F200DAA686 /* FontPickerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E51322FB9E7F200DAA686 /* FontPickerSheet.swift */; };
 		804E51352FB9E82600DAA686 /* ScreenshotPromptStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E51342FB9E82600DAA686 /* ScreenshotPromptStep.swift */; };
 		804E51372FB9E83900DAA686 /* NevernoteNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E51362FB9E83900DAA686 /* NevernoteNotification.swift */; };
-		8056F5FF196591BE009CEA81 /* UNITaskCreatorViewController.m in Sources */ = {
-			isa = PBXBuildFile;
-			fileRef = 8056F5FE196591BE009CEA81 /* UNITaskCreatorViewController.m */;
-			platformFilters = (
-				ios,
-			);
-		};
+		804E51382FB9E85000DAA686 /* NoteDataDetectorInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E51392FB9E85000DAA686 /* NoteDataDetectorInteraction.swift */; };
+		804E513A2FB9E86800DAA686 /* NoteDataDetectorConfirmationDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E513B2FB9E86800DAA686 /* NoteDataDetectorConfirmationDialog.swift */; };
+		8056F5FF196591BE009CEA81 /* UNITaskCreatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8056F5FE196591BE009CEA81 /* UNITaskCreatorViewController.m */; platformFilter = ios; };
 		805898751916641F00352439 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 805898741916641F00352439 /* Foundation.framework */; };
 		805898771916641F00352439 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 805898761916641F00352439 /* CoreGraphics.framework */; };
-		805898791916641F00352439 /* UIKit.framework in Frameworks */ = {
-			isa = PBXBuildFile;
-			fileRef = 805898781916641F00352439 /* UIKit.framework */;
-			platformFilters = (
-				ios,
-			);
-		};
+		805898791916641F00352439 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 805898781916641F00352439 /* UIKit.framework */; platformFilter = ios; };
 		8058987B1916641F00352439 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8058987A1916641F00352439 /* CoreData.framework */; };
-		805898871916641F00352439 /* NNAppDelegate.m in Sources */ = {
-			isa = PBXBuildFile;
-			fileRef = 805898861916641F00352439 /* NNAppDelegate.m */;
-			platformFilters = (
-				ios,
-			);
-		};
+		805898871916641F00352439 /* NNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 805898861916641F00352439 /* NNAppDelegate.m */; platformFilter = ios; };
 		8058988A1916641F00352439 /* NeverNote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 805898881916641F00352439 /* NeverNote.xcdatamodeld */; };
 		8058988C1916641F00352439 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8058988B1916641F00352439 /* Images.xcassets */; };
 		805898931916642000352439 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 805898921916642000352439 /* XCTest.framework */; };
@@ -145,27 +49,9 @@
 		805898951916642000352439 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 805898781916641F00352439 /* UIKit.framework */; };
 		805898961916642000352439 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8058987A1916641F00352439 /* CoreData.framework */; };
 		8058989E1916642000352439 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8058989C1916642000352439 /* InfoPlist.strings */; };
-		805898A01916642000352439 /* NeverNoteTests.m in Sources */ = {
-			isa = PBXBuildFile;
-			fileRef = 8058989F1916642000352439 /* NeverNoteTests.m */;
-			platformFilters = (
-				ios,
-			);
-		};
-		805898AB1916643400352439 /* NNViewController.m in Sources */ = {
-			isa = PBXBuildFile;
-			fileRef = 805898AA1916643400352439 /* NNViewController.m */;
-			platformFilters = (
-				ios,
-			);
-		};
-		805898B21919A21400352439 /* CoreMotion.framework in Frameworks */ = {
-			isa = PBXBuildFile;
-			fileRef = 805898B11919A21400352439 /* CoreMotion.framework */;
-			platformFilters = (
-				ios,
-			);
-		};
+		805898A01916642000352439 /* NeverNoteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8058989F1916642000352439 /* NeverNoteTests.m */; platformFilter = ios; };
+		805898AB1916643400352439 /* NNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 805898AA1916643400352439 /* NNViewController.m */; platformFilter = ios; };
+		805898B21919A21400352439 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 805898B11919A21400352439 /* CoreMotion.framework */; platformFilter = ios; };
 		80B9E221191AF91B008B377C /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 80B9E220191AF91B008B377C /* icon.icns */; };
 		80B9E22A191AFC4A008B377C /* Icon 29.png in Resources */ = {isa = PBXBuildFile; fileRef = 80B9E224191AFC4A008B377C /* Icon 29.png */; };
 		80B9E22B191AFC4A008B377C /* Icon 40.png in Resources */ = {isa = PBXBuildFile; fileRef = 80B9E225191AFC4A008B377C /* Icon 40.png */; };
@@ -180,13 +66,7 @@
 		80B9E23A191AFDA1008B377C /* Launch Screen iPhone Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 80B9E234191AFDA1008B377C /* Launch Screen iPhone Portrait.png */; };
 		80B9E23B191AFDA1008B377C /* Launch Screen iPhone Portrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 80B9E235191AFDA1008B377C /* Launch Screen iPhone Portrait@2x.png */; };
 		80B9E23D191AFDF8008B377C /* Launch Screen iPhone Portrait 4-inch.png in Resources */ = {isa = PBXBuildFile; fileRef = 80B9E23C191AFDF8008B377C /* Launch Screen iPhone Portrait 4-inch.png */; };
-		80ECF9371964519E00EDABD1 /* NNColorObject.m in Sources */ = {
-			isa = PBXBuildFile;
-			fileRef = 80ECF9361964519E00EDABD1 /* NNColorObject.m */;
-			platformFilters = (
-				ios,
-			);
-		};
+		80ECF9371964519E00EDABD1 /* NNColorObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 80ECF9361964519E00EDABD1 /* NNColorObject.m */; platformFilter = ios; };
 		90AA00021000000000000001 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA00011000000000000001 /* ContentView.swift */; };
 		90AA00021000000000000002 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA00011000000000000002 /* Item.swift */; };
 		90AA00021000000000000003 /* NevernoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA00011000000000000003 /* NevernoteApp.swift */; };
@@ -199,17 +79,11 @@
 		90AA00031000000000000112 /* NoteImageEducationalModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA00031000000000000111 /* NoteImageEducationalModal.swift */; };
 		90AA00031000000000000114 /* NoteImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA00031000000000000113 /* NoteImagePicker.swift */; };
 		90AA00031000000000000116 /* NoteImageOCR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA00031000000000000115 /* NoteImageOCR.swift */; };
-		90AA0003100000000000011E /* NoteImageQRDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA0003100000000000011D /* NoteImageQRDetection.swift */; };
 		90AA00031000000000000118 /* NoteImageFullScreenModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA00031000000000000117 /* NoteImageFullScreenModal.swift */; };
 		90AA0003100000000000011A /* MacInspectorPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA00031000000000000119 /* MacInspectorPanel.swift */; };
 		90AA0003100000000000011C /* MacPhotoImportInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA0003100000000000011B /* MacPhotoImportInspector.swift */; };
-		9ECED7F59E864A5DAB31195E /* NNSettingsManager.m in Sources */ = {
-			isa = PBXBuildFile;
-			fileRef = 60DE51B2428F42E399C83D79 /* NNSettingsManager.m */;
-			platformFilters = (
-				ios,
-			);
-		};
+		90AA0003100000000000011E /* NoteImageQRDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA0003100000000000011D /* NoteImageQRDetection.swift */; };
+		9ECED7F59E864A5DAB31195E /* NNSettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DE51B2428F42E399C83D79 /* NNSettingsManager.m */; platformFilter = ios; };
 		A10000010191664200352401 /* NoteRichTextCodec.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000020191664200352401 /* NoteRichTextCodec.swift */; };
 		A10000030191664200352401 /* NeverNoteCloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000040191664200352401 /* NeverNoteCloudKit.swift */; };
 		A10000050191664200352401 /* NoteRichTextCodec.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000020191664200352401 /* NoteRichTextCodec.swift */; };
@@ -218,24 +92,11 @@
 		A10000080191664200352401 /* NevernoteWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000090191664200352401 /* NevernoteWatchApp.swift */; };
 		A100000A0191664200352401 /* WatchRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100000B0191664200352401 /* WatchRootView.swift */; };
 		A100000E0191664200352401 /* NeverNoteWatchWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100000F0191664200352401 /* NeverNoteWatchWidget.swift */; };
-		A10000100191664200352401 /* NeverNote Watch App.app in Embed Watch Content */ = {
-			isa = PBXBuildFile;
-			fileRef = A10000110191664200352401 /* NeverNote Watch App.app */;
-			platformFilters = (
-				ios,
-			);
-			settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); };
-		};
+		A10000100191664200352401 /* NeverNote Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = A10000110191664200352401 /* NeverNote Watch App.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A10000120191664200352401 /* NeverNote Watch Widget Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A10000130191664200352401 /* NeverNote Watch Widget Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A100001B0191664200352401 /* NevernoteModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100001A0191664200352401 /* NevernoteModelContainer.swift */; };
 		A100001C0191664200352401 /* NevernoteModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100001A0191664200352401 /* NevernoteModelContainer.swift */; };
-		A7B1C2D3E4F5678901234567 /* NNLogoTraceView.m in Sources */ = {
-			isa = PBXBuildFile;
-			fileRef = A7B1C2D3E4F5678901234569 /* NNLogoTraceView.m */;
-			platformFilters = (
-				ios,
-			);
-		};
+		A7B1C2D3E4F5678901234567 /* NNLogoTraceView.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B1C2D3E4F5678901234569 /* NNLogoTraceView.m */; platformFilter = ios; };
 		AABB00000000000000000002 /* ScreenshotLaunchSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB00000000000000000001 /* ScreenshotLaunchSupport.swift */; };
 		AABB00000000000000000004 /* WatchScreenshotLaunchSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB00000000000000000003 /* WatchScreenshotLaunchSupport.swift */; };
 		BLOC00021000000000000001 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = BLOC00011000000000000001 /* Localizable.xcstrings */; };
@@ -244,10 +105,21 @@
 		BLOC00021000000000000004 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = BLOC00011000000000000001 /* Localizable.xcstrings */; };
 		BLOC00021000000000000005 /* ScreenshotDemoStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BLOC00011000000000000003 /* ScreenshotDemoStrings.swift */; };
 		BLOC00021000000000000006 /* ScreenshotDemoStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BLOC00011000000000000003 /* ScreenshotDemoStrings.swift */; };
-		PLAT00021000000000000001 /* NeverNotePlatform.swift in Sources */ = {isa = PBXBuildFile; fileRef = PLAT00011000000000000001 /* NeverNotePlatform.swift */; };
+		FF00012000000000000001 /* FeatureFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF00011000000000000001 /* FeatureFlag.swift */; };
+		FF00022000000000000001 /* FeatureFlagLaunchOverrides.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF00021000000000000001 /* FeatureFlagLaunchOverrides.swift */; };
+		FF00032000000000000001 /* FeatureFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF00031000000000000001 /* FeatureFlags.swift */; };
+		FF00042000000000000001 /* FeatureFlagsDebugSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF00041000000000000001 /* FeatureFlagsDebugSheet.swift */; };
+		HTTP00021000000000000001 /* NoteHTTPPasteboardLinkFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = HTTP00011000000000000001 /* NoteHTTPPasteboardLinkFormatting.swift */; };
 		KB00021000000000000001 /* NeverNoteKeyboardShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = KB00011000000000000001 /* NeverNoteKeyboardShortcuts.swift */; };
 		MAC00021000000000000001 /* NoteTextViewsMac.swift in Sources */ = {isa = PBXBuildFile; fileRef = MAC00011000000000000001 /* NoteTextViewsMac.swift */; };
-		HTTP00021000000000000001 /* NoteHTTPPasteboardLinkFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = HTTP00011000000000000001 /* NoteHTTPPasteboardLinkFormatting.swift */; };
+		NT00021000000000000001 /* NoteTranslationEligibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = NT00011000000000000001 /* NoteTranslationEligibility.swift */; };
+		NT00041000000000000001 /* NoteLanguageDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = NT00031000000000000001 /* NoteLanguageDetection.swift */; };
+		NT00061000000000000001 /* NoteOnDeviceTranslation.swift in Sources */ = {isa = PBXBuildFile; fileRef = NT00051000000000000001 /* NoteOnDeviceTranslation.swift */; };
+		NT00121000000000000001 /* NoteOnDeviceTranslationIOS18.swift in Sources */ = {isa = PBXBuildFile; fileRef = NT00111000000000000001 /* NoteOnDeviceTranslationIOS18.swift */; };
+		NT00141000000000000001 /* NoteEditorTranslationHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = NT00131000000000000001 /* NoteEditorTranslationHost.swift */; };
+		NT00081000000000000001 /* NoteLocaleFlagEmoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = NT00071000000000000001 /* NoteLocaleFlagEmoji.swift */; };
+		NT000A10000000000000001 /* NoteLocaleFlagEmojiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = NT00091000000000000001 /* NoteLocaleFlagEmojiTests.swift */; };
+		PLAT00021000000000000001 /* NeverNotePlatform.swift in Sources */ = {isa = PBXBuildFile; fileRef = PLAT00011000000000000001 /* NeverNotePlatform.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -261,9 +133,6 @@
 		A10000140191664200352401 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 805898691916641F00352439 /* Project object */;
-			platformFilters = (
-				ios,
-			);
 			proxyType = 1;
 			remoteGlobalIDString = A10000150191664200352401;
 			remoteInfo = "NeverNote Watch App";
@@ -298,9 +167,6 @@
 				A10000100191664200352401 /* NeverNote Watch App.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
-			platformFilters = (
-				ios,
-			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -330,8 +196,6 @@
 		803CDE4B196B157600C1C789 /* UNIRepeatOptionsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNIRepeatOptionsView.m; sourceTree = "<group>"; };
 		804E511E2FB9E68800DAA686 /* EditorFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorFont.swift; sourceTree = "<group>"; };
 		804E51202FB9E69900DAA686 /* NoteDataDetectors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDataDetectors.swift; sourceTree = "<group>"; };
-		804E51392FB9E85000DAA686 /* NoteDataDetectorInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDataDetectorInteraction.swift; sourceTree = "<group>"; };
-		804E513B2FB9E86800DAA686 /* NoteDataDetectorConfirmationDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDataDetectorConfirmationDialog.swift; sourceTree = "<group>"; };
 		804E51222FB9E6CE00DAA686 /* EditorToolbarPlacement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorToolbarPlacement.swift; sourceTree = "<group>"; };
 		804E51242FB9E6E100DAA686 /* NoteBottomURLImagePreviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteBottomURLImagePreviews.swift; sourceTree = "<group>"; };
 		804E51262FB9E6FD00DAA686 /* NoteBottomURLImageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteBottomURLImageRow.swift; sourceTree = "<group>"; };
@@ -343,6 +207,8 @@
 		804E51322FB9E7F200DAA686 /* FontPickerSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontPickerSheet.swift; sourceTree = "<group>"; };
 		804E51342FB9E82600DAA686 /* ScreenshotPromptStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotPromptStep.swift; sourceTree = "<group>"; };
 		804E51362FB9E83900DAA686 /* NevernoteNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NevernoteNotification.swift; sourceTree = "<group>"; };
+		804E51392FB9E85000DAA686 /* NoteDataDetectorInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDataDetectorInteraction.swift; sourceTree = "<group>"; };
+		804E513B2FB9E86800DAA686 /* NoteDataDetectorConfirmationDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDataDetectorConfirmationDialog.swift; sourceTree = "<group>"; };
 		8056F5FD196591BE009CEA81 /* UNITaskCreatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNITaskCreatorViewController.h; sourceTree = "<group>"; };
 		8056F5FE196591BE009CEA81 /* UNITaskCreatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNITaskCreatorViewController.m; sourceTree = "<group>"; };
 		805898711916641F00352439 /* NeverNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeverNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -395,10 +261,10 @@
 		90AA00031000000000000111 /* NoteImageEducationalModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteImageEducationalModal.swift; sourceTree = "<group>"; };
 		90AA00031000000000000113 /* NoteImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteImagePicker.swift; sourceTree = "<group>"; };
 		90AA00031000000000000115 /* NoteImageOCR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteImageOCR.swift; sourceTree = "<group>"; };
-		90AA0003100000000000011D /* NoteImageQRDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteImageQRDetection.swift; sourceTree = "<group>"; };
 		90AA00031000000000000117 /* NoteImageFullScreenModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteImageFullScreenModal.swift; sourceTree = "<group>"; };
 		90AA00031000000000000119 /* MacInspectorPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacInspectorPanel.swift; sourceTree = "<group>"; };
 		90AA0003100000000000011B /* MacPhotoImportInspector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacPhotoImportInspector.swift; sourceTree = "<group>"; };
+		90AA0003100000000000011D /* NoteImageQRDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteImageQRDetection.swift; sourceTree = "<group>"; };
 		A10000020191664200352401 /* NoteRichTextCodec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRichTextCodec.swift; sourceTree = "<group>"; };
 		A10000040191664200352401 /* NeverNoteCloudKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeverNoteCloudKit.swift; sourceTree = "<group>"; };
 		A10000090191664200352401 /* NevernoteWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NevernoteWatchApp.swift; sourceTree = "<group>"; };
@@ -423,10 +289,21 @@
 		D4E5F6789012345678A1B2C3 /* NNOnboardingTooltipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNOnboardingTooltipView.m; sourceTree = "<group>"; };
 		E5F6789012345678A1B2C3D4 /* NNOnboardingCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNOnboardingCoordinator.h; sourceTree = "<group>"; };
 		F6789012345678A1B2C3D4E5 /* NNOnboardingCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNOnboardingCoordinator.m; sourceTree = "<group>"; };
-		PLAT00011000000000000001 /* NeverNotePlatform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeverNotePlatform.swift; sourceTree = "<group>"; };
+		FF00011000000000000001 /* FeatureFlag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureFlag.swift; sourceTree = "<group>"; };
+		FF00021000000000000001 /* FeatureFlagLaunchOverrides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureFlagLaunchOverrides.swift; sourceTree = "<group>"; };
+		FF00031000000000000001 /* FeatureFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureFlags.swift; sourceTree = "<group>"; };
+		FF00041000000000000001 /* FeatureFlagsDebugSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureFlagsDebugSheet.swift; sourceTree = "<group>"; };
+		HTTP00011000000000000001 /* NoteHTTPPasteboardLinkFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteHTTPPasteboardLinkFormatting.swift; sourceTree = "<group>"; };
 		KB00011000000000000001 /* NeverNoteKeyboardShortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeverNoteKeyboardShortcuts.swift; sourceTree = "<group>"; };
 		MAC00011000000000000001 /* NoteTextViewsMac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTextViewsMac.swift; sourceTree = "<group>"; };
-		HTTP00011000000000000001 /* NoteHTTPPasteboardLinkFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteHTTPPasteboardLinkFormatting.swift; sourceTree = "<group>"; };
+		NT00011000000000000001 /* NoteTranslationEligibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTranslationEligibility.swift; sourceTree = "<group>"; };
+		NT00031000000000000001 /* NoteLanguageDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteLanguageDetection.swift; sourceTree = "<group>"; };
+		NT00051000000000000001 /* NoteOnDeviceTranslation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteOnDeviceTranslation.swift; sourceTree = "<group>"; };
+		NT00111000000000000001 /* NoteOnDeviceTranslationIOS18.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteOnDeviceTranslationIOS18.swift; sourceTree = "<group>"; };
+		NT00131000000000000001 /* NoteEditorTranslationHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditorTranslationHost.swift; sourceTree = "<group>"; };
+		NT00071000000000000001 /* NoteLocaleFlagEmoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteLocaleFlagEmoji.swift; sourceTree = "<group>"; };
+		NT00091000000000000001 /* NoteLocaleFlagEmojiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteLocaleFlagEmojiTests.swift; sourceTree = "<group>"; };
+		PLAT00011000000000000001 /* NeverNotePlatform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeverNotePlatform.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -572,6 +449,7 @@
 			isa = PBXGroup;
 			children = (
 				8058989F1916642000352439 /* NeverNoteTests.m */,
+				NT00091000000000000001 /* NoteLocaleFlagEmojiTests.swift */,
 				8058989A1916642000352439 /* Supporting Files */,
 			);
 			path = NeverNoteTests;
@@ -643,6 +521,16 @@
 				804E51242FB9E6E100DAA686 /* NoteBottomURLImagePreviews.swift */,
 				804E51222FB9E6CE00DAA686 /* EditorToolbarPlacement.swift */,
 				804E51202FB9E69900DAA686 /* NoteDataDetectors.swift */,
+				NT00011000000000000001 /* NoteTranslationEligibility.swift */,
+				NT00031000000000000001 /* NoteLanguageDetection.swift */,
+				NT00051000000000000001 /* NoteOnDeviceTranslation.swift */,
+				NT00111000000000000001 /* NoteOnDeviceTranslationIOS18.swift */,
+				NT00131000000000000001 /* NoteEditorTranslationHost.swift */,
+				NT00071000000000000001 /* NoteLocaleFlagEmoji.swift */,
+				FF00011000000000000001 /* FeatureFlag.swift */,
+				FF00021000000000000001 /* FeatureFlagLaunchOverrides.swift */,
+				FF00031000000000000001 /* FeatureFlags.swift */,
+				FF00041000000000000001 /* FeatureFlagsDebugSheet.swift */,
 				804E51392FB9E85000DAA686 /* NoteDataDetectorInteraction.swift */,
 				804E513B2FB9E86800DAA686 /* NoteDataDetectorConfirmationDialog.swift */,
 				804E511E2FB9E68800DAA686 /* EditorFont.swift */,
@@ -809,56 +697,56 @@
 				"en-AU",
 				"en-CA",
 				"en-IN",
-				"ar",
-				"bn",
-				"ca",
+				ar,
+				bn,
+				ca,
 				"zh-Hans",
 				"zh-Hant",
 				"zh-HK",
-				"hr",
-				"cs",
-				"da",
-				"nl",
-				"fi",
-				"fr",
+				hr,
+				cs,
+				da,
+				nl,
+				fi,
+				fr,
 				"fr-CA",
-				"de",
-				"el",
-				"gu",
-				"he",
-				"hi",
-				"hu",
-				"id",
-				"it",
-				"ja",
-				"kn",
-				"ko",
-				"ml",
-				"mr",
-				"ms",
-				"nb",
-				"no",
-				"or",
-				"pa",
-				"pl",
+				de,
+				el,
+				gu,
+				he,
+				hi,
+				hu,
+				id,
+				it,
+				ja,
+				kn,
+				ko,
+				ml,
+				mr,
+				ms,
+				nb,
+				no,
+				or,
+				pa,
+				pl,
 				"pt-BR",
 				"pt-PT",
-				"ro",
-				"ru",
-				"sk",
-				"sl",
-				"es",
+				ro,
+				ru,
+				sk,
+				sl,
+				es,
 				"es-ES",
 				"es-MX",
 				"es-419",
-				"sv",
-				"ta",
-				"te",
-				"th",
-				"tr",
-				"uk",
-				"ur",
-				"vi",
+				sv,
+				ta,
+				te,
+				th,
+				tr,
+				uk,
+				ur,
+				vi,
 			);
 			mainGroup = 805898681916641F00352439;
 			productRefGroup = 805898721916641F00352439 /* Products */;
@@ -977,6 +865,16 @@
 				90AA00021000000000000002 /* Item.swift in Sources */,
 				803137BC1965D08E00B78BC5 /* UNIOptionsView.m in Sources */,
 				804E51212FB9E69900DAA686 /* NoteDataDetectors.swift in Sources */,
+				NT00021000000000000001 /* NoteTranslationEligibility.swift in Sources */,
+				NT00041000000000000001 /* NoteLanguageDetection.swift in Sources */,
+				NT00061000000000000001 /* NoteOnDeviceTranslation.swift in Sources */,
+				NT00121000000000000001 /* NoteOnDeviceTranslationIOS18.swift in Sources */,
+				NT00141000000000000001 /* NoteEditorTranslationHost.swift in Sources */,
+				NT00081000000000000001 /* NoteLocaleFlagEmoji.swift in Sources */,
+				FF00012000000000000001 /* FeatureFlag.swift in Sources */,
+				FF00022000000000000001 /* FeatureFlagLaunchOverrides.swift in Sources */,
+				FF00032000000000000001 /* FeatureFlags.swift in Sources */,
+				FF00042000000000000001 /* FeatureFlagsDebugSheet.swift in Sources */,
 				804E51382FB9E85000DAA686 /* NoteDataDetectorInteraction.swift in Sources */,
 				804E513A2FB9E86800DAA686 /* NoteDataDetectorConfirmationDialog.swift in Sources */,
 				803CDE4C196B157600C1C789 /* UNIRepeatOptionsView.m in Sources */,
@@ -998,6 +896,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				805898A01916642000352439 /* NeverNoteTests.m in Sources */,
+				NT000A10000000000000001 /* NoteLocaleFlagEmojiTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1039,9 +938,7 @@
 		};
 		A100002E0191664200352401 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			platformFilters = (
-				ios,
-			);
+			platformFilter = ios;
 			target = A10000150191664200352401 /* NeverNote Watch App */;
 			targetProxy = A10000140191664200352401 /* PBXContainerItemProxy */;
 		};
@@ -1099,7 +996,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1132,7 +1029,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1146,22 +1043,22 @@
 				CODE_SIGN_ENTITLEMENTS = NeverNote/NeverNote.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EJLR2RPSV2;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				ENABLE_APP_INTENTS_METADATA_GENERATION = NO;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				"GCC_PRECOMPILE_PREFIX_HEADER[sdk=macosx*]" = NO;
 				GCC_PREFIX_HEADER = "NeverNote1/NeverNote-Prefix.pch";
-				"SWIFT_OBJC_BRIDGING_HEADER[sdk=macosx*]" = "NeverNote/NeverNote-Bridging-Header.h";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"NEVERNOTE_SWIFTUI_ROOT=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "NeverNote1/NeverNote-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-weak_framework",
@@ -1176,6 +1073,7 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "NeverNote/NeverNote-Bridging-Header.h";
+				"SWIFT_OBJC_BRIDGING_HEADER[sdk=macosx*]" = "NeverNote/NeverNote-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
 				WRAPPER_EXTENSION = app;
@@ -1189,7 +1087,6 @@
 				CODE_SIGN_ENTITLEMENTS = NeverNote/NeverNote.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EJLR2RPSV2;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				ENABLE_APP_INTENTS_METADATA_GENERATION = NO;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1197,14 +1094,14 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				"GCC_PRECOMPILE_PREFIX_HEADER[sdk=macosx*]" = NO;
 				GCC_PREFIX_HEADER = "NeverNote1/NeverNote-Prefix.pch";
-				"SWIFT_OBJC_BRIDGING_HEADER[sdk=macosx*]" = "NeverNote/NeverNote-Bridging-Header.h";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"NEVERNOTE_SWIFTUI_ROOT=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "NeverNote1/NeverNote-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-weak_framework",
@@ -1219,6 +1116,7 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "NeverNote/NeverNote-Bridging-Header.h";
+				"SWIFT_OBJC_BRIDGING_HEADER[sdk=macosx*]" = "NeverNote/NeverNote-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
 				WRAPPER_EXTENSION = app;
@@ -1241,7 +1139,9 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "NeverNoteTests/NeverNoteTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -1259,7 +1159,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "NeverNote1/NeverNote-Prefix.pch";
 				INFOPLIST_FILE = "NeverNoteTests/NeverNoteTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -1278,7 +1180,10 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Nevernote;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.nathanfennel.NeverNote;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1310,7 +1215,10 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Nevernote;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.nathanfennel.NeverNote;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1341,7 +1249,11 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Nevernote;
 				INFOPLIST_KEY_NSExtensionPointIdentifier = "com.apple.widgetkit-extension";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1372,7 +1284,11 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Nevernote;
 				INFOPLIST_KEY_NSExtensionPointIdentifier = "com.apple.widgetkit-extension";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",

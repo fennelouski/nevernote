@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+enum NevernoteNotification {
+    static let onboardingDidStart = Notification.Name("NNOnboardingDidStartNotification")
+    static let onboardingDidComplete = Notification.Name("NNOnboardingDidCompleteNotification")
+    static let shakeUndo = Notification.Name("NNShakeUndoNotification")
+    #if DEBUG
+    static let showFeatureFlags = Notification.Name("NNShowFeatureFlagsNotification")
+    #endif
+}

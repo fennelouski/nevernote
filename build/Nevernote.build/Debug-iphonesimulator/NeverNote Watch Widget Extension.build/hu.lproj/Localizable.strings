@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>16:9</key>
+	<string>16:9</string>
+	<key>9:16</key>
+	<string>9:16</string>
+	<key>Add</key>
+	<string>Hozzáadás</string>
+	<key>Add Photo</key>
+	<string>Fénykép hozzáadása</string>
+	<key>Add text</key>
+	<string>Szöveg hozzáadása</string>
+	<key>Align center</key>
+	<string>Középre igazít</string>
+	<key>Align left</key>
+	<string>Balra igazít</string>
+	<key>Align right</key>
+	<string>Jobbra igazít</string>
+	<key>Alignment</key>
+	<string>Igazítás</string>
+	<key>All Fonts</key>
+	<string>Minden betűtípus</string>
+	<key>Aspect ratio</key>
+	<string>Képarány</string>
+	<key>Bold</key>
+	<string>Félkövér</string>
+	<key>Bulleted list</key>
+	<string>Felsorolásos lista</string>
+	<key>Camera</key>
+	<string>Kamera</string>
+	<key>Can't use this link as an image</key>
+	<string>Ez a link nem használható képként</string>
+	<key>Cancel</key>
+	<string>Mégse</string>
+	<key>Checking image…</key>
+	<string>Kép ellenőrzése…</string>
+	<key>Continue</key>
+	<string>Folytatás</string>
+	<key>Could not load that link.</key>
+	<string>Nem sikerült betölteni a linket.</string>
+	<key>Delete note</key>
+	<string>Jegyzet törlése</string>
+	<key>Dictate or type</key>
+	<string>Diktáljon vagy gépeljen</string>
+	<key>Done</key>
+	<string>Kész</string>
+	<key>Enter text before dismissing the keyboard</key>
+	<string>Írj szöveget a billentyűzet bezárása előtt</string>
+	<key>Font</key>
+	<string>Betűtípus</string>
+	<key>Help and support</key>
+	<string>Segítség és támogatás</string>
+	<key>Hide image at bottom</key>
+	<string>Kép elrejtése alul</string>
+	<key>Hide keyboard</key>
+	<string>Billentyűzet elrejtése</string>
+	<key>Image is too large.</key>
+	<string>A kép túl nagy.</string>
+	<key>Image link</key>
+	<string>Kép linkje</string>
+	<key>Import Text from a Photo</key>
+	<string>Szöveg importálása fényképről</string>
+	<key>Import text from photo</key>
+	<string>Szöveg importálása a fényképről</string>
+	<key>Italic</key>
+	<string>Dőlt</string>
+	<key>LAST EDITED %@.</key>
+	<string>UTOLSÓ SZERKESZTÉS: %@.</string>
+	<key>Landscape</key>
+	<string>Táj</string>
+	<key>Line markers</key>
+	<string>Vonaljelzők</string>
+	<key>Maximize presentation size</key>
+	<string>Maximalizálja a prezentáció méretét</string>
+	<key>More formatting</key>
+	<string>További formázás</string>
+	<key>NEVERNOTE FOCUS</key>
+	<string>NEVERNOTE FOCUS</string>
+	<key>Nevernote</key>
+	<string>Nevernote</string>
+	<key>Not Now</key>
+	<string>Most nem</string>
+	<key>Numbered list</key>
+	<string>Számozott lista</string>
+	<key>OK</key>
+	<string>RENDBEN</string>
+	<key>Open Nevernote to read or capture a note.</key>
+	<string>Jegyzet olvasásához vagy rögzítéséhez nyissa meg a Nevernote alkalmazást.</string>
+	<key>Photo Library</key>
+	<string>Fotótár</string>
+	<key>Plain lines</key>
+	<string>Sima vonalak</string>
+	<key>Portrait</key>
+	<string>Portré</string>
+	<key>Recent</key>
+	<string>Legutóbbi</string>
+	<key>Reset</key>
+	<string>Reset</string>
+	<key>Save</key>
+	<string>Megtakarítás</string>
+	<key>Search fonts</key>
+	<string>Keresés a betűtípusok között</string>
+	<key>Share as image of text</key>
+	<string>Megosztás szöveges képként</string>
+	<key>Share note</key>
+	<string>Jegyzet megosztása</string>
+	<key>Share note text</key>
+	<string>Jegyzet szövegének megosztása</string>
+	<key>Share your note?</key>
+	<string>Megosztja a jegyzetét?</string>
+	<key>Show image at bottom</key>
+	<string>Kép megjelenítése alul</string>
+	<key>Show this image below the note?</key>
+	<string>Megjeleníti ezt a képet a jegyzet alatt?</string>
+	<key>Size</key>
+	<string>Méret</string>
+	<key>Smart links</key>
+	<string>Intelligens linkek</string>
+	<key>Square</key>
+	<string>Négyzet</string>
+	<key>System Bold</key>
+	<string>System Bold</string>
+	<key>Take a photo or choose one from your library. NeverNote will read any text in the image and add it to your note.</key>
+	<string>Készítsen fényképet, vagy válasszon egyet a könyvtárából. A NeverNote elolvassa a kép bármely szövegét, és hozzáadja a jegyzethez.</string>
+	<key>That link is not an image.</key>
+	<string>Ez a link nem kép.</string>
+	<key>The image will contain only your text and background — no buttons or frames.</key>
+	<string>A kép csak a szöveget és a hátteret tartalmazza – gombok vagy keretek nélkül.</string>
+	<key>Toggle line markers</key>
+	<string>Vonaljelzők váltása</string>
+	<key>Underline</key>
+	<string>Aláhúzás</string>
+	<key>Undo delete</key>
+	<string>Törlés visszavonása</string>
+	<key>View captured image</key>
+	<string>A rögzített kép megtekintése</string>
+	<key>You just took a screenshot. Share the note text, or create a clean image of your text only.</key>
+	<string>Most csináltál egy képernyőképet. Ossza meg a jegyzet szövegét, vagy hozzon létre tiszta képet csak a szövegből.</string>
+	<key>screenshot.demo.0</key>
+	<string>Nyitott.
+Írja be.
+Kész</string>
+	<key>screenshot.demo.1</key>
+	<string>Tökéletes egy gyors szám elkapására hívás közben.</string>
+	<key>screenshot.demo.2</key>
+	<string>Csak egy tiszta hely az azonnali gondolataidnak.</string>
+	<key>screenshot.demo.3</key>
+	<string>Nincsenek mappák.
+Nincsenek címkék.
+Nincsenek zavaró tényezők.</string>
+	<key>screenshot.demo.4</key>
+	<string>A leggyorsabb módja annak, hogy megragadjon egy múló gondolatot.</string>
+</dict>
+</plist>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>16:9</key>
+	<string>16:9</string>
+	<key>9:16</key>
+	<string>9:16</string>
+	<key>Add</key>
+	<string>يضيف</string>
+	<key>Add Photo</key>
+	<string>إضافة صورة</string>
+	<key>Add text</key>
+	<string>أضف نصًا</string>
+	<key>Align center</key>
+	<string>محاذاة للوسط</string>
+	<key>Align left</key>
+	<string>محاذاة لليسار</string>
+	<key>Align right</key>
+	<string>محاذاة لليمين</string>
+	<key>Alignment</key>
+	<string>تنسيق</string>
+	<key>All Fonts</key>
+	<string>جميع الخطوط</string>
+	<key>Aspect ratio</key>
+	<string>نسبة الارتفاع</string>
+	<key>Bold</key>
+	<string>عريض</string>
+	<key>Bulleted list</key>
+	<string>قائمة نقطية</string>
+	<key>Camera</key>
+	<string>آلة تصوير</string>
+	<key>Can't use this link as an image</key>
+	<string>لا يمكن استخدام هذا الرابط كصورة</string>
+	<key>Cancel</key>
+	<string>إلغاء</string>
+	<key>Checking image…</key>
+	<string>جارٍ التحقق من الصورة…</string>
+	<key>Continue</key>
+	<string>يكمل</string>
+	<key>Could not load that link.</key>
+	<string>تعذر تحميل هذا الرابط.</string>
+	<key>Delete note</key>
+	<string>حذف الملاحظة</string>
+	<key>Dictate or type</key>
+	<string>إملاء أو اكتب</string>
+	<key>Done</key>
+	<string>منتهي</string>
+	<key>Enter text before dismissing the keyboard</key>
+	<string>أدخل نصاً قبل إغلاق لوحة المفاتيح</string>
+	<key>Font</key>
+	<string>الخط</string>
+	<key>Help and support</key>
+	<string>المساعدة والدعم</string>
+	<key>Hide image at bottom</key>
+	<string>إخفاء الصورة في الأسفل</string>
+	<key>Hide keyboard</key>
+	<string>إخفاء لوحة المفاتيح</string>
+	<key>Image is too large.</key>
+	<string>الصورة كبيرة جدًا.</string>
+	<key>Image link</key>
+	<string>رابط الصورة</string>
+	<key>Import Text from a Photo</key>
+	<string>استيراد نص من صورة</string>
+	<key>Import text from photo</key>
+	<string>استيراد النص من الصورة</string>
+	<key>Italic</key>
+	<string>مائل</string>
+	<key>LAST EDITED %@.</key>
+	<string>آخر تعديل %@.</string>
+	<key>Landscape</key>
+	<string>منظر جمالي</string>
+	<key>Line markers</key>
+	<string>علامات الخط</string>
+	<key>Maximize presentation size</key>
+	<string>تعظيم حجم العرض التقديمي</string>
+	<key>More formatting</key>
+	<string>مزيد من التنسيق</string>
+	<key>NEVERNOTE FOCUS</key>
+	<string>Nevernote تركيز</string>
+	<key>Nevernote</key>
+	<string>Nevernote</string>
+	<key>Not Now</key>
+	<string>ليس الآن</string>
+	<key>Numbered list</key>
+	<string>قائمة مرقمة</string>
+	<key>OK</key>
+	<string>نعم</string>
+	<key>Open Nevernote to read or capture a note.</key>
+	<string>افتح Nevernote لقراءة ملاحظة أو التقاطها.</string>
+	<key>Photo Library</key>
+	<string>مكتبة الصور</string>
+	<key>Plain lines</key>
+	<string>خطوط عادية</string>
+	<key>Portrait</key>
+	<string>لَوحَة</string>
+	<key>Recent</key>
+	<string>مؤخرًا</string>
+	<key>Reset</key>
+	<string>إعادة ضبط</string>
+	<key>Save</key>
+	<string>يحفظ</string>
+	<key>Search fonts</key>
+	<string>البحث عن الخطوط</string>
+	<key>Share as image of text</key>
+	<string>شارك كصورة للنص</string>
+	<key>Share note</key>
+	<string>مشاركة الملاحظة</string>
+	<key>Share note text</key>
+	<string>مشاركة نص الملاحظة</string>
+	<key>Share your note?</key>
+	<string>مشاركة ملاحظتك؟</string>
+	<key>Show image at bottom</key>
+	<string>إظهار الصورة في الأسفل</string>
+	<key>Show this image below the note?</key>
+	<string>هل تظهر هذه الصورة أسفل الملاحظة؟</string>
+	<key>Size</key>
+	<string>مقاس</string>
+	<key>Smart links</key>
+	<string>الروابط الذكية</string>
+	<key>Square</key>
+	<string>مربع</string>
+	<key>System Bold</key>
+	<string>نظام جريئة</string>
+	<key>Take a photo or choose one from your library. NeverNote will read any text in the image and add it to your note.</key>
+	<string>التقط صورة أو اختر واحدة من مكتبتك. سوف يقوم NeverNote بقراءة أي نص في الصورة وإضافته إلى ملاحظتك.</string>
+	<key>That link is not an image.</key>
+	<string>هذا الرابط ليس صورة.</string>
+	<key>The image will contain only your text and background — no buttons or frames.</key>
+	<string>ستحتوي الصورة على النص والخلفية فقط، بدون أزرار أو إطارات.</string>
+	<key>Toggle line markers</key>
+	<string>تبديل علامات الخط</string>
+	<key>Underline</key>
+	<string>تسطير</string>
+	<key>Undo delete</key>
+	<string>التراجع عن الحذف</string>
+	<key>View captured image</key>
+	<string>عرض الصورة الملتقطة</string>
+	<key>You just took a screenshot. Share the note text, or create a clean image of your text only.</key>
+	<string>لقد التقطت للتو لقطة شاشة. قم بمشاركة نص الملاحظة، أو قم بإنشاء صورة نظيفة للنص الخاص بك فقط.</string>
+	<key>screenshot.demo.0</key>
+	<string>يفتح.
+يكتب.
+منتهي</string>
+	<key>screenshot.demo.1</key>
+	<string>مثالية لالتقاط رقم سريع أثناء المكالمة.</string>
+	<key>screenshot.demo.2</key>
+	<string>مجرد مساحة نظيفة لأفكارك الفورية.</string>
+	<key>screenshot.demo.3</key>
+	<string>لا توجد مجلدات.
+لا توجد علامات.
+لا الانحرافات.</string>
+	<key>screenshot.demo.4</key>
+	<string>أسرع طريقة لالتقاط فكرة عابرة.</string>
+</dict>
+</plist>

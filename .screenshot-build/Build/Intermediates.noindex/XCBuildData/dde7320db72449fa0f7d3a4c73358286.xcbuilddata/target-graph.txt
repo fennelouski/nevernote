@@ -1,0 +1,6 @@
+Target dependency graph (3 targets)
+Target 'NeverNote' in project 'Nevernote'
+➜ Explicit dependency on target 'NeverNote Watch App' in project 'Nevernote'
+Target 'NeverNote Watch App' in project 'Nevernote'
+➜ Explicit dependency on target 'NeverNote Watch Widget Extension' in project 'Nevernote'
+Target 'NeverNote Watch Widget Extension' in project 'Nevernote' (no dependencies)

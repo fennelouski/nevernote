@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>16:9</key>
+	<string>16:9</string>
+	<key>9:16</key>
+	<string>9:16</string>
+	<key>Add</key>
+	<string>Thêm vào</string>
+	<key>Add Photo</key>
+	<string>Thêm ảnh</string>
+	<key>Add text</key>
+	<string>Thêm văn bản</string>
+	<key>Align center</key>
+	<string>Căn giữa</string>
+	<key>Align left</key>
+	<string>Căn trái</string>
+	<key>Align right</key>
+	<string>Căn phải</string>
+	<key>Alignment</key>
+	<string>Căn chỉnh</string>
+	<key>All Fonts</key>
+	<string>Tất cả phông chữ</string>
+	<key>Aspect ratio</key>
+	<string>tỷ lệ khung hình</string>
+	<key>Bold</key>
+	<string>In đậm</string>
+	<key>Bulleted list</key>
+	<string>Danh sách có dấu đầu dòng</string>
+	<key>Camera</key>
+	<string>Máy ảnh</string>
+	<key>Can't use this link as an image</key>
+	<string>Không thể sử dụng liên kết này làm hình ảnh</string>
+	<key>Cancel</key>
+	<string>Hủy bỏ</string>
+	<key>Checking image…</key>
+	<string>Đang kiểm tra hình ảnh…</string>
+	<key>Continue</key>
+	<string>Tiếp tục</string>
+	<key>Could not load that link.</key>
+	<string>Không thể tải liên kết đó.</string>
+	<key>Delete note</key>
+	<string>Xóa ghi chú</string>
+	<key>Dictate or type</key>
+	<string>Đọc chính tả hoặc gõ</string>
+	<key>Done</key>
+	<string>Xong</string>
+	<key>Enter text before dismissing the keyboard</key>
+	<string>Nhập văn bản trước khi đóng bàn phím</string>
+	<key>Font</key>
+	<string>Phông chữ</string>
+	<key>Help and support</key>
+	<string>Trợ giúp và hỗ trợ</string>
+	<key>Hide image at bottom</key>
+	<string>Ẩn hình ảnh ở phía dưới</string>
+	<key>Hide keyboard</key>
+	<string>Ẩn bàn phím</string>
+	<key>Image is too large.</key>
+	<string>Hình ảnh quá lớn.</string>
+	<key>Image link</key>
+	<string>Liên kết hình ảnh</string>
+	<key>Import Text from a Photo</key>
+	<string>Nhập văn bản từ ảnh</string>
+	<key>Import text from photo</key>
+	<string>Nhập văn bản từ ảnh</string>
+	<key>Italic</key>
+	<string>Nghiêng</string>
+	<key>LAST EDITED %@.</key>
+	<string>CHỈNH SỬA CUỐI CÙNG %@.</string>
+	<key>Landscape</key>
+	<string>Phong cảnh</string>
+	<key>Line markers</key>
+	<string>Điểm đánh dấu dòng</string>
+	<key>Maximize presentation size</key>
+	<string>Tối đa hóa kích thước bản trình bày</string>
+	<key>More formatting</key>
+	<string>Định dạng thêm</string>
+	<key>NEVERNOTE FOCUS</key>
+	<string>NEVERNOTE FOCUS</string>
+	<key>Nevernote</key>
+	<string>Nevernote</string>
+	<key>Not Now</key>
+	<string>Không phải bây giờ</string>
+	<key>Numbered list</key>
+	<string>Danh sách đánh số</string>
+	<key>OK</key>
+	<string>ĐƯỢC RỒI</string>
+	<key>Open Nevernote to read or capture a note.</key>
+	<string>Mở Nevernote để đọc hoặc ghi chú.</string>
+	<key>Photo Library</key>
+	<string>Thư viện ảnh</string>
+	<key>Plain lines</key>
+	<string>Đường thẳng</string>
+	<key>Portrait</key>
+	<string>Chân dung</string>
+	<key>Recent</key>
+	<string>Gần đây</string>
+	<key>Reset</key>
+	<string>Cài lại</string>
+	<key>Save</key>
+	<string>Cứu</string>
+	<key>Search fonts</key>
+	<string>Tìm kiếm phông chữ</string>
+	<key>Share as image of text</key>
+	<string>Chia sẻ dưới dạng hình ảnh của văn bản</string>
+	<key>Share note</key>
+	<string>Chia sẻ ghi chú</string>
+	<key>Share note text</key>
+	<string>Chia sẻ văn bản ghi chú</string>
+	<key>Share your note?</key>
+	<string>Chia sẻ ghi chú của bạn?</string>
+	<key>Show image at bottom</key>
+	<string>Hiển thị hình ảnh ở phía dưới</string>
+	<key>Show this image below the note?</key>
+	<string>Hiển thị hình ảnh này bên dưới ghi chú?</string>
+	<key>Size</key>
+	<string>Kích cỡ</string>
+	<key>Smart links</key>
+	<string>Liên kết thông minh</string>
+	<key>Square</key>
+	<string>Quảng trường</string>
+	<key>System Bold</key>
+	<string>Hệ thống in đậm</string>
+	<key>Take a photo or choose one from your library. NeverNote will read any text in the image and add it to your note.</key>
+	<string>Chụp ảnh hoặc chọn một bức ảnh từ thư viện của bạn. NeverNote sẽ đọc bất kỳ văn bản nào trong hình ảnh và thêm nó vào ghi chú của bạn.</string>
+	<key>That link is not an image.</key>
+	<string>Liên kết đó không phải là một hình ảnh.</string>
+	<key>The image will contain only your text and background — no buttons or frames.</key>
+	<string>Hình ảnh sẽ chỉ chứa văn bản và nền của bạn - không có nút hoặc khung.</string>
+	<key>Toggle line markers</key>
+	<string>Chuyển đổi điểm đánh dấu dòng</string>
+	<key>Underline</key>
+	<string>gạch chân</string>
+	<key>Undo delete</key>
+	<string>Hoàn tác xóa</string>
+	<key>View captured image</key>
+	<string>Xem hình ảnh đã chụp</string>
+	<key>You just took a screenshot. Share the note text, or create a clean image of your text only.</key>
+	<string>Bạn vừa chụp ảnh màn hình. Chia sẻ văn bản ghi chú hoặc chỉ tạo một hình ảnh rõ ràng cho văn bản của bạn.</string>
+	<key>screenshot.demo.0</key>
+	<string>Mở.
+Kiểu.
+Xong</string>
+	<key>screenshot.demo.1</key>
+	<string>Hoàn hảo để bắt số nhanh trong khi gọi.</string>
+	<key>screenshot.demo.2</key>
+	<string>Chỉ là một không gian sạch sẽ cho những suy nghĩ tức thời của bạn.</string>
+	<key>screenshot.demo.3</key>
+	<string>Không có thư mục.
+Không có thẻ.
+Không có phiền nhiễu.</string>
+	<key>screenshot.demo.4</key>
+	<string>Cách nhanh nhất để nắm bắt một ý nghĩ thoáng qua.</string>
+</dict>
+</plist>

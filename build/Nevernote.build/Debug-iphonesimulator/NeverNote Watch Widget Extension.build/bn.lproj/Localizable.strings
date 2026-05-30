@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>16:9</key>
+	<string>16:9</string>
+	<key>9:16</key>
+	<string>৯:১৬</string>
+	<key>Add</key>
+	<string>যোগ করুন</string>
+	<key>Add Photo</key>
+	<string>ফটো যোগ করুন</string>
+	<key>Add text</key>
+	<string>পাঠ্য যোগ করুন</string>
+	<key>Align center</key>
+	<string>মাঝ বরাবর সারিবদ্ধ</string>
+	<key>Align left</key>
+	<string>বাম দিকে সারিবদ্ধ</string>
+	<key>Align right</key>
+	<string>ডানদিকে সারিবদ্ধ</string>
+	<key>Alignment</key>
+	<string>প্রান্তিককরণ</string>
+	<key>All Fonts</key>
+	<string>সব ফন্ট</string>
+	<key>Aspect ratio</key>
+	<string>আকৃতির অনুপাত</string>
+	<key>Bold</key>
+	<string>সাহসী</string>
+	<key>Bulleted list</key>
+	<string>বুলেটেড তালিকা</string>
+	<key>Camera</key>
+	<string>ক্যামেরা</string>
+	<key>Can't use this link as an image</key>
+	<string>একটি ছবি হিসাবে এই লিঙ্ক ব্যবহার করতে পারবেন না</string>
+	<key>Cancel</key>
+	<string>বাতিল করুন</string>
+	<key>Checking image…</key>
+	<string>ছবি পরীক্ষা করা হচ্ছে...</string>
+	<key>Continue</key>
+	<string>চালিয়ে যান</string>
+	<key>Could not load that link.</key>
+	<string>সেই লিঙ্কটি লোড করা যায়নি।</string>
+	<key>Delete note</key>
+	<string>নোট মুছুন</string>
+	<key>Dictate or type</key>
+	<string>নির্দেশ বা টাইপ</string>
+	<key>Done</key>
+	<string>সম্পন্ন</string>
+	<key>Enter text before dismissing the keyboard</key>
+	<string>কীবোর্ড বন্ধ করার আগে পাঠ্য লিখুন</string>
+	<key>Font</key>
+	<string>হরফ</string>
+	<key>Help and support</key>
+	<string>সাহায্য এবং সমর্থন</string>
+	<key>Hide image at bottom</key>
+	<string>নীচে ইমেজ লুকান</string>
+	<key>Hide keyboard</key>
+	<string>কীবোর্ড লুকান</string>
+	<key>Image is too large.</key>
+	<string>ছবি অনেক বড়।</string>
+	<key>Image link</key>
+	<string>ছবির লিঙ্ক</string>
+	<key>Import Text from a Photo</key>
+	<string>একটি ফটো থেকে পাঠ্য আমদানি করুন</string>
+	<key>Import text from photo</key>
+	<string>ফটো থেকে পাঠ্য আমদানি করুন</string>
+	<key>Italic</key>
+	<string>তির্যক</string>
+	<key>LAST EDITED %@.</key>
+	<string>শেষ সম্পাদিত %@।</string>
+	<key>Landscape</key>
+	<string>ল্যান্ডস্কেপ</string>
+	<key>Line markers</key>
+	<string>লাইন মার্কার</string>
+	<key>Maximize presentation size</key>
+	<string>উপস্থাপনার আকার সর্বাধিক করুন</string>
+	<key>More formatting</key>
+	<string>আরো ফরম্যাটিং</string>
+	<key>NEVERNOTE FOCUS</key>
+	<string>Nevernote ফোকাস</string>
+	<key>Nevernote</key>
+	<string>Nevernote</string>
+	<key>Not Now</key>
+	<string>এখন না</string>
+	<key>Numbered list</key>
+	<string>সংখ্যাযুক্ত তালিকা</string>
+	<key>OK</key>
+	<string>ঠিক আছে</string>
+	<key>Open Nevernote to read or capture a note.</key>
+	<string>একটি নোট পড়তে বা ক্যাপচার করতে Nevernote খুলুন।</string>
+	<key>Photo Library</key>
+	<string>ফটো লাইব্রেরি</string>
+	<key>Plain lines</key>
+	<string>প্লেইন লাইন</string>
+	<key>Portrait</key>
+	<string>প্রতিকৃতি</string>
+	<key>Recent</key>
+	<string>সাম্প্রতিক</string>
+	<key>Reset</key>
+	<string>রিসেট করুন</string>
+	<key>Save</key>
+	<string>সংরক্ষণ করুন</string>
+	<key>Search fonts</key>
+	<string>ফন্ট অনুসন্ধান করুন</string>
+	<key>Share as image of text</key>
+	<string>পাঠ্যের চিত্র হিসাবে ভাগ করুন</string>
+	<key>Share note</key>
+	<string>নোট শেয়ার করুন</string>
+	<key>Share note text</key>
+	<string>নোট টেক্সট শেয়ার করুন</string>
+	<key>Share your note?</key>
+	<string>আপনার নোট শেয়ার করবেন?</string>
+	<key>Show image at bottom</key>
+	<string>নীচে চিত্র দেখান</string>
+	<key>Show this image below the note?</key>
+	<string>নোটের নিচে এই ছবিটি দেখাবেন?</string>
+	<key>Size</key>
+	<string>আকার</string>
+	<key>Smart links</key>
+	<string>স্মার্ট লিঙ্ক</string>
+	<key>Square</key>
+	<string>বর্গক্ষেত্র</string>
+	<key>System Bold</key>
+	<string>সিস্টেম বোল্ড</string>
+	<key>Take a photo or choose one from your library. NeverNote will read any text in the image and add it to your note.</key>
+	<string>একটি ফটো তুলুন বা আপনার লাইব্রেরি থেকে একটি চয়ন করুন৷ NeverNote ইমেজের কোনো লেখা পড়বে এবং আপনার নোটে যোগ করবে।</string>
+	<key>That link is not an image.</key>
+	<string>যে লিঙ্ক একটি ছবি না.</string>
+	<key>The image will contain only your text and background — no buttons or frames.</key>
+	<string>ছবিতে শুধুমাত্র আপনার পাঠ্য এবং পটভূমি থাকবে - কোন বোতাম বা ফ্রেম নেই।</string>
+	<key>Toggle line markers</key>
+	<string>লাইন মার্কার টগল করুন</string>
+	<key>Underline</key>
+	<string>আন্ডারলাইন করুন</string>
+	<key>Undo delete</key>
+	<string>মোছা পূর্বাবস্থায় ফেরান</string>
+	<key>View captured image</key>
+	<string>ক্যাপচার করা ছবি দেখুন</string>
+	<key>You just took a screenshot. Share the note text, or create a clean image of your text only.</key>
+	<string>আপনি শুধু একটি স্ক্রিনশট নিয়েছেন। নোট টেক্সট শেয়ার করুন, অথবা শুধুমাত্র আপনার টেক্সট একটি পরিষ্কার ইমেজ তৈরি করুন.</string>
+	<key>screenshot.demo.0</key>
+	<string>খোলা
+টাইপ
+সম্পন্ন</string>
+	<key>screenshot.demo.1</key>
+	<string>কলের সময় দ্রুত নম্বর ধরার জন্য পারফেক্ট।</string>
+	<key>screenshot.demo.2</key>
+	<string>আপনার তাত্ক্ষণিক চিন্তার জন্য একটি পরিষ্কার স্থান।</string>
+	<key>screenshot.demo.3</key>
+	<string>কোনো ফোল্ডার নেই।
+কোনো ট্যাগ নেই।
+কোন distractions.</string>
+	<key>screenshot.demo.4</key>
+	<string>একটি ক্ষণস্থায়ী চিন্তা ক্যাপচার করার দ্রুততম উপায়.</string>
+</dict>
+</plist>

@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+enum EditorToolbarPlacement {
+    case inline
+    case keyboardAdjacent
+}

@@ -63,6 +63,9 @@ struct WatchRootView: View {
     }
 
     private var displayString: String {
+        if let config = WatchScreenshotMode.config {
+            return config.noteText
+        }
         let text = activeNote?.plainText ?? ""
         return text.isEmpty ? " " : text
     }

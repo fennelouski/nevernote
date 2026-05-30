@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>16:9</key>
+	<string>16:9</string>
+	<key>9:16</key>
+	<string>9:16</string>
+	<key>Add</key>
+	<string>Tambah</string>
+	<key>Add Photo</key>
+	<string>Tambahkan Foto</string>
+	<key>Add text</key>
+	<string>Tambahkan teks</string>
+	<key>Align center</key>
+	<string>Rata tengah</string>
+	<key>Align left</key>
+	<string>Rata kiri</string>
+	<key>Align right</key>
+	<string>Rata kanan</string>
+	<key>Alignment</key>
+	<string>Penyelarasan</string>
+	<key>All Fonts</key>
+	<string>Semua Font</string>
+	<key>Aspect ratio</key>
+	<string>Rasio aspek</string>
+	<key>Bold</key>
+	<string>Tebal</string>
+	<key>Bulleted list</key>
+	<string>Daftar berpoin</string>
+	<key>Camera</key>
+	<string>Kamera</string>
+	<key>Can't use this link as an image</key>
+	<string>Tidak dapat menggunakan tautan ini sebagai gambar</string>
+	<key>Cancel</key>
+	<string>Batal</string>
+	<key>Checking image…</key>
+	<string>Memeriksa gambar…</string>
+	<key>Continue</key>
+	<string>Melanjutkan</string>
+	<key>Could not load that link.</key>
+	<string>Tidak dapat memuat tautan itu.</string>
+	<key>Delete note</key>
+	<string>Hapus catatan</string>
+	<key>Dictate or type</key>
+	<string>Mendiktekan atau mengetik</string>
+	<key>Done</key>
+	<string>Selesai</string>
+	<key>Enter text before dismissing the keyboard</key>
+	<string>Masukkan teks sebelum menutup keyboard</string>
+	<key>Font</key>
+	<string>huruf</string>
+	<key>Help and support</key>
+	<string>Bantuan dan dukungan</string>
+	<key>Hide image at bottom</key>
+	<string>Sembunyikan gambar di bagian bawah</string>
+	<key>Hide keyboard</key>
+	<string>Sembunyikan keyboard</string>
+	<key>Image is too large.</key>
+	<string>Gambar terlalu besar.</string>
+	<key>Image link</key>
+	<string>Tautan gambar</string>
+	<key>Import Text from a Photo</key>
+	<string>Impor Teks dari Foto</string>
+	<key>Import text from photo</key>
+	<string>Impor teks dari foto</string>
+	<key>Italic</key>
+	<string>miring</string>
+	<key>LAST EDITED %@.</key>
+	<string>TERAKHIR DIEDIT %@.</string>
+	<key>Landscape</key>
+	<string>Lanskap</string>
+	<key>Line markers</key>
+	<string>Penanda garis</string>
+	<key>Maximize presentation size</key>
+	<string>Maksimalkan ukuran presentasi</string>
+	<key>More formatting</key>
+	<string>Pemformatan lainnya</string>
+	<key>NEVERNOTE FOCUS</key>
+	<string>NEVERNOTE FOCUS</string>
+	<key>Nevernote</key>
+	<string>Nevernote</string>
+	<key>Not Now</key>
+	<string>Tidak Sekarang</string>
+	<key>Numbered list</key>
+	<string>Daftar bernomor</string>
+	<key>OK</key>
+	<string>OKE</string>
+	<key>Open Nevernote to read or capture a note.</key>
+	<string>Buka Nevernote untuk membaca atau mengambil catatan.</string>
+	<key>Photo Library</key>
+	<string>Perpustakaan Foto</string>
+	<key>Plain lines</key>
+	<string>Garis polos</string>
+	<key>Portrait</key>
+	<string>Potret</string>
+	<key>Recent</key>
+	<string>Terkini</string>
+	<key>Reset</key>
+	<string>Mengatur ulang</string>
+	<key>Save</key>
+	<string>Menyimpan</string>
+	<key>Search fonts</key>
+	<string>Cari font</string>
+	<key>Share as image of text</key>
+	<string>Bagikan sebagai gambar teks</string>
+	<key>Share note</key>
+	<string>Bagikan catatan</string>
+	<key>Share note text</key>
+	<string>Bagikan teks catatan</string>
+	<key>Share your note?</key>
+	<string>Bagikan catatan Anda?</string>
+	<key>Show image at bottom</key>
+	<string>Tampilkan gambar di bagian bawah</string>
+	<key>Show this image below the note?</key>
+	<string>Tunjukkan gambar ini di bawah catatan?</string>
+	<key>Size</key>
+	<string>Ukuran</string>
+	<key>Smart links</key>
+	<string>Tautan cerdas</string>
+	<key>Square</key>
+	<string>Persegi</string>
+	<key>System Bold</key>
+	<string>Sistem Berani</string>
+	<key>Take a photo or choose one from your library. NeverNote will read any text in the image and add it to your note.</key>
+	<string>Ambil foto atau pilih salah satu dari perpustakaan Anda. NeverNote akan membaca teks apa pun di gambar dan menambahkannya ke catatan Anda.</string>
+	<key>That link is not an image.</key>
+	<string>Tautan itu bukan gambar.</string>
+	<key>The image will contain only your text and background — no buttons or frames.</key>
+	<string>Gambar hanya akan berisi teks dan latar belakang Anda — tanpa tombol atau bingkai.</string>
+	<key>Toggle line markers</key>
+	<string>Alihkan penanda garis</string>
+	<key>Underline</key>
+	<string>Menggarisbawahi</string>
+	<key>Undo delete</key>
+	<string>Urungkan penghapusan</string>
+	<key>View captured image</key>
+	<string>Lihat gambar yang diambil</string>
+	<key>You just took a screenshot. Share the note text, or create a clean image of your text only.</key>
+	<string>Anda baru saja mengambil tangkapan layar. Bagikan teks catatan, atau buat gambar bersih dari teks Anda saja.</string>
+	<key>screenshot.demo.0</key>
+	<string>Membuka.
+Jenis.
+Selesai</string>
+	<key>screenshot.demo.1</key>
+	<string>Sempurna untuk menangkap nomor cepat selama panggilan.</string>
+	<key>screenshot.demo.2</key>
+	<string>Hanya ruang bersih untuk pemikiran langsung Anda.</string>
+	<key>screenshot.demo.3</key>
+	<string>Tidak ada folder.
+Tidak ada tag.
+Tidak ada gangguan.</string>
+	<key>screenshot.demo.4</key>
+	<string>Cara tercepat untuk menangkap pemikiran sekilas.</string>
+</dict>
+</plist>
