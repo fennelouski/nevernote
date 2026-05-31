@@ -70,6 +70,9 @@ struct ContentView: View {
     @State private var showTranslateButton = false
     @State private var isTranslating = false
     @State private var translationRequestID: UUID?
+    @State private var translationPrefetchID: UUID?
+    @State private var translationTaskIntent: TranslationTaskIntent = .idle
+    @State private var translationPrefetchCache = NoteTranslationPrefetchCache()
     @State private var translationEligibilityTask: Task<Void, Never>?
     #if os(macOS)
     @State private var macSidePanel: MacInspectorPanel?
@@ -242,6 +245,9 @@ struct ContentView: View {
             sourceIdentifier: translationSourceLocaleIdentifier,
             targetIdentifier: translationTargetLocaleIdentifier,
             requestID: translationRequestID,
+            prefetchID: translationPrefetchID,
+            taskIntent: $translationTaskIntent,
+            prefetchCache: translationPrefetchCache,
             attributedText: $attributedText,
             fontToken: editorFontName,
             pointSize: editorScaledPointSize,
@@ -1367,9 +1373,19 @@ struct ContentView: View {
             translationSourceLocaleIdentifier = detected.sourceLocaleIdentifier
             translationTargetLocaleIdentifier = targetLocaleID
             showTranslateButton = true
+            scheduleTranslationPrefetch()
         case .unavailable:
             clearTranslationOffer()
         }
+    }
+
+    private func scheduleTranslationPrefetch() {
+        let fingerprint = NoteTranslationPrefetchCache.fingerprint(for: attributedText.string)
+        guard !fingerprint.isEmpty else { return }
+        guard !translationPrefetchCache.isSatisfied(by: fingerprint) else { return }
+        translationPrefetchCache.reset()
+        translationTaskIntent = .prefetch
+        translationPrefetchID = UUID()
     }
 
     private func clearTranslationOffer() {
@@ -1377,12 +1393,44 @@ struct ContentView: View {
         translationSourceLocaleIdentifier = nil
         translationTargetLocaleIdentifier = nil
         translationRequestID = nil
+        translationPrefetchID = nil
+        translationTaskIntent = .idle
+        translationPrefetchCache.reset()
+    }
+
+    @MainActor
+    private func applyPrefetchedTranslation(_ targetText: String) {
+        attributedText = NoteOnDeviceTranslation.prependTranslation(
+            targetText,
+            to: attributedText,
+            fontToken: editorFontName,
+            pointSize: editorScaledPointSize
+        )
+        translationPrefetchCache.reset()
+        persistNote()
+        Task { await updateTranslationEligibility() }
     }
 
     private func beginNoteTranslation() {
         guard translationSourceLocaleIdentifier != nil,
               translationTargetLocaleIdentifier != nil else { return }
+
+        let fingerprint = NoteTranslationPrefetchCache.fingerprint(for: attributedText.string)
+
+        if let cached = translationPrefetchCache.readyText(for: fingerprint) {
+            applyPrefetchedTranslation(cached)
+            return
+        }
+
+        if translationPrefetchCache.hasInFlight(matching: fingerprint) {
+            isTranslating = true
+            translationTaskIntent = .apply
+            translationRequestID = UUID()
+            return
+        }
+
         isTranslating = true
+        translationTaskIntent = .apply
         translationRequestID = UUID()
     }
 

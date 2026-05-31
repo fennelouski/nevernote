@@ -5,6 +5,7 @@
 
 import Foundation
 import SwiftUI
+import SwiftUI
 
 #if canImport(UIKit)
 import UIKit
@@ -78,8 +79,16 @@ extension Color {
 extension NSColor {
     static let brandBlueTint = NSColor(red: 28.0 / 255.0, green: 128.0 / 255.0, blue: 152.0 / 255.0, alpha: 1)
 
+    /// Explicit body color for AppKit text storage. Prefer `noteBodyText(for:)` from SwiftUI where possible —
+    /// dynamic catalog colors often resolve incorrectly inside `NSViewRepresentable`.
+    static func noteBodyText(for colorScheme: ColorScheme) -> NSColor {
+        colorScheme == .dark
+            ? NSColor(calibratedWhite: 1, alpha: 1)
+            : NSColor(calibratedWhite: 0, alpha: 1)
+    }
+
     static var noteBodyText: NSColor {
-        NSColor.labelColor
+        noteBodyText(for: .light)
     }
 
     static var noteExportBackground: NSColor {

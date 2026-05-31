@@ -9,6 +9,7 @@ import UIKit
 #elseif canImport(AppKit)
 import AppKit
 #endif
+import SwiftUI
 
 enum NoteTextAlignment: String, CaseIterable, Identifiable {
     case left
@@ -237,6 +238,22 @@ enum NoteTextImageRenderer {
     }
 }
 
+#if os(macOS)
+enum NoteTextLayout {
+    static func measuredHeight(of attributed: NSAttributedString, width: CGFloat) -> CGFloat {
+        guard width > 0, attributed.length > 0 else { return 44 }
+        let storage = NSTextStorage(attributedString: attributed)
+        let layoutManager = NSLayoutManager()
+        storage.addLayoutManager(layoutManager)
+        let container = NSTextContainer(size: NSSize(width: width, height: .greatestFiniteMagnitude))
+        container.lineFragmentPadding = 0
+        layoutManager.addTextContainer(container)
+        layoutManager.ensureLayout(for: container)
+        return ceil(layoutManager.usedRect(for: container).height)
+    }
+}
+#endif
+
 enum NoteTextFormatting {
     static let bulletPrefix = "\u{2022} "
 
@@ -244,10 +261,14 @@ enum NoteTextFormatting {
         from base: NSAttributedString,
         alignment: NoteTextAlignment,
         linePrefixMode: NoteLinePrefixMode,
-        prefixFallbackFont: PlatformFont
+        prefixFallbackFont: PlatformFont,
+        colorScheme: ColorScheme? = nil
     ) -> NSAttributedString {
         guard linePrefixMode != .none else {
-            return strippingForegroundColor(applyingAlignment(base, alignment: alignment))
+            return applyingBodyTextColor(
+                applyingAlignment(base, alignment: alignment),
+                colorScheme: colorScheme
+            )
         }
 
         let baseNSString = base.string as NSString
@@ -282,7 +303,10 @@ enum NoteTextFormatting {
             idx = NSMaxRange(lineRange)
         }
 
-        return strippingForegroundColor(applyingAlignment(result, alignment: alignment))
+        return applyingBodyTextColor(
+            applyingAlignment(result, alignment: alignment),
+            colorScheme: colorScheme
+        )
     }
 
     private static func resolvedPrefixFont(
@@ -305,18 +329,41 @@ enum NoteTextFormatting {
     }
 
     private static func strippingForegroundColor(_ attributed: NSAttributedString) -> NSAttributedString {
+        removingForegroundColor(from: attributed)
+    }
+
+    /// Strips explicit foreground colors so SwiftUI `Text` can apply `.foregroundStyle(.primary)`.
+    static func removingForegroundColor(from attributed: NSAttributedString) -> NSAttributedString {
         let mutable = NSMutableAttributedString(attributedString: attributed)
         mutable.removeAttribute(.foregroundColor, range: NSRange(location: 0, length: mutable.length))
         return mutable
     }
 
     /// Re-applies body text color after attributed-string transforms (e.g. font scaling) that break `textView.textColor` inheritance.
-    static func applyingBodyTextColor(_ attributed: NSAttributedString) -> NSAttributedString {
+    static func applyingBodyTextColor(
+        _ attributed: NSAttributedString,
+        colorScheme: ColorScheme? = nil
+    ) -> NSAttributedString {
         let mutable = NSMutableAttributedString(attributedString: attributed)
         let full = NSRange(location: 0, length: mutable.length)
         guard full.length > 0 else { return mutable }
-        mutable.addAttribute(.foregroundColor, value: PlatformColor.noteBodyText, range: full)
+        mutable.addAttribute(
+            .foregroundColor,
+            value: resolvedBodyTextColor(colorScheme: colorScheme),
+            range: full
+        )
         return mutable
+    }
+
+    static func resolvedBodyTextColor(colorScheme: ColorScheme?) -> PlatformColor {
+        #if canImport(AppKit)
+        if let colorScheme {
+            return NSColor.noteBodyText(for: colorScheme)
+        }
+        return NSColor.noteBodyText(for: .light)
+        #else
+        PlatformColor.noteBodyText
+        #endif
     }
 
     private static func applyingAlignment(_ attributed: NSAttributedString, alignment: NoteTextAlignment) -> NSAttributedString {

@@ -23,19 +23,13 @@ struct FocusTextView: View {
             let fitted = fittedAttributedText(maxWidth: width, maxHeight: availableHeight)
 
             Group {
-                #if canImport(UIKit)
+                #if os(macOS)
+                macReadOnlyBody(fitted)
+                #elseif canImport(UIKit)
                 ReadOnlyNoteTextView(
                     attributedText: fitted,
                     textAlignment: textAlignment.nsTextAlignment,
                     dataDetectorTypes: dataDetectorsEnabled ? NoteDataDetectors.enabledTypes : [],
-                    onDataDetectorInteraction: onDataDetectorInteraction,
-                    onHTTPSImageLinkLongPress: onHTTPSImageLinkLongPress
-                )
-                #else
-                ReadOnlyNoteTextView(
-                    attributedText: fitted,
-                    textAlignment: textAlignment.nsTextAlignment,
-                    dataDetectorsEnabled: dataDetectorsEnabled,
                     onDataDetectorInteraction: onDataDetectorInteraction,
                     onHTTPSImageLinkLongPress: onHTTPSImageLinkLongPress
                 )
@@ -45,6 +39,26 @@ struct FocusTextView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
+
+    #if os(macOS)
+    @ViewBuilder
+    private func macReadOnlyBody(_ fitted: NSAttributedString) -> some View {
+        let styled = NoteTextFormatting.removingForegroundColor(from: fitted)
+        Text(AttributedString(styled))
+            .foregroundStyle(.primary)
+            .multilineTextAlignment(swiftUITextAlignment)
+            .textSelection(.enabled)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: frameAlignment)
+    }
+
+    private var swiftUITextAlignment: TextAlignment {
+        switch textAlignment {
+        case .left: return .leading
+        case .center: return .center
+        case .right: return .trailing
+        }
+    }
+    #endif
 
     private var frameAlignment: Alignment {
         switch textAlignment {
@@ -63,7 +77,11 @@ struct FocusTextView: View {
             let scale = min(1.0, maxHeight / measuredHeight)
             fitted = scaleFonts(in: attributedText, scale: scale)
         }
+        #if os(macOS)
+        return fitted
+        #else
         return NoteTextFormatting.applyingBodyTextColor(fitted)
+        #endif
     }
 
     private func maximizeToFit(maxWidth: CGFloat, maxHeight: CGFloat) -> NSAttributedString {

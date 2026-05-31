@@ -74,6 +74,31 @@ final class NoteWrappingTextView: NSTextView {
         container.containerSize = NSSize(width: contentWidth, height: .greatestFiniteMagnitude)
     }
 
+    /// Sizes the document view to its laid-out text height — required for SwiftUI `NSViewRepresentable` hosts.
+    func resizeToFitContents(width: CGFloat) {
+        guard width > 0, let container = textContainer, let layoutManager else { return }
+        let horizontalInset = textContainerInset.width
+        let padding = container.lineFragmentPadding * 2
+        let contentWidth = max(0, width - horizontalInset - padding)
+        container.widthTracksTextView = false
+        container.containerSize = NSSize(width: contentWidth, height: .greatestFiniteMagnitude)
+        layoutManager.ensureLayout(for: container)
+        let usedHeight = layoutManager.usedRect(for: container).height
+        let targetHeight = max(44, usedHeight + textContainerInset.height)
+        let targetSize = NSSize(width: width, height: targetHeight)
+        if abs(frame.width - targetSize.width) > 0.5 || abs(frame.height - targetSize.height) > 0.5 {
+            setFrameSize(targetSize)
+        }
+        invalidateIntrinsicContentSize()
+    }
+
+    override func layout() {
+        super.layout()
+        if bounds.width > 0 {
+            syncTextContainerToBoundsWidth()
+        }
+    }
+
     override var intrinsicContentSize: NSSize {
         if isVerticallyResizable {
             return NSSize(width: NSView.noIntrinsicMetric, height: NSView.noIntrinsicMetric)
@@ -89,6 +114,7 @@ final class NoteWrappingTextView: NSTextView {
 }
 
 struct RichTextEditor: NSViewRepresentable {
+    @Environment(\.colorScheme) private var colorScheme
     @Binding var attributedText: NSAttributedString
     @Binding var isFirstResponder: Bool
     var preferredFontName: String
@@ -133,28 +159,48 @@ struct RichTextEditor: NSViewRepresentable {
         textView.alignment = textAlignment.nsTextAlignment
         let initial = EditorFont.platformFont(forToken: preferredFontName, size: pointSize)
         textView.font = initial
-        textView.typingAttributes = [
-            .font: initial,
-            .paragraphStyle: Self.paragraphStyle(for: textAlignment),
-        ]
-        textView.textColor = .noteBodyText
+        textView.typingAttributes = Coordinator.typingAttributes(
+            font: initial,
+            alignment: textAlignment,
+            colorScheme: colorScheme
+        )
+        textView.textColor = .noteBodyText(for: colorScheme)
         textView.textContainerInset = NSSize(width: 0, height: 12)
         let prefixFallback = EditorFont.platformFont(forToken: preferredFontName, size: pointSize)
-        textView.textStorage?.setAttributedString(
-            NoteTextFormatting.makeDisplayAttributedText(
-                from: attributedText,
-                alignment: textAlignment,
-                linePrefixMode: linePrefixMode,
-                prefixFallbackFont: prefixFallback
-            )
+        let initialDisplay = NoteTextFormatting.makeDisplayAttributedText(
+            from: attributedText,
+            alignment: textAlignment,
+            linePrefixMode: linePrefixMode,
+            prefixFallbackFont: prefixFallback,
+            colorScheme: colorScheme
         )
+        textView.textStorage?.setAttributedString(initialDisplay)
         context.coordinator.lastSyncedPreferredFont = preferredFontName
+        context.coordinator.lastColorScheme = colorScheme
         context.coordinator.textView = textView
+        context.coordinator.scrollView = scrollView
         let longPress = NSPressGestureRecognizer(target: context.coordinator, action: #selector(Coordinator.handleLinkLongPress(_:)))
         longPress.minimumPressDuration = 0.45
         textView.addGestureRecognizer(longPress)
         scrollView.documentView = textView
         return scrollView
+    }
+
+    func sizeThatFits(_ proposal: ProposedViewSize, nsView: NSScrollView, context: Context) -> CGSize? {
+        let width = proposal.width ?? max(nsView.contentSize.width, 320)
+        guard let textView = context.coordinator.textView else {
+            return CGSize(width: width, height: 120)
+        }
+        _ = textView
+        let display = NoteTextFormatting.makeDisplayAttributedText(
+            from: attributedText,
+            alignment: textAlignment,
+            linePrefixMode: linePrefixMode,
+            prefixFallbackFont: EditorFont.platformFont(forToken: preferredFontName, size: pointSize),
+            colorScheme: colorScheme
+        )
+        let textHeight = NoteTextLayout.measuredHeight(of: display, width: width)
+        return CGSize(width: width, height: max(120, textHeight + 24))
     }
 
     func updateNSView(_ scrollView: NSScrollView, context: Context) {
@@ -166,27 +212,42 @@ struct RichTextEditor: NSViewRepresentable {
             !attributedText.string.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
         }
         textView.alignment = textAlignment.nsTextAlignment
-        context.coordinator.syncTypingAlignment(in: textView)
+        context.coordinator.syncTypingAlignment(in: textView, colorScheme: colorScheme)
+
+        let bodyColor = NSColor.noteBodyText(for: colorScheme)
+        textView.textColor = bodyColor
 
         let prefixFallback = EditorFont.platformFont(forToken: preferredFontName, size: pointSize)
         let display = NoteTextFormatting.makeDisplayAttributedText(
             from: attributedText,
             alignment: textAlignment,
             linePrefixMode: linePrefixMode,
-            prefixFallbackFont: prefixFallback
+            prefixFallbackFont: prefixFallback,
+            colorScheme: colorScheme
         )
         let current = textView.attributedString()
-        if current != display {
-            if textView.window?.firstResponder !== textView || textView.string != display.string {
-                let savedRange = textView.selectedRange()
-                let savedTypingAttrs = textView.typingAttributes
-                textView.textStorage?.setAttributedString(display)
-                textView.textColor = .noteBodyText
-                if savedRange.location + savedRange.length <= display.length {
-                    textView.setSelectedRange(savedRange)
-                    textView.typingAttributes = savedTypingAttrs
-                }
+        let colorSchemeChanged = context.coordinator.lastColorScheme != colorScheme
+        context.coordinator.lastColorScheme = colorScheme
+        if current != display || colorSchemeChanged {
+            let savedRange = textView.selectedRange()
+            var savedTypingAttrs = textView.typingAttributes
+            textView.textStorage?.setAttributedString(display)
+            savedTypingAttrs[.foregroundColor] = bodyColor
+            if savedRange.location + savedRange.length <= display.length {
+                textView.setSelectedRange(savedRange)
+                textView.typingAttributes = savedTypingAttrs
+            } else {
+                textView.typingAttributes = Coordinator.typingAttributes(
+                    font: (savedTypingAttrs[.font] as? NSFont) ?? prefixFallback,
+                    alignment: textAlignment,
+                    colorScheme: colorScheme
+                )
             }
+        }
+
+        let layoutWidth = scrollView.contentView.bounds.width
+        if layoutWidth > 0 {
+            textView.resizeToFitContents(width: layoutWidth)
         }
 
         if context.coordinator.lastSyncedPreferredFont != preferredFontName {
@@ -226,8 +287,10 @@ struct RichTextEditor: NSViewRepresentable {
         var parent: RichTextEditor
         var lastAppliedCommandId: Int = 0
         var lastSyncedPreferredFont: String = ""
+        var lastColorScheme: ColorScheme = .light
         var focusBinding: Binding<Bool>?
         weak var textView: NoteWrappingTextView?
+        weak var scrollView: NSScrollView?
 
         init(parent: RichTextEditor) {
             self.parent = parent
@@ -264,6 +327,10 @@ struct RichTextEditor: NSViewRepresentable {
         func textDidChange(_ notification: Notification) {
             guard let textView = notification.object as? NSTextView else { return }
             textView.invalidateIntrinsicContentSize()
+            if let scrollView, scrollView.contentView.bounds.width > 0,
+               let wrapping = textView as? NoteWrappingTextView {
+                wrapping.resizeToFitContents(width: scrollView.contentView.bounds.width)
+            }
             let stripped = NoteTextFormatting.stripPrefixesFromDisplayString(textView.attributedString(), mode: parent.linePrefixMode)
             parent.attributedText = stripped
             parent.onChange()
@@ -306,6 +373,7 @@ struct RichTextEditor: NSViewRepresentable {
                 textView.font = font
             }
             textView.typingAttributes[.font] = font
+            textView.typingAttributes[.foregroundColor] = NSColor.noteBodyText(for: parent.colorScheme)
             textView.invalidateIntrinsicContentSize()
         }
 
@@ -347,10 +415,18 @@ struct RichTextEditor: NSViewRepresentable {
             case .resetFormatting:
                 let fullRange = NSRange(location: 0, length: mutable.length)
                 let resetFont = EditorFont.platformFont(forToken: EditorFont.systemBoldStorageToken, size: EditorFont.defaultFontSize)
-                mutable.setAttributes([.font: resetFont], range: fullRange)
-                let resetStyle = NSMutableParagraphStyle()
-                resetStyle.alignment = .center
-                textView.typingAttributes = [.font: resetFont, .paragraphStyle: resetStyle]
+                mutable.setAttributes(
+                    [
+                        .font: resetFont,
+                        .foregroundColor: NSColor.noteBodyText(for: parent.colorScheme),
+                    ],
+                    range: fullRange
+                )
+                textView.typingAttributes = Self.typingAttributes(
+                    font: resetFont,
+                    alignment: .center,
+                    colorScheme: parent.colorScheme
+                )
                 textView.alignment = .center
                 textView.font = resetFont
             }
@@ -461,8 +537,21 @@ struct RichTextEditor: NSViewRepresentable {
             return adjusted
         }
 
-        func syncTypingAlignment(in textView: NSTextView) {
+        func syncTypingAlignment(in textView: NSTextView, colorScheme: ColorScheme) {
             textView.typingAttributes[.paragraphStyle] = Self.paragraphStyle(for: parent.textAlignment)
+            textView.typingAttributes[.foregroundColor] = NSColor.noteBodyText(for: colorScheme)
+        }
+
+        static func typingAttributes(
+            font: NSFont,
+            alignment: NoteTextAlignment,
+            colorScheme: ColorScheme
+        ) -> [NSAttributedString.Key: Any] {
+            [
+                .font: font,
+                .foregroundColor: NSColor.noteBodyText(for: colorScheme),
+                .paragraphStyle: paragraphStyle(for: alignment),
+            ]
         }
 
         private static func paragraphStyle(for alignment: NoteTextAlignment) -> NSParagraphStyle {
@@ -527,7 +616,9 @@ struct ReadOnlyNoteTextView: NSViewRepresentable {
         textView.enabledTextCheckingTypes = dataDetectorsEnabled ? NoteDataDetectors.enabledCheckingTypes : 0
         let current = textView.attributedString()
         if !current.isEqual(to: attributedText) {
-            textView.textStorage?.setAttributedString(attributedText)
+            textView.textStorage?.setAttributedString(
+                NoteTextFormatting.applyingBodyTextColor(attributedText)
+            )
             textView.textColor = .noteBodyText
         }
     }
