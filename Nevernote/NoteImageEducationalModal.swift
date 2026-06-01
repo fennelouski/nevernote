@@ -114,9 +114,13 @@ extension NoteImageEducationalModal {
 
     private var educationBodyText: String {
         #if os(macOS)
-        "Choose a photo from your library or files. NeverNote will read any text in the image and add it to your note. QR codes in the image are added at the bottom of the note."
+        String(localized:
+            "Choose a photo from your library or files. NeverNote will read any text in the image and add it to your note. QR codes in the image are added at the bottom of the note."
+        )
         #else
-        "Take a photo or choose one from your library. NeverNote will read any text in the image and add it to your note. QR codes in the image are added at the bottom of the note."
+        String(localized:
+            "Take a photo or choose one from your library. NeverNote will read any text in the image and add it to your note. QR codes in the image are added at the bottom of the note."
+        )
         #endif
     }
 }

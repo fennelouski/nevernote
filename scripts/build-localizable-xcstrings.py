@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-Generate NeverNote/Localizable.xcstrings for every iOS / App Store locale.
+Generate Nevernote/Localizable.xcstrings for 20 app locales.
 
 Usage:
-  python3 scripts/build-localizable-xcstrings.py              # English + manual overrides
-  python3 scripts/build-localizable-xcstrings.py --translate  # Fill all locales via Google Translate
+  python3 scripts/build-localizable-xcstrings.py              # English + preserved translations
+  python3 scripts/build-localizable-xcstrings.py --translate  # Machine-translate all 20 locales
 """
 
 from __future__ import annotations
@@ -15,90 +15,36 @@ import sys
 import time
 from pathlib import Path
 
-# Every language Apple lists for App Store metadata + common Xcode regional variants.
-# https://developer.apple.com/help/app-store-connect/reference/app-store-localizations
-IOS_ALL_LOCALES = [
+# Twenty locales: English (source) + nineteen localized languages.
+IOS_LOCALES = [
     "en",
-    "en-US",
-    "en-GB",
-    "en-AU",
-    "en-CA",
-    "en-IN",
-    "ar",
-    "bn",
-    "ca",
+    "es",
+    "fr",
+    "de",
+    "it",
+    "pt-BR",
+    "ja",
+    "ko",
     "zh-Hans",
     "zh-Hant",
-    "zh-HK",
-    "hr",
-    "cs",
-    "da",
-    "nl",
-    "fi",
-    "fr",
-    "fr-CA",
-    "de",
-    "el",
-    "gu",
-    "he",
-    "hi",
-    "hu",
-    "id",
-    "it",
-    "ja",
-    "kn",
-    "ko",
-    "ml",
-    "mr",
-    "ms",
-    "nb",
-    "no",
-    "or",
-    "pa",
-    "pl",
-    "pt-BR",
-    "pt-PT",
-    "ro",
+    "ar",
     "ru",
-    "sk",
-    "sl",
-    "es",
-    "es-ES",
-    "es-MX",
-    "es-419",
+    "hi",
+    "nl",
+    "pl",
     "sv",
-    "ta",
-    "te",
-    "th",
     "tr",
-    "uk",
-    "ur",
+    "th",
     "vi",
+    "id",
 ]
 
 # Map Xcode locale identifiers to deep-translator / Google language codes.
 LOCALE_TO_TRANSLATOR: dict[str, str | None] = {
     "en": None,
-    "en-US": None,
-    "en-GB": None,
-    "en-AU": None,
-    "en-CA": None,
-    "en-IN": None,
     "zh-Hans": "zh-CN",
     "zh-Hant": "zh-TW",
-    "zh-HK": "zh-TW",
-    "nb": "no",
-    "no": "no",
-    "es-ES": "es",
-    "es-MX": "es",
-    "es-419": "es",
-    "es": "es",
-    "fr-CA": "fr",
-    "fr": "fr",
     "pt-BR": "pt",
-    "pt-PT": "pt",
-    "he": "iw",  # Google Translate legacy Hebrew code
-    "or": "or",
 }
 
 STRINGS: dict[str, str] = {
@@ -181,6 +127,56 @@ STRINGS: dict[str, str] = {
     "screenshot.demo.2": "Just a clean space for your immediate thoughts.",
     "screenshot.demo.3": "No folders.\nNo tags.\nNo distractions.",
     "screenshot.demo.4": "The fastest way to capture a fleeting thought.",
+    "Translating…": "Translating…",
+    "Translate note from %1$@ to %2$@": "Translate note from %1$@ to %2$@",
+    "Smart link": "Smart link",
+    "Copy": "Copy",
+    "Call": "Call",
+    "Open": "Open",
+    "Send Email": "Send Email",
+    "Show in Maps": "Show in Maps",
+    "Add to Calendar": "Add to Calendar",
+    "Note": "Note",
+    "Edit Note": "Edit Note",
+    "Select All": "Select All",
+    "Import Text from Photo": "Import Text from Photo",
+    "View Captured Image": "View Captured Image",
+    "Smart Links": "Smart Links",
+    "Share Note": "Share Note",
+    "Undo Delete": "Undo Delete",
+    "Delete Note": "Delete Note",
+    "Hide Keyboard": "Hide Keyboard",
+    "Format": "Format",
+    "Font…": "Font…",
+    "Maximize Presentation Size": "Maximize Presentation Size",
+    "Align Left": "Align Left",
+    "Align Center": "Align Center",
+    "Align Right": "Align Right",
+    "Plain Lines": "Plain Lines",
+    "Bulleted List": "Bulleted List",
+    "Numbered List": "Numbered List",
+    "Toggle Line Markers": "Toggle Line Markers",
+    "Reset Formatting": "Reset Formatting",
+    "Screenshot Share": "Screenshot Share",
+    "Share Note Text": "Share Note Text",
+    "Share as Image of Text": "Share as Image of Text",
+    "Actions": "Actions",
+    "Close Image": "Close Image",
+    "Browse Files…": "Browse Files…",
+    "NeverNote will read any text in the image and add it to your note.": (
+        "NeverNote will read any text in the image and add it to your note."
+    ),
+    "Take a photo or choose one from your library. NeverNote will read any text in the image and add it to your note. QR codes in the image are added at the bottom of the note.": (
+        "Take a photo or choose one from your library. NeverNote will read any text in the image and add it to your note. QR codes in the image are added at the bottom of the note."
+    ),
+    "Choose a photo from your library or files. NeverNote will read any text in the image and add it to your note. QR codes in the image are added at the bottom of the note.": (
+        "Choose a photo from your library or files. NeverNote will read any text in the image and add it to your note. QR codes in the image are added at the bottom of the note."
+    ),
+    "Feature Flags": "Feature Flags",
+    "Feature Flags…": "Feature Flags…",
+    "Choose Photo": "Choose Photo",
+    "Confirm": "Confirm",
+    "Share": "Share",
 }
 
 INFOPLIST_STRINGS: dict[str, str] = {
@@ -214,10 +210,41 @@ def translate_text(translator, text: str) -> str:
     return translator.translate(text)
 
 
-def build_translation_cache(translate: bool) -> dict[tuple[str, str], str]:
-    """(locale, english_text) -> translated text."""
-    if not translate:
+def load_preserved_catalog(path: Path) -> dict[tuple[str, str], str]:
+    """(locale, string_key) -> translated value from an existing .xcstrings file."""
+    if not path.is_file():
         return {}
+    data = json.loads(path.read_text(encoding="utf-8"))
+    preserved: dict[tuple[str, str], str] = {}
+    for key, entry in data.get("strings", {}).items():
+        for locale, loc_entry in entry.get("localizations", {}).items():
+            if locale not in IOS_LOCALES:
+                continue
+            value = loc_entry.get("stringUnit", {}).get("value")
+            if value:
+                preserved[(locale, key)] = value
+    return preserved
+
+
+def build_translation_cache(
+    translate: bool,
+    preserved: dict[tuple[str, str], str],
+) -> dict[tuple[str, str], str]:
+    """(locale, english_text) -> translated text."""
+    cache: dict[tuple[str, str], str] = {}
+    unique_en = sorted(set(STRINGS.values()) | set(INFOPLIST_STRINGS.values()))
+
+    for locale in IOS_LOCALES:
+        if translator_code(locale) is None:
+            for text in unique_en:
+                cache[(locale, text)] = text
+
+    for (locale, key), value in preserved.items():
+        if locale in IOS_LOCALES and key in STRINGS:
+            cache[(locale, STRINGS[key])] = value
+
+    if not translate:
+        return cache
 
     try:
         from deep_translator import GoogleTranslator
@@ -225,18 +252,9 @@ def build_translation_cache(translate: bool) -> dict[tuple[str, str], str]:
         print("Install deep-translator: pip3 install deep-translator", file=sys.stderr)
         sys.exit(1)
 
-    cache: dict[tuple[str, str], str] = {}
-    unique_en = sorted(set(STRINGS.values()) | set(INFOPLIST_STRINGS.values()))
-
-    # English variants
-    for locale in IOS_ALL_LOCALES:
-        if translator_code(locale) is None:
-            for text in unique_en:
-                cache[(locale, text)] = text
-
     # One pass per distinct target language code
     codes_to_locales: dict[str, list[str]] = {}
-    for locale in IOS_ALL_LOCALES:
+    for locale in IOS_LOCALES:
         code = translator_code(locale)
         if code is None:
             continue
@@ -255,16 +273,19 @@ def build_translation_cache(translate: bool) -> dict[tuple[str, str], str]:
 
         per_code: dict[str, str] = {}
         for text in unique_en:
+            if all(cache.get((locale, text), text) != text for locale in locales):
+                continue
             try:
                 per_code[text] = translate_text(translator, text)
                 time.sleep(0.06)
             except Exception as exc:
                 print(f"  warn: {code} failed for {text[:50]!r}: {exc}", flush=True)
-                per_code[text] = text
+                per_code[text] = cache.get((locales[0], text), text)
 
         for locale in locales:
             for text in unique_en:
-                cache[(locale, text)] = per_code[text]
+                if cache.get((locale, text), text) == text:
+                    cache[(locale, text)] = per_code.get(text, text)
         time.sleep(0.15)
 
     return cache
@@ -272,28 +293,23 @@ def build_translation_cache(translate: bool) -> dict[tuple[str, str], str]:
 
 def localized_value(
     locale: str,
+    key: str,
     en_value: str,
     cache: dict[tuple[str, str], str],
-    translate: bool,
 ) -> tuple[str, str]:
-    if locale == "en" or not translate:
-        if locale.startswith("en") or locale == "en":
-            return en_value, "translated"
-        if (locale, en_value) in cache:
-            return cache[(locale, en_value)], "translated"
-        return en_value, "needs_review"
-
-    value = cache.get((locale, en_value), en_value)
-    state = "translated" if value != en_value or locale.startswith("en") else "translated"
-    return value, state
+    if locale == "en":
+        return en_value, "translated"
+    if (locale, en_value) in cache:
+        return cache[(locale, en_value)], "translated"
+    return en_value, "needs_review"
 
 
-def build_localizable(cache: dict[tuple[str, str], str], translate: bool) -> dict:
+def build_localizable(cache: dict[tuple[str, str], str]) -> dict:
     strings: dict = {}
-    for key, en_value in STRINGS.items():
+    for key, en_value in sorted(STRINGS.items()):
         locs = {}
-        for locale in IOS_ALL_LOCALES:
-            value, state = localized_value(locale, en_value, cache, translate)
+        for locale in IOS_LOCALES:
+            value, state = localized_value(locale, key, en_value, cache)
             locs[locale] = unit(value, state)
         strings[key] = {"comment": key, "localizations": locs}
     return {
@@ -303,12 +319,12 @@ def build_localizable(cache: dict[tuple[str, str], str], translate: bool) -> dic
     }
 
 
-def build_infoplist(cache: dict[tuple[str, str], str], translate: bool) -> dict:
+def build_infoplist(cache: dict[tuple[str, str], str]) -> dict:
     strings: dict = {}
     for key, en_value in INFOPLIST_STRINGS.items():
         locs = {}
-        for locale in IOS_ALL_LOCALES:
-            value, state = localized_value(locale, en_value, cache, translate)
+        for locale in IOS_LOCALES:
+            value, state = localized_value(locale, key, en_value, cache)
             locs[locale] = unit(value, state)
         strings[key] = {"comment": f"Privacy - {key}", "localizations": locs}
     return {
@@ -322,7 +338,7 @@ def write_known_regions_snippet() -> None:
     lines = ["\t\t\tknownRegions = ("]
     lines.append("\t\t\t\tEnglish,")
     lines.append("\t\t\t\tBase,")
-    for loc in IOS_ALL_LOCALES:
+    for loc in IOS_LOCALES:
         if loc in ("en",):
             lines.append("\t\t\t\ten,")
         else:
@@ -343,17 +359,19 @@ def main() -> None:
     args = parser.parse_args()
 
     root = Path(__file__).resolve().parent.parent
-    cache = build_translation_cache(args.translate)
+    loc_path = root / "Nevernote" / "Localizable.xcstrings"
+    plist_path = root / "Nevernote" / "InfoPlist.xcstrings"
+    preserved = load_preserved_catalog(loc_path)
+    preserved.update(load_preserved_catalog(plist_path))
+    cache = build_translation_cache(args.translate, preserved)
 
-    loc_path = root / "NeverNote" / "Localizable.xcstrings"
     loc_path.write_text(
-        json.dumps(build_localizable(cache, args.translate), ensure_ascii=False, indent=2) + "\n",
+        json.dumps(build_localizable(cache), ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
 
-    plist_path = root / "NeverNote" / "InfoPlist.xcstrings"
     existing = json.loads(plist_path.read_text(encoding="utf-8"))
-    generated = build_infoplist(cache, args.translate)
+    generated = build_infoplist(cache)
     # Preserve auto-extracted bundle name keys if present
     for preserved in ("CFBundleDisplayName", "CFBundleName"):
         if preserved in existing.get("strings", {}):
@@ -366,7 +384,7 @@ def main() -> None:
     write_known_regions_snippet()
     print(
         f"Wrote {loc_path.name} + InfoPlist.xcstrings "
-        f"({len(STRINGS)} UI keys, {len(INFOPLIST_STRINGS)} plist keys, {len(IOS_ALL_LOCALES)} locales)"
+        f"({len(STRINGS)} UI keys, {len(INFOPLIST_STRINGS)} plist keys, {len(IOS_LOCALES)} locales)"
     )
 
 
