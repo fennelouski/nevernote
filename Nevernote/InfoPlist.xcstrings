@@ -13,7 +13,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote usa la cámara para fotografiar texto e importarlo a su nota."
+            "value": "NeverNote usa la cámara para fotografiar texto e importarlo en tu nota."
           }
         },
         "fr": {
@@ -79,7 +79,7 @@
         "hi": {
           "stringUnit": {
             "state": "translated",
-            "value": "नेवरनोट टेक्स्ट का फोटो खींचने और उसे आपके नोट में आयात करने के लिए कैमरे का उपयोग करता है।"
+            "value": "NeverNote टेक्स्ट का फोटो खींचने और उसे आपके नोट में आयात करने के लिए कैमरे का उपयोग करता है।"
           }
         },
         "nl": {
@@ -241,7 +241,7 @@
         "pt-PT": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote usa a câmera para fotografar texto e importá-lo para sua nota."
+            "value": "O NeverNote utiliza a câmara para fotografar texto e importá-lo para a sua nota."
           }
         },
         "bg": {
@@ -271,7 +271,7 @@
         "sr": {
           "stringUnit": {
             "state": "translated",
-            "value": "НеверНоте користи камеру да фотографише текст и увезе га у белешку."
+            "value": "NeverNote користи камеру да фотографише текст и увезе га у белешку."
           }
         },
         "af": {
@@ -363,6 +363,246 @@
             "state": "translated",
             "value": "NeverNote ले पाठ फोटो खिच्न र तपाईंको नोटमा आयात गर्न क्यामेरा प्रयोग गर्दछ।"
           }
+        },
+        "be": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote uses the camera to photograph text and import it into your note."
+          }
+        },
+        "bs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote uses the camera to photograph text and import it into your note."
+          }
+        },
+        "de-AT": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote verwendet die Kamera, um Text zu fotografieren und in Ihre Notiz zu importieren."
+          }
+        },
+        "de-CH": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote verwendet die Kamera, um Text zu fotografieren und in Ihre Notiz zu importieren."
+          }
+        },
+        "en-AU": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote uses the camera to photograph text and import it into your note."
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote uses the camera to photograph text and import it into your note."
+          }
+        },
+        "en-GB": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote uses the camera to photograph text and import it into your note."
+          }
+        },
+        "en-IN": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote uses the camera to photograph text and import it into your note."
+          }
+        },
+        "en-NZ": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote uses the camera to photograph text and import it into your note."
+          }
+        },
+        "en-SG": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote uses the camera to photograph text and import it into your note."
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote uses the camera to photograph text and import it into your note."
+          }
+        },
+        "es-419": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote usa la cámara para fotografiar texto e importarlo en tu nota."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote usa la cámara para fotografiar texto e importarlo en tu nota."
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote usa la cámara para fotografiar texto e importarlo en tu nota."
+          }
+        },
+        "fa": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote uses the camera to photograph text and import it into your note."
+          }
+        },
+        "fil": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote menggunakan kamera untuk memotret teks dan mengimpornya ke catatan Anda."
+          }
+        },
+        "fr-BE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote utilise l'appareil photo pour photographier le texte et l'importer dans votre note."
+          }
+        },
+        "fr-CH": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote utilise l'appareil photo pour photographier le texte et l'importer dans votre note."
+          }
+        },
+        "gu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote uses the camera to photograph text and import it into your note."
+          }
+        },
+        "hi-Latn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote uses the camera to photograph text and import it into your note."
+          }
+        },
+        "hy": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote uses the camera to photograph text and import it into your note."
+          }
+        },
+        "it-CH": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote utilizza la fotocamera per fotografare il testo e importarlo nella nota."
+          }
+        },
+        "ka": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote uses the camera to photograph text and import it into your note."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote uses the camera to photograph text and import it into your note."
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote uses the camera to photograph text and import it into your note."
+          }
+        },
+        "mn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote uses the camera to photograph text and import it into your note."
+          }
+        },
+        "nl-BE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote gebruikt de camera om tekst te fotograferen en deze in uw notitie te importeren."
+          }
+        },
+        "nn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote bruker kameraet til å fotografere tekst og importere den til notatet ditt."
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote bruker kameraet til å fotografere tekst og importere den til notatet ditt."
+          }
+        },
+        "pa": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote uses the camera to photograph text and import it into your note."
+          }
+        },
+        "si": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote uses the camera to photograph text and import it into your note."
+          }
+        },
+        "sq": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote uses the camera to photograph text and import it into your note."
+          }
+        },
+        "tl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote menggunakan kamera untuk memotret teks dan mengimpornya ke catatan Anda."
+          }
+        },
+        "ug": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote uses the camera to photograph text and import it into your note."
+          }
+        },
+        "uz": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote uses the camera to photograph text and import it into your note."
+          }
+        },
+        "yue-CN": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote uses the camera to photograph text and import it into your note."
+          }
+        },
+        "zh-CN": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote 使用相机拍摄文本并将其导入到您的笔记中。"
+          }
+        },
+        "zh-HK": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote 使用相機拍攝文字並將其匯入到您的筆記中。"
+          }
+        },
+        "zh-TW": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote 使用相機拍攝文字並將其匯入到您的筆記中。"
+          }
+        },
+        "zh": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote 使用相机拍摄文本并将其导入到您的笔记中。"
+          }
         }
       }
     },
@@ -378,7 +618,7 @@
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote accede a su biblioteca de fotos para importar texto de una foto a su nota."
+            "value": "NeverNote accede a tu fototeca para importar texto de una foto en tu nota."
           }
         },
         "fr": {
@@ -444,7 +684,7 @@
         "hi": {
           "stringUnit": {
             "state": "translated",
-            "value": "नेवरनोट किसी फोटो से टेक्स्ट को आपके नोट में आयात करने के लिए आपकी फोटो लाइब्रेरी तक पहुंचता है।"
+            "value": "NeverNote किसी फोटो से टेक्स्ट को आपके नोट में आयात करने के लिए आपकी फोटो लाइब्रेरी तक पहुंचता है।"
           }
         },
         "nl": {
@@ -606,7 +846,7 @@
         "pt-PT": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote acessa sua biblioteca de fotos para importar texto de uma foto para sua nota."
+            "value": "O NeverNote acede à sua fototeca para importar texto de uma fotografia para a sua nota."
           }
         },
         "bg": {
@@ -636,7 +876,7 @@
         "sr": {
           "stringUnit": {
             "state": "translated",
-            "value": "НеверНоте приступа вашој библиотеци фотографија да увезе текст са фотографије у белешку."
+            "value": "NeverNote приступа вашој библиотеци фотографија да увезе текст са фотографије у белешку."
           }
         },
         "af": {
@@ -728,6 +968,246 @@
             "state": "translated",
             "value": "NeverNote ले तपाइँको नोटमा फोटोबाट पाठ आयात गर्न तपाइँको फोटो लाइब्रेरी पहुँच गर्दछ।"
           }
+        },
+        "be": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote accesses your photo library to import text from a photo into your note."
+          }
+        },
+        "bs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote accesses your photo library to import text from a photo into your note."
+          }
+        },
+        "de-AT": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote greift auf Ihre Fotobibliothek zu, um Text aus einem Foto in Ihre Notiz zu importieren."
+          }
+        },
+        "de-CH": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote greift auf Ihre Fotobibliothek zu, um Text aus einem Foto in Ihre Notiz zu importieren."
+          }
+        },
+        "en-AU": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote accesses your photo library to import text from a photo into your note."
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote accesses your photo library to import text from a photo into your note."
+          }
+        },
+        "en-GB": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote accesses your photo library to import text from a photo into your note."
+          }
+        },
+        "en-IN": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote accesses your photo library to import text from a photo into your note."
+          }
+        },
+        "en-NZ": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote accesses your photo library to import text from a photo into your note."
+          }
+        },
+        "en-SG": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote accesses your photo library to import text from a photo into your note."
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote accesses your photo library to import text from a photo into your note."
+          }
+        },
+        "es-419": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote accede a tu fototeca para importar texto de una foto en tu nota."
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote accede a tu fototeca para importar texto de una foto en tu nota."
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote accede a tu fototeca para importar texto de una foto en tu nota."
+          }
+        },
+        "fa": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote accesses your photo library to import text from a photo into your note."
+          }
+        },
+        "fil": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote mengakses perpustakaan foto Anda untuk mengimpor teks dari foto ke catatan Anda."
+          }
+        },
+        "fr-BE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote accède à votre photothèque pour importer le texte d'une photo dans votre note."
+          }
+        },
+        "fr-CH": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote accède à votre photothèque pour importer le texte d'une photo dans votre note."
+          }
+        },
+        "gu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote accesses your photo library to import text from a photo into your note."
+          }
+        },
+        "hi-Latn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote accesses your photo library to import text from a photo into your note."
+          }
+        },
+        "hy": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote accesses your photo library to import text from a photo into your note."
+          }
+        },
+        "it-CH": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote accede alla tua libreria di foto per importare il testo da una foto nella tua nota."
+          }
+        },
+        "ka": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote accesses your photo library to import text from a photo into your note."
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote accesses your photo library to import text from a photo into your note."
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote accesses your photo library to import text from a photo into your note."
+          }
+        },
+        "mn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote accesses your photo library to import text from a photo into your note."
+          }
+        },
+        "nl-BE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote heeft toegang tot uw fotobibliotheek om tekst van een foto in uw notitie te importeren."
+          }
+        },
+        "nn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote får tilgang til bildebiblioteket ditt for å importere tekst fra et bilde til notatet ditt."
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote får tilgang til bildebiblioteket ditt for å importere tekst fra et bilde til notatet ditt."
+          }
+        },
+        "pa": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote accesses your photo library to import text from a photo into your note."
+          }
+        },
+        "si": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote accesses your photo library to import text from a photo into your note."
+          }
+        },
+        "sq": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote accesses your photo library to import text from a photo into your note."
+          }
+        },
+        "tl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote mengakses perpustakaan foto Anda untuk mengimpor teks dari foto ke catatan Anda."
+          }
+        },
+        "ug": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote accesses your photo library to import text from a photo into your note."
+          }
+        },
+        "uz": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote accesses your photo library to import text from a photo into your note."
+          }
+        },
+        "yue-CN": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote accesses your photo library to import text from a photo into your note."
+          }
+        },
+        "zh-CN": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote 访问您的照片库，将照片中的文本导入到您的笔记中。"
+          }
+        },
+        "zh-HK": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote 存取您的照片庫，將照片中的文字匯入到您的筆記中。"
+          }
+        },
+        "zh-TW": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote 存取您的照片庫，將照片中的文字匯入到您的筆記中。"
+          }
+        },
+        "zh": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote 访问您的照片库，将照片中的文本导入到您的笔记中。"
+          }
         }
       }
     },
@@ -740,6 +1220,246 @@
             "state": "new",
             "value": "NeverNote"
           }
+        },
+        "be": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "bs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "de-AT": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "de-CH": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "en-AU": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "en-GB": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "en-IN": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "en-NZ": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "en-SG": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "es-419": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "fa": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "fil": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "fr-BE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "fr-CH": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "gu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "hi-Latn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "hy": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "it-CH": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "ka": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "mn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "nl-BE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "nn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "pa": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "si": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "sq": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "tl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "ug": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "uz": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "yue-CN": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "zh-CN": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "zh-HK": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "zh-TW": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "zh": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
         }
       }
     },
@@ -750,6 +1470,246 @@
         "en": {
           "stringUnit": {
             "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "be": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "bs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "de-AT": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "de-CH": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "en-AU": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "en-CA": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "en-GB": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "en-IN": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "en-NZ": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "en-SG": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "en-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "es-419": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "es-MX": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "es-US": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "fa": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "fil": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "fr-BE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "fr-CH": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "gu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "hi-Latn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "hy": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "it-CH": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "ka": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "kn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "mn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "nl-BE": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "nn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "no": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "pa": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "si": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "sq": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "tl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "ug": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "uz": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "yue-CN": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "zh-CN": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "zh-HK": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "zh-TW": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote"
+          }
+        },
+        "zh": {
+          "stringUnit": {
+            "state": "translated",
             "value": "NeverNote"
           }
         }

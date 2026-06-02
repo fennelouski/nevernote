@@ -1045,6 +1045,7 @@
 				);
 				INFOPLIST_FILE = "NeverNote1/NeverNote-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				"INFOPLIST_KEY_LSApplicationCategoryType[sdk=macosx*]" = "public.app-category.productivity";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				CURRENT_PROJECT_VERSION = 2;
@@ -1077,6 +1078,7 @@
 				CODE_SIGN_ENTITLEMENTS = NeverNote/NeverNote.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				"DEBUG_INFORMATION_FORMAT[sdk=macosx*]" = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = EJLR2RPSV2;
 				ENABLE_APP_INTENTS_METADATA_GENERATION = NO;
 				ENABLE_APP_SANDBOX = YES;
@@ -1091,6 +1093,7 @@
 				);
 				INFOPLIST_FILE = "NeverNote1/NeverNote-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				"INFOPLIST_KEY_LSApplicationCategoryType[sdk=macosx*]" = "public.app-category.productivity";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				CURRENT_PROJECT_VERSION = 2;
@@ -1112,6 +1115,9 @@
 				"SWIFT_OBJC_BRIDGING_HEADER[sdk=macosx*]" = "NeverNote/NeverNote-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				DWARF_DSYM_FILE_SHOULD_ACCOMPANY_PRODUCT = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
