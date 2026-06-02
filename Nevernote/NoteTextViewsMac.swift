@@ -74,24 +74,6 @@ final class NoteWrappingTextView: NSTextView {
         container.containerSize = NSSize(width: contentWidth, height: .greatestFiniteMagnitude)
     }
 
-    /// Sizes the document view to its laid-out text height — required for SwiftUI `NSViewRepresentable` hosts.
-    func resizeToFitContents(width: CGFloat) {
-        guard width > 0, let container = textContainer, let layoutManager else { return }
-        let horizontalInset = textContainerInset.width
-        let padding = container.lineFragmentPadding * 2
-        let contentWidth = max(0, width - horizontalInset - padding)
-        container.widthTracksTextView = false
-        container.containerSize = NSSize(width: contentWidth, height: .greatestFiniteMagnitude)
-        layoutManager.ensureLayout(for: container)
-        let usedHeight = layoutManager.usedRect(for: container).height
-        let targetHeight = max(44, usedHeight + textContainerInset.height)
-        let targetSize = NSSize(width: width, height: targetHeight)
-        if abs(frame.width - targetSize.width) > 0.5 || abs(frame.height - targetSize.height) > 0.5 {
-            setFrameSize(targetSize)
-        }
-        invalidateIntrinsicContentSize()
-    }
-
     override func layout() {
         super.layout()
         if bounds.width > 0 {
@@ -145,9 +127,11 @@ struct RichTextEditor: NSViewRepresentable {
         textView.isRichText = true
         textView.drawsBackground = false
         textView.backgroundColor = .clear
-        textView.isVerticallyResizable = false
+        textView.isVerticallyResizable = true
         textView.isHorizontallyResizable = false
         textView.autoresizingMask = [.width]
+        textView.minSize = NSSize(width: 0, height: 0)
+        textView.maxSize = NSSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude)
         textView.textContainer?.widthTracksTextView = false
         textView.textContainer?.lineBreakMode = .byWordWrapping
         textView.textContainer?.lineFragmentPadding = 0
@@ -188,10 +172,9 @@ struct RichTextEditor: NSViewRepresentable {
 
     func sizeThatFits(_ proposal: ProposedViewSize, nsView: NSScrollView, context: Context) -> CGSize? {
         let width = proposal.width ?? max(nsView.contentSize.width, 320)
-        guard let textView = context.coordinator.textView else {
-            return CGSize(width: width, height: 120)
+        if let proposedHeight = proposal.height, proposedHeight.isFinite, proposedHeight > 0 {
+            return CGSize(width: width, height: proposedHeight)
         }
-        _ = textView
         let display = NoteTextFormatting.makeDisplayAttributedText(
             from: attributedText,
             alignment: textAlignment,
@@ -243,11 +226,6 @@ struct RichTextEditor: NSViewRepresentable {
                     colorScheme: colorScheme
                 )
             }
-        }
-
-        let layoutWidth = scrollView.contentView.bounds.width
-        if layoutWidth > 0 {
-            textView.resizeToFitContents(width: layoutWidth)
         }
 
         if context.coordinator.lastSyncedPreferredFont != preferredFontName {
@@ -327,10 +305,6 @@ struct RichTextEditor: NSViewRepresentable {
         func textDidChange(_ notification: Notification) {
             guard let textView = notification.object as? NSTextView else { return }
             textView.invalidateIntrinsicContentSize()
-            if let scrollView, scrollView.contentView.bounds.width > 0,
-               let wrapping = textView as? NoteWrappingTextView {
-                wrapping.resizeToFitContents(width: scrollView.contentView.bounds.width)
-            }
             let stripped = NoteTextFormatting.stripPrefixesFromDisplayString(textView.attributedString(), mode: parent.linePrefixMode)
             parent.attributedText = stripped
             parent.onChange()
