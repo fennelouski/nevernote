@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Generate Nevernote/Localizable.xcstrings for 40 app locales.
+Generate Nevernote/Localizable.xcstrings for supported app locales.
 
 Usage:
   python3 scripts/build-localizable-xcstrings.py              # English + preserved translations
@@ -15,7 +15,7 @@ import sys
 import time
 from pathlib import Path
 
-# Forty locales: original twenty + twenty additional languages.
+# Extended iOS locale coverage.
 IOS_LOCALES = [
     # Original 20
     "en",
@@ -59,6 +59,27 @@ IOS_LOCALES = [
     "ca",
     "ms",
     "pt-PT",
+    # Additional locales
+    "bg",
+    "et",
+    "lv",
+    "lt",
+    "sr",
+    "af",
+    "is",
+    "mk",
+    "ga",
+    "kk",
+    "az",
+    "eu",
+    "gl",
+    "sw",
+    "zu",
+    "am",
+    "km",
+    "lo",
+    "my",
+    "ne",
 ]
 
 # Map Xcode locale identifiers to deep-translator / Google language codes.
