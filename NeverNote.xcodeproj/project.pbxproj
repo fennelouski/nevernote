@@ -714,6 +714,26 @@
 				th,
 				vi,
 				id,
+				uk,
+				he,
+				bn,
+				ta,
+				te,
+				mr,
+				ur,
+				da,
+				nb,
+				fi,
+				cs,
+				sk,
+				hu,
+				ro,
+				hr,
+				sl,
+				el,
+				ca,
+				ms,
+				"pt-PT",
 			);
 			mainGroup = 805898681916641F00352439;
 			productRefGroup = 805898721916641F00352439 /* Products */;
@@ -1056,6 +1076,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = NeverNote/NeverNote.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = EJLR2RPSV2;
 				ENABLE_APP_INTENTS_METADATA_GENERATION = NO;
 				ENABLE_APP_SANDBOX = YES;

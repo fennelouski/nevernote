@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-Generate Nevernote/Localizable.xcstrings for 20 app locales.
+Generate Nevernote/Localizable.xcstrings for 40 app locales.
 
 Usage:
   python3 scripts/build-localizable-xcstrings.py              # English + preserved translations
-  python3 scripts/build-localizable-xcstrings.py --translate  # Machine-translate all 20 locales
+  python3 scripts/build-localizable-xcstrings.py --translate  # Machine-translate all locales
 """
 
 from __future__ import annotations
@@ -15,8 +15,9 @@ import sys
 import time
 from pathlib import Path
 
-# Twenty locales: English (source) + nineteen localized languages.
+# Forty locales: original twenty + twenty additional languages.
 IOS_LOCALES = [
+    # Original 20
     "en",
     "es",
     "fr",
@@ -37,6 +38,27 @@ IOS_LOCALES = [
     "th",
     "vi",
     "id",
+    # Additional 20
+    "uk",
+    "he",
+    "bn",
+    "ta",
+    "te",
+    "mr",
+    "ur",
+    "da",
+    "nb",
+    "fi",
+    "cs",
+    "sk",
+    "hu",
+    "ro",
+    "hr",
+    "sl",
+    "el",
+    "ca",
+    "ms",
+    "pt-PT",
 ]
 
 # Map Xcode locale identifiers to deep-translator / Google language codes.
@@ -45,6 +67,9 @@ LOCALE_TO_TRANSLATOR: dict[str, str | None] = {
     "zh-Hans": "zh-CN",
     "zh-Hant": "zh-TW",
     "pt-BR": "pt",
+    "pt-PT": "pt",
+    "nb": "no",
+    "he": "iw",
 }
 
 STRINGS: dict[str, str] = {
@@ -240,8 +265,12 @@ def build_translation_cache(
                 cache[(locale, text)] = text
 
     for (locale, key), value in preserved.items():
-        if locale in IOS_LOCALES and key in STRINGS:
+        if locale not in IOS_LOCALES:
+            continue
+        if key in STRINGS:
             cache[(locale, STRINGS[key])] = value
+        elif key in INFOPLIST_STRINGS:
+            cache[(locale, INFOPLIST_STRINGS[key])] = value
 
     if not translate:
         return cache

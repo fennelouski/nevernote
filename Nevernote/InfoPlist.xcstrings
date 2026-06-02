@@ -123,6 +123,126 @@
             "state": "translated",
             "value": "NeverNote menggunakan kamera untuk memotret teks dan mengimpornya ke catatan Anda."
           }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote використовує камеру, щоб сфотографувати текст і імпортувати його у вашу нотатку."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote משתמש במצלמה כדי לצלם טקסט ולייבא אותו לפתק שלך."
+          }
+        },
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote টেক্সট ফটোগ্রাফ করতে এবং আপনার নোটে আমদানি করতে ক্যামেরা ব্যবহার করে।"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote உரையை புகைப்படம் எடுத்து உங்கள் குறிப்பில் இறக்குமதி செய்ய கேமராவைப் பயன்படுத்துகிறது."
+          }
+        },
+        "te": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote టెక్స్ట్‌ని ఫోటోగ్రాఫ్ చేయడానికి మరియు మీ నోట్‌లోకి దిగుమతి చేసుకోవడానికి కెమెరాను ఉపయోగిస్తుంది."
+          }
+        },
+        "mr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote कॅमेऱ्याचा वापर मजकूर फोटो काढण्यासाठी आणि तुमच्या नोटमध्ये आयात करण्यासाठी करते."
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote متن کی تصویر کشی کرنے اور اسے آپ کے نوٹ میں درآمد کرنے کے لیے کیمرے کا استعمال کرتا ہے۔"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote bruger kameraet til at fotografere tekst og importere den til din note."
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote bruker kameraet til å fotografere tekst og importere den til notatet ditt."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote käyttää kameraa tekstin kuvaamiseen ja tuomiseen muistiinpanoosi."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote používá fotoaparát k fotografování textu a jeho importu do vaší poznámky."
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote používa fotoaparát na fotografovanie textu a jeho importovanie do vašej poznámky."
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A NeverNote a kamerával lefényképezi a szöveget, és importálja azt a jegyzetébe."
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote folosește camera pentru a fotografia text și pentru a-l importa în notă."
+          }
+        },
+        "hr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote koristi kameru za fotografiranje teksta i uvoz u vašu bilješku."
+          }
+        },
+        "sl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote s kamero fotografira besedilo in ga uvozi v vašo beležko."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Το NeverNote χρησιμοποιεί την κάμερα για να φωτογραφίζει κείμενο και να το εισάγει στη σημείωσή σας."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote utilitza la càmera per fotografiar text i importar-lo a la teva nota."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote menggunakan kamera untuk mengambil gambar teks dan mengimportnya ke dalam nota anda."
+          }
+        },
+        "pt-PT": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote usa a câmera para fotografar texto e importá-lo para sua nota."
+          }
         }
       }
     },
@@ -247,6 +367,126 @@
           "stringUnit": {
             "state": "translated",
             "value": "NeverNote mengakses perpustakaan foto Anda untuk mengimpor teks dari foto ke catatan Anda."
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote отримує доступ до вашої бібліотеки фотографій, щоб імпортувати текст із фотографії у вашу нотатку."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote ניגשת לספריית התמונות שלך כדי לייבא טקסט מתמונה להערה שלך."
+          }
+        },
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote আপনার নোটে একটি ফটো থেকে পাঠ্য আমদানি করতে আপনার ফটো লাইব্রেরি অ্যাক্সেস করে৷"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote ஒரு புகைப்படத்திலிருந்து உரையை உங்கள் குறிப்பில் இறக்குமதி செய்ய உங்கள் புகைப்பட நூலகத்தை அணுகுகிறது."
+          }
+        },
+        "te": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ఫోటో నుండి వచనాన్ని మీ నోట్‌లోకి దిగుమతి చేసుకోవడానికి NeverNote మీ ఫోటో లైబ్రరీని యాక్సెస్ చేస్తుంది."
+          }
+        },
+        "mr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote तुमच्या नोटमध्ये फोटोमधून मजकूर इंपोर्ट करण्यासाठी तुमच्या फोटो लायब्ररीमध्ये प्रवेश करते."
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote کسی تصویر سے متن کو آپ کے نوٹ میں درآمد کرنے کے لیے آپ کی فوٹو لائبریری تک رسائی حاصل کرتا ہے۔"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote får adgang til dit fotobibliotek for at importere tekst fra et billede til din note."
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote får tilgang til bildebiblioteket ditt for å importere tekst fra et bilde til notatet ditt."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote käyttää valokuvakirjastoasi tuodakseen tekstiä valokuvasta muistiinpanoosi."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote přistupuje k vaší knihovně fotografií a importuje text z fotografie do vaší poznámky."
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote pristupuje k vašej knižnici fotografií a importuje text z fotografie do vašej poznámky."
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A NeverNote hozzáfér a fotókönyvtárához, hogy szöveget importáljon egy fotóból a jegyzetébe."
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote accesează biblioteca dvs. de fotografii pentru a importa text dintr-o fotografie în nota dvs."
+          }
+        },
+        "hr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote pristupa vašoj biblioteci fotografija kako bi uveo tekst s fotografije u vašu bilješku."
+          }
+        },
+        "sl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote dostopa do vaše knjižnice fotografij, da uvozi besedilo s fotografije v vaš zapisek."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Το NeverNote αποκτά πρόσβαση στη βιβλιοθήκη φωτογραφιών σας για να εισάγει κείμενο από μια φωτογραφία στη σημείωσή σας."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote accedeix a la vostra biblioteca de fotos per importar text d'una foto a la vostra nota."
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote mengakses pustaka foto anda untuk mengimport teks daripada foto ke dalam nota anda."
+          }
+        },
+        "pt-PT": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NeverNote acessa sua biblioteca de fotos para importar texto de uma foto para sua nota."
           }
         }
       }
