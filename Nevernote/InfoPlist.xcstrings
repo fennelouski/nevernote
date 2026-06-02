@@ -367,13 +367,13 @@
         "be": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote uses the camera to photograph text and import it into your note."
+            "value": "NeverNote выкарыстоўвае камеру для фатаграфавання тэксту і імпарту яго ў вашу нататку."
           }
         },
         "bs": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote uses the camera to photograph text and import it into your note."
+            "value": "NeverNote koristi kameru da fotografiše tekst i uveze ga u vašu bilješku."
           }
         },
         "de-AT": {
@@ -451,7 +451,7 @@
         "fa": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote uses the camera to photograph text and import it into your note."
+            "value": "NeverNote از دوربین برای عکاسی از متن و وارد کردن آن به یادداشت شما استفاده می کند."
           }
         },
         "fil": {
@@ -475,19 +475,19 @@
         "gu": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote uses the camera to photograph text and import it into your note."
+            "value": "NeverNote ટેક્સ્ટને ફોટોગ્રાફ કરવા અને તેને તમારી નોંધમાં આયાત કરવા માટે કેમેરાનો ઉપયોગ કરે છે."
           }
         },
         "hi-Latn": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote uses the camera to photograph text and import it into your note."
+            "value": "नेवरनोट टेक्स्ट का फोटो खींचने और उसे आपके नोट में आयात करने के लिए कैमरे का उपयोग करता है।"
           }
         },
         "hy": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote uses the camera to photograph text and import it into your note."
+            "value": "NeverNote-ն օգտագործում է տեսախցիկը տեքստը լուսանկարելու և այն ձեր գրառման մեջ ներմուծելու համար:"
           }
         },
         "it-CH": {
@@ -499,25 +499,25 @@
         "ka": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote uses the camera to photograph text and import it into your note."
+            "value": "NeverNote იყენებს კამერას ტექსტის გადასაღებად და თქვენს ჩანაწერში იმპორტირებისთვის."
           }
         },
         "kn": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote uses the camera to photograph text and import it into your note."
+            "value": "NeverNote ಪಠ್ಯವನ್ನು ಛಾಯಾಚಿತ್ರ ಮಾಡಲು ಮತ್ತು ಅದನ್ನು ನಿಮ್ಮ ಟಿಪ್ಪಣಿಗೆ ಆಮದು ಮಾಡಿಕೊಳ್ಳಲು ಕ್ಯಾಮರಾವನ್ನು ಬಳಸುತ್ತದೆ."
           }
         },
         "ml": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote uses the camera to photograph text and import it into your note."
+            "value": "ടെക്‌സ്‌റ്റ് ഫോട്ടോഗ്രാഫ് ചെയ്യാനും അത് നിങ്ങളുടെ കുറിപ്പിലേക്ക് ഇമ്പോർട്ടുചെയ്യാനും NeverNote ക്യാമറ ഉപയോഗിക്കുന്നു."
           }
         },
         "mn": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote uses the camera to photograph text and import it into your note."
+            "value": "NeverNote камер ашиглан текстийн зургийг авч, тэмдэглэлдээ импортолдог."
           }
         },
         "nl-BE": {
@@ -541,19 +541,19 @@
         "pa": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote uses the camera to photograph text and import it into your note."
+            "value": "NeverNote ਟੈਕਸਟ ਦੀ ਫੋਟੋ ਖਿੱਚਣ ਅਤੇ ਇਸਨੂੰ ਤੁਹਾਡੇ ਨੋਟ ਵਿੱਚ ਆਯਾਤ ਕਰਨ ਲਈ ਕੈਮਰੇ ਦੀ ਵਰਤੋਂ ਕਰਦਾ ਹੈ।"
           }
         },
         "si": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote uses the camera to photograph text and import it into your note."
+            "value": "NeverNote කැමරාව භාවිතයෙන් පෙළ ඡායාරූපගත කර එය ඔබේ සටහනට ආයාත කරයි."
           }
         },
         "sq": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote uses the camera to photograph text and import it into your note."
+            "value": "NeverNote përdor kamerën për të fotografuar tekstin dhe për ta importuar atë në shënimin tuaj."
           }
         },
         "tl": {
@@ -565,19 +565,19 @@
         "ug": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote uses the camera to photograph text and import it into your note."
+            "value": "NeverNote كامېرا ئارقىلىق تېكىستنى رەسىمگە تارتىپ خاتىرە قالدۇرىدۇ."
           }
         },
         "uz": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote uses the camera to photograph text and import it into your note."
+            "value": "NeverNote kameradan matnni suratga olish va uni qaydingizga import qilish uchun foydalanadi."
           }
         },
         "yue-CN": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote uses the camera to photograph text and import it into your note."
+            "value": "NeverNote 使用相機拍攝文字並將其匯入到您的筆記中。"
           }
         },
         "zh-CN": {
@@ -972,13 +972,13 @@
         "be": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote accesses your photo library to import text from a photo into your note."
+            "value": "NeverNote атрымлівае доступ да вашай бібліятэкі фатаграфій, каб імпартаваць тэкст з фатаграфіі ў вашу нататку."
           }
         },
         "bs": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote accesses your photo library to import text from a photo into your note."
+            "value": "NeverNote pristupa vašoj biblioteci fotografija da uveze tekst sa fotografije u vašu bilješku."
           }
         },
         "de-AT": {
@@ -1056,7 +1056,7 @@
         "fa": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote accesses your photo library to import text from a photo into your note."
+            "value": "NeverNote برای وارد کردن متن از عکس به یادداشت شما به کتابخانه عکس شما دسترسی دارد."
           }
         },
         "fil": {
@@ -1080,19 +1080,19 @@
         "gu": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote accesses your photo library to import text from a photo into your note."
+            "value": "NeverNote તમારી નોંધમાં ફોટામાંથી ટેક્સ્ટ આયાત કરવા માટે તમારી ફોટો લાઇબ્રેરીને ઍક્સેસ કરે છે."
           }
         },
         "hi-Latn": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote accesses your photo library to import text from a photo into your note."
+            "value": "नेवरनोट किसी फोटो से टेक्स्ट को आपके नोट में आयात करने के लिए आपकी फोटो लाइब्रेरी तक पहुंचता है।"
           }
         },
         "hy": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote accesses your photo library to import text from a photo into your note."
+            "value": "NeverNote-ը մուտք է գործում ձեր լուսանկարադարան՝ լուսանկարից տեքստը ձեր գրության մեջ ներմուծելու համար:"
           }
         },
         "it-CH": {
@@ -1104,25 +1104,25 @@
         "ka": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote accesses your photo library to import text from a photo into your note."
+            "value": "NeverNote წვდება თქვენს ფოტო ბიბლიოთეკას, რათა იმპორტიროს ტექსტი ფოტოდან თქვენს ჩანიშვნაში."
           }
         },
         "kn": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote accesses your photo library to import text from a photo into your note."
+            "value": "ಫೋಟೋದಿಂದ ಪಠ್ಯವನ್ನು ನಿಮ್ಮ ಟಿಪ್ಪಣಿಗೆ ಆಮದು ಮಾಡಿಕೊಳ್ಳಲು NeverNote ನಿಮ್ಮ ಫೋಟೋ ಲೈಬ್ರರಿಯನ್ನು ಪ್ರವೇಶಿಸುತ್ತದೆ."
           }
         },
         "ml": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote accesses your photo library to import text from a photo into your note."
+            "value": "ഒരു ഫോട്ടോയിൽ നിന്ന് നിങ്ങളുടെ കുറിപ്പിലേക്ക് ടെക്‌സ്‌റ്റ് ഇമ്പോർട്ടുചെയ്യാൻ NeverNote നിങ്ങളുടെ ഫോട്ടോ ലൈബ്രറി ആക്‌സസ് ചെയ്യുന്നു."
           }
         },
         "mn": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote accesses your photo library to import text from a photo into your note."
+            "value": "NeverNote нь таны зургийн санд нэвтэрч, зургаас текстийг тэмдэглэлдээ оруулах боломжтой."
           }
         },
         "nl-BE": {
@@ -1146,19 +1146,19 @@
         "pa": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote accesses your photo library to import text from a photo into your note."
+            "value": "NeverNote ਇੱਕ ਫੋਟੋ ਤੋਂ ਟੈਕਸਟ ਨੂੰ ਤੁਹਾਡੇ ਨੋਟ ਵਿੱਚ ਆਯਾਤ ਕਰਨ ਲਈ ਤੁਹਾਡੀ ਫੋਟੋ ਲਾਇਬ੍ਰੇਰੀ ਤੱਕ ਪਹੁੰਚ ਕਰਦਾ ਹੈ।"
           }
         },
         "si": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote accesses your photo library to import text from a photo into your note."
+            "value": "NeverNote ඡායාරූපයකින් පෙළ ඔබේ සටහනට ආයාත කිරීමට ඔබේ ඡායාරූප පුස්තකාලයට ප්‍රවේශ වේ."
           }
         },
         "sq": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote accesses your photo library to import text from a photo into your note."
+            "value": "NeverNote akseson bibliotekën tuaj të fotografive për të importuar tekst nga një foto në shënimin tuaj."
           }
         },
         "tl": {
@@ -1170,19 +1170,19 @@
         "ug": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote accesses your photo library to import text from a photo into your note."
+            "value": "NeverNote رەسىم ئامبىرىڭىزغا رەسىمدىن تېكىست كىرگۈزۈپ خاتىرىڭىزگە كىرگۈزىدۇ."
           }
         },
         "uz": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote accesses your photo library to import text from a photo into your note."
+            "value": "NeverNote fotosuratdan matnni qaydingizga import qilish uchun foto kutubxonangizga kiradi."
           }
         },
         "yue-CN": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote accesses your photo library to import text from a photo into your note."
+            "value": "NeverNote 存取您的照片庫，將照片中的文字匯入到您的筆記中。"
           }
         },
         "zh-CN": {
@@ -1236,13 +1236,13 @@
         "de-AT": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "Niemals beachten"
           }
         },
         "de-CH": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "Niemals beachten"
           }
         },
         "en-AU": {
@@ -1290,25 +1290,25 @@
         "es-419": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "NuncaNota"
           }
         },
         "es-MX": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "NuncaNota"
           }
         },
         "es-US": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "NuncaNota"
           }
         },
         "fa": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "هرگز توجه نکنید"
           }
         },
         "fil": {
@@ -1320,25 +1320,25 @@
         "fr-BE": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "JamaisNote"
           }
         },
         "fr-CH": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "JamaisNote"
           }
         },
         "gu": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "ક્યારેય નોંધ નહીં"
           }
         },
         "hi-Latn": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "कभी ध्यान न दें"
           }
         },
         "hy": {
@@ -1350,37 +1350,37 @@
         "it-CH": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "MaiNota"
           }
         },
         "ka": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "არასოდეს შენიშვნა"
           }
         },
         "kn": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "ಎಂದಿಗೂ ಗಮನಿಸಿ"
           }
         },
         "ml": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "ഒരിക്കലും ശ്രദ്ധിക്കരുത്"
           }
         },
         "mn": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "Хэзээ ч анхаар"
           }
         },
         "nl-BE": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "NooitOpmerking"
           }
         },
         "nn": {
@@ -1398,19 +1398,19 @@
         "pa": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "ਕਦੇ ਵੀ ਨੋਟ ਨਹੀਂ"
           }
         },
         "si": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "කවදාවත් සටහන් කරන්න එපා"
           }
         },
         "sq": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "Asnjëherë Shënim"
           }
         },
         "tl": {
@@ -1428,36 +1428,390 @@
         "uz": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "Hech qachon eslatma"
           }
         },
         "yue-CN": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "從不注意"
           }
         },
         "zh-CN": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "从不注意"
           }
         },
         "zh-HK": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "從不注意"
           }
         },
         "zh-TW": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "從不注意"
           }
         },
         "zh": {
           "stringUnit": {
             "state": "translated",
+            "value": "从不注意"
+          }
+        },
+        "af": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "am": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "az": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "bg": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "bn": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "et": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "eu": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "ga": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "gl": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "hr": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "is": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "kk": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "km": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "lo": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "lt": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "lv": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "mk": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "mr": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "my": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "ne": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "pt-PT": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "sl": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "sr": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "sw": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "te": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "zu": {
+          "stringUnit": {
+            "state": "new",
             "value": "NeverNote"
           }
         }
@@ -1488,13 +1842,13 @@
         "de-AT": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "Niemals beachten"
           }
         },
         "de-CH": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "Niemals beachten"
           }
         },
         "en-AU": {
@@ -1542,25 +1896,25 @@
         "es-419": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "NuncaNota"
           }
         },
         "es-MX": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "NuncaNota"
           }
         },
         "es-US": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "NuncaNota"
           }
         },
         "fa": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "هرگز توجه نکنید"
           }
         },
         "fil": {
@@ -1572,25 +1926,25 @@
         "fr-BE": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "JamaisNote"
           }
         },
         "fr-CH": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "JamaisNote"
           }
         },
         "gu": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "ક્યારેય નોંધ નહીં"
           }
         },
         "hi-Latn": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "कभी ध्यान न दें"
           }
         },
         "hy": {
@@ -1602,37 +1956,37 @@
         "it-CH": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "MaiNota"
           }
         },
         "ka": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "არასოდეს შენიშვნა"
           }
         },
         "kn": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "ಎಂದಿಗೂ ಗಮನಿಸಿ"
           }
         },
         "ml": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "ഒരിക്കലും ശ്രദ്ധിക്കരുത്"
           }
         },
         "mn": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "Хэзээ ч анхаар"
           }
         },
         "nl-BE": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "NooitOpmerking"
           }
         },
         "nn": {
@@ -1650,19 +2004,19 @@
         "pa": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "ਕਦੇ ਵੀ ਨੋਟ ਨਹੀਂ"
           }
         },
         "si": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "කවදාවත් සටහන් කරන්න එපා"
           }
         },
         "sq": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "Asnjëherë Shënim"
           }
         },
         "tl": {
@@ -1680,36 +2034,390 @@
         "uz": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "Hech qachon eslatma"
           }
         },
         "yue-CN": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "從不注意"
           }
         },
         "zh-CN": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "从不注意"
           }
         },
         "zh-HK": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "從不注意"
           }
         },
         "zh-TW": {
           "stringUnit": {
             "state": "translated",
-            "value": "NeverNote"
+            "value": "從不注意"
           }
         },
         "zh": {
           "stringUnit": {
             "state": "translated",
+            "value": "从不注意"
+          }
+        },
+        "af": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "am": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "az": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "bg": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "bn": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "et": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "eu": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "ga": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "gl": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "hr": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "is": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "kk": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "km": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "lo": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "lt": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "lv": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "mk": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "mr": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "ms": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "my": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "ne": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "pt-PT": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "sl": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "sr": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "sw": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "te": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "new",
+            "value": "NeverNote"
+          }
+        },
+        "zu": {
+          "stringUnit": {
+            "state": "new",
             "value": "NeverNote"
           }
         }

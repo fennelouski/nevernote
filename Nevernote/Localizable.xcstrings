@@ -4608,7 +4608,7 @@
         "bs": {
           "stringUnit": {
             "state": "translated",
-            "value": "Align Center"
+            "value": "Poravnaj po sredini"
           }
         },
         "de-AT": {
@@ -4788,7 +4788,7 @@
         "sq": {
           "stringUnit": {
             "state": "translated",
-            "value": "Align Center"
+            "value": "Qendërzo"
           }
         },
         "tl": {
@@ -4800,7 +4800,7 @@
         "ug": {
           "stringUnit": {
             "state": "translated",
-            "value": "Align Center"
+            "value": "ئوتتۇرىغا توغرىلاش"
           }
         },
         "uz": {
@@ -10053,7 +10053,7 @@
         "bs": {
           "stringUnit": {
             "state": "translated",
-            "value": "Bold"
+            "value": "Podebljano"
           }
         },
         "de-AT": {
@@ -10245,7 +10245,7 @@
         "ug": {
           "stringUnit": {
             "state": "translated",
-            "value": "Bold"
+            "value": "توم"
           }
         },
         "uz": {
@@ -11263,7 +11263,7 @@
         "bs": {
           "stringUnit": {
             "state": "translated",
-            "value": "Bulleted List"
+            "value": "Lista s oznakama"
           }
         },
         "de-AT": {
@@ -16271,7 +16271,7 @@
         "pa": {
           "stringUnit": {
             "state": "translated",
-            "value": "Choose a photo from your library or files. NeverNote will read any text in the image and add it to your note. QR codes in the image are added at the bottom of the note."
+            "value": "ਆਪਣੀ ਲਾਇਬ੍ਰੇਰੀ ਜਾਂ ਫਾਈਲਾਂ ਵਿੱਚੋਂ ਇੱਕ ਫੋਟੋ ਚੁਣੋ। NeverNote ਚਿੱਤਰ ਵਿੱਚ ਕਿਸੇ ਵੀ ਟੈਕਸਟ ਨੂੰ ਪੜ੍ਹੇਗਾ ਅਤੇ ਇਸਨੂੰ ਤੁਹਾਡੇ ਨੋਟ ਵਿੱਚ ਸ਼ਾਮਲ ਕਰੇਗਾ। ਚਿੱਤਰ ਵਿੱਚ QR ਕੋਡ ਨੋਟ ਦੇ ਹੇਠਾਂ ਜੋੜੇ ਗਏ ਹਨ।"
           }
         },
         "si": {
@@ -23363,7 +23363,7 @@
         "bs": {
           "stringUnit": {
             "state": "translated",
-            "value": "Feature Flags"
+            "value": "Značajke zastavica"
           }
         },
         "de-AT": {
@@ -24231,7 +24231,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Font"
+            "value": "Carattere"
           }
         },
         "pt-BR": {
@@ -24297,7 +24297,7 @@
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Font"
+            "value": "Teckensnitt"
           }
         },
         "tr": {
@@ -24405,13 +24405,13 @@
         "ro": {
           "stringUnit": {
             "state": "translated",
-            "value": "Font"
+            "value": "Caractere"
           }
         },
         "hr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Font"
+            "value": "Vrsta fonta"
           }
         },
         "sl": {
@@ -24429,7 +24429,7 @@
         "ca": {
           "stringUnit": {
             "state": "translated",
-            "value": "Font"
+            "value": "Tipus de lletra"
           }
         },
         "ms": {
@@ -24453,7 +24453,7 @@
         "et": {
           "stringUnit": {
             "state": "translated",
-            "value": "Font"
+            "value": "Kiri"
           }
         },
         "lv": {
@@ -24573,7 +24573,7 @@
         "bs": {
           "stringUnit": {
             "state": "translated",
-            "value": "Font"
+            "value": "Font teksta"
           }
         },
         "de-AT": {
@@ -24693,7 +24693,7 @@
         "it-CH": {
           "stringUnit": {
             "state": "translated",
-            "value": "Font"
+            "value": "Carattere"
           }
         },
         "ka": {
@@ -24729,13 +24729,13 @@
         "nn": {
           "stringUnit": {
             "state": "translated",
-            "value": "Font"
+            "value": "Skrift"
           }
         },
         "no": {
           "stringUnit": {
             "state": "translated",
-            "value": "Font"
+            "value": "Skrift"
           }
         },
         "pa": {
@@ -24836,7 +24836,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Font…"
+            "value": "Carattere…"
           }
         },
         "pt-BR": {
@@ -24902,7 +24902,7 @@
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Font…"
+            "value": "Teckensnitt…"
           }
         },
         "tr": {
@@ -25010,13 +25010,13 @@
         "ro": {
           "stringUnit": {
             "state": "translated",
-            "value": "Font…"
+            "value": "Caractere…"
           }
         },
         "hr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Font…"
+            "value": "Vrsta fonta…"
           }
         },
         "sl": {
@@ -25034,7 +25034,7 @@
         "ca": {
           "stringUnit": {
             "state": "translated",
-            "value": "Font…"
+            "value": "Tipus de lletra…"
           }
         },
         "ms": {
@@ -25058,7 +25058,7 @@
         "et": {
           "stringUnit": {
             "state": "translated",
-            "value": "Font…"
+            "value": "Kiri…"
           }
         },
         "lv": {
@@ -25178,7 +25178,7 @@
         "bs": {
           "stringUnit": {
             "state": "translated",
-            "value": "Font…"
+            "value": "Font teksta…"
           }
         },
         "de-AT": {
@@ -25298,7 +25298,7 @@
         "it-CH": {
           "stringUnit": {
             "state": "translated",
-            "value": "Font…"
+            "value": "Carattere…"
           }
         },
         "ka": {
@@ -25370,7 +25370,7 @@
         "ug": {
           "stringUnit": {
             "state": "translated",
-            "value": "Font…"
+            "value": "خەت نۇسخىسى…"
           }
         },
         "uz": {
@@ -25429,13 +25429,13 @@
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Format"
+            "value": "Mise en forme"
           }
         },
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Format"
+            "value": "Formatierung"
           }
         },
         "it": {
@@ -25501,7 +25501,7 @@
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Format"
+            "value": "Formatowanie"
           }
         },
         "sv": {
@@ -25531,7 +25531,7 @@
         "id": {
           "stringUnit": {
             "state": "translated",
-            "value": "Format"
+            "value": "Pemformatan"
           }
         },
         "uk": {
@@ -25717,7 +25717,7 @@
         "az": {
           "stringUnit": {
             "state": "translated",
-            "value": "Format"
+            "value": "Formatlaşdırma"
           }
         },
         "eu": {
@@ -25783,19 +25783,19 @@
         "bs": {
           "stringUnit": {
             "state": "translated",
-            "value": "Format"
+            "value": "Formatiranje"
           }
         },
         "de-AT": {
           "stringUnit": {
             "state": "translated",
-            "value": "Format"
+            "value": "Formatierung"
           }
         },
         "de-CH": {
           "stringUnit": {
             "state": "translated",
-            "value": "Format"
+            "value": "Formatierung"
           }
         },
         "en-AU": {
@@ -25873,13 +25873,13 @@
         "fr-BE": {
           "stringUnit": {
             "state": "translated",
-            "value": "Format"
+            "value": "Mise en forme"
           }
         },
         "fr-CH": {
           "stringUnit": {
             "state": "translated",
-            "value": "Format"
+            "value": "Mise en forme"
           }
         },
         "gu": {
@@ -25939,13 +25939,13 @@
         "nn": {
           "stringUnit": {
             "state": "translated",
-            "value": "Format"
+            "value": "Formatering"
           }
         },
         "no": {
           "stringUnit": {
             "state": "translated",
-            "value": "Format"
+            "value": "Formatering"
           }
         },
         "pa": {
@@ -25981,7 +25981,7 @@
         "uz": {
           "stringUnit": {
             "state": "translated",
-            "value": "Format"
+            "value": "Formatlash"
           }
         },
         "yue-CN": {
@@ -32630,7 +32630,7 @@
         "ug": {
           "stringUnit": {
             "state": "translated",
-            "value": "LAST EDITED %@."
+            "value": "ئاخىرقى تەھرىر %@."
           }
         },
         "uz": {
@@ -34355,7 +34355,7 @@
         "gu": {
           "stringUnit": {
             "state": "translated",
-            "value": "Maximize Presentation Size"
+            "value": "પ્રસ્તુતિનું કદ મહત્તમ કરો"
           }
         },
         "hi-Latn": {
@@ -38284,7 +38284,7 @@
         "da": {
           "stringUnit": {
             "state": "translated",
-            "value": "Note"
+            "value": "Notat"
           }
         },
         "nb": {
@@ -38644,13 +38644,13 @@
         "nn": {
           "stringUnit": {
             "state": "translated",
-            "value": "Note"
+            "value": "Notat"
           }
         },
         "no": {
           "stringUnit": {
             "state": "translated",
-            "value": "Note"
+            "value": "Notat"
           }
         },
         "pa": {
@@ -40620,7 +40620,7 @@
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Open"
+            "value": "Openen"
           }
         },
         "pl": {
@@ -41058,7 +41058,7 @@
         "nl-BE": {
           "stringUnit": {
             "state": "translated",
-            "value": "Open"
+            "value": "Openen"
           }
         },
         "nn": {
@@ -42118,7 +42118,7 @@
         "bs": {
           "stringUnit": {
             "state": "translated",
-            "value": "Photo Library"
+            "value": "Biblioteka fotografija"
           }
         },
         "de-AT": {
@@ -42531,7 +42531,7 @@
         "fi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Plain Lines"
+            "value": "Yksinkertaiset rivit"
           }
         },
         "cs": {
@@ -42723,7 +42723,7 @@
         "bs": {
           "stringUnit": {
             "state": "translated",
-            "value": "Plain Lines"
+            "value": "Običajni redovi"
           }
         },
         "de-AT": {
@@ -44125,7 +44125,7 @@
         "ug": {
           "stringUnit": {
             "state": "translated",
-            "value": "Portrait"
+            "value": "تىك"
           }
         },
         "uz": {
@@ -44250,7 +44250,7 @@
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Recent"
+            "value": "Recente"
           }
         },
         "pl": {
@@ -44688,7 +44688,7 @@
         "nl-BE": {
           "stringUnit": {
             "state": "translated",
-            "value": "Recent"
+            "value": "Recente"
           }
         },
         "nn": {
@@ -44801,7 +44801,7 @@
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Reset"
+            "value": "Reimposta"
           }
         },
         "pt-BR": {
@@ -45143,7 +45143,7 @@
         "bs": {
           "stringUnit": {
             "state": "translated",
-            "value": "Reset"
+            "value": "Poništi"
           }
         },
         "de-AT": {
@@ -45263,7 +45263,7 @@
         "it-CH": {
           "stringUnit": {
             "state": "translated",
-            "value": "Reset"
+            "value": "Reimposta"
           }
         },
         "ka": {
@@ -46958,7 +46958,7 @@
         "bs": {
           "stringUnit": {
             "state": "translated",
-            "value": "Screenshot Share"
+            "value": "Dijeljenje snimka ekrana"
           }
         },
         "de-AT": {
@@ -47072,7 +47072,7 @@
         "hy": {
           "stringUnit": {
             "state": "translated",
-            "value": "Screenshot Share"
+            "value": "Էկրանի պատկերի կիսում"
           }
         },
         "it-CH": {
@@ -47090,7 +47090,7 @@
         "kn": {
           "stringUnit": {
             "state": "translated",
-            "value": "Screenshot Share"
+            "value": "ಸ್ಕ್ರೀನ್‌ಶಾಟ್ ಹಂಚಿಕೆ"
           }
         },
         "ml": {
@@ -47132,7 +47132,7 @@
         "si": {
           "stringUnit": {
             "state": "translated",
-            "value": "Screenshot Share"
+            "value": "තිර රූපය බෙදාගැනීම"
           }
         },
         "sq": {
@@ -49983,7 +49983,7 @@
         "bs": {
           "stringUnit": {
             "state": "translated",
-            "value": "Share Note"
+            "value": "Podijeli bilješku"
           }
         },
         "de-AT": {
@@ -54356,7 +54356,7 @@
         "ml": {
           "stringUnit": {
             "state": "translated",
-            "value": "Show image at bottom"
+            "value": "ചിത്രം താഴെ കാണിക്കുക"
           }
         },
         "mn": {
@@ -56638,7 +56638,7 @@
         "bs": {
           "stringUnit": {
             "state": "translated",
-            "value": "Smart Links"
+            "value": "Pametne veze"
           }
         },
         "de-AT": {
@@ -56830,7 +56830,7 @@
         "ug": {
           "stringUnit": {
             "state": "translated",
-            "value": "Smart Links"
+            "value": "ئەقلىي ئۇلانمىلار"
           }
         },
         "uz": {
@@ -57243,7 +57243,7 @@
         "bs": {
           "stringUnit": {
             "state": "translated",
-            "value": "Smart link"
+            "value": "Pametna veza"
           }
         },
         "de-AT": {
@@ -57399,13 +57399,13 @@
         "nn": {
           "stringUnit": {
             "state": "translated",
-            "value": "Smart link"
+            "value": "Smartlenke"
           }
         },
         "no": {
           "stringUnit": {
             "state": "translated",
-            "value": "Smart link"
+            "value": "Smartlenke"
           }
         },
         "pa": {
@@ -58453,7 +58453,7 @@
         "bs": {
           "stringUnit": {
             "state": "translated",
-            "value": "Square"
+            "value": "Kvadrat"
           }
         },
         "de-AT": {
@@ -59040,7 +59040,7 @@
         "my": {
           "stringUnit": {
             "state": "translated",
-            "value": "System Bold"
+            "value": "စနစ် ထူထူ"
           }
         },
         "ne": {
@@ -59058,7 +59058,7 @@
         "bs": {
           "stringUnit": {
             "state": "translated",
-            "value": "System Bold"
+            "value": "Sistemsko podebljano"
           }
         },
         "de-AT": {
@@ -59250,7 +59250,7 @@
         "ug": {
           "stringUnit": {
             "state": "translated",
-            "value": "System Bold"
+            "value": "سىستېما توم"
           }
         },
         "uz": {
@@ -69547,7 +69547,7 @@
         "yue-CN": {
           "stringUnit": {
             "state": "translated",
-            "value": "Just a clean space for your immediate thoughts."
+            "value": "只是一個乾淨的空間來容納您的即時想法。"
           }
         },
         "zh-CN": {
