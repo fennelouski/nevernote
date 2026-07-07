@@ -1,0 +1,17 @@
+# Xcode build output
+build/
+DerivedData/
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Xcode user state
+xcuserdata/
+*.xcuserstate
+
+# macOS
+.DS_Store
+
+# Python tooling
+__pycache__/
+*.pyc

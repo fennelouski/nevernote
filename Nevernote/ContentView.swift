@@ -39,7 +39,6 @@ struct ContentView: View {
     @State private var showLastEditedBanner = true
     @State private var lastEditedBannerScheduleID = UUID()
 
-    @State private var onboardingActive = false
     @State private var showScreenshotPrompt = false
     @State private var screenshotPromptStep: ScreenshotPromptStep = .chooseShareKind
     @State private var lastScreenshotHandledAt = Date.distantPast
@@ -265,12 +264,6 @@ struct ContentView: View {
             softwareKeyboardVisible = false
         }
         #endif
-        .onReceive(NotificationCenter.default.publisher(for: NevernoteNotification.onboardingDidStart)) { _ in
-            onboardingActive = true
-        }
-        .onReceive(NotificationCenter.default.publisher(for: NevernoteNotification.onboardingDidComplete)) { _ in
-            onboardingActive = false
-        }
         .onReceive(NotificationCenter.default.publisher(for: NeverNotePlatform.screenshotNotification)) { _ in
             handleScreenshotDetected()
         }
@@ -571,7 +564,6 @@ struct ContentView: View {
     }
 
     private func handleScreenshotDetected() {
-        guard !onboardingActive else { return }
         #if os(macOS)
         guard macSidePanel == nil else { return }
         #else

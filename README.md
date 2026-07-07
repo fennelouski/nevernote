@@ -22,7 +22,6 @@ Nevernote is an iOS note-taking app focused on a single distraction-free note wi
 - `NeverNote/NevernoteApp.swift` - app entry point and `ModelContainer` setup
 - `NeverNote/ContentView.swift` - primary UI, editor flow, and persistence hooks
 - `NeverNote/Item.swift` - `SwiftData` `@Model` (`NoteDocument`)
-- `NeverNote1/` - legacy Objective-C code and assets retained in the repo
 
 ## Getting Started
 
@@ -41,5 +40,4 @@ Nevernote is an iOS note-taking app focused on a single distraction-free note wi
 
 ## Notes
 
-- Existing modernization and onboarding docs are in `MODERNIZATION_TODO.md` and `ONBOARDING.md`.
 - The app currently prioritizes a single active note experience rather than multi-note navigation.

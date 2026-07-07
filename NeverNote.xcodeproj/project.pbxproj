@@ -7,20 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1A2B3C4D5E6F789012345678 /* NNOnboardingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C3D4E5F6789012345678A1 /* NNOnboardingManager.m */; platformFilter = ios; };
-		2B3C4D5E6F789012345678A1 /* NNOnboardingTooltipView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E5F6789012345678A1B2C3 /* NNOnboardingTooltipView.m */; platformFilter = ios; };
-		33B70CB51399476FAEFB55D8 /* NNSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 478AA74701524D5BB5AE53F4 /* NNSettingsViewController.m */; platformFilter = ios; };
-		3C4D5E6F789012345678A1B2 /* NNOnboardingCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = F6789012345678A1B2C3D4E5 /* NNOnboardingCoordinator.m */; platformFilter = ios; };
-		8008A38B191BC5C10071B32D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8008A38A191BC5C10071B32D /* Default-568h@2x.png */; };
-		800D2E021947919700E904AA /* UIColor+AppColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 800D2E011947919700E904AA /* UIColor+AppColors.m */; platformFilter = ios; };
-		8015691419B1189F00A4A083 /* NNListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8015691319B1189F00A4A083 /* NNListViewController.m */; platformFilter = ios; };
-		803137BC1965D08E00B78BC5 /* UNIOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 803137BB1965D08E00B78BC5 /* UNIOptionsView.m */; platformFilter = ios; };
-		803137BF1965D5CC00B78BC5 /* UNISuggestionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 803137BE1965D5CC00B78BC5 /* UNISuggestionView.m */; platformFilter = ios; };
-		803137C21965F15B00B78BC5 /* UNICalendarPopOver.m in Sources */ = {isa = PBXBuildFile; fileRef = 803137C11965F15B00B78BC5 /* UNICalendarPopOver.m */; platformFilter = ios; };
-		803137CB19660DAB00B78BC5 /* UNIAdditionalOptionsViewButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 803137CA19660DAB00B78BC5 /* UNIAdditionalOptionsViewButton.m */; platformFilter = ios; };
-		803CDE46196AFFE600C1C789 /* UNITimeInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 803CDE45196AFFE600C1C789 /* UNITimeInputView.m */; platformFilter = ios; };
-		803CDE49196B06A700C1C789 /* UNIAdditionalOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 803CDE48196B06A700C1C789 /* UNIAdditionalOptionsView.m */; platformFilter = ios; };
-		803CDE4C196B157600C1C789 /* UNIRepeatOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 803CDE4B196B157600C1C789 /* UNIRepeatOptionsView.m */; platformFilter = ios; };
 		804E511F2FB9E68800DAA686 /* EditorFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E511E2FB9E68800DAA686 /* EditorFont.swift */; };
 		804E51212FB9E69900DAA686 /* NoteDataDetectors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E51202FB9E69900DAA686 /* NoteDataDetectors.swift */; };
 		804E51232FB9E6CE00DAA686 /* EditorToolbarPlacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E51222FB9E6CE00DAA686 /* EditorToolbarPlacement.swift */; };
@@ -36,37 +22,17 @@
 		804E51372FB9E83900DAA686 /* NevernoteNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E51362FB9E83900DAA686 /* NevernoteNotification.swift */; };
 		804E51382FB9E85000DAA686 /* NoteDataDetectorInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E51392FB9E85000DAA686 /* NoteDataDetectorInteraction.swift */; };
 		804E513A2FB9E86800DAA686 /* NoteDataDetectorConfirmationDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E513B2FB9E86800DAA686 /* NoteDataDetectorConfirmationDialog.swift */; };
-		8056F5FF196591BE009CEA81 /* UNITaskCreatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8056F5FE196591BE009CEA81 /* UNITaskCreatorViewController.m */; platformFilter = ios; };
 		805898751916641F00352439 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 805898741916641F00352439 /* Foundation.framework */; };
 		805898771916641F00352439 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 805898761916641F00352439 /* CoreGraphics.framework */; };
 		805898791916641F00352439 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 805898781916641F00352439 /* UIKit.framework */; platformFilter = ios; };
 		8058987B1916641F00352439 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8058987A1916641F00352439 /* CoreData.framework */; };
-		805898871916641F00352439 /* NNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 805898861916641F00352439 /* NNAppDelegate.m */; platformFilter = ios; };
-		8058988A1916641F00352439 /* NeverNote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 805898881916641F00352439 /* NeverNote.xcdatamodeld */; };
 		8058988C1916641F00352439 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8058988B1916641F00352439 /* Images.xcassets */; };
 		805898931916642000352439 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 805898921916642000352439 /* XCTest.framework */; };
 		805898941916642000352439 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 805898741916641F00352439 /* Foundation.framework */; };
 		805898951916642000352439 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 805898781916641F00352439 /* UIKit.framework */; };
 		805898961916642000352439 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8058987A1916641F00352439 /* CoreData.framework */; };
 		8058989E1916642000352439 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8058989C1916642000352439 /* InfoPlist.strings */; };
-		805898A01916642000352439 /* NeverNoteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8058989F1916642000352439 /* NeverNoteTests.m */; platformFilter = ios; };
-		805898AB1916643400352439 /* NNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 805898AA1916643400352439 /* NNViewController.m */; platformFilter = ios; };
 		805898B21919A21400352439 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 805898B11919A21400352439 /* CoreMotion.framework */; platformFilter = ios; };
-		80B9E221191AF91B008B377C /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 80B9E220191AF91B008B377C /* icon.icns */; };
-		80B9E22A191AFC4A008B377C /* Icon 29.png in Resources */ = {isa = PBXBuildFile; fileRef = 80B9E224191AFC4A008B377C /* Icon 29.png */; };
-		80B9E22B191AFC4A008B377C /* Icon 40.png in Resources */ = {isa = PBXBuildFile; fileRef = 80B9E225191AFC4A008B377C /* Icon 40.png */; };
-		80B9E22C191AFC4A008B377C /* Icon 58.png in Resources */ = {isa = PBXBuildFile; fileRef = 80B9E226191AFC4A008B377C /* Icon 58.png */; };
-		80B9E22D191AFC4A008B377C /* Icon 80.png in Resources */ = {isa = PBXBuildFile; fileRef = 80B9E227191AFC4A008B377C /* Icon 80.png */; };
-		80B9E22E191AFC4A008B377C /* Icon 120.png in Resources */ = {isa = PBXBuildFile; fileRef = 80B9E228191AFC4A008B377C /* Icon 120.png */; };
-		80B9E22F191AFC4A008B377C /* Icon 152.png in Resources */ = {isa = PBXBuildFile; fileRef = 80B9E229191AFC4A008B377C /* Icon 152.png */; };
-		80B9E236191AFDA1008B377C /* Launch Screen iPad Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 80B9E230191AFDA1008B377C /* Launch Screen iPad Landscape.png */; };
-		80B9E237191AFDA1008B377C /* Launch Screen iPad Landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 80B9E231191AFDA1008B377C /* Launch Screen iPad Landscape@2x.png */; };
-		80B9E238191AFDA1008B377C /* Launch Screen iPad Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 80B9E232191AFDA1008B377C /* Launch Screen iPad Portrait.png */; };
-		80B9E239191AFDA1008B377C /* Launch Screen iPad Portrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 80B9E233191AFDA1008B377C /* Launch Screen iPad Portrait@2x.png */; };
-		80B9E23A191AFDA1008B377C /* Launch Screen iPhone Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 80B9E234191AFDA1008B377C /* Launch Screen iPhone Portrait.png */; };
-		80B9E23B191AFDA1008B377C /* Launch Screen iPhone Portrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 80B9E235191AFDA1008B377C /* Launch Screen iPhone Portrait@2x.png */; };
-		80B9E23D191AFDF8008B377C /* Launch Screen iPhone Portrait 4-inch.png in Resources */ = {isa = PBXBuildFile; fileRef = 80B9E23C191AFDF8008B377C /* Launch Screen iPhone Portrait 4-inch.png */; };
-		80ECF9371964519E00EDABD1 /* NNColorObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 80ECF9361964519E00EDABD1 /* NNColorObject.m */; platformFilter = ios; };
 		90AA00021000000000000001 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA00011000000000000001 /* ContentView.swift */; };
 		90AA00021000000000000002 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA00011000000000000002 /* Item.swift */; };
 		90AA00021000000000000003 /* NevernoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA00011000000000000003 /* NevernoteApp.swift */; };
@@ -83,7 +49,6 @@
 		90AA0003100000000000011A /* MacInspectorPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA00031000000000000119 /* MacInspectorPanel.swift */; };
 		90AA0003100000000000011C /* MacPhotoImportInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA0003100000000000011B /* MacPhotoImportInspector.swift */; };
 		90AA0003100000000000011E /* NoteImageQRDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA0003100000000000011D /* NoteImageQRDetection.swift */; };
-		9ECED7F59E864A5DAB31195E /* NNSettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DE51B2428F42E399C83D79 /* NNSettingsManager.m */; platformFilter = ios; };
 		A10000010191664200352401 /* NoteRichTextCodec.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000020191664200352401 /* NoteRichTextCodec.swift */; };
 		A10000030191664200352401 /* NeverNoteCloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000040191664200352401 /* NeverNoteCloudKit.swift */; };
 		A10000050191664200352401 /* NoteRichTextCodec.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000020191664200352401 /* NoteRichTextCodec.swift */; };
@@ -96,7 +61,6 @@
 		A10000120191664200352401 /* NeverNote Watch Widget Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A10000130191664200352401 /* NeverNote Watch Widget Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A100001B0191664200352401 /* NevernoteModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100001A0191664200352401 /* NevernoteModelContainer.swift */; };
 		A100001C0191664200352401 /* NevernoteModelContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100001A0191664200352401 /* NevernoteModelContainer.swift */; };
-		A7B1C2D3E4F5678901234567 /* NNLogoTraceView.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B1C2D3E4F5678901234569 /* NNLogoTraceView.m */; platformFilter = ios; };
 		AABB00000000000000000002 /* ScreenshotLaunchSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB00000000000000000001 /* ScreenshotLaunchSupport.swift */; };
 		AABB00000000000000000004 /* WatchScreenshotLaunchSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABB00000000000000000003 /* WatchScreenshotLaunchSupport.swift */; };
 		BLOC00021000000000000001 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = BLOC00011000000000000001 /* Localizable.xcstrings */; };
@@ -117,6 +81,7 @@
 		NT00061000000000000001 /* NoteOnDeviceTranslation.swift in Sources */ = {isa = PBXBuildFile; fileRef = NT00051000000000000001 /* NoteOnDeviceTranslation.swift */; };
 		NT00081000000000000001 /* NoteLocaleFlagEmoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = NT00071000000000000001 /* NoteLocaleFlagEmoji.swift */; };
 		NT000A10000000000000001 /* NoteLocaleFlagEmojiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = NT00091000000000000001 /* NoteLocaleFlagEmojiTests.swift */; };
+		TL00021000000000000001 /* NoteLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = TL00011000000000000001 /* NoteLogicTests.swift */; };
 		NT00121000000000000001 /* NoteOnDeviceTranslationIOS18.swift in Sources */ = {isa = PBXBuildFile; fileRef = NT00111000000000000001 /* NoteOnDeviceTranslationIOS18.swift */; };
 		NT00141000000000000001 /* NoteEditorTranslationHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = NT00131000000000000001 /* NoteEditorTranslationHost.swift */; };
 		NT00161000000000000001 /* NoteTranslationPrefetchCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = NT00151000000000000001 /* NoteTranslationPrefetchCache.swift */; };
@@ -173,28 +138,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		30F8F0CBA3F646DDA8B85864 /* NNSettingsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNSettingsManager.h; sourceTree = "<group>"; };
-		478AA74701524D5BB5AE53F4 /* NNSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNSettingsViewController.m; sourceTree = "<group>"; };
-		60DE51B2428F42E399C83D79 /* NNSettingsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNSettingsManager.m; sourceTree = "<group>"; };
-		8008A38A191BC5C10071B32D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		800D2E001947919700E904AA /* UIColor+AppColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+AppColors.h"; sourceTree = "<group>"; };
-		800D2E011947919700E904AA /* UIColor+AppColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AppColors.m"; sourceTree = "<group>"; };
-		8015691219B1189F00A4A083 /* NNListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNListViewController.h; sourceTree = "<group>"; };
-		8015691319B1189F00A4A083 /* NNListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNListViewController.m; sourceTree = "<group>"; };
-		803137BA1965D08E00B78BC5 /* UNIOptionsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNIOptionsView.h; sourceTree = "<group>"; };
-		803137BB1965D08E00B78BC5 /* UNIOptionsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNIOptionsView.m; sourceTree = "<group>"; };
-		803137BD1965D5CC00B78BC5 /* UNISuggestionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNISuggestionView.h; sourceTree = "<group>"; };
-		803137BE1965D5CC00B78BC5 /* UNISuggestionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNISuggestionView.m; sourceTree = "<group>"; };
-		803137C01965F15B00B78BC5 /* UNICalendarPopOver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNICalendarPopOver.h; sourceTree = "<group>"; };
-		803137C11965F15B00B78BC5 /* UNICalendarPopOver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNICalendarPopOver.m; sourceTree = "<group>"; };
-		803137C919660DAB00B78BC5 /* UNIAdditionalOptionsViewButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNIAdditionalOptionsViewButton.h; sourceTree = "<group>"; };
-		803137CA19660DAB00B78BC5 /* UNIAdditionalOptionsViewButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNIAdditionalOptionsViewButton.m; sourceTree = "<group>"; };
-		803CDE44196AFFE600C1C789 /* UNITimeInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNITimeInputView.h; sourceTree = "<group>"; };
-		803CDE45196AFFE600C1C789 /* UNITimeInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNITimeInputView.m; sourceTree = "<group>"; };
-		803CDE47196B06A700C1C789 /* UNIAdditionalOptionsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNIAdditionalOptionsView.h; sourceTree = "<group>"; };
-		803CDE48196B06A700C1C789 /* UNIAdditionalOptionsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNIAdditionalOptionsView.m; sourceTree = "<group>"; };
-		803CDE4A196B157600C1C789 /* UNIRepeatOptionsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNIRepeatOptionsView.h; sourceTree = "<group>"; };
-		803CDE4B196B157600C1C789 /* UNIRepeatOptionsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNIRepeatOptionsView.m; sourceTree = "<group>"; };
 		804E511E2FB9E68800DAA686 /* EditorFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorFont.swift; sourceTree = "<group>"; };
 		804E51202FB9E69900DAA686 /* NoteDataDetectors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDataDetectors.swift; sourceTree = "<group>"; };
 		804E51222FB9E6CE00DAA686 /* EditorToolbarPlacement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorToolbarPlacement.swift; sourceTree = "<group>"; };
@@ -210,52 +153,24 @@
 		804E51362FB9E83900DAA686 /* NevernoteNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NevernoteNotification.swift; sourceTree = "<group>"; };
 		804E51392FB9E85000DAA686 /* NoteDataDetectorInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDataDetectorInteraction.swift; sourceTree = "<group>"; };
 		804E513B2FB9E86800DAA686 /* NoteDataDetectorConfirmationDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDataDetectorConfirmationDialog.swift; sourceTree = "<group>"; };
-		8056F5FD196591BE009CEA81 /* UNITaskCreatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UNITaskCreatorViewController.h; sourceTree = "<group>"; };
-		8056F5FE196591BE009CEA81 /* UNITaskCreatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UNITaskCreatorViewController.m; sourceTree = "<group>"; };
 		805898711916641F00352439 /* NeverNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeverNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		805898741916641F00352439 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		805898761916641F00352439 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		805898781916641F00352439 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8058987A1916641F00352439 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		8058987E1916641F00352439 /* NeverNote-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NeverNote-Info.plist"; sourceTree = "<group>"; };
-		805898801916641F00352439 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		805898821916641F00352439 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		805898841916641F00352439 /* NeverNote-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NeverNote-Prefix.pch"; sourceTree = "<group>"; };
-		805898851916641F00352439 /* NNAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NNAppDelegate.h; sourceTree = "<group>"; };
-		805898861916641F00352439 /* NNAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NNAppDelegate.m; sourceTree = "<group>"; };
-		805898891916641F00352439 /* NeverNote.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NeverNote.xcdatamodel; sourceTree = "<group>"; };
 		8058988B1916641F00352439 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		805898911916642000352439 /* NeverNoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeverNoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		805898921916642000352439 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		8058989B1916642000352439 /* NeverNoteTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NeverNoteTests-Info.plist"; sourceTree = "<group>"; };
 		8058989D1916642000352439 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		8058989F1916642000352439 /* NeverNoteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NeverNoteTests.m; sourceTree = "<group>"; };
-		805898A91916643400352439 /* NNViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNViewController.h; sourceTree = "<group>"; };
-		805898AA1916643400352439 /* NNViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNViewController.m; sourceTree = "<group>"; };
 		805898B11919A21400352439 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
-		80B9E220191AF91B008B377C /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
-		80B9E224191AFC4A008B377C /* Icon 29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon 29.png"; sourceTree = "<group>"; };
-		80B9E225191AFC4A008B377C /* Icon 40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon 40.png"; sourceTree = "<group>"; };
-		80B9E226191AFC4A008B377C /* Icon 58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon 58.png"; sourceTree = "<group>"; };
-		80B9E227191AFC4A008B377C /* Icon 80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon 80.png"; sourceTree = "<group>"; };
-		80B9E228191AFC4A008B377C /* Icon 120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon 120.png"; sourceTree = "<group>"; };
-		80B9E229191AFC4A008B377C /* Icon 152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon 152.png"; sourceTree = "<group>"; };
-		80B9E230191AFDA1008B377C /* Launch Screen iPad Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Launch Screen iPad Landscape.png"; sourceTree = "<group>"; };
-		80B9E231191AFDA1008B377C /* Launch Screen iPad Landscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Launch Screen iPad Landscape@2x.png"; sourceTree = "<group>"; };
-		80B9E232191AFDA1008B377C /* Launch Screen iPad Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Launch Screen iPad Portrait.png"; sourceTree = "<group>"; };
-		80B9E233191AFDA1008B377C /* Launch Screen iPad Portrait@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Launch Screen iPad Portrait@2x.png"; sourceTree = "<group>"; };
-		80B9E234191AFDA1008B377C /* Launch Screen iPhone Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Launch Screen iPhone Portrait.png"; sourceTree = "<group>"; };
-		80B9E235191AFDA1008B377C /* Launch Screen iPhone Portrait@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Launch Screen iPhone Portrait@2x.png"; sourceTree = "<group>"; };
-		80B9E23C191AFDF8008B377C /* Launch Screen iPhone Portrait 4-inch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Launch Screen iPhone Portrait 4-inch.png"; sourceTree = "<group>"; };
-		80ECF9351964519E00EDABD1 /* NNColorObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNColorObject.h; sourceTree = "<group>"; };
-		80ECF9361964519E00EDABD1 /* NNColorObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNColorObject.m; sourceTree = "<group>"; };
 		90AA00011000000000000001 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		90AA00011000000000000002 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		90AA00011000000000000003 /* NevernoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NevernoteApp.swift; sourceTree = "<group>"; };
 		90AA00031000000000000101 /* NoteTextImageRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTextImageRenderer.swift; sourceTree = "<group>"; };
 		90AA00031000000000000103 /* ActivityShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityShareSheet.swift; sourceTree = "<group>"; };
 		90AA00031000000000000105 /* ScreenshotSharePromptOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotSharePromptOverlay.swift; sourceTree = "<group>"; };
-		90AA00031000000000000107 /* NeverNote-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NeverNote-Bridging-Header.h"; sourceTree = "<group>"; };
 		90AA00031000000000000109 /* NoteImageURLPrefetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteImageURLPrefetcher.swift; sourceTree = "<group>"; };
 		90AA0003100000000000010B /* NeverNoteTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeverNoteTheme.swift; sourceTree = "<group>"; };
 		90AA0003100000000000010F /* NoteImagePermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteImagePermissionManager.swift; sourceTree = "<group>"; };
@@ -276,20 +191,11 @@
 		A10000180191664200352401 /* NeverNoteWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NeverNoteWatch.entitlements; sourceTree = "<group>"; };
 		A10000190191664200352401 /* NeverNote.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NeverNote.entitlements; sourceTree = "<group>"; };
 		A100001A0191664200352401 /* NevernoteModelContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NevernoteModelContainer.swift; sourceTree = "<group>"; };
-		A1B2C3D4E5F6789012345678 /* NNOnboardingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNOnboardingManager.h; sourceTree = "<group>"; };
-		A7B1C2D3E4F5678901234568 /* NNLogoTraceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNLogoTraceView.h; sourceTree = "<group>"; };
-		A7B1C2D3E4F5678901234569 /* NNLogoTraceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNLogoTraceView.m; sourceTree = "<group>"; };
 		AABB00000000000000000001 /* ScreenshotLaunchSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotLaunchSupport.swift; sourceTree = "<group>"; };
 		AABB00000000000000000003 /* WatchScreenshotLaunchSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchScreenshotLaunchSupport.swift; sourceTree = "<group>"; };
-		B2C3D4E5F6789012345678A1 /* NNOnboardingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNOnboardingManager.m; sourceTree = "<group>"; };
 		BLOC00011000000000000001 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		BLOC00011000000000000002 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		BLOC00011000000000000003 /* ScreenshotDemoStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotDemoStrings.swift; sourceTree = "<group>"; };
-		C3D4E5F6789012345678A1B2 /* NNOnboardingTooltipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNOnboardingTooltipView.h; sourceTree = "<group>"; };
-		C49CBDEC93FC4C8192723291 /* NNSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNSettingsViewController.h; sourceTree = "<group>"; };
-		D4E5F6789012345678A1B2C3 /* NNOnboardingTooltipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNOnboardingTooltipView.m; sourceTree = "<group>"; };
-		E5F6789012345678A1B2C3D4 /* NNOnboardingCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNOnboardingCoordinator.h; sourceTree = "<group>"; };
-		F6789012345678A1B2C3D4E5 /* NNOnboardingCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNOnboardingCoordinator.m; sourceTree = "<group>"; };
 		FF00011000000000000001 /* FeatureFlag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureFlag.swift; sourceTree = "<group>"; };
 		FF00021000000000000001 /* FeatureFlagLaunchOverrides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureFlagLaunchOverrides.swift; sourceTree = "<group>"; };
 		FF00031000000000000001 /* FeatureFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureFlags.swift; sourceTree = "<group>"; };
@@ -302,6 +208,7 @@
 		NT00051000000000000001 /* NoteOnDeviceTranslation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteOnDeviceTranslation.swift; sourceTree = "<group>"; };
 		NT00071000000000000001 /* NoteLocaleFlagEmoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteLocaleFlagEmoji.swift; sourceTree = "<group>"; };
 		NT00091000000000000001 /* NoteLocaleFlagEmojiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteLocaleFlagEmojiTests.swift; sourceTree = "<group>"; };
+		TL00011000000000000001 /* NoteLogicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteLogicTests.swift; sourceTree = "<group>"; };
 		NT00111000000000000001 /* NoteOnDeviceTranslationIOS18.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteOnDeviceTranslationIOS18.swift; sourceTree = "<group>"; };
 		NT00131000000000000001 /* NoteEditorTranslationHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditorTranslationHost.swift; sourceTree = "<group>"; };
 		NT00151000000000000001 /* NoteTranslationPrefetchCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTranslationPrefetchCache.swift; sourceTree = "<group>"; };
@@ -352,11 +259,9 @@
 		805898681916641F00352439 = {
 			isa = PBXGroup;
 			children = (
-				8008A38A191BC5C10071B32D /* Default-568h@2x.png */,
 				90AA00011000000000000004 /* NeverNote */,
 				A10000220191664200352401 /* NeverNoteWatch */,
 				A10000230191664200352401 /* NeverNoteWatchWidget */,
-				8058987C1916641F00352439 /* NeverNote1 */,
 				805898991916642000352439 /* NeverNoteTests */,
 				805898731916641F00352439 /* Frameworks */,
 				805898721916641F00352439 /* Products */,
@@ -387,71 +292,11 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		8058987C1916641F00352439 /* NeverNote1 */ = {
-			isa = PBXGroup;
-			children = (
-				805898851916641F00352439 /* NNAppDelegate.h */,
-				805898861916641F00352439 /* NNAppDelegate.m */,
-				8015691219B1189F00A4A083 /* NNListViewController.h */,
-				8015691319B1189F00A4A083 /* NNListViewController.m */,
-				805898A91916643400352439 /* NNViewController.h */,
-				805898AA1916643400352439 /* NNViewController.m */,
-				80ECF9351964519E00EDABD1 /* NNColorObject.h */,
-				80ECF9361964519E00EDABD1 /* NNColorObject.m */,
-				800D2E001947919700E904AA /* UIColor+AppColors.h */,
-				800D2E011947919700E904AA /* UIColor+AppColors.m */,
-				8056F5FD196591BE009CEA81 /* UNITaskCreatorViewController.h */,
-				8056F5FE196591BE009CEA81 /* UNITaskCreatorViewController.m */,
-				803137BA1965D08E00B78BC5 /* UNIOptionsView.h */,
-				803137BB1965D08E00B78BC5 /* UNIOptionsView.m */,
-				803137C919660DAB00B78BC5 /* UNIAdditionalOptionsViewButton.h */,
-				803137CA19660DAB00B78BC5 /* UNIAdditionalOptionsViewButton.m */,
-				803137BD1965D5CC00B78BC5 /* UNISuggestionView.h */,
-				803137BE1965D5CC00B78BC5 /* UNISuggestionView.m */,
-				803137C01965F15B00B78BC5 /* UNICalendarPopOver.h */,
-				803137C11965F15B00B78BC5 /* UNICalendarPopOver.m */,
-				803CDE44196AFFE600C1C789 /* UNITimeInputView.h */,
-				803CDE45196AFFE600C1C789 /* UNITimeInputView.m */,
-				803CDE47196B06A700C1C789 /* UNIAdditionalOptionsView.h */,
-				803CDE48196B06A700C1C789 /* UNIAdditionalOptionsView.m */,
-				803CDE4A196B157600C1C789 /* UNIRepeatOptionsView.h */,
-				803CDE4B196B157600C1C789 /* UNIRepeatOptionsView.m */,
-				30F8F0CBA3F646DDA8B85864 /* NNSettingsManager.h */,
-				60DE51B2428F42E399C83D79 /* NNSettingsManager.m */,
-				C49CBDEC93FC4C8192723291 /* NNSettingsViewController.h */,
-				478AA74701524D5BB5AE53F4 /* NNSettingsViewController.m */,
-				A1B2C3D4E5F6789012345678 /* NNOnboardingManager.h */,
-				B2C3D4E5F6789012345678A1 /* NNOnboardingManager.m */,
-				C3D4E5F6789012345678A1B2 /* NNOnboardingTooltipView.h */,
-				D4E5F6789012345678A1B2C3 /* NNOnboardingTooltipView.m */,
-				E5F6789012345678A1B2C3D4 /* NNOnboardingCoordinator.h */,
-				F6789012345678A1B2C3D4E5 /* NNOnboardingCoordinator.m */,
-				A7B1C2D3E4F5678901234568 /* NNLogoTraceView.h */,
-				A7B1C2D3E4F5678901234569 /* NNLogoTraceView.m */,
-				8058988B1916641F00352439 /* Images.xcassets */,
-				805898881916641F00352439 /* NeverNote.xcdatamodeld */,
-				8058987D1916641F00352439 /* Supporting Files */,
-			);
-			path = NeverNote1;
-			sourceTree = "<group>";
-		};
-		8058987D1916641F00352439 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				80B9E211191AF7C9008B377C /* Images */,
-				8058987E1916641F00352439 /* NeverNote-Info.plist */,
-				8058987F1916641F00352439 /* InfoPlist.strings */,
-				805898821916641F00352439 /* main.m */,
-				805898841916641F00352439 /* NeverNote-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		805898991916642000352439 /* NeverNoteTests */ = {
 			isa = PBXGroup;
 			children = (
-				8058989F1916642000352439 /* NeverNoteTests.m */,
 				NT00091000000000000001 /* NoteLocaleFlagEmojiTests.swift */,
+				TL00011000000000000001 /* NoteLogicTests.swift */,
 				8058989A1916642000352439 /* Supporting Files */,
 			);
 			path = NeverNoteTests;
@@ -466,47 +311,12 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		80B9E211191AF7C9008B377C /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				80B9E21F191AF913008B377C /* Icon */,
-				80B9E212191AF7CF008B377C /* Launch Images */,
-			);
-			name = Images;
-			sourceTree = "<group>";
-		};
-		80B9E212191AF7CF008B377C /* Launch Images */ = {
-			isa = PBXGroup;
-			children = (
-				80B9E230191AFDA1008B377C /* Launch Screen iPad Landscape.png */,
-				80B9E231191AFDA1008B377C /* Launch Screen iPad Landscape@2x.png */,
-				80B9E232191AFDA1008B377C /* Launch Screen iPad Portrait.png */,
-				80B9E233191AFDA1008B377C /* Launch Screen iPad Portrait@2x.png */,
-				80B9E234191AFDA1008B377C /* Launch Screen iPhone Portrait.png */,
-				80B9E235191AFDA1008B377C /* Launch Screen iPhone Portrait@2x.png */,
-				80B9E23C191AFDF8008B377C /* Launch Screen iPhone Portrait 4-inch.png */,
-				80B9E224191AFC4A008B377C /* Icon 29.png */,
-				80B9E225191AFC4A008B377C /* Icon 40.png */,
-				80B9E226191AFC4A008B377C /* Icon 58.png */,
-				80B9E227191AFC4A008B377C /* Icon 80.png */,
-				80B9E228191AFC4A008B377C /* Icon 120.png */,
-				80B9E229191AFC4A008B377C /* Icon 152.png */,
-			);
-			name = "Launch Images";
-			sourceTree = "<group>";
-		};
-		80B9E21F191AF913008B377C /* Icon */ = {
-			isa = PBXGroup;
-			children = (
-				80B9E220191AF91B008B377C /* icon.icns */,
-			);
-			name = Icon;
-			sourceTree = "<group>";
-		};
 		90AA00011000000000000004 /* NeverNote */ = {
 			isa = PBXGroup;
 			children = (
 				90AA00011000000000000001 /* ContentView.swift */,
+				8058987E1916641F00352439 /* NeverNote-Info.plist */,
+				8058988B1916641F00352439 /* Images.xcassets */,
 				PLAT00011000000000000001 /* NeverNotePlatform.swift */,
 				KB00011000000000000001 /* NeverNoteKeyboardShortcuts.swift */,
 				MAC00011000000000000001 /* NoteTextViewsMac.swift */,
@@ -556,7 +366,6 @@
 				90AA00031000000000000117 /* NoteImageFullScreenModal.swift */,
 				90AA00031000000000000119 /* MacInspectorPanel.swift */,
 				90AA0003100000000000011B /* MacPhotoImportInspector.swift */,
-				90AA00031000000000000107 /* NeverNote-Bridging-Header.h */,
 				AABB00000000000000000001 /* ScreenshotLaunchSupport.swift */,
 				BLOC00011000000000000003 /* ScreenshotDemoStrings.swift */,
 				BLOC00011000000000000001 /* Localizable.xcstrings */,
@@ -666,7 +475,6 @@
 		805898691916641F00352439 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = NN;
 				LastUpgradeCheck = 1500;
 				ORGANIZATIONNAME = "Nathan Fennel";
 				TargetAttributes = {
@@ -755,22 +563,7 @@
 			files = (
 				BLOC00021000000000000001 /* Localizable.xcstrings in Resources */,
 				BLOC00021000000000000002 /* InfoPlist.xcstrings in Resources */,
-				80B9E23D191AFDF8008B377C /* Launch Screen iPhone Portrait 4-inch.png in Resources */,
-				80B9E23A191AFDA1008B377C /* Launch Screen iPhone Portrait.png in Resources */,
-				80B9E22F191AFC4A008B377C /* Icon 152.png in Resources */,
-				80B9E236191AFDA1008B377C /* Launch Screen iPad Landscape.png in Resources */,
-				80B9E22B191AFC4A008B377C /* Icon 40.png in Resources */,
-				80B9E239191AFDA1008B377C /* Launch Screen iPad Portrait@2x.png in Resources */,
-				80B9E22C191AFC4A008B377C /* Icon 58.png in Resources */,
-				8008A38B191BC5C10071B32D /* Default-568h@2x.png in Resources */,
-				80B9E22E191AFC4A008B377C /* Icon 120.png in Resources */,
-				80B9E237191AFDA1008B377C /* Launch Screen iPad Landscape@2x.png in Resources */,
 				8058988C1916641F00352439 /* Images.xcassets in Resources */,
-				80B9E238191AFDA1008B377C /* Launch Screen iPad Portrait.png in Resources */,
-				80B9E22A191AFC4A008B377C /* Icon 29.png in Resources */,
-				80B9E22D191AFC4A008B377C /* Icon 80.png in Resources */,
-				80B9E23B191AFDA1008B377C /* Launch Screen iPhone Portrait@2x.png in Resources */,
-				80B9E221191AF91B008B377C /* icon.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -831,26 +624,14 @@
 				90AA00031000000000000118 /* NoteImageFullScreenModal.swift in Sources */,
 				90AA0003100000000000011A /* MacInspectorPanel.swift in Sources */,
 				90AA0003100000000000011C /* MacPhotoImportInspector.swift in Sources */,
-				803137C21965F15B00B78BC5 /* UNICalendarPopOver.m in Sources */,
-				800D2E021947919700E904AA /* UIColor+AppColors.m in Sources */,
 				804E51352FB9E82600DAA686 /* ScreenshotPromptStep.swift in Sources */,
-				8015691419B1189F00A4A083 /* NNListViewController.m in Sources */,
-				803137CB19660DAB00B78BC5 /* UNIAdditionalOptionsViewButton.m in Sources */,
-				803137BF1965D5CC00B78BC5 /* UNISuggestionView.m in Sources */,
 				804E51252FB9E6E100DAA686 /* NoteBottomURLImagePreviews.swift in Sources */,
-				805898AB1916643400352439 /* NNViewController.m in Sources */,
-				8058988A1916641F00352439 /* NeverNote.xcdatamodeld in Sources */,
-				803CDE49196B06A700C1C789 /* UNIAdditionalOptionsView.m in Sources */,
-				805898871916641F00352439 /* NNAppDelegate.m in Sources */,
-				8056F5FF196591BE009CEA81 /* UNITaskCreatorViewController.m in Sources */,
 				804E51232FB9E6CE00DAA686 /* EditorToolbarPlacement.swift in Sources */,
-				80ECF9371964519E00EDABD1 /* NNColorObject.m in Sources */,
 				90AA00021000000000000001 /* ContentView.swift in Sources */,
 				804E51372FB9E83900DAA686 /* NevernoteNotification.swift in Sources */,
 				AABB00000000000000000002 /* ScreenshotLaunchSupport.swift in Sources */,
 				BLOC00021000000000000005 /* ScreenshotDemoStrings.swift in Sources */,
 				90AA00021000000000000002 /* Item.swift in Sources */,
-				803137BC1965D08E00B78BC5 /* UNIOptionsView.m in Sources */,
 				804E51212FB9E69900DAA686 /* NoteDataDetectors.swift in Sources */,
 				NT00021000000000000001 /* NoteTranslationEligibility.swift in Sources */,
 				NT00041000000000000001 /* NoteLanguageDetection.swift in Sources */,
@@ -865,17 +646,9 @@
 				FF00042000000000000001 /* FeatureFlagsDebugSheet.swift in Sources */,
 				804E51382FB9E85000DAA686 /* NoteDataDetectorInteraction.swift in Sources */,
 				804E513A2FB9E86800DAA686 /* NoteDataDetectorConfirmationDialog.swift in Sources */,
-				803CDE4C196B157600C1C789 /* UNIRepeatOptionsView.m in Sources */,
-				803CDE46196AFFE600C1C789 /* UNITimeInputView.m in Sources */,
-				9ECED7F59E864A5DAB31195E /* NNSettingsManager.m in Sources */,
 				804E51312FB9E7D900DAA686 /* ReadOnlyNoteTextView.swift in Sources */,
-				33B70CB51399476FAEFB55D8 /* NNSettingsViewController.m in Sources */,
-				1A2B3C4D5E6F789012345678 /* NNOnboardingManager.m in Sources */,
-				2B3C4D5E6F789012345678A1 /* NNOnboardingTooltipView.m in Sources */,
-				3C4D5E6F789012345678A1B2 /* NNOnboardingCoordinator.m in Sources */,
 				804E512B2FB9E75D00DAA686 /* NoteWrappingTextView.swift in Sources */,
 				804E51332FB9E7F200DAA686 /* FontPickerSheet.swift in Sources */,
-				A7B1C2D3E4F5678901234567 /* NNLogoTraceView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -883,8 +656,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				805898A01916642000352439 /* NeverNoteTests.m in Sources */,
 				NT000A10000000000000001 /* NoteLocaleFlagEmojiTests.swift in Sources */,
+				TL00021000000000000001 /* NoteLogicTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -933,14 +706,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8058987F1916641F00352439 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				805898801916641F00352439 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		8058989C1916642000352439 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1036,14 +801,10 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				"GCC_PRECOMPILE_PREFIX_HEADER[sdk=macosx*]" = NO;
-				GCC_PREFIX_HEADER = "NeverNote1/NeverNote-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"NEVERNOTE_SWIFTUI_ROOT=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "NeverNote1/NeverNote-Info.plist";
+				INFOPLIST_FILE = "NeverNote/NeverNote-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				"INFOPLIST_KEY_LSApplicationCategoryType[sdk=macosx*]" = "public.app-category.productivity";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
@@ -1063,8 +824,6 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "NeverNote/NeverNote-Bridging-Header.h";
-				"SWIFT_OBJC_BRIDGING_HEADER[sdk=macosx*]" = "NeverNote/NeverNote-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
 				WRAPPER_EXTENSION = app;
@@ -1084,14 +843,10 @@
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				"GCC_PRECOMPILE_PREFIX_HEADER[sdk=macosx*]" = NO;
-				GCC_PREFIX_HEADER = "NeverNote1/NeverNote-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"NEVERNOTE_SWIFTUI_ROOT=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "NeverNote1/NeverNote-Info.plist";
+				INFOPLIST_FILE = "NeverNote/NeverNote-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				"INFOPLIST_KEY_LSApplicationCategoryType[sdk=macosx*]" = "public.app-category.productivity";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
@@ -1111,8 +866,6 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "NeverNote/NeverNote-Bridging-Header.h";
-				"SWIFT_OBJC_BRIDGING_HEADER[sdk=macosx*]" = "NeverNote/NeverNote-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
@@ -1131,8 +884,6 @@
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "NeverNote1/NeverNote-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1155,8 +906,6 @@
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "NeverNote1/NeverNote-Prefix.pch";
 				INFOPLIST_FILE = "NeverNoteTests/NeverNoteTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1358,16 +1107,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		805898881916641F00352439 /* NeverNote.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				805898891916641F00352439 /* NeverNote.xcdatamodel */,
-			);
-			currentVersion = 805898891916641F00352439 /* NeverNote.xcdatamodel */;
-			path = NeverNote.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
 /* End XCVersionGroup section */
 	};
 	rootObject = 805898691916641F00352439 /* Project object */;

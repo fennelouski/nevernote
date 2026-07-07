@@ -7,15 +7,9 @@
 
 import SwiftData
 import SwiftUI
-#if canImport(UIKit)
-import UIKit
-#endif
 
 @main
 struct NevernoteApp: App {
-    #if canImport(UIKit)
-    @UIApplicationDelegateAdaptor(NNAppDelegate.self) private var appDelegate
-    #endif
     var sharedModelContainer: ModelContainer = NevernoteModelContainerFactory.makeContainer()
 
     @State private var featureFlags = FeatureFlags()

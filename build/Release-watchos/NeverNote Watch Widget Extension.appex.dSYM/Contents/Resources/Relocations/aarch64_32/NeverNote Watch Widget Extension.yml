@@ -1,5 +1,0 @@
----
-triple:          'arm64_32-apple-darwin'
-binary-path:     '/Users/nathanfennel/Documents/GitHub/Nevernote/build/Release-watchos/NeverNote Watch Widget Extension.appex/NeverNote Watch Widget Extension'
-relocations:     []
-...
