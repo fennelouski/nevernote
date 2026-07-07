@@ -145,6 +145,17 @@ fi
 capture() {
     local udid="$1" outpath="$2"
     mkdir -p "$(dirname "$outpath")"
+    # Headless sims occasionally stall rendering ("Timeout waiting for screen
+    # surfaces"), especially right after an appearance switch — retry.
+    local attempt
+    for attempt in 1 2 3 4; do
+        if xcrun simctl io "$udid" screenshot "$outpath" 2>/dev/null; then
+            echo "    $outpath"
+            return 0
+        fi
+        echo "    capture failed (attempt $attempt), retrying..." >&2
+        sleep 3
+    done
     xcrun simctl io "$udid" screenshot "$outpath"
     echo "    $outpath"
 }
@@ -167,10 +178,10 @@ ios_shot() {
 }
 
 watch_shot() {
-    local udid="$1" appearance="$2" idx="$3"
-    local outpath="$OUTPUT_DIR/Apple_Watch_41mm/$appearance/text_${idx}.png"
+    local udid="$1" idx="$2"
+    local outpath="$OUTPUT_DIR/Apple_Watch_41mm/text_${idx}.png"
 
-    xcrun simctl ui "$udid" appearance "$appearance"
+    # watchOS has no light/dark appearance setting — always dark
     xcrun simctl terminate "$udid" "$BUNDLE_ID_WATCH" 2>/dev/null || true
     xcrun simctl launch "$udid" "$BUNDLE_ID_WATCH" \
         --screenshot-mode --screenshot-text "$idx" > /dev/null
@@ -184,7 +195,8 @@ watch_shot() {
 echo "==> Capturing screenshots..."
 mkdir -p "$OUTPUT_DIR"
 
-for idx in 0 1 2 3 4; do
+# Optionally capture a subset, e.g. SCREENSHOT_TEXTS="0 1" ./scripts/screenshots.sh
+for idx in ${SCREENSHOT_TEXTS:-0 1 2 3 4}; do
     for appearance in light dark; do
         echo "  [text $idx / $appearance]"
 
@@ -193,10 +205,11 @@ for idx in 0 1 2 3 4; do
         ios_shot "$IPAD_UDID"   "iPad_Pro_13"       "$appearance" "$idx" "no_keyboard"
         ios_shot "$IPAD_UDID"   "iPad_Pro_13"       "$appearance" "$idx" "keyboard"
 
-        if [ "$SKIP_WATCH" -eq 0 ]; then
-            watch_shot "$WATCH_UDID" "$appearance" "$idx"
-        fi
     done
+
+    if [ "$SKIP_WATCH" -eq 0 ]; then
+        watch_shot "$WATCH_UDID" "$idx"
+    fi
 done
 
 COUNT=$(find "$OUTPUT_DIR" -name '*.png' | wc -l | tr -d ' ')

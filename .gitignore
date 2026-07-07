@@ -15,3 +15,6 @@ xcuserdata/
 # Python tooling
 __pycache__/
 *.pyc
+
+# Screenshot pipeline build output
+.screenshot-build/

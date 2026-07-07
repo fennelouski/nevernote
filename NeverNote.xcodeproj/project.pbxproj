@@ -127,7 +127,7 @@
 		A100002D0191664200352401 /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = "";
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
 				A10000100191664200352401 /* NeverNote Watch App.app in Embed Watch Content */,
@@ -996,6 +996,7 @@
 				ENABLE_APP_INTENTS_METADATA_GENERATION = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Nevernote;
+				INFOPLIST_FILE = NeverNoteWatchWidget/Info.plist;
 				INFOPLIST_KEY_NSExtensionPointIdentifier = "com.apple.widgetkit-extension";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1031,6 +1032,7 @@
 				ENABLE_APP_INTENTS_METADATA_GENERATION = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Nevernote;
+				INFOPLIST_FILE = NeverNoteWatchWidget/Info.plist;
 				INFOPLIST_KEY_NSExtensionPointIdentifier = "com.apple.widgetkit-extension";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
