@@ -10,7 +10,11 @@
 	<array>
 		<string>CloudKit</string>
 	</array>
-	<key>aps-environment</key>
+	<key>com.apple.security.files.user-selected.read-only</key>
+	<true/>
+	<key>com.apple.security.personal-information.photos-library</key>
+	<true/>
+	<key>com.apple.developer.aps-environment</key>
 	<string>development</string>
 </dict>
 </plist>

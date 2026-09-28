@@ -38,6 +38,7 @@ struct NotePhotoPicker: UIViewControllerRepresentable {
     }
 }
 
+#if os(iOS)
 struct NoteCameraPicker: UIViewControllerRepresentable {
     let onImageSelected: (UIImage) -> Void
     @Environment(\.dismiss) private var dismiss
@@ -71,4 +72,6 @@ struct NoteCameraPicker: UIViewControllerRepresentable {
         }
     }
 }
+#endif
+
 #endif

@@ -15,7 +15,7 @@ final class NoteImagePermissionManager {
     private(set) var state: NoteImageCombinedPermission = .notDetermined
 
     func refreshStatus() {
-        #if os(macOS)
+        #if os(macOS) || os(visionOS)
         state = .photoOnly
         return
         #endif
@@ -41,12 +41,16 @@ final class NoteImagePermissionManager {
     }
 
     func requestCamera() async {
+        #if os(iOS)
         await AVCaptureDevice.requestAccess(for: .video)
+        #endif
         await MainActor.run { refreshStatus() }
     }
 
     func requestPhotoLibrary() async {
+        #if !os(visionOS)
         await PHPhotoLibrary.requestAuthorization(for: .readWrite)
+        #endif
         await MainActor.run { refreshStatus() }
     }
 

@@ -13,20 +13,36 @@ struct WatchRootView: View {
     @State private var showAddText = false
     @State private var draftText = ""
 
-    private var activeNote: NoteDocument? { notes.first }
+    @State private var activeNote: NoteDocument?
+    @State private var addingToNote: NoteDocument?
+    @State private var saveError: String?
 
     var body: some View {
         NavigationStack {
             ScrollView {
-                Text(displayString)
-                    .font(.body)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal, 6)
+                VStack {
+                    if let saveError {
+                        Text("Not saved: " + saveError).font(.caption)
+                    }
+                    if notes.count > 1 {
+                        Picker("Saved note", selection: $activeNote) {
+                            ForEach(notes) { note in
+                                Text(note.plainText.isEmpty ? "Photo or empty note" : String(note.plainText.prefix(30)))
+                                    .tag(Optional(note))
+                            }
+                        }
+                    }
+                    Text(displayString)
+                        .font(.body)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.horizontal, 6)
+                }
             }
             .navigationTitle("Nevernote")
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
+                        addingToNote = activeNote
                         draftText = ""
                         showAddText = true
                     } label: {
@@ -37,26 +53,28 @@ struct WatchRootView: View {
             }
             .sheet(isPresented: $showAddText) {
                 NavigationStack {
-                    TextField("Dictate or type", text: $draftText)
-                        .padding()
-                    Spacer(minLength: 0)
-                }
-                .navigationTitle("Add")
-                .toolbar {
-                    ToolbarItem(placement: .cancellationAction) {
-                        Button("Cancel") {
-                            showAddText = false
-                        }
+                    VStack {
+                        TextField("Dictate or type", text: $draftText)
+                        if let saveError { Text("Not saved: " + saveError).font(.caption) }
+                        Spacer(minLength: 0)
                     }
-                    ToolbarItem(placement: .confirmationAction) {
-                        Button("Save") {
-                            if let note = activeNote {
-                                appendFragment(draftText, to: note)
+                    .padding()
+                    .navigationTitle("Add")
+                    .toolbar {
+                        ToolbarItem(placement: .cancellationAction) {
+                            Button("Cancel") { showAddText = false }
+                        }
+                        ToolbarItem(placement: .confirmationAction) {
+                            Button("Save") {
+                                if let note = addingToNote, appendFragment(draftText, to: note) {
+                                    showAddText = false
+                                }
                             }
-                            showAddText = false
+                            .disabled(draftText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
                         }
                     }
                 }
+                .interactiveDismissDisabled(!draftText.isEmpty)
             }
         }
         .onAppear(perform: ensureSingleNoteExists)
@@ -71,14 +89,18 @@ struct WatchRootView: View {
     }
 
     private func ensureSingleNoteExists() {
-        guard notes.isEmpty else { return }
-        modelContext.insert(NoteDocument())
-        try? modelContext.save()
+        guard activeNote == nil else { return }
+        if let existing = notes.first { activeNote = existing; return }
+        let note = NoteDocument()
+        modelContext.insert(note)
+        activeNote = note
+        do { try modelContext.save(); saveError = nil }
+        catch { saveError = error.localizedDescription }
     }
 
-    private func appendFragment(_ fragment: String, to note: NoteDocument) {
+    private func appendFragment(_ fragment: String, to note: NoteDocument) -> Bool {
         let trimmed = fragment.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !trimmed.isEmpty else { return }
+        guard !trimmed.isEmpty else { return false }
 
         let base: NSAttributedString
         if let decoded = NoteRichTextCodec.decode(note.richTextData), decoded.length > 0 {
@@ -95,9 +117,21 @@ struct WatchRootView: View {
         }
         mutable.append(NSAttributedString(string: trimmed))
 
-        note.plainText = mutable.string
-        note.richTextData = NoteRichTextCodec.encode(NSAttributedString(attributedString: mutable)) ?? Data()
-        note.lastEditedAt = .now
-        try? modelContext.save()
+        guard let encoded = NoteRichTextCodec.encode(mutable) else {
+            saveError = "The text could not be encoded. Your draft is still here."
+            return false
+        }
+        var draft = NoteDocumentSnapshot(note)
+        draft.plainText = mutable.string
+        draft.richTextData = encoded
+        draft.lastEditedAt = .now
+        do {
+            try draft.save(to: note, in: modelContext)
+            saveError = nil
+            return true
+        } catch {
+            saveError = error.localizedDescription
+            return false
+        }
     }
 }

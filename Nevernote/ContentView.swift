@@ -53,7 +53,14 @@ struct ContentView: View {
     @State private var urlPreviewRefreshToken = 0
     /// When false, keyboard shelf chrome is hidden so a focused field without a visible keyboard does not show a large gray slab.
     @State private var softwareKeyboardVisible = false
-    @State private var undoAttributedText: NSAttributedString? = nil
+    @State private var undoDraft: NoteDocumentSnapshot?
+    @State private var activeNote: NoteDocument?
+    @State private var capturedImageBytes: Data?
+    @State private var previewState = NoteURLImagePreviewStore.emptyJSON
+    @State private var saveError: String?
+    @State private var loadedSnapshot: NoteDocumentSnapshot?
+    @State private var hasSaveConflict = false
+    @State private var imageImportID = UUID()
 
     @State private var capturedImage: PlatformImage? = nil
     @State private var showEducationalModal = false
@@ -78,7 +85,6 @@ struct ContentView: View {
     @State private var macConfirmationOnConfirm: (() -> Void)?
     #endif
 
-    private var activeNote: NoteDocument? { notes.first }
     private var displayAttributedText: NSAttributedString {
         let prefixFallback = EditorFont.platformFont(forToken: editorFontName, size: editorScaledPointSize)
         return NoteTextFormatting.makeDisplayAttributedText(
@@ -107,8 +113,10 @@ struct ContentView: View {
 
     private var bottomPreviewURLKeys: [String] {
         _ = urlPreviewRefreshToken
-        guard let note = activeNote else { return [] }
-        return NoteHTTPSLinkEnumeration.orderedLinkKeys(in: attributedText) { note.urlShowsImagePreview($0) }
+        guard activeNote != nil else { return [] }
+        return NoteHTTPSLinkEnumeration.orderedLinkKeys(in: attributedText) { key in
+            NoteURLImagePreviewStore.decodeEntries(from: previewState).first { $0.url == key }?.showPreview ?? false
+        }
     }
 
     private var noteExportBackground: PlatformColor {
@@ -124,6 +132,33 @@ struct ContentView: View {
             Color.noteCanvas.ignoresSafeArea()
 
             VStack(spacing: 0) {
+                if let saveError {
+                    VStack(spacing: 4) {
+                        Text("Changes have not been saved. Keep this note open and try again.")
+                        Text(saveError).font(.caption)
+                        Button("Retry save") { persistNote() }
+                        if hasSaveConflict {
+                            Button("Keep draft as a separate note") { saveDraftAsSeparateNote() }
+                        }
+                    }.padding(8).background(Color.orange.opacity(0.15))
+                }
+                if notes.count > 1 {
+                    Menu("Saved notes (\(notes.count))") {
+                        ForEach(notes) { note in
+                            Button(note.plainText.isEmpty ? "Photo or empty note" : String(note.plainText.prefix(60))) {
+                                guard saveCurrentNote() else { return }
+                                activeNote = note
+                                hasLoadedExistingNote = false
+                                undoDraft = nil
+                                imageImportID = UUID()
+                                isProcessingImage = false
+                                translationPrefetchCache.reset()
+                                translationTaskIntent = .idle
+                                loadNoteIfNeeded()
+                            }
+                        }
+                    }.padding(6)
+                }
                 if isEditing {
                     topBar
                 }
@@ -215,6 +250,7 @@ struct ContentView: View {
         }
         .onChange(of: scenePhase) { _, newPhase in
             if newPhase == .active { permissionManager.refreshStatus() }
+            else { persistNote() }
         }
         .onChange(of: notes.count) { _, _ in
             ensureSingleNoteExists()
@@ -231,8 +267,8 @@ struct ContentView: View {
         .onChange(of: textAlignment) { _, _ in persistNote() }
         .onChange(of: linePrefixMode) { _, _ in persistNote() }
         .onChange(of: attributedText) { _, newValue in
-            if undoAttributedText != nil && !newValue.string.isEmpty {
-                undoAttributedText = nil
+            if undoDraft != nil && !newValue.string.isEmpty {
+                undoDraft = nil
                 NoteWrappingTextView.customUndoAvailable = false
             }
         }
@@ -248,6 +284,7 @@ struct ContentView: View {
             taskIntent: $translationTaskIntent,
             prefetchCache: translationPrefetchCache,
             attributedText: $attributedText,
+            draftGeneration: $imageImportID,
             fontToken: editorFontName,
             pointSize: editorScaledPointSize,
             isTranslating: $isTranslating,
@@ -405,9 +442,9 @@ struct ContentView: View {
         if let capturedImage {
             handlers.viewCapturedImage = .when(true) { showCapturedImagePreview(capturedImage) }
         }
-        handlers.undoDelete = .when(undoAttributedText != nil) { restoreNote() }
-        handlers.deleteNote = .when(hasDeletableContent && undoAttributedText == nil) { clearNote() }
-        handlers.shareNote = .when(hasContent && undoAttributedText == nil) {
+        handlers.undoDelete = .when(undoDraft != nil) { restoreNote() }
+        handlers.deleteNote = .when(hasDeletableContent && undoDraft == nil) { clearNote() }
+        handlers.shareNote = .when(hasContent && undoDraft == nil) {
             activityItems = [attributedText.string]
             showActivitySharePanel()
         }
@@ -580,6 +617,14 @@ struct ContentView: View {
 
     private var topBar: some View {
         HStack(spacing: 16) {
+            Menu {
+                Link("Privacy Policy", destination: URL(string: "https://nathanfennel.com/nevernote/privacy.html")!)
+                Link("Support", destination: URL(string: "https://nathanfennel.com/contact")!)
+            } label: {
+                Image(systemName: "info.circle")
+            }
+            .accessibilityLabel("About Nevernote")
+
             Text("Nevernote")
                 .font(.headline)
                 .foregroundStyle(.primary)
@@ -669,7 +714,7 @@ struct ContentView: View {
                 .neverNoteShortcut(.importPhoto)
             }
 
-            if undoAttributedText != nil {
+            if undoDraft != nil {
                 Button {
                     restoreNote()
                 } label: {
@@ -1073,77 +1118,129 @@ struct ContentView: View {
     }
 
     private func ensureSingleNoteExists() {
-        guard notes.isEmpty else { return }
-        let newNote = NoteDocument()
-        modelContext.insert(newNote)
-        try? modelContext.save()
+        guard activeNote == nil else { return }
+        if let existing = notes.first {
+            activeNote = existing
+        } else {
+            let newNote = NoteDocument()
+            modelContext.insert(newNote)
+            activeNote = newNote
+            do { try modelContext.save(); saveError = nil }
+            catch { saveError = error.localizedDescription }
+        }
     }
 
     private func loadNoteIfNeeded() {
-        guard !hasLoadedExistingNote else { return }
+        guard !hasLoadedExistingNote, let note = activeNote else { return }
         hasLoadedExistingNote = true
-
         if let config = ScreenshotMode.config {
             attributedText = config.attributedNoteText
             return
         }
-
-        guard let note = activeNote else { return }
-        if let decoded = NoteRichTextCodec.decode(note.richTextData), decoded.length > 0 {
-            attributedText = decoded
-        } else if !note.plainText.isEmpty {
-            attributedText = NSAttributedString(string: note.plainText)
-        }
-        textAlignment = NoteTextAlignment(rawValue: note.textAlignmentRawValue ?? "center") ?? .center
-        linePrefixMode = NoteLinePrefixMode(rawValue: note.linePrefixModeRawValue ?? "none") ?? .none
-        if let data = note.capturedImageData {
-            capturedImage = NeverNotePlatform.platformImage(from: data)
-        }
+        loadedSnapshot = NoteDocumentSnapshot(note)
+        loadDraft(NoteDocumentSnapshot(note))
     }
 
-    private func removeCapturedImage() {
-        capturedImage = nil
-        #if os(macOS)
-        if case .capturedImage = macSidePanel {
-            macSidePanel = nil
+    private func loadDraft(_ draft: NoteDocumentSnapshot) {
+        attributedText = NoteRichTextCodec.decode(draft.richTextData) ?? NSAttributedString(string: draft.plainText)
+        textAlignment = NoteTextAlignment(rawValue: draft.textAlignmentRawValue ?? "center") ?? .center
+        linePrefixMode = NoteLinePrefixMode(rawValue: draft.linePrefixModeRawValue ?? "none") ?? .none
+        previewState = draft.urlImagePreviewStateJSON
+        capturedImageBytes = draft.capturedImageData
+        capturedImage = draft.capturedImageData.flatMap { NeverNotePlatform.platformImage(from: $0) }
+    }
+
+    private func currentDraft() -> NoteDocumentSnapshot? {
+        guard let note = activeNote else { return nil }
+        guard let encoded = NoteRichTextCodec.encode(attributedText) else {
+            saveError = "The formatted text could not be encoded. Your draft is still open."
+            return nil
         }
-        #else
-        fullScreenImagePresentation = nil
-        #endif
-        if let note = activeNote {
-            note.capturedImageData = nil
-        }
-        try? modelContext.save()
+        var draft = loadedSnapshot ?? NoteDocumentSnapshot(note)
+        draft.richTextData = encoded
+        draft.plainText = attributedText.string
+        draft.textAlignmentRawValue = textAlignment.rawValue
+        draft.linePrefixModeRawValue = linePrefixMode.rawValue
+        draft.capturedImageData = capturedImageBytes
+        draft.urlImagePreviewStateJSON = NoteURLImagePreviewStore.encodeEntries(
+            NoteURLImagePreviewStore.decodeEntries(from: previewState)
+                .filter { draft.plainText.contains($0.url) }
+        )
+        return draft
     }
 
     private func clearNote() {
-        undoAttributedText = attributedText
+        guard let draft = currentDraft() else { return }
+        undoDraft = draft
         NoteWrappingTextView.customUndoAvailable = true
+        imageImportID = UUID()
+        isProcessingImage = false
         attributedText = NSAttributedString(string: "")
-        removeCapturedImage()
+        capturedImage = nil
+        capturedImageBytes = nil
         persistNote()
     }
 
     private func restoreNote() {
-        guard let saved = undoAttributedText else { return }
-        undoAttributedText = nil
+        guard let saved = undoDraft else { return }
+        undoDraft = nil
         NoteWrappingTextView.customUndoAvailable = false
-        attributedText = saved
+        imageImportID = UUID()
+        isProcessingImage = false
+        loadDraft(saved)
         persistNote()
     }
 
-    private func persistNote() {
-        guard let note = activeNote else { return }
-        if !hasContent, capturedImage != nil {
-            removeCapturedImage()
+    private func persistNote() { _ = saveCurrentNote() }
+
+    @discardableResult
+    private func saveCurrentNote() -> Bool {
+        guard ScreenshotMode.config == nil, hasLoadedExistingNote else { return true }
+        guard let note = activeNote, var draft = currentDraft() else { return false }
+        guard !note.isDeleted, note.modelContext != nil else {
+            saveError = NoteSaveError.removedElsewhere.localizedDescription
+            hasSaveConflict = true
+            return false
         }
-        note.lastEditedAt = .now
-        note.plainText = attributedText.string
-        note.pruneURLImagePreviewEntries(notContainedIn: note.plainText)
-        note.richTextData = NoteRichTextCodec.encode(attributedText) ?? Data()
-        note.textAlignmentRawValue = textAlignment.rawValue
-        note.linePrefixModeRawValue = linePrefixMode.rawValue
-        try? modelContext.save()
+        let current = NoteDocumentSnapshot(note)
+        if let loadedSnapshot, !current.hasSameContent(as: loadedSnapshot), draft.hasSameContent(as: loadedSnapshot) {
+            self.loadedSnapshot = current
+            loadDraft(current)
+            saveError = nil
+            hasSaveConflict = false
+            return true
+        }
+        if !draft.hasSameContent(as: current) { draft.lastEditedAt = .now }
+        do {
+            try draft.save(to: note, in: modelContext, expected: loadedSnapshot)
+            loadedSnapshot = NoteDocumentSnapshot(note)
+            saveError = nil
+            hasSaveConflict = false
+            return true
+        } catch {
+            saveError = error.localizedDescription
+            hasSaveConflict = error is NoteSaveError
+            return false
+        }
+    }
+
+    private func saveDraftAsSeparateNote() {
+        guard var draft = currentDraft() else { return }
+        draft.lastEditedAt = .now
+        let copy = NoteDocument()
+        modelContext.insert(copy)
+        do {
+            try draft.save(to: copy, in: modelContext)
+            activeNote = copy
+            loadedSnapshot = NoteDocumentSnapshot(copy)
+            hasSaveConflict = false
+            saveError = nil
+            imageImportID = UUID()
+            isProcessingImage = false
+        } catch {
+            modelContext.delete(copy)
+            saveError = error.localizedDescription
+        }
     }
 
     private var cameraButtonIcon: String {
@@ -1189,13 +1286,18 @@ struct ContentView: View {
     }
 
     private func handleImageSelected(_ image: PlatformImage) async {
-        capturedImage = image
-        if let jpeg = NeverNotePlatform.jpegData(from: image, compressionQuality: 0.7), let note = activeNote {
-            note.capturedImageData = jpeg
-            try? modelContext.save()
+        guard let jpeg = NeverNotePlatform.jpegData(from: image, compressionQuality: 0.7), let note = activeNote else {
+            saveError = "The selected image could not be encoded. Please choose it again."
+            return
         }
+        let requestID = UUID()
+        imageImportID = requestID
+        let originalText = attributedText
+        capturedImage = image
+        capturedImageBytes = jpeg
+        persistNote()
         isProcessingImage = true
-        defer { isProcessingImage = false }
+        defer { if imageImportID == requestID { isProcessingImage = false } }
 
         async let ocrTextTask = NoteImageOCR.recognizeText(in: image)
         async let qrPayloadsTask = NoteImageQRDetection.detectQRPayloads(in: image)
@@ -1204,7 +1306,7 @@ struct ContentView: View {
             .trimmingCharacters(in: .whitespacesAndNewlines)
         let qrPayloads = await qrPayloadsTask
         let combined = NoteImportedImageText.compose(ocr: ocrText, qrPayloads: qrPayloads)
-        guard !combined.isEmpty else { return }
+        guard !combined.isEmpty, imageImportID == requestID, activeNote === note else { return }
 
         let font = EditorFont.platformFont(forToken: editorFontName, size: editorScaledPointSize)
         #if canImport(UIKit)
@@ -1212,38 +1314,60 @@ struct ContentView: View {
         #else
         let attrs: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: NSColor.noteBodyText]
         #endif
-        attributedText = NSAttributedString(string: combined, attributes: attrs)
+        let result = NSAttributedString(string: combined, attributes: attrs)
+        if attributedText.isEqual(to: originalText) {
+            attributedText = result
+        } else {
+            // Recognition must not replace text typed while it was running.
+            let merged = NSMutableAttributedString(attributedString: attributedText)
+            if merged.length > 0 { merged.append(NSAttributedString(string: "\n")) }
+            merged.append(result)
+            attributedText = merged
+        }
         persistNote()
     }
 
     private func handleHTTPSImageLinkLongPress(url: URL, point: CGPoint, textView: PlatformTextView) {
+        guard let targetNote = activeNote, ["https", "http"].contains(url.scheme?.lowercased() ?? "") else { return }
         let key = NoteDocument.normalizedURLKey(url)
-        NoteImageURLPrefetcher.prefetchImage(from: url) { result in
-            DispatchQueue.main.async {
-                switch result {
-                case .success:
-                    let current = activeNote?.urlShowsImagePreview(key) ?? false
-                    let toggleTitle = current
-                        ? String(localized: "Hide image at bottom")
-                        : String(localized: "Show image at bottom")
-                    presentImageLinkPrompt(
-                        title: String(localized: "Image link"),
-                        message: String(localized: "Show this image below the note?"),
-                        confirmTitle: toggleTitle
-                    ) {
-                        activeNote?.setURLShowsImagePreview(key, show: !current)
-                        urlPreviewRefreshToken &+= 1
-                        persistNote()
+        let current = NoteURLImagePreviewStore.decodeEntries(from: previewState).first { $0.url == key }?.showPreview ?? false
+        presentImageLinkPrompt(
+            title: current ? "Hide linked image?" : "Load linked image?",
+            message: current
+                ? "This removes the preview below this note."
+                : "Loading contacts \(url.host ?? "the linked website"), which receives this URL, your IP address and request information, and may use cookies. An enabled preview can load again when you reopen the note. The website's privacy policy applies.",
+            confirmTitle: current ? "Hide image" : "Load and show image"
+        ) {
+            guard activeNote === targetNote else { return }
+            if current {
+                setImagePreview(key, show: false)
+                return
+            }
+            NoteImageURLPrefetcher.prefetchImage(from: url) { result in
+                DispatchQueue.main.async {
+                    guard activeNote === targetNote else { return }
+                    switch result {
+                    case .success:
+                        setImagePreview(key, show: true)
+                    case .failure(let error):
+                        presentImageLinkPrompt(
+                            title: "Can't use this link as an image",
+                            message: error.localizedDescription,
+                            confirmTitle: "OK"
+                        ) {}
                     }
-                case .failure(let error):
-                    presentImageLinkPrompt(
-                        title: String(localized: "Can't use this link as an image"),
-                        message: error.localizedDescription,
-                        confirmTitle: String(localized: "OK")
-                    ) {}
                 }
             }
         }
+    }
+
+    private func setImagePreview(_ key: String, show: Bool) {
+        var entries = NoteURLImagePreviewStore.decodeEntries(from: previewState)
+        entries.removeAll { $0.url == key }
+        entries.append(NoteURLImagePreviewEntry(url: key, showPreview: show))
+        previewState = NoteURLImagePreviewStore.encodeEntries(entries)
+        urlPreviewRefreshToken &+= 1
+        persistNote()
     }
 
     #if os(macOS)

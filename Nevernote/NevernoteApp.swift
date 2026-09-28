@@ -10,7 +10,6 @@ import SwiftUI
 
 @main
 struct NevernoteApp: App {
-    var sharedModelContainer: ModelContainer = NevernoteModelContainerFactory.makeContainer()
 
     @State private var featureFlags = FeatureFlags()
     #if DEBUG
@@ -25,24 +24,25 @@ struct NevernoteApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .tint(Color.nevernoteBrandBlue)
-                .environment(featureFlags)
-                #if DEBUG
-                .sheet(isPresented: $showFeatureFlagsDebug) {
-                    FeatureFlagsDebugSheet(featureFlags: featureFlags)
-                }
-                .onReceive(NotificationCenter.default.publisher(for: NevernoteNotification.showFeatureFlags)) { _ in
-                    showFeatureFlagsDebug = true
-                }
-                .onAppear {
-                    if FeatureFlagLaunchOverrides.shouldShowFeatureFlagsPanel {
+            NevernoteStorageView {
+                ContentView()
+                    .tint(Color.nevernoteBrandBlue)
+                    .environment(featureFlags)
+                    #if DEBUG
+                    .sheet(isPresented: $showFeatureFlagsDebug) {
+                        FeatureFlagsDebugSheet(featureFlags: featureFlags)
+                    }
+                    .onReceive(NotificationCenter.default.publisher(for: NevernoteNotification.showFeatureFlags)) { _ in
                         showFeatureFlagsDebug = true
                     }
-                }
-                #endif
+                    .onAppear {
+                        if FeatureFlagLaunchOverrides.shouldShowFeatureFlagsPanel {
+                            showFeatureFlagsDebug = true
+                        }
+                    }
+                    #endif
+            }
         }
-        .modelContainer(sharedModelContainer)
         #if os(macOS)
         .commands {
             NeverNoteAppCommands()

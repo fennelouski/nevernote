@@ -41,3 +41,35 @@ Nevernote is an iOS note-taking app focused on a single distraction-free note wi
 ## Notes
 
 - The app currently prioritizes a single active note experience rather than multi-note navigation.
+
+## Release 1.2 storage and privacy notes
+
+The app keeps the existing `NevernoteSwiftData/notes.store` and any earlier
+`notes-local.store` in Application Support. It creates a one-time `-before-1.2`
+recovery copy before opening each existing store. If both stores exist, launch
+asks which to open; neither is merged or deleted. An unreadable store presents
+recovery choices instead of silently opening an empty or in-memory note.
+Opening the primary store without iCloud is an explicit recovery option.
+
+The editor holds a stable note identity. When several notes are present, the
+saved-note menu makes them accessible. Save failures keep the editor or watch
+input open; conflicting incoming changes can be kept alongside the local draft
+as a separate note. Clear/Undo preserves the photo, rich text and preview
+preferences. Photo-only notes remain saved. On-device recognition and
+translation must not overwrite text changed while they were running.
+
+CloudKit requires the app and watch identifiers to have iCloud and Push
+Notifications provisioning for `iCloud.com.nathanfennel.NeverNote`. Production
+CloudKit schema deployment and cross-device behavior still require a signed,
+authenticated device check; a local store test does not verify that service.
+
+Linked images contact the user-selected website after confirmation. Enabled
+previews may load again when a note reopens. The site's privacy policy applies;
+notes are not sent to a developer backend. Translation uses Apple's on-device
+framework on supported iOS/macOS versions and is unavailable on visionOS.
+
+Run `scripts/check-persistence.sh` for actual old-schema SQLite migration,
+photo-only/undo/conflict and disk-failure checks in isolated temporary stores.
+Run `scripts/check-logic.py` for the existing 24 logic tests without opening the
+app or a Simulator. These checks do not replace camera, watch input, VoiceOver,
+real UI, CloudKit or App Store distribution validation.

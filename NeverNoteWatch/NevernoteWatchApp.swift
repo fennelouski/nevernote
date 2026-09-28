@@ -8,12 +8,12 @@ import SwiftUI
 
 @main
 struct NevernoteWatchApp: App {
-    var sharedModelContainer: ModelContainer = NevernoteModelContainerFactory.makeContainer()
 
     var body: some Scene {
         WindowGroup {
-            WatchRootView()
+            NevernoteStorageView {
+                WatchRootView()
+            }
         }
-        .modelContainer(sharedModelContainer)
     }
 }

@@ -63,7 +63,9 @@ struct RichTextEditor: UIViewRepresentable {
        let longPress = UILongPressGestureRecognizer(target: context.coordinator, action: #selector(Coordinator.handleLinkLongPress(_:)))
        longPress.minimumPressDuration = 0.45
        textView.addGestureRecognizer(longPress)
+       #if os(iOS)
        textView.inputAccessoryView = nil
+       #endif
 
        return textView
    }

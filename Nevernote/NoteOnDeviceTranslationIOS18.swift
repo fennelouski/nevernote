@@ -1,3 +1,4 @@
+#if os(iOS) || os(macOS)
 //
 //  NoteOnDeviceTranslationIOS18.swift
 //  NeverNote
@@ -36,3 +37,5 @@ enum NoteOnDeviceTranslationIOS18 {
         return .unavailable
     }
 }
+
+#endif

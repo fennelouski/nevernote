@@ -4,6 +4,8 @@
 //
 
 import SwiftUI
+
+#if os(iOS) || os(macOS)
 import Translation
 
 /// Invisible attachment that runs `translationTask` on iOS 18+; omitted on earlier OS versions.
@@ -16,6 +18,7 @@ struct NoteEditorTranslationHost: View {
     @Binding var taskIntent: TranslationTaskIntent
     let prefetchCache: NoteTranslationPrefetchCache
     @Binding var attributedText: NSAttributedString
+    @Binding var draftGeneration: UUID
     var fontToken: String
     var pointSize: CGFloat
     @Binding var isTranslating: Bool
@@ -102,6 +105,7 @@ struct NoteEditorTranslationHost: View {
             taskIntent = .idle
         }
         let fingerprint = NoteTranslationPrefetchCache.fingerprint(for: attributedText.string)
+        let generation = draftGeneration
         guard !fingerprint.isEmpty else { return }
 
         if let cached = prefetchCache.readyText(for: fingerprint) {
@@ -112,6 +116,7 @@ struct NoteEditorTranslationHost: View {
 
         do {
             let response = try await session.translate(fingerprint)
+            guard draftGeneration == generation, NoteTranslationPrefetchCache.fingerprint(for: attributedText.string) == fingerprint, !Task.isCancelled else { return }
             applyTranslation(response.targetText)
             prefetchCache.reset()
         } catch {
@@ -133,6 +138,8 @@ struct NoteEditorTranslationHost: View {
     }
 }
 
+#endif
+
 extension View {
     @ViewBuilder
     func noteEditorTranslationHost(
@@ -144,6 +151,7 @@ extension View {
         taskIntent: Binding<TranslationTaskIntent>,
         prefetchCache: NoteTranslationPrefetchCache,
         attributedText: Binding<NSAttributedString>,
+        draftGeneration: Binding<UUID>,
         fontToken: String,
         pointSize: CGFloat,
         isTranslating: Binding<Bool>,
@@ -151,6 +159,7 @@ extension View {
         onClearOffer: @escaping () -> Void,
         onEligibilityRefresh: @escaping () async -> Void
     ) -> some View {
+        #if os(iOS) || os(macOS)
         if isSupported,
            #available(iOS 18.0, *),
            let sourceIdentifier,
@@ -164,6 +173,7 @@ extension View {
                     taskIntent: taskIntent,
                     prefetchCache: prefetchCache,
                     attributedText: attributedText,
+                    draftGeneration: draftGeneration,
                     fontToken: fontToken,
                     pointSize: pointSize,
                     isTranslating: isTranslating,
@@ -175,5 +185,8 @@ extension View {
         } else {
             self
         }
+        #else
+        self
+        #endif
     }
 }

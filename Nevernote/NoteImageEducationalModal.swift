@@ -105,7 +105,7 @@ extension NoteImageEducationalModal {
     }
 
     private var educationIconName: String {
-        #if os(macOS)
+        #if os(macOS) || os(visionOS)
         "photo.on.rectangle"
         #else
         "camera.viewfinder"
@@ -113,7 +113,9 @@ extension NoteImageEducationalModal {
     }
 
     private var educationBodyText: String {
-        #if os(macOS)
+        #if os(visionOS)
+        String(localized: "Choose a photo from your library. NeverNote reads text and QR codes on this device and adds them to your note.")
+        #elseif os(macOS)
         String(localized:
             "Choose a photo from your library or files. NeverNote will read any text in the image and add it to your note. QR codes in the image are added at the bottom of the note."
         )

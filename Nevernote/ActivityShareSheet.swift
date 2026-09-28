@@ -30,8 +30,8 @@ struct ActivityShareSheet: UIViewControllerRepresentable {
                 pop.sourceView = v
                 pop.sourceRect = sourceRect ?? CGRect(x: v.bounds.midX, y: v.bounds.midY, width: 1, height: 1)
             } else {
-                let b = UIScreen.main.bounds
-                pop.sourceView = UIView(frame: b)
+                let b = vc.view.bounds
+                pop.sourceView = vc.view
                 pop.sourceRect = sourceRect ?? CGRect(x: b.midX, y: b.midY, width: 1, height: 1)
             }
             pop.permittedArrowDirections = []

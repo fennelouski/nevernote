@@ -4,6 +4,9 @@
 //
 
 import XCTest
+#if canImport(AppKit)
+import AppKit
+#endif
 @testable import NeverNote
 
 final class NoteRichTextCodecTests: XCTestCase {

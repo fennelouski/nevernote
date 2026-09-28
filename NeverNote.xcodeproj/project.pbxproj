@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED0000000000000000000002 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = ED0000000000000000000001 /* PrivacyInfo.xcprivacy */; };
+		ED0000000000000000000003 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = ED0000000000000000000001 /* PrivacyInfo.xcprivacy */; };
 		804E511F2FB9E68800DAA686 /* EditorFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E511E2FB9E68800DAA686 /* EditorFont.swift */; };
 		804E51212FB9E69900DAA686 /* NoteDataDetectors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E51202FB9E69900DAA686 /* NoteDataDetectors.swift */; };
 		804E51232FB9E6CE00DAA686 /* EditorToolbarPlacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E51222FB9E6CE00DAA686 /* EditorToolbarPlacement.swift */; };
@@ -138,6 +140,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		ED0000000000000000000001 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		804E511E2FB9E68800DAA686 /* EditorFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorFont.swift; sourceTree = "<group>"; };
 		804E51202FB9E69900DAA686 /* NoteDataDetectors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDataDetectors.swift; sourceTree = "<group>"; };
 		804E51222FB9E6CE00DAA686 /* EditorToolbarPlacement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorToolbarPlacement.swift; sourceTree = "<group>"; };
@@ -347,6 +350,7 @@
 				804E51392FB9E85000DAA686 /* NoteDataDetectorInteraction.swift */,
 				804E513B2FB9E86800DAA686 /* NoteDataDetectorConfirmationDialog.swift */,
 				804E511E2FB9E68800DAA686 /* EditorFont.swift */,
+				ED0000000000000000000001 /* PrivacyInfo.xcprivacy */,
 				90AA00011000000000000002 /* Item.swift */,
 				90AA00011000000000000003 /* NevernoteApp.swift */,
 				A10000020191664200352401 /* NoteRichTextCodec.swift */,
@@ -561,6 +565,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED0000000000000000000002 /* PrivacyInfo.xcprivacy in Resources */,
 				BLOC00021000000000000001 /* Localizable.xcstrings in Resources */,
 				BLOC00021000000000000002 /* InfoPlist.xcstrings in Resources */,
 				8058988C1916641F00352439 /* Images.xcassets in Resources */,
@@ -579,6 +584,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED0000000000000000000003 /* PrivacyInfo.xcprivacy in Resources */,
 				BLOC00021000000000000003 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -794,6 +800,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = NeverNote/NeverNote.entitlements;
+				"CODE_SIGN_ENTITLEMENTS[sdk=macosx*]" = "NeverNote/NeverNote-macOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EJLR2RPSV2;
 				ENABLE_APP_INTENTS_METADATA_GENERATION = NO;
@@ -809,8 +816,8 @@
 				"INFOPLIST_KEY_LSApplicationCategoryType[sdk=macosx*]" = "public.app-category.productivity";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
-				CURRENT_PROJECT_VERSION = 2;
-				MARKETING_VERSION = 1.1;
+				CURRENT_PROJECT_VERSION = 3;
+				MARKETING_VERSION = 1.2;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-weak_framework",
@@ -835,6 +842,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = NeverNote/NeverNote.entitlements;
+				"CODE_SIGN_ENTITLEMENTS[sdk=macosx*]" = "NeverNote/NeverNote-macOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				"DEBUG_INFORMATION_FORMAT[sdk=macosx*]" = "dwarf-with-dsym";
@@ -851,8 +859,8 @@
 				"INFOPLIST_KEY_LSApplicationCategoryType[sdk=macosx*]" = "public.app-category.productivity";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
-				CURRENT_PROJECT_VERSION = 2;
-				MARKETING_VERSION = 1.1;
+				CURRENT_PROJECT_VERSION = 3;
+				MARKETING_VERSION = 1.2;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-weak_framework",
@@ -920,7 +928,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = NeverNoteWatch/NeverNoteWatch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = EJLR2RPSV2;
 				ENABLE_APP_INTENTS_METADATA_GENERATION = NO;
 				ENABLE_PREVIEWS = YES;
@@ -932,7 +940,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-weak_framework",
@@ -956,7 +964,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = NeverNoteWatch/NeverNoteWatch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = EJLR2RPSV2;
 				ENABLE_APP_INTENTS_METADATA_GENERATION = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -967,7 +975,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-weak_framework",
@@ -991,7 +999,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = EJLR2RPSV2;
 				ENABLE_APP_INTENTS_METADATA_GENERATION = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1003,7 +1011,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-weak_framework",
@@ -1027,7 +1035,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = EJLR2RPSV2;
 				ENABLE_APP_INTENTS_METADATA_GENERATION = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1039,7 +1047,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-weak_framework",

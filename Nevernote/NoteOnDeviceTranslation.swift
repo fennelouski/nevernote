@@ -12,9 +12,9 @@ enum NoteOnDeviceTranslation {
     }
 
     static var isFrameworkAvailable: Bool {
-        if #available(iOS 18.0, macOS 15.0, *) {
-            return true
-        }
+        #if os(iOS) || os(macOS)
+        if #available(iOS 18.0, macOS 15.0, *) { return true }
+        #endif
         return false
     }
 
@@ -22,6 +22,7 @@ enum NoteOnDeviceTranslation {
         detected: NoteLanguageDetection.Result,
         preferredLanguageIdentifiers: [String] = Locale.preferredLanguages
     ) async -> TargetResolution {
+        #if os(iOS) || os(macOS)
         guard #available(iOS 18.0, macOS 15.0, *) else {
             return .unavailable
         }
@@ -29,6 +30,9 @@ enum NoteOnDeviceTranslation {
             detected: detected,
             preferredLanguageIdentifiers: preferredLanguageIdentifiers
         )
+        #else
+        return .unavailable
+        #endif
     }
 
     static func prependTranslation(
