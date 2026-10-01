@@ -1335,7 +1335,7 @@ struct ContentView: View {
             title: current ? "Hide linked image?" : "Load linked image?",
             message: current
                 ? "This removes the preview below this note."
-                : "Loading contacts \(url.host ?? "the linked website"), which receives this URL, your IP address and request information, and may use cookies. An enabled preview can load again when you reopen the note. The website's privacy policy applies.",
+                : "Only load images you own or have permission to use. You are responsible for how you use them. Loading contacts \(url.host ?? "the linked website"), which receives this URL, your IP address and request information, and may use cookies. An enabled preview can load again when you reopen the note. The website's privacy policy applies.",
             confirmTitle: current ? "Hide image" : "Load and show image"
         ) {
             guard activeNote === targetNote else { return }
