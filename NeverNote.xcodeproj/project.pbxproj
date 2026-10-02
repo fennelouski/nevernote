@@ -936,6 +936,7 @@
 				ENABLE_APP_INTENTS_METADATA_GENERATION = NO;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NeverNoteWatch/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Nevernote;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.nathanfennel.NeverNote;
@@ -972,6 +973,7 @@
 				DEVELOPMENT_TEAM = EJLR2RPSV2;
 				ENABLE_APP_INTENTS_METADATA_GENERATION = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NeverNoteWatch/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Nevernote;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.nathanfennel.NeverNote;
