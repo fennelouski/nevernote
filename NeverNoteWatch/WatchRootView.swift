@@ -67,6 +67,7 @@ struct WatchRootView: View {
                         ToolbarItem(placement: .confirmationAction) {
                             Button("Save") {
                                 if let note = addingToNote, appendFragment(draftText, to: note) {
+                                    addingToNote = nil
                                     showAddText = false
                                 }
                             }
