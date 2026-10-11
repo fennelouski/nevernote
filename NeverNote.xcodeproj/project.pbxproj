@@ -12,8 +12,6 @@
 		804E511F2FB9E68800DAA686 /* EditorFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E511E2FB9E68800DAA686 /* EditorFont.swift */; };
 		804E51212FB9E69900DAA686 /* NoteDataDetectors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E51202FB9E69900DAA686 /* NoteDataDetectors.swift */; };
 		804E51232FB9E6CE00DAA686 /* EditorToolbarPlacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E51222FB9E6CE00DAA686 /* EditorToolbarPlacement.swift */; };
-		804E51252FB9E6E100DAA686 /* NoteBottomURLImagePreviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E51242FB9E6E100DAA686 /* NoteBottomURLImagePreviews.swift */; };
-		804E51272FB9E6FD00DAA686 /* NoteBottomURLImageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E51262FB9E6FD00DAA686 /* NoteBottomURLImageRow.swift */; };
 		804E51292FB9E74100DAA686 /* RichTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E51282FB9E74100DAA686 /* RichTextEditor.swift */; };
 		804E512B2FB9E75D00DAA686 /* NoteWrappingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E512A2FB9E75D00DAA686 /* NoteWrappingTextView.swift */; };
 		804E512D2FB9E77C00DAA686 /* TextFormatAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E512C2FB9E77C00DAA686 /* TextFormatAction.swift */; };
@@ -42,7 +40,6 @@
 		90AA00031000000000000102 /* NoteTextImageRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA00031000000000000101 /* NoteTextImageRenderer.swift */; };
 		90AA00031000000000000104 /* ActivityShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA00031000000000000103 /* ActivityShareSheet.swift */; };
 		90AA00031000000000000106 /* ScreenshotSharePromptOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA00031000000000000105 /* ScreenshotSharePromptOverlay.swift */; };
-		90AA0003100000000000010A /* NoteImageURLPrefetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA00031000000000000109 /* NoteImageURLPrefetcher.swift */; };
 		90AA0003100000000000010C /* NeverNoteTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA0003100000000000010B /* NeverNoteTheme.swift */; };
 		90AA00031000000000000110 /* NoteImagePermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA0003100000000000010F /* NoteImagePermissionManager.swift */; };
 		90AA00031000000000000112 /* NoteImageEducationalModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AA00031000000000000111 /* NoteImageEducationalModal.swift */; };
@@ -145,8 +142,6 @@
 		804E511E2FB9E68800DAA686 /* EditorFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorFont.swift; sourceTree = "<group>"; };
 		804E51202FB9E69900DAA686 /* NoteDataDetectors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDataDetectors.swift; sourceTree = "<group>"; };
 		804E51222FB9E6CE00DAA686 /* EditorToolbarPlacement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorToolbarPlacement.swift; sourceTree = "<group>"; };
-		804E51242FB9E6E100DAA686 /* NoteBottomURLImagePreviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteBottomURLImagePreviews.swift; sourceTree = "<group>"; };
-		804E51262FB9E6FD00DAA686 /* NoteBottomURLImageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteBottomURLImageRow.swift; sourceTree = "<group>"; };
 		804E51282FB9E74100DAA686 /* RichTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichTextEditor.swift; sourceTree = "<group>"; };
 		804E512A2FB9E75D00DAA686 /* NoteWrappingTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteWrappingTextView.swift; sourceTree = "<group>"; };
 		804E512C2FB9E77C00DAA686 /* TextFormatAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFormatAction.swift; sourceTree = "<group>"; };
@@ -175,7 +170,6 @@
 		90AA00031000000000000101 /* NoteTextImageRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTextImageRenderer.swift; sourceTree = "<group>"; };
 		90AA00031000000000000103 /* ActivityShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityShareSheet.swift; sourceTree = "<group>"; };
 		90AA00031000000000000105 /* ScreenshotSharePromptOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotSharePromptOverlay.swift; sourceTree = "<group>"; };
-		90AA00031000000000000109 /* NoteImageURLPrefetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteImageURLPrefetcher.swift; sourceTree = "<group>"; };
 		90AA0003100000000000010B /* NeverNoteTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeverNoteTheme.swift; sourceTree = "<group>"; };
 		90AA0003100000000000010F /* NoteImagePermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteImagePermissionManager.swift; sourceTree = "<group>"; };
 		90AA00031000000000000111 /* NoteImageEducationalModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteImageEducationalModal.swift; sourceTree = "<group>"; };
@@ -333,8 +327,6 @@
 				804E512C2FB9E77C00DAA686 /* TextFormatAction.swift */,
 				804E512A2FB9E75D00DAA686 /* NoteWrappingTextView.swift */,
 				804E51282FB9E74100DAA686 /* RichTextEditor.swift */,
-				804E51262FB9E6FD00DAA686 /* NoteBottomURLImageRow.swift */,
-				804E51242FB9E6E100DAA686 /* NoteBottomURLImagePreviews.swift */,
 				804E51222FB9E6CE00DAA686 /* EditorToolbarPlacement.swift */,
 				804E51202FB9E69900DAA686 /* NoteDataDetectors.swift */,
 				NT00011000000000000001 /* NoteTranslationEligibility.swift */,
@@ -361,7 +353,6 @@
 				90AA00031000000000000101 /* NoteTextImageRenderer.swift */,
 				90AA00031000000000000103 /* ActivityShareSheet.swift */,
 				90AA00031000000000000105 /* ScreenshotSharePromptOverlay.swift */,
-				90AA00031000000000000109 /* NoteImageURLPrefetcher.swift */,
 				90AA0003100000000000010B /* NeverNoteTheme.swift */,
 				90AA0003100000000000010F /* NoteImagePermissionManager.swift */,
 				90AA00031000000000000111 /* NoteImageEducationalModal.swift */,
@@ -615,13 +606,11 @@
 				A10000010191664200352401 /* NoteRichTextCodec.swift in Sources */,
 				804E511F2FB9E68800DAA686 /* EditorFont.swift in Sources */,
 				A10000030191664200352401 /* NeverNoteCloudKit.swift in Sources */,
-				804E51272FB9E6FD00DAA686 /* NoteBottomURLImageRow.swift in Sources */,
 				804E51292FB9E74100DAA686 /* RichTextEditor.swift in Sources */,
 				A100001B0191664200352401 /* NevernoteModelContainer.swift in Sources */,
 				90AA00031000000000000102 /* NoteTextImageRenderer.swift in Sources */,
 				90AA00031000000000000104 /* ActivityShareSheet.swift in Sources */,
 				90AA00031000000000000106 /* ScreenshotSharePromptOverlay.swift in Sources */,
-				90AA0003100000000000010A /* NoteImageURLPrefetcher.swift in Sources */,
 				804E512D2FB9E77C00DAA686 /* TextFormatAction.swift in Sources */,
 				90AA0003100000000000010C /* NeverNoteTheme.swift in Sources */,
 				90AA00031000000000000110 /* NoteImagePermissionManager.swift in Sources */,
@@ -633,7 +622,6 @@
 				90AA0003100000000000011A /* MacInspectorPanel.swift in Sources */,
 				90AA0003100000000000011C /* MacPhotoImportInspector.swift in Sources */,
 				804E51352FB9E82600DAA686 /* ScreenshotPromptStep.swift in Sources */,
-				804E51252FB9E6E100DAA686 /* NoteBottomURLImagePreviews.swift in Sources */,
 				804E51232FB9E6CE00DAA686 /* EditorToolbarPlacement.swift in Sources */,
 				90AA00021000000000000001 /* ContentView.swift in Sources */,
 				804E51372FB9E83900DAA686 /* NevernoteNotification.swift in Sources */,

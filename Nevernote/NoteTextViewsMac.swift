@@ -104,7 +104,6 @@ struct RichTextEditor: NSViewRepresentable {
     var textAlignment: NoteTextAlignment
     var linePrefixMode: NoteLinePrefixMode
     let command: EditorCommand?
-    let onHTTPSImageLinkLongPress: (URL, CGPoint, NSTextView) -> Void
     let onChange: () -> Void
     let onFormattingStateChange: (Bool, Bool, Bool) -> Void
 
@@ -163,9 +162,6 @@ struct RichTextEditor: NSViewRepresentable {
         context.coordinator.lastColorScheme = colorScheme
         context.coordinator.textView = textView
         context.coordinator.scrollView = scrollView
-        let longPress = NSPressGestureRecognizer(target: context.coordinator, action: #selector(Coordinator.handleLinkLongPress(_:)))
-        longPress.minimumPressDuration = 0.45
-        textView.addGestureRecognizer(longPress)
         scrollView.documentView = textView
         return scrollView
     }
@@ -272,21 +268,6 @@ struct RichTextEditor: NSViewRepresentable {
 
         init(parent: RichTextEditor) {
             self.parent = parent
-        }
-
-        @objc func handleLinkLongPress(_ gesture: NSPressGestureRecognizer) {
-            guard gesture.state == .began, let textView = gesture.view as? NSTextView else { return }
-            let point = gesture.location(in: textView)
-            guard let layoutManager = textView.layoutManager, let container = textView.textContainer else { return }
-            let glyphIndex = layoutManager.glyphIndex(for: point, in: container)
-            let charIndex = layoutManager.characterIndexForGlyph(at: glyphIndex)
-            guard textView.textStorage?.length ?? 0 > 0 else { return }
-            let safeIdx = min(max(0, charIndex), (textView.textStorage?.length ?? 1) - 1)
-            var effective = NSRange()
-            let link = textView.textStorage?.attribute(.link, at: safeIdx, effectiveRange: &effective)
-            guard let url = link as? URL ?? (link as? String).flatMap(URL.init(string:)) else { return }
-            guard let scheme = url.scheme?.lowercased(), scheme == "http" || scheme == "https" else { return }
-            parent.onHTTPSImageLinkLongPress(url, point, textView)
         }
 
         func textDidBeginEditing(_ notification: Notification) {
@@ -549,7 +530,6 @@ struct ReadOnlyNoteTextView: NSViewRepresentable {
     var textAlignment: NSTextAlignment
     var dataDetectorsEnabled: Bool
     var onDataDetectorInteraction: ((NoteDataDetectorInteraction) -> Void)?
-    var onHTTPSImageLinkLongPress: ((URL, CGPoint, NSTextView) -> Void)?
 
     func makeCoordinator() -> Coordinator {
         Coordinator(dataDetectorsEnabled: dataDetectorsEnabled)
@@ -573,17 +553,12 @@ struct ReadOnlyNoteTextView: NSViewRepresentable {
         textView.textColor = .noteBodyText
         textView.textStorage?.setAttributedString(attributedText)
         textView.delegate = context.coordinator
-        let longPress = NSPressGestureRecognizer(target: context.coordinator, action: #selector(Coordinator.handleLinkLongPress(_:)))
-        longPress.minimumPressDuration = 0.45
-        textView.addGestureRecognizer(longPress)
-        context.coordinator.onHTTPSImageLinkLongPress = onHTTPSImageLinkLongPress
         context.coordinator.onDataDetectorInteraction = onDataDetectorInteraction
         return textView
     }
 
     func updateNSView(_ textView: NoteWrappingTextView, context: Context) {
         context.coordinator.dataDetectorsEnabled = dataDetectorsEnabled
-        context.coordinator.onHTTPSImageLinkLongPress = onHTTPSImageLinkLongPress
         context.coordinator.onDataDetectorInteraction = onDataDetectorInteraction
         textView.alignment = textAlignment
         textView.isAutomaticLinkDetectionEnabled = dataDetectorsEnabled
@@ -600,7 +575,6 @@ struct ReadOnlyNoteTextView: NSViewRepresentable {
     final class Coordinator: NSObject, NSTextViewDelegate {
         var dataDetectorsEnabled: Bool
         var onDataDetectorInteraction: ((NoteDataDetectorInteraction) -> Void)?
-        var onHTTPSImageLinkLongPress: ((URL, CGPoint, NSTextView) -> Void)?
 
         init(dataDetectorsEnabled: Bool) {
             self.dataDetectorsEnabled = dataDetectorsEnabled
@@ -634,21 +608,6 @@ struct ReadOnlyNoteTextView: NSViewRepresentable {
                 onDataDetectorInteraction?(interactionModel)
             }
             return true
-        }
-
-        @objc fileprivate func handleLinkLongPress(_ gesture: NSPressGestureRecognizer) {
-            guard gesture.state == .began, let textView = gesture.view as? NSTextView else { return }
-            let point = gesture.location(in: textView)
-            guard let layoutManager = textView.layoutManager, let container = textView.textContainer else { return }
-            let glyphIndex = layoutManager.glyphIndex(for: point, in: container)
-            let charIndex = layoutManager.characterIndexForGlyph(at: glyphIndex)
-            guard textView.textStorage?.length ?? 0 > 0 else { return }
-            let safeIdx = min(max(0, charIndex), (textView.textStorage?.length ?? 1) - 1)
-            var effective = NSRange()
-            let link = textView.textStorage?.attribute(.link, at: safeIdx, effectiveRange: &effective)
-            guard let url = link as? URL ?? (link as? String).flatMap(URL.init(string:)) else { return }
-            guard let scheme = url.scheme?.lowercased(), scheme == "http" || scheme == "https" else { return }
-            onHTTPSImageLinkLongPress?(url, point, textView)
         }
     }
 }

@@ -50,7 +50,6 @@ struct ContentView: View {
     @State private var isBoldActive = true
     @State private var isItalicActive = false
     @State private var isUnderlineActive = false
-    @State private var urlPreviewRefreshToken = 0
     /// When false, keyboard shelf chrome is hidden so a focused field without a visible keyboard does not show a large gray slab.
     @State private var softwareKeyboardVisible = false
     @State private var undoDraft: NoteDocumentSnapshot?
@@ -109,14 +108,6 @@ struct ContentView: View {
 
     private var hasDetectableContent: Bool {
         NoteDataDetectors.textWouldTriggerDataDetectors(attributedText.string)
-    }
-
-    private var bottomPreviewURLKeys: [String] {
-        _ = urlPreviewRefreshToken
-        guard activeNote != nil else { return [] }
-        return NoteHTTPSLinkEnumeration.orderedLinkKeys(in: attributedText) { key in
-            NoteURLImagePreviewStore.decodeEntries(from: previewState).first { $0.url == key }?.showPreview ?? false
-        }
     }
 
     private var noteExportBackground: PlatformColor {
@@ -769,9 +760,6 @@ struct ContentView: View {
                         textAlignment: textAlignment,
                         linePrefixMode: linePrefixMode,
                         command: editorCommand,
-                        onHTTPSImageLinkLongPress: { url, point, tv in
-                            handleHTTPSImageLinkLongPress(url: url, point: point, textView: tv)
-                        },
                         onChange: persistNote,
                         onFormattingStateChange: { bold, italic, underline in
                             DispatchQueue.main.async {
@@ -789,9 +777,6 @@ struct ContentView: View {
                         dataDetectorsEnabled: dataDetectorsEnabled,
                         onDataDetectorInteraction: { interaction in
                             pendingDataDetectorInteraction = interaction
-                        },
-                        onHTTPSImageLinkLongPress: { url, point, tv in
-                            handleHTTPSImageLinkLongPress(url: url, point: point, textView: tv)
                         }
                     )
                     .contentShape(Rectangle())
@@ -803,11 +788,6 @@ struct ContentView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
             .padding(.horizontal, 24)
-
-            if !bottomPreviewURLKeys.isEmpty {
-                NoteBottomURLImagePreviews(urlKeys: bottomPreviewURLKeys)
-                    .padding(.horizontal, 24)
-            }
 
             if showLastEditedBanner {
                 Text(footerText)
@@ -1327,49 +1307,6 @@ struct ContentView: View {
         persistNote()
     }
 
-    private func handleHTTPSImageLinkLongPress(url: URL, point: CGPoint, textView: PlatformTextView) {
-        guard let targetNote = activeNote, ["https", "http"].contains(url.scheme?.lowercased() ?? "") else { return }
-        let key = NoteDocument.normalizedURLKey(url)
-        let current = NoteURLImagePreviewStore.decodeEntries(from: previewState).first { $0.url == key }?.showPreview ?? false
-        presentImageLinkPrompt(
-            title: current ? "Hide linked image?" : "Load linked image?",
-            message: current
-                ? "This removes the preview below this note."
-                : "Loading contacts \(url.host ?? "the linked website"), which receives this URL, your IP address and request information, and may use cookies. An enabled preview can load again when you reopen the note. The website's privacy policy applies.",
-            confirmTitle: current ? "Hide image" : "Load and show image"
-        ) {
-            guard activeNote === targetNote else { return }
-            if current {
-                setImagePreview(key, show: false)
-                return
-            }
-            NoteImageURLPrefetcher.prefetchImage(from: url) { result in
-                DispatchQueue.main.async {
-                    guard activeNote === targetNote else { return }
-                    switch result {
-                    case .success:
-                        setImagePreview(key, show: true)
-                    case .failure(let error):
-                        presentImageLinkPrompt(
-                            title: "Can't use this link as an image",
-                            message: error.localizedDescription,
-                            confirmTitle: "OK"
-                        ) {}
-                    }
-                }
-            }
-        }
-    }
-
-    private func setImagePreview(_ key: String, show: Bool) {
-        var entries = NoteURLImagePreviewStore.decodeEntries(from: previewState)
-        entries.removeAll { $0.url == key }
-        entries.append(NoteURLImagePreviewEntry(url: key, showPreview: show))
-        previewState = NoteURLImagePreviewStore.encodeEntries(entries)
-        urlPreviewRefreshToken &+= 1
-        persistNote()
-    }
-
     #if os(macOS)
     private func showFontPickerPanel() {
         macSidePanel = .fontPicker
@@ -1395,27 +1332,6 @@ struct ContentView: View {
         fullScreenImagePresentation = FullScreenImagePresentation(image: image)
     }
     #endif
-
-    private func presentImageLinkPrompt(
-        title: String,
-        message: String,
-        confirmTitle: String,
-        onConfirm: @escaping () -> Void
-    ) {
-        #if os(macOS)
-        macConfirmationOnConfirm = onConfirm
-        macSidePanel = .confirmation(
-            MacConfirmationRequest(title: title, message: message, confirmTitle: confirmTitle)
-        )
-        #elseif canImport(UIKit)
-        guard let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-              let root = scene.windows.first(where: { $0.isKeyWindow })?.rootViewController else { return }
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: confirmTitle, style: .default) { _ in onConfirm() })
-        alert.addAction(UIAlertAction(title: String(localized: "Cancel"), style: .cancel))
-        root.present(alert, animated: true)
-        #endif
-    }
 
     #if DEBUG
     @ViewBuilder

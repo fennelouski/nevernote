@@ -63,10 +63,11 @@ Notifications provisioning for `iCloud.com.nathanfennel.NeverNote`. Production
 CloudKit schema deployment and cross-device behavior still require a signed,
 authenticated device check; a local store test does not verify that service.
 
-Linked images contact the user-selected website after confirmation. Enabled
-previews may load again when a note reopens. The site's privacy policy applies;
-notes are not sent to a developer backend. Translation uses Apple's on-device
-framework on supported iOS/macOS versions and is unavailable on visionOS.
+Linked images no longer load from websites. Existing link text and preview
+preferences remain saved, but no remote image is displayed or fetched. Photos,
+camera images and pasted image data remain supported. Notes are not sent to a
+developer backend. Translation uses Apple's on-device framework on supported
+iOS/macOS versions and is unavailable on visionOS.
 
 Run `scripts/check-persistence.sh` for actual old-schema SQLite migration,
 photo-only/undo/conflict and disk-failure checks in isolated temporary stores.

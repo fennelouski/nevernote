@@ -18,7 +18,6 @@ struct RichTextEditor: UIViewRepresentable {
    var textAlignment: NoteTextAlignment
    var linePrefixMode: NoteLinePrefixMode
    let command: EditorCommand?
-   let onHTTPSImageLinkLongPress: (URL, CGPoint, UITextView) -> Void
    let onChange: () -> Void
    let onFormattingStateChange: (Bool, Bool, Bool) -> Void
 
@@ -60,9 +59,6 @@ struct RichTextEditor: UIViewRepresentable {
        )
        textView.textColor = .noteBodyText
        context.coordinator.lastSyncedPreferredFont = preferredFontName
-       let longPress = UILongPressGestureRecognizer(target: context.coordinator, action: #selector(Coordinator.handleLinkLongPress(_:)))
-       longPress.minimumPressDuration = 0.45
-       textView.addGestureRecognizer(longPress)
        #if os(iOS)
        textView.inputAccessoryView = nil
        #endif
@@ -149,18 +145,8 @@ struct RichTextEditor: UIViewRepresentable {
            self.parent = parent
        }
 
-       @objc func handleLinkLongPress(_ gesture: UILongPressGestureRecognizer) {
-           guard gesture.state == .began, let textView = gesture.view as? UITextView else { return }
-           let point = gesture.location(in: textView)
-           guard let pos = textView.closestPosition(to: point) else { return }
-           let idx = textView.offset(from: textView.beginningOfDocument, to: pos)
-           guard textView.textStorage.length > 0 else { return }
-           let safeIdx = min(max(0, idx), textView.textStorage.length - 1)
-           var effective = NSRange()
-           let link = textView.textStorage.attribute(.link, at: safeIdx, effectiveRange: &effective)
-           guard let url = link as? URL ?? (link as? String).flatMap(URL.init(string:)) else { return }
-           guard let scheme = url.scheme?.lowercased(), scheme == "http" || scheme == "https" else { return }
-           parent.onHTTPSImageLinkLongPress(url, point, textView)
+       func textView(_ textView: UITextView, menuConfigurationFor textItem: UITextItem, defaultMenu: UIMenu) -> UITextItem.MenuConfiguration? {
+           .init(preview: nil, menu: defaultMenu)
        }
 
        func textViewDidBeginEditing(_ textView: UITextView) {

@@ -14,7 +14,6 @@ struct FocusTextView: View {
     let maximizePresentationSize: Bool
     var dataDetectorsEnabled: Bool
     var onDataDetectorInteraction: ((NoteDataDetectorInteraction) -> Void)?
-    var onHTTPSImageLinkLongPress: ((URL, CGPoint, PlatformTextView) -> Void)?
 
     var body: some View {
         GeometryReader { proxy in
@@ -30,8 +29,7 @@ struct FocusTextView: View {
                     attributedText: fitted,
                     textAlignment: textAlignment.nsTextAlignment,
                     dataDetectorTypes: dataDetectorsEnabled ? NoteDataDetectors.enabledTypes : [],
-                    onDataDetectorInteraction: onDataDetectorInteraction,
-                    onHTTPSImageLinkLongPress: onHTTPSImageLinkLongPress
+                    onDataDetectorInteraction: onDataDetectorInteraction
                 )
                 #endif
             }

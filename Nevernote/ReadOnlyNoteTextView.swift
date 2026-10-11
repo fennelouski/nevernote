@@ -15,7 +15,6 @@ struct ReadOnlyNoteTextView: UIViewRepresentable {
     var textAlignment: NSTextAlignment
     var dataDetectorTypes: UIDataDetectorTypes
     var onDataDetectorInteraction: ((NoteDataDetectorInteraction) -> Void)?
-    var onHTTPSImageLinkLongPress: ((URL, CGPoint, UITextView) -> Void)?
 
     private var requiresLinkConfirmation: Bool {
         !dataDetectorTypes.isEmpty
@@ -44,17 +43,12 @@ struct ReadOnlyNoteTextView: UIViewRepresentable {
         textView.attributedText = attributedText
         textView.textColor = .noteBodyText
         textView.delegate = context.coordinator
-        let longPress = UILongPressGestureRecognizer(target: context.coordinator, action: #selector(Coordinator.handleLinkLongPress(_:)))
-        longPress.minimumPressDuration = 0.45
-        textView.addGestureRecognizer(longPress)
-        context.coordinator.onHTTPSImageLinkLongPress = onHTTPSImageLinkLongPress
         context.coordinator.onDataDetectorInteraction = onDataDetectorInteraction
         return textView
     }
 
     func updateUIView(_ uiView: NoteWrappingTextView, context: Context) {
         context.coordinator.requiresLinkConfirmation = requiresLinkConfirmation
-        context.coordinator.onHTTPSImageLinkLongPress = onHTTPSImageLinkLongPress
         context.coordinator.onDataDetectorInteraction = onDataDetectorInteraction
         uiView.textAlignment = textAlignment
         uiView.dataDetectorTypes = dataDetectorTypes
@@ -67,42 +61,32 @@ struct ReadOnlyNoteTextView: UIViewRepresentable {
     final class Coordinator: NSObject, UITextViewDelegate {
         var requiresLinkConfirmation: Bool
         var onDataDetectorInteraction: ((NoteDataDetectorInteraction) -> Void)?
-        var onHTTPSImageLinkLongPress: ((URL, CGPoint, UITextView) -> Void)?
 
         init(requiresLinkConfirmation: Bool) {
             self.requiresLinkConfirmation = requiresLinkConfirmation
         }
 
-        func textView(
-            _ textView: UITextView,
-            shouldInteractWith url: URL,
-            in characterRange: NSRange,
-            interaction: UITextItemInteraction
-        ) -> Bool {
-            guard requiresLinkConfirmation else { return true }
-            guard let interactionModel = NoteDataDetectorInteraction.make(
-                url: url,
-                range: characterRange,
-                in: textView.text
-            ) else { return true }
+        func textView(_ textView: UITextView, primaryActionFor textItem: UITextItem, defaultAction: UIAction) -> UIAction? {
+            guard requiresLinkConfirmation,
+                  case .link(let url) = textItem.content,
+                  let interactionModel = NoteDataDetectorInteraction.make(url: url, range: textItem.range, in: textView.text) else {
+                return defaultAction
+            }
+            return UIAction(title: interactionModel.primaryActionTitle) { [onDataDetectorInteraction] _ in
+                onDataDetectorInteraction?(interactionModel)
+            }
+        }
+
+        func textView(_ textView: UITextView, menuConfigurationFor textItem: UITextItem, defaultMenu: UIMenu) -> UITextItem.MenuConfiguration? {
+            guard requiresLinkConfirmation,
+                  case .link(let url) = textItem.content,
+                  let interactionModel = NoteDataDetectorInteraction.make(url: url, range: textItem.range, in: textView.text) else {
+                return .init(preview: nil, menu: defaultMenu)
+            }
             DispatchQueue.main.async { [onDataDetectorInteraction] in
                 onDataDetectorInteraction?(interactionModel)
             }
-            return false
-        }
-
-        @objc fileprivate func handleLinkLongPress(_ gesture: UILongPressGestureRecognizer) {
-            guard gesture.state == .began, let textView = gesture.view as? UITextView else { return }
-            let point = gesture.location(in: textView)
-            guard let pos = textView.closestPosition(to: point) else { return }
-            let idx = textView.offset(from: textView.beginningOfDocument, to: pos)
-            guard textView.textStorage.length > 0 else { return }
-            let safeIdx = min(max(0, idx), textView.textStorage.length - 1)
-            var effective = NSRange()
-            let link = textView.textStorage.attribute(.link, at: safeIdx, effectiveRange: &effective)
-            guard let url = link as? URL ?? (link as? String).flatMap(URL.init(string:)) else { return }
-            guard let scheme = url.scheme?.lowercased(), scheme == "http" || scheme == "https" else { return }
-            onHTTPSImageLinkLongPress?(url, point, textView)
+            return nil
         }
     }
 }
