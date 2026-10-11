@@ -1,0 +1,82 @@
+{
+  "checked_at_utc": "2026-09-30T22:27:28.615559+00:00",
+  "purpose": "Isolated local native diagnostic fixture; never ship or upload this binary",
+  "source_revision": "e111174306c7f18fd65247485b9527d7301114f3",
+  "source_preparation": "git archive; original repository unchanged by fixture preparation",
+  "fixture_path": "/Users/nathan/Documents/GitHub/app-store-audit/2026-09-27-release/nevernote/schema-diagnostic-mac-20261001",
+  "app_path": "/Users/nathan/Documents/GitHub/app-store-audit/2026-09-27-release/nevernote/schema-diagnostic-mac-20261001/DerivedData/Build/Products/Debug/NeverNote.app",
+  "build_command": "xcodebuild -project NeverNote.xcodeproj -scheme NeverNote -configuration Debug -destination platform=macOS -derivedDataPath DerivedData -allowProvisioningUpdates build",
+  "future_rebuild_without_provisioning": "xcodebuild -project NeverNote.xcodeproj -scheme NeverNote -configuration Debug -destination platform=macOS -derivedDataPath DerivedData build",
+  "final_build_log": "/Users/nathan/Documents/GitHub/app-store-audit/2026-09-27-release/nevernote/schema-diagnostic-mac-20261001/build-diagnostic-mac-only.log",
+  "signature_strict_deep": "passed",
+  "signed_entitlements": {
+    "com.apple.application-identifier": "EJLR2RPSV2.com.nathanfennel.NeverNote",
+    "com.apple.developer.aps-environment": "development",
+    "com.apple.developer.icloud-container-environment": "Development",
+    "com.apple.developer.icloud-container-identifiers": [
+      "iCloud.com.nathanfennel.NeverNote"
+    ],
+    "com.apple.developer.icloud-services": [
+      "CloudKit"
+    ],
+    "com.apple.developer.team-identifier": "EJLR2RPSV2",
+    "com.apple.security.app-sandbox": true,
+    "com.apple.security.files.user-selected.read-only": true,
+    "com.apple.security.get-task-allow": true,
+    "com.apple.security.network.client": true,
+    "com.apple.security.personal-information.photos-library": true
+  },
+  "profile": {
+    "uuid": "c09b2591-6e86-4e4b-b904-8d6bce3e30d5",
+    "name": "Mac Team Provisioning Profile: com.nathanfennel.NeverNote",
+    "team": [
+      "EJLR2RPSV2"
+    ],
+    "platform": [
+      "OSX"
+    ],
+    "expires_utc": "2027-09-30T22:19:08Z",
+    "sha256": "5e408d5054e15b25d9108803e0f3072eee502642d4f7bac8499a40375011fe56"
+  },
+  "binary_sha256": "91086d9e6e26af953ce79fce3f5cd3d4d0d2ed56c5ccd540151ae1f6bbc496f0",
+  "model_sha256": "2feb1644fc87958161494796c09da95b5c620972118bbc5b5d9e96c29599ac99",
+  "changed_archived_files": [
+    "NeverNote.xcodeproj/project.pbxproj",
+    "Nevernote/NevernoteApp.swift"
+  ],
+  "added_preparation_files": [
+    "AGENTS.md",
+    "SchemaDiagnostic-Development.entitlements",
+    "SCHEMA-DIAGNOSTIC.md",
+    "schema-diagnostic-preparation.json"
+  ],
+  "source_repository_status": "",
+  "account_status": "not called; root to use native Check account",
+  "helper_launched": false,
+  "schema_initialization": "not performed",
+  "production_schema_mutations": "none",
+  "guard_review": "Independent child read-only review found no write bypass; signed profile independently verified externally here. Initialization requires signed Development, available account, confirmation and repeated checks.",
+  "signing_side_effect": {
+    "cause": "An intermediate global CODE_SIGN_ENTITLEMENTS override also applied to Watch/widget dependencies; corrected final build scopes override to main target macOS SDK only.",
+    "unintended_widget_development_profile_uuid": "bff4803c-a8fe-4273-8520-5e5e9f284ad6",
+    "original_widget_development_profile_uuid": "be6a4c29-d174-4568-bddf-16c294b088cf",
+    "expanded_profile_keys": [
+      "application-identifier (wildcard to explicit)",
+      "aps-environment=development",
+      "com.apple.developer.icloud-container-development-container-identifiers",
+      "com.apple.developer.icloud-container-environment (Production,Development)",
+      "com.apple.developer.icloud-container-identifiers",
+      "com.apple.developer.icloud-services=*",
+      "com.apple.developer.ubiquity-container-identifiers",
+      "com.apple.developer.ubiquity-kvstore-identifier"
+    ],
+    "current_widget_signed_entitlements": "Original minimal application identifier/team/get-task-allow only; no CloudKit or push entitlements requested by final build",
+    "portal_capability_state": "Not inspected; root normal portal verification required. No revocation/deletion attempted."
+  },
+  "official_sources": [
+    "https://developer.apple.com/documentation/swiftdata/syncing-model-data-across-a-persons-devices",
+    "https://developer.apple.com/documentation/coredata/nspersistentcloudkitcontainer/initializecloudkitschema(options:)",
+    "https://developer.apple.com/documentation/cloudkit/enabling-cloudkit-in-your-app",
+    "https://developer.apple.com/documentation/cloudkit/deploying-an-icloud-container-s-schema"
+  ]
+}
