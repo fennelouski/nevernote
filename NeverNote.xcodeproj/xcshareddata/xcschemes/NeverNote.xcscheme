@@ -17,7 +17,7 @@
                BlueprintIdentifier = "805898701916641F00352439"
                BuildableName = "NeverNote.app"
                BlueprintName = "NeverNote"
-               ReferencedContainer = "container:Nevernote.xcodeproj">
+               ReferencedContainer = "container:NeverNote.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -32,7 +32,7 @@
                BlueprintIdentifier = "A10000170191664200352401"
                BuildableName = "NeverNote Watch Widget Extension.appex"
                BlueprintName = "NeverNote Watch Widget Extension"
-               ReferencedContainer = "container:Nevernote.xcodeproj">
+               ReferencedContainer = "container:NeverNote.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -47,7 +47,7 @@
                BlueprintIdentifier = "A10000150191664200352401"
                BuildableName = "NeverNote Watch App.app"
                BlueprintName = "NeverNote Watch App"
-               ReferencedContainer = "container:Nevernote.xcodeproj">
+               ReferencedContainer = "container:NeverNote.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -61,7 +61,7 @@
                BlueprintIdentifier = "805898901916642000352439"
                BuildableName = "NeverNoteTests.xctest"
                BlueprintName = "NeverNoteTests"
-               ReferencedContainer = "container:Nevernote.xcodeproj">
+               ReferencedContainer = "container:NeverNote.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -78,7 +78,7 @@
             BlueprintIdentifier = "805898701916641F00352439"
             BuildableName = "NeverNote.app"
             BlueprintName = "NeverNote"
-            ReferencedContainer = "container:Nevernote.xcodeproj">
+            ReferencedContainer = "container:NeverNote.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <Testables>
@@ -89,7 +89,7 @@
                BlueprintIdentifier = "805898901916642000352439"
                BuildableName = "NeverNoteTests.xctest"
                BlueprintName = "NeverNoteTests"
-               ReferencedContainer = "container:Nevernote.xcodeproj">
+               ReferencedContainer = "container:NeverNote.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -111,7 +111,7 @@
             BlueprintIdentifier = "805898701916641F00352439"
             BuildableName = "NeverNote.app"
             BlueprintName = "NeverNote"
-            ReferencedContainer = "container:Nevernote.xcodeproj">
+            ReferencedContainer = "container:NeverNote.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -128,7 +128,7 @@
             BlueprintIdentifier = "805898701916641F00352439"
             BuildableName = "NeverNote.app"
             BlueprintName = "NeverNote"
-            ReferencedContainer = "container:Nevernote.xcodeproj">
+            ReferencedContainer = "container:NeverNote.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
