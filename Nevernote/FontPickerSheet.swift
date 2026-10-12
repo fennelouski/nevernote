@@ -141,7 +141,7 @@ struct FontPickerSheet: View {
                 Text(title)
                     .font(Font(EditorFont.platformFont(forToken: token, size: previewPointSize)))
                     .foregroundStyle(Color.primary)
-                    .lineLimit(1)
+                    .fixedSize(horizontal: false, vertical: true)
                 Spacer()
                 if token == currentToken {
                     Image(systemName: "checkmark")
